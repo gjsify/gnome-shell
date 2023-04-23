@@ -1,0 +1,58 @@
+{
+    "name": "@girs/gnome-shell",
+    "version": "3.0.0-beta.13",
+    "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
+    "main": "src/index.js",
+    "typedoc": {
+        "entryPoint": "./src/index.d.ts",
+        "readmeFile": "./README.md",
+        "displayName": "GNOME Shell",
+        "tsconfig": "./tsconfig.doc.json"
+    },
+    "scripts": {
+        "validate": "tsc --noEmit"
+    },
+    "workspaces": [
+        "examples/*"
+    ],
+    "dependencies": {
+        "@girs/atk-1.0": "latest",
+        "@girs/cally-12": "latest",
+        "@girs/clutter-12": "latest",
+        "@girs/cogl-2.0": "latest",
+        "@girs/gcr-4": "latest",
+        "@girs/gio-2.0": "latest",
+        "@girs/gjs": "latest",
+        "@girs/glib-2.0": "latest",
+        "@girs/gnomedesktop-4.0": "latest",
+        "@girs/gobject-2.0": "latest",
+        "@girs/meta-12": "latest",
+        "@girs/shell-12": "latest",
+        "@girs/shew-0": "latest",
+        "@girs/st-12": "latest"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.4"
+    },
+    "keywords": [
+        "Gir",
+        "TypeScript",
+        "types",
+        "GObject-Introspection",
+        "GJS",
+        "GnomeShell",
+        "GNOME",
+        "Shell",
+        "Extension"
+    ],
+    "author": "Pascal Garber <pascal@artandcode.studio>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gjsify/gnome-shell.git"
+    },
+    "bugs": {
+        "url": "https://github.com/gjsify/gnome-shell/issues"
+    },
+    "homepage": "https://github.com/gjsify/gnome-shell#readme"
+}

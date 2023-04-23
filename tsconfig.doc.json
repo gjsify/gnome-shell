@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // General settings for code interpretation
+    "target": "ESNext",
+    "module": "ESNext",
+    "noEmit": true,
+    "baseUrl": "./",
+    "rootDir": ".",
+    // General settings for code generation
+    "removeComments": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "newLine": "LF"
+  }
+}

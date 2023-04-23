@@ -1,0 +1,10 @@
+{
+  "name": "Hello World",
+  "description": "Simple Gnome Shell Hello World Extension example",
+  "uuid": "hello-world-example@gjsify.gnome-shell",
+  "shell-version": [
+    "43",
+    "44"
+  ],
+  "version": 1
+}
