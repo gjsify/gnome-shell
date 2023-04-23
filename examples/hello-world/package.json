@@ -8,13 +8,14 @@
     "clear": "rm -rf dist",
     "build:app": "node esbuild.js",
     "build": "npm run clear && npm run build:app",
-    "validate": "tsc --noEmit",
-    "install-extension": "node install.js"
+    "validate": "tsc --noEmit"
   },
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "MIT",
   "devDependencies": {
     "@girs/gjs": "^3.0.0-beta.13",
+    "@girs/gnome-shell": "^3.0.0-beta.13",
+    "adm-zip": "^0.5.10",
     "esbuild": "^0.17.17",
     "typescript": "^5.0.4"
   }

@@ -1,4 +1,4 @@
-import { misc, ui } from '../../..';
+import { misc, ui } from '../../..'; // @girs/gnome-shell
 
 const { St, GObject } = imports.gi;
 

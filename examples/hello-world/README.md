@@ -11,11 +11,3 @@ To build this extension run
 ```
 npm run build
 ```
-
-## Install
-
-To install this extension, you need to first build it and then run
-
-```
-npm run install-extension
-```

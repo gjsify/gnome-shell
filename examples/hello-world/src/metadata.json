@@ -3,6 +3,7 @@
   "description": "Simple Gnome Shell Hello World Extension example",
   "uuid": "hello-world-example@gjsify.gnome-shell",
   "shell-version": [
+    "42",
     "43",
     "44"
   ],
