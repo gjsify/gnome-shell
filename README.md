@@ -20,12 +20,10 @@ You can import this package into your project like this:
 import GnomeShell from '@girs/gnome-shell';
 ```
 
-Or if you prefer CommonJS, you can also use this:
+If you prefer CommonJS, you can also use this:
 
 ```ts
 const GnomeShell = require('@girs/gnome-shell');
 ```
 
-> GNOME Shell extensions currently do not support ESM imports and instead rely on the global imports variable. However, you can still use ESM syntax in TypeScript, but you need to ensure that your bundler translates these imports to CommonJS.
-
-Depending on your project configuration, it is recommended to use a bundler like [esbuild](https://esbuild.github.io/).
+GNOME Shell extensions currently [do not yet support ESM imports](https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1499) and instead rely on the global `imports` [variable from GJS](https://gjs.guide/guides/gjs/intro.html). However, you can still use ESM syntax in TypeScript, but you need to ensure that your bundler translates these imports to CommonJS. We recommended to use [esbuild](https://esbuild.github.io/), which we also use [in our example](examples/hello-world).

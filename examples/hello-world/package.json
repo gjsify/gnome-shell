@@ -9,7 +9,7 @@
     "build:app": "node esbuild.js",
     "build": "npm run clear && npm run build:app",
     "validate": "tsc --noEmit",
-    "install": "node install.js"
+    "install-extension": "node install.js"
   },
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "MIT",

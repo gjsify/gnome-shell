@@ -17,5 +17,5 @@ npm run build
 To install this extension, you need to first build it and then run
 
 ```
-npm run install
+npm run install-extension
 ```
