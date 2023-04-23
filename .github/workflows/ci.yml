@@ -8,7 +8,7 @@ on:
     branches:
       - "*"
 jobs:
-  build:
+  ci:
 
     runs-on: ubuntu-22.04
 
@@ -27,7 +27,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: NODE_OPTIONS=--max_old_space_size=9216 npm run validate
-    - run: cd examples/hello-world
-    - run: npm run build
-    - run: NODE_OPTIONS=--max_old_space_size=9216 npm run validate
+    - name: Validate Typescript
+      run: NODE_OPTIONS=--max_old_space_size=9216 npm run validate
+    - name: Build Example
+      working-directory: ./examples/hello-world
+      run: npm run build
+    - name: Validate Example Typescript
+      working-directory: ./examples/hello-world-typescript
+      run: NODE_OPTIONS=--max_old_space_size=9216 npm run validate
