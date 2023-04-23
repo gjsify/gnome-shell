@@ -10,7 +10,9 @@
         "tsconfig": "./tsconfig.doc.json"
     },
     "scripts": {
-        "validate": "tsc --noEmit"
+        "validate": "tsc --noEmit",
+        "publish:next": "npm publish --tag next --access public",
+        "publish:latest": "npm publish --tag latest --access public"
     },
     "workspaces": [
         "examples/*"
