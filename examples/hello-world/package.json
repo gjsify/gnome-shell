@@ -1,6 +1,6 @@
 {
   "name": "@gjsify/gnome-shell-hello-world-example",
-  "version": "3.0.0-beta.13",
+  "version": "3.0.0-beta.14",
   "description": "Simple Gnome Shell Hello World Extension example",
   "main": "dist/extension.js",
   "private": true,
@@ -13,8 +13,7 @@
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "MIT",
   "devDependencies": {
-    "@girs/gjs": "^3.0.0-beta.13",
-    "@girs/gnome-shell": "^3.0.0-beta.13",
+    "@girs/gjs": "^3.0.0-beta.14",
     "adm-zip": "^0.5.10",
     "esbuild": "^0.17.17",
     "typescript": "^5.0.4"

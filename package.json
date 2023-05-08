@@ -1,6 +1,6 @@
 {
     "name": "@girs/gnome-shell",
-    "version": "3.0.0-beta.13",
+    "version": "3.0.0-beta.14",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
     "main": "src/index.js",
     "typedoc": {
@@ -10,6 +10,8 @@
         "tsconfig": "./tsconfig.doc.json"
     },
     "scripts": {
+        "update": "ncu",
+        "upgrade": "ncu -u && npm i",
         "validate": "tsc --noEmit",
         "publish:next": "npm publish --tag next --access public",
         "publish:latest": "npm publish --tag latest --access public"
@@ -34,6 +36,7 @@
         "@girs/st-12": "latest"
     },
     "devDependencies": {
+        "npm-check-updates": "^16.10.10",
         "typescript": "^5.0.4"
     },
     "keywords": [
