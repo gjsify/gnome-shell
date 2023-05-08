@@ -1,5 +1,7 @@
 import "@girs/gjs";
 
+export * from './types/index.js';
+
 import * as DbusUtils from './misc/dbusUtils.js';
 import * as ExtensionUtils from './misc/extensionUtils.js';
 import * as FileUtils from './misc/fileUtils.js';

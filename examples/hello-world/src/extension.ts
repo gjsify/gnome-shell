@@ -1,8 +1,9 @@
-import { misc, ui } from '../../..'; // @girs/gnome-shell
+import { misc, ui, ExtensionMetadata } from '../../..'; // -> @girs/gnome-shell
 
 const { St, GObject } = imports.gi;
 
 const ExtensionUtils = misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
 const Main = ui.main;
 const PanelMenuButton = ui.panelMenu.Button;
 const { PopupMenuItem } = ui.popupMenu;
@@ -43,6 +44,7 @@ class Extension {
     }
 
     enable() {
+        log(`enabling ${JSON.stringify(Me.metadata, null, 2)}`);
         this._indicator = new Indicator();
         Main.panel.addToStatusArea(this._uuid, this._indicator);
     }
@@ -54,6 +56,6 @@ class Extension {
     }
 }
 
-function init(meta: { uuid: string }) {
+function init(meta: ExtensionMetadata) {
     return new Extension(meta.uuid);
 }

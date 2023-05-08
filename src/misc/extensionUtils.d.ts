@@ -1,15 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/blob/main/js/misc/extensionUtils.js
 
-// TODO: untested
-export interface Extension {
-    type: ExtensionType;
-    state: ExtensionState;
-    path: string;
-    error: string | null;
-    hasPrefs: boolean;
-    hasUpdate: boolean;
-    canChange: boolean;
-}
+import type { Extension } from "../types/index.js";
 
 export enum ExtensionType {
     SYSTEM = 1,
