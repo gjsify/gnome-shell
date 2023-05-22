@@ -1,4 +1,4 @@
-import { misc, ui, ExtensionMetadata } from '../../..'; // -> @girs/gnome-shell
+import { misc, ui, ExtensionMetadata } from '@girs/gnome-shell';
 
 const { St, GObject } = imports.gi;
 

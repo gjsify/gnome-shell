@@ -1,21 +1,23 @@
 {
   "name": "@gjsify/gnome-shell-hello-world-example",
-  "version": "3.0.0-beta.14",
+  "version": "3.0.0-beta.16",
   "description": "Simple Gnome Shell Hello World Extension example",
   "main": "dist/extension.js",
   "private": true,
   "scripts": {
     "clear": "rm -rf dist",
     "build:app": "node esbuild.js",
-    "build": "npm run clear && npm run build:app",
+    "build": "yarn run clear && yarn run build:app",
     "validate": "tsc --noEmit"
   },
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "MIT",
   "devDependencies": {
-    "@girs/gjs": "^3.0.0-beta.14",
     "adm-zip": "^0.5.10",
-    "esbuild": "^0.17.17",
+    "esbuild": "^0.17.19",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@girs/gnome-shell": "workspace:^"
   }
 }

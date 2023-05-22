@@ -5,5 +5,9 @@
     "target": "ESNext",
     "module": "CommonJS",
     "moduleResolution": "node"
-  }
+  },
+  "include": [],
+  "files": [
+    "src/index.d.ts",
+  ]
 }
