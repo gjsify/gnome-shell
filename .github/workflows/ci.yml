@@ -26,12 +26,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
+    - run: yarn install
     - name: Validate Typescript
-      run: NODE_OPTIONS=--max_old_space_size=9216 npm run validate
+      run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate
     - name: Build Example
       working-directory: ./examples/hello-world
-      run: npm run build
+      run: yarn run build
     - name: Validate Example Typescript
       working-directory: ./examples/hello-world
-      run: NODE_OPTIONS=--max_old_space_size=9216 npm run validate
+      run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate
