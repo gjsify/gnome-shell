@@ -9,6 +9,5 @@ This is a monorepo for [@girs/gnome-shell](https://www.npmjs.com/package/@girs/g
 
 ## TODO
 
-* Write a script to autogenerate exports for `packages/gnome-shell/package.json`.
 * Write a script to autogenerate the `*.js` (for ESM) and `*.cjs` (for CJS) files.
 * Write a script to autogenerate the `index` files.

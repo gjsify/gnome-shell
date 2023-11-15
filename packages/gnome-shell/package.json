@@ -1,122 +1,582 @@
 {
-    "name": "@girs/gnome-shell",
-    "version": "3.0.0",
-    "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
-
-    "type": "module",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./src/index.d.ts",
-                "default": "./src/index.js"
-            },
-            "require": {
-                "types": "./src/index.d.ts",
-                "default": "./src/index.cjs"
-            }
-        },
-        "./misc/extensionUtils": {
-            "import": {
-                "types": "./src/misc/extensionUtils.d.ts",
-                "default": "./src/misc/extensionUtils.js"
-            },
-            "require": {
-                "types": "./src/misc/extensionUtils.d.ts",
-                "default": "./src/misc/extensionUtils.cjs"
-            }
-        },
-        "./extensions/extension": {
-            "import": {
-                "types": "./src/extensions/extension.d.ts",
-                "default": "./src/extensions/extension.js"
-            },
-            "require": {
-                "types": "./src/extensions/extension.d.ts",
-                "default": "./src/extensions/extension.cjs"
-            }
-        },
-        "./ui/main": {
-            "import": {
-                "types": "./src/ui/main.d.ts",
-                "default": "./src/ui/main.js"
-            },
-            "require": {
-                "types": "./src/ui/main.d.ts",
-                "default": "./src/ui/main.cjs"
-            }
-        },
-        "./ui/panelMenu": {
-            "import": {
-                "types": "./src/ui/panelMenu.d.ts",
-                "default": "./src/ui/panelMenu.js"
-            },
-            "require": {
-                "types": "./src/ui/panelMenu.d.ts",
-                "default": "./src/ui/panelMenu.cjs"
-            }
-        },
-        "./ui/popupMenu": {
-            "import": {
-                "types": "./src/ui/popupMenu.d.ts",
-                "default": "./src/ui/popupMenu.js"
-            },
-            "require": {
-                "types": "./src/ui/popupMenu.d.ts",
-                "default": "./src/ui/popupMenu.cjs"
-            }
-        }
+  "name": "@girs/gnome-shell",
+  "version": "3.0.0",
+  "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
+  "type": "module",
+  "exports": {
+    "./extensions/extension": {
+      "import": {
+        "types": "./src/extensions/extension.d.ts",
+        "default": "./src/extensions/extension.js"
+      },
+      "require": {
+        "types": "./src/extensions/extension.d.ts",
+        "default": "./src/extensions/extension.cjs"
+      }
     },
-    "typedoc": {
-        "entryPoint": "./src/index.d.ts",
-        "readmeFile": "./README.md",
-        "displayName": "GNOME Shell",
-        "tsconfig": "./tsconfig.doc.json"
+    "./extensions/sharedInternals": {
+      "import": {
+        "types": "./src/extensions/sharedInternals.d.ts",
+        "default": "./src/extensions/sharedInternals.js"
+      },
+      "require": {
+        "types": "./src/extensions/sharedInternals.d.ts",
+        "default": "./src/extensions/sharedInternals.cjs"
+      }
     },
-    "scripts": {
-        "validate": "tsc --noEmit",
-        "publish": "yarn npm publish --tolerate-republish --access public",
-        "publish:latest": "yarn npm publish --tolerate-republish --tag latest --access public",
-        "publish:next": "yarn npm publish --tolerate-republish --tag next --access public"
+    ".": {
+      "import": {
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
+      },
+      "require": {
+        "types": "./src/index.d.ts",
+        "default": "./src/index.cjs"
+      }
     },
-    "dependencies": {
-        "@girs/atk-1.0": "^2.50.0-3.2.4",
-        "@girs/cally-13": "^13.0.0-3.2.4",
-        "@girs/clutter-13": "^13.0.0-3.2.4",
-        "@girs/cogl-2.0": "^2.0.0-3.2.4",
-        "@girs/gcr-4": "^4.1.0-3.2.4",
-        "@girs/gio-2.0": "^2.78.0-3.2.4",
-        "@girs/gjs": "^3.2.4",
-        "@girs/glib-2.0": "^2.78.0-3.2.4",
-        "@girs/gnomebg-4.0": "^4.0.0-3.2.4",
-        "@girs/gnomedesktop-4.0": "^4.0.0-3.2.4",
-        "@girs/gobject-2.0": "^2.78.0-3.2.4",
-        "@girs/meta-13": "^13.0.0-3.2.4",
-        "@girs/shell-13": "^13.0.0-3.2.4",
-        "@girs/shew-0": "^0.0.0-3.2.4",
-        "@girs/st-13": "^13.0.0-3.2.4"
+    "./misc/animationUtils": {
+      "import": {
+        "types": "./src/misc/animationUtils.d.ts",
+        "default": "./src/misc/animationUtils.js"
+      },
+      "require": {
+        "types": "./src/misc/animationUtils.d.ts",
+        "default": "./src/misc/animationUtils.cjs"
+      }
     },
-    "devDependencies": {
-        "typescript": "^5.2.2"
+    "./misc/config": {
+      "import": {
+        "types": "./src/misc/config.d.ts",
+        "default": "./src/misc/config.js"
+      },
+      "require": {
+        "types": "./src/misc/config.d.ts",
+        "default": "./src/misc/config.cjs"
+      }
     },
-    "keywords": [
-        "Gir",
-        "TypeScript",
-        "types",
-        "GObject-Introspection",
-        "GJS",
-        "GnomeShell",
-        "GNOME",
-        "Shell",
-        "Extension"
-    ],
-    "author": "Pascal Garber <pascal@artandcode.studio>",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/gjsify/gnome-shell.git"
+    "./misc/dbusUtils": {
+      "import": {
+        "types": "./src/misc/dbusUtils.d.ts",
+        "default": "./src/misc/dbusUtils.js"
+      },
+      "require": {
+        "types": "./src/misc/dbusUtils.d.ts",
+        "default": "./src/misc/dbusUtils.cjs"
+      }
     },
-    "bugs": {
-        "url": "https://github.com/gjsify/gnome-shell/issues"
+    "./misc/extensionUtils": {
+      "import": {
+        "types": "./src/misc/extensionUtils.d.ts",
+        "default": "./src/misc/extensionUtils.js"
+      },
+      "require": {
+        "types": "./src/misc/extensionUtils.d.ts",
+        "default": "./src/misc/extensionUtils.cjs"
+      }
     },
-    "homepage": "https://github.com/gjsify/gnome-shell#readme"
+    "./misc/fileUtils": {
+      "import": {
+        "types": "./src/misc/fileUtils.d.ts",
+        "default": "./src/misc/fileUtils.js"
+      },
+      "require": {
+        "types": "./src/misc/fileUtils.d.ts",
+        "default": "./src/misc/fileUtils.cjs"
+      }
+    },
+    "./misc/gnomeSession": {
+      "import": {
+        "types": "./src/misc/gnomeSession.d.ts",
+        "default": "./src/misc/gnomeSession.js"
+      },
+      "require": {
+        "types": "./src/misc/gnomeSession.d.ts",
+        "default": "./src/misc/gnomeSession.cjs"
+      }
+    },
+    "./misc/parentalControlsManager": {
+      "import": {
+        "types": "./src/misc/parentalControlsManager.d.ts",
+        "default": "./src/misc/parentalControlsManager.js"
+      },
+      "require": {
+        "types": "./src/misc/parentalControlsManager.d.ts",
+        "default": "./src/misc/parentalControlsManager.cjs"
+      }
+    },
+    "./misc/signals": {
+      "import": {
+        "types": "./src/misc/signals.d.ts",
+        "default": "./src/misc/signals.js"
+      },
+      "require": {
+        "types": "./src/misc/signals.d.ts",
+        "default": "./src/misc/signals.cjs"
+      }
+    },
+    "./types/extension-metadata": {
+      "import": {
+        "types": "./src/types/extension-metadata.ts",
+        "default": "./src/types/extension-metadata.js"
+      },
+      "require": {
+        "types": "./src/types/extension-metadata.ts",
+        "default": "./src/types/extension-metadata.cjs"
+      }
+    },
+    "./types": {
+      "import": {
+        "types": "./src/types/index.ts",
+        "default": "./src/types/index.js"
+      },
+      "require": {
+        "types": "./src/types/index.ts",
+        "default": "./src/types/index.cjs"
+      }
+    },
+    "./ui/accessDialog": {
+      "import": {
+        "types": "./src/ui/accessDialog.d.ts",
+        "default": "./src/ui/accessDialog.js"
+      },
+      "require": {
+        "types": "./src/ui/accessDialog.d.ts",
+        "default": "./src/ui/accessDialog.cjs"
+      }
+    },
+    "./ui/altTab": {
+      "import": {
+        "types": "./src/ui/altTab.d.ts",
+        "default": "./src/ui/altTab.js"
+      },
+      "require": {
+        "types": "./src/ui/altTab.d.ts",
+        "default": "./src/ui/altTab.cjs"
+      }
+    },
+    "./ui/animation": {
+      "import": {
+        "types": "./src/ui/animation.d.ts",
+        "default": "./src/ui/animation.js"
+      },
+      "require": {
+        "types": "./src/ui/animation.d.ts",
+        "default": "./src/ui/animation.cjs"
+      }
+    },
+    "./ui/appDisplay": {
+      "import": {
+        "types": "./src/ui/appDisplay.d.ts",
+        "default": "./src/ui/appDisplay.js"
+      },
+      "require": {
+        "types": "./src/ui/appDisplay.d.ts",
+        "default": "./src/ui/appDisplay.cjs"
+      }
+    },
+    "./ui/appFavorites": {
+      "import": {
+        "types": "./src/ui/appFavorites.d.ts",
+        "default": "./src/ui/appFavorites.js"
+      },
+      "require": {
+        "types": "./src/ui/appFavorites.d.ts",
+        "default": "./src/ui/appFavorites.cjs"
+      }
+    },
+    "./ui/appMenu": {
+      "import": {
+        "types": "./src/ui/appMenu.d.ts",
+        "default": "./src/ui/appMenu.js"
+      },
+      "require": {
+        "types": "./src/ui/appMenu.d.ts",
+        "default": "./src/ui/appMenu.cjs"
+      }
+    },
+    "./ui/audioDeviceSelection": {
+      "import": {
+        "types": "./src/ui/audioDeviceSelection.d.ts",
+        "default": "./src/ui/audioDeviceSelection.js"
+      },
+      "require": {
+        "types": "./src/ui/audioDeviceSelection.d.ts",
+        "default": "./src/ui/audioDeviceSelection.cjs"
+      }
+    },
+    "./ui/background": {
+      "import": {
+        "types": "./src/ui/background.d.ts",
+        "default": "./src/ui/background.js"
+      },
+      "require": {
+        "types": "./src/ui/background.d.ts",
+        "default": "./src/ui/background.cjs"
+      }
+    },
+    "./ui/backgroundMenu": {
+      "import": {
+        "types": "./src/ui/backgroundMenu.d.ts",
+        "default": "./src/ui/backgroundMenu.js"
+      },
+      "require": {
+        "types": "./src/ui/backgroundMenu.d.ts",
+        "default": "./src/ui/backgroundMenu.cjs"
+      }
+    },
+    "./ui/barLevel": {
+      "import": {
+        "types": "./src/ui/barLevel.d.ts",
+        "default": "./src/ui/barLevel.js"
+      },
+      "require": {
+        "types": "./src/ui/barLevel.d.ts",
+        "default": "./src/ui/barLevel.cjs"
+      }
+    },
+    "./ui/boxpointer": {
+      "import": {
+        "types": "./src/ui/boxpointer.d.ts",
+        "default": "./src/ui/boxpointer.js"
+      },
+      "require": {
+        "types": "./src/ui/boxpointer.d.ts",
+        "default": "./src/ui/boxpointer.cjs"
+      }
+    },
+    "./ui/calendar": {
+      "import": {
+        "types": "./src/ui/calendar.d.ts",
+        "default": "./src/ui/calendar.js"
+      },
+      "require": {
+        "types": "./src/ui/calendar.d.ts",
+        "default": "./src/ui/calendar.cjs"
+      }
+    },
+    "./ui/checkBox": {
+      "import": {
+        "types": "./src/ui/checkBox.d.ts",
+        "default": "./src/ui/checkBox.js"
+      },
+      "require": {
+        "types": "./src/ui/checkBox.d.ts",
+        "default": "./src/ui/checkBox.cjs"
+      }
+    },
+    "./ui/closeDialog": {
+      "import": {
+        "types": "./src/ui/closeDialog.d.ts",
+        "default": "./src/ui/closeDialog.js"
+      },
+      "require": {
+        "types": "./src/ui/closeDialog.d.ts",
+        "default": "./src/ui/closeDialog.cjs"
+      }
+    },
+    "./ui/components/automountManager": {
+      "import": {
+        "types": "./src/ui/components/automountManager.d.ts",
+        "default": "./src/ui/components/automountManager.js"
+      },
+      "require": {
+        "types": "./src/ui/components/automountManager.d.ts",
+        "default": "./src/ui/components/automountManager.cjs"
+      }
+    },
+    "./ui/components/autorunManager": {
+      "import": {
+        "types": "./src/ui/components/autorunManager.d.ts",
+        "default": "./src/ui/components/autorunManager.js"
+      },
+      "require": {
+        "types": "./src/ui/components/autorunManager.d.ts",
+        "default": "./src/ui/components/autorunManager.cjs"
+      }
+    },
+    "./components": {
+      "import": {
+        "types": "./src/ui/components/index.d.ts",
+        "default": "./src/ui/components/index.js"
+      },
+      "require": {
+        "types": "./src/ui/components/index.d.ts",
+        "default": "./src/ui/components/index.cjs"
+      }
+    },
+    "./ui/components/keyring": {
+      "import": {
+        "types": "./src/ui/components/keyring.d.ts",
+        "default": "./src/ui/components/keyring.js"
+      },
+      "require": {
+        "types": "./src/ui/components/keyring.d.ts",
+        "default": "./src/ui/components/keyring.cjs"
+      }
+    },
+    "./ui/components/networkAgent": {
+      "import": {
+        "types": "./src/ui/components/networkAgent.d.ts",
+        "default": "./src/ui/components/networkAgent.js"
+      },
+      "require": {
+        "types": "./src/ui/components/networkAgent.d.ts",
+        "default": "./src/ui/components/networkAgent.cjs"
+      }
+    },
+    "./ui/components/polkitAgent": {
+      "import": {
+        "types": "./src/ui/components/polkitAgent.d.ts",
+        "default": "./src/ui/components/polkitAgent.js"
+      },
+      "require": {
+        "types": "./src/ui/components/polkitAgent.d.ts",
+        "default": "./src/ui/components/polkitAgent.cjs"
+      }
+    },
+    "./ui/components/telepathyClient": {
+      "import": {
+        "types": "./src/ui/components/telepathyClient.d.ts",
+        "default": "./src/ui/components/telepathyClient.js"
+      },
+      "require": {
+        "types": "./src/ui/components/telepathyClient.d.ts",
+        "default": "./src/ui/components/telepathyClient.cjs"
+      }
+    },
+    "./ui/components": {
+      "import": {
+        "types": "./src/ui/components.d.ts",
+        "default": "./src/ui/components.js"
+      },
+      "require": {
+        "types": "./src/ui/components.d.ts",
+        "default": "./src/ui/components.cjs"
+      }
+    },
+    "./ui/dialog": {
+      "import": {
+        "types": "./src/ui/dialog.d.ts",
+        "default": "./src/ui/dialog.js"
+      },
+      "require": {
+        "types": "./src/ui/dialog.d.ts",
+        "default": "./src/ui/dialog.cjs"
+      }
+    },
+    "./ui/dnd": {
+      "import": {
+        "types": "./src/ui/dnd.d.ts",
+        "default": "./src/ui/dnd.js"
+      },
+      "require": {
+        "types": "./src/ui/dnd.d.ts",
+        "default": "./src/ui/dnd.cjs"
+      }
+    },
+    "./ui/iconGrid": {
+      "import": {
+        "types": "./src/ui/iconGrid.d.ts",
+        "default": "./src/ui/iconGrid.js"
+      },
+      "require": {
+        "types": "./src/ui/iconGrid.d.ts",
+        "default": "./src/ui/iconGrid.cjs"
+      }
+    },
+    "./ui/layout": {
+      "import": {
+        "types": "./src/ui/layout.d.ts",
+        "default": "./src/ui/layout.js"
+      },
+      "require": {
+        "types": "./src/ui/layout.d.ts",
+        "default": "./src/ui/layout.cjs"
+      }
+    },
+    "./ui/main": {
+      "import": {
+        "types": "./src/ui/main.d.ts",
+        "default": "./src/ui/main.js"
+      },
+      "require": {
+        "types": "./src/ui/main.d.ts",
+        "default": "./src/ui/main.cjs"
+      }
+    },
+    "./ui/messageList": {
+      "import": {
+        "types": "./src/ui/messageList.d.ts",
+        "default": "./src/ui/messageList.js"
+      },
+      "require": {
+        "types": "./src/ui/messageList.d.ts",
+        "default": "./src/ui/messageList.cjs"
+      }
+    },
+    "./ui/messageTray": {
+      "import": {
+        "types": "./src/ui/messageTray.d.ts",
+        "default": "./src/ui/messageTray.js"
+      },
+      "require": {
+        "types": "./src/ui/messageTray.d.ts",
+        "default": "./src/ui/messageTray.cjs"
+      }
+    },
+    "./ui/modalDialog": {
+      "import": {
+        "types": "./src/ui/modalDialog.d.ts",
+        "default": "./src/ui/modalDialog.js"
+      },
+      "require": {
+        "types": "./src/ui/modalDialog.d.ts",
+        "default": "./src/ui/modalDialog.cjs"
+      }
+    },
+    "./ui/mpris": {
+      "import": {
+        "types": "./src/ui/mpris.d.ts",
+        "default": "./src/ui/mpris.js"
+      },
+      "require": {
+        "types": "./src/ui/mpris.d.ts",
+        "default": "./src/ui/mpris.cjs"
+      }
+    },
+    "./ui/notificationDaemon": {
+      "import": {
+        "types": "./src/ui/notificationDaemon.d.ts",
+        "default": "./src/ui/notificationDaemon.js"
+      },
+      "require": {
+        "types": "./src/ui/notificationDaemon.d.ts",
+        "default": "./src/ui/notificationDaemon.cjs"
+      }
+    },
+    "./ui/panel": {
+      "import": {
+        "types": "./src/ui/panel.d.ts",
+        "default": "./src/ui/panel.js"
+      },
+      "require": {
+        "types": "./src/ui/panel.d.ts",
+        "default": "./src/ui/panel.cjs"
+      }
+    },
+    "./ui/panelMenu": {
+      "import": {
+        "types": "./src/ui/panelMenu.d.ts",
+        "default": "./src/ui/panelMenu.js"
+      },
+      "require": {
+        "types": "./src/ui/panelMenu.d.ts",
+        "default": "./src/ui/panelMenu.cjs"
+      }
+    },
+    "./ui/popupMenu": {
+      "import": {
+        "types": "./src/ui/popupMenu.d.ts",
+        "default": "./src/ui/popupMenu.js"
+      },
+      "require": {
+        "types": "./src/ui/popupMenu.d.ts",
+        "default": "./src/ui/popupMenu.cjs"
+      }
+    },
+    "./ui/ripples": {
+      "import": {
+        "types": "./src/ui/ripples.d.ts",
+        "default": "./src/ui/ripples.js"
+      },
+      "require": {
+        "types": "./src/ui/ripples.d.ts",
+        "default": "./src/ui/ripples.cjs"
+      }
+    },
+    "./ui/search": {
+      "import": {
+        "types": "./src/ui/search.d.ts",
+        "default": "./src/ui/search.js"
+      },
+      "require": {
+        "types": "./src/ui/search.d.ts",
+        "default": "./src/ui/search.cjs"
+      }
+    },
+    "./ui/switcherPopup": {
+      "import": {
+        "types": "./src/ui/switcherPopup.d.ts",
+        "default": "./src/ui/switcherPopup.js"
+      },
+      "require": {
+        "types": "./src/ui/switcherPopup.d.ts",
+        "default": "./src/ui/switcherPopup.cjs"
+      }
+    },
+    "./ui/userWidget": {
+      "import": {
+        "types": "./src/ui/userWidget.d.ts",
+        "default": "./src/ui/userWidget.js"
+      },
+      "require": {
+        "types": "./src/ui/userWidget.d.ts",
+        "default": "./src/ui/userWidget.cjs"
+      }
+    }
+  },
+  "typedoc": {
+    "entryPoint": "./src/index.d.ts",
+    "readmeFile": "./README.md",
+    "displayName": "GNOME Shell",
+    "tsconfig": "./tsconfig.doc.json"
+  },
+  "scripts": {
+    "validate": "tsc --noEmit",
+    "publish": "yarn npm publish --tolerate-republish --access public",
+    "publish:latest": "yarn npm publish --tolerate-republish --tag latest --access public",
+    "publish:next": "yarn npm publish --tolerate-republish --tag next --access public",
+    "generate:exports": "node ./scripts/generate-exports.js && yarn install"
+  },
+  "dependencies": {
+    "@girs/atk-1.0": "^2.50.0-3.2.4",
+    "@girs/cally-13": "^13.0.0-3.2.4",
+    "@girs/clutter-13": "^13.0.0-3.2.4",
+    "@girs/cogl-2.0": "^2.0.0-3.2.4",
+    "@girs/gcr-4": "^4.1.0-3.2.4",
+    "@girs/gio-2.0": "^2.78.0-3.2.4",
+    "@girs/gjs": "^3.2.4",
+    "@girs/glib-2.0": "^2.78.0-3.2.4",
+    "@girs/gnomebg-4.0": "^4.0.0-3.2.4",
+    "@girs/gnomedesktop-4.0": "^4.0.0-3.2.4",
+    "@girs/gobject-2.0": "^2.78.0-3.2.4",
+    "@girs/meta-13": "^13.0.0-3.2.4",
+    "@girs/shell-13": "^13.0.0-3.2.4",
+    "@girs/shew-0": "^0.0.0-3.2.4",
+    "@girs/st-13": "^13.0.0-3.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "Gir",
+    "TypeScript",
+    "types",
+    "GObject-Introspection",
+    "GJS",
+    "GnomeShell",
+    "GNOME",
+    "Shell",
+    "Extension"
+  ],
+  "author": "Pascal Garber <pascal@artandcode.studio>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjsify/gnome-shell.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjsify/gnome-shell/issues"
+  },
+  "homepage": "https://github.com/gjsify/gnome-shell#readme"
 }

@@ -1,7 +1,6 @@
 import St from '@girs/st-13';
 import GObject from '@girs/gobject-2.0';
 
-// import { ui } from '@girs/gnome-shell';
 import { Extension, gettext as _ } from '@girs/gnome-shell/extensions/extension';
 import * as panelMenu from '@girs/gnome-shell/ui/panelMenu';
 import { PopupMenuItem } from '@girs/gnome-shell/ui/popupMenu';
