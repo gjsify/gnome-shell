@@ -11,3 +11,24 @@ This is a monorepo for [@girs/gnome-shell](https://www.npmjs.com/package/@girs/g
 
 * Write a script to autogenerate the `*.js` (for ESM) and `*.cjs` (for CJS) files.
 * Write a script to autogenerate the `index` files.
+* Write a script to autogenerate module declarations like [this](https://github.com/gjsify/gnome-shell/issues/5#issuecomment-1783839225):
+
+```ts
+declare module "resource:///org/gnome/shell/ui/panelMenu.js" {
+  import * as ns from "@girs/gnome-shell/src/ui/panelMenu.d.ts";
+
+  export = ns;
+}
+
+declare module "resource:///org/gnome/shell/ui/popupMenu.js" {
+  import * as ns from "@girs/gnome-shell/src/ui/popupMenu.js";
+
+  export = ns;
+}
+
+declare module "resource:///org/gnome/shell/ui/main.js" {
+  import * as ns from "@girs/gnome-shell/src/ui/main.d.ts";
+
+  export = ns;
+}
+```
