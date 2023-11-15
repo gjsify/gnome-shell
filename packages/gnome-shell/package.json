@@ -2,8 +2,70 @@
     "name": "@girs/gnome-shell",
     "version": "3.0.0",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
-    "main": "src/index.js",
+
     "type": "module",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./src/index.d.ts",
+                "default": "./src/index.js"
+            },
+            "require": {
+                "types": "./src/index.d.ts",
+                "default": "./src/index.cjs"
+            }
+        },
+        "./misc/extensionUtils": {
+            "import": {
+                "types": "./src/misc/extensionUtils.d.ts",
+                "default": "./src/misc/extensionUtils.js"
+            },
+            "require": {
+                "types": "./src/misc/extensionUtils.d.ts",
+                "default": "./src/misc/extensionUtils.cjs"
+            }
+        },
+        "./extensions/extension": {
+            "import": {
+                "types": "./src/extensions/extension.d.ts",
+                "default": "./src/extensions/extension.js"
+            },
+            "require": {
+                "types": "./src/extensions/extension.d.ts",
+                "default": "./src/extensions/extension.cjs"
+            }
+        },
+        "./ui/main": {
+            "import": {
+                "types": "./src/ui/main.d.ts",
+                "default": "./src/ui/main.js"
+            },
+            "require": {
+                "types": "./src/ui/main.d.ts",
+                "default": "./src/ui/main.cjs"
+            }
+        },
+        "./ui/panelMenu": {
+            "import": {
+                "types": "./src/ui/panelMenu.d.ts",
+                "default": "./src/ui/panelMenu.js"
+            },
+            "require": {
+                "types": "./src/ui/panelMenu.d.ts",
+                "default": "./src/ui/panelMenu.cjs"
+            }
+        },
+        "./ui/popupMenu": {
+            "import": {
+                "types": "./src/ui/popupMenu.d.ts",
+                "default": "./src/ui/popupMenu.js"
+            },
+            "require": {
+                "types": "./src/ui/popupMenu.d.ts",
+                "default": "./src/ui/popupMenu.cjs"
+            }
+        }
+    },
     "typedoc": {
         "entryPoint": "./src/index.d.ts",
         "readmeFile": "./README.md",

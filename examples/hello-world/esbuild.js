@@ -40,7 +40,14 @@ build({
 
     console.log(`Build complete. Zip file: ${zipFilename}\n`);
     console.log(`Install with: gnome-extensions install ${zipFilename}`)
-    console.log(`Update with: gnome-extensions install ${zipFilename} --force`)
-    console.log(`Enable with: gnome-extensions enable ${metadata.uuid} --user`)
+    console.log(`Update with: gnome-extensions install --force ${zipFilename}`)
+    console.log(`Enable with: gnome-extensions enable ${metadata.uuid}`)
+    console.log('');
+    console.log(`Disable with: gnome-extensions disable ${metadata.uuid}`)
+    console.log(`Remove with: gnome-extensions uninstall ${metadata.uuid}`)
+    console.log('');
+    console.log('To check if the extension has been recognized, you can execute the following: gnome-extensions list.')
+    console.log(`If ${metadata.uuid} is listed in the output, you should be able to activate the extension.`);
+    console.log('Otherwise, you will need to restart the GNOME Shell.');
 });
 

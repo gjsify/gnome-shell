@@ -1,18 +1,13 @@
-import { misc, ui, ExtensionMetadata } from '@girs/gnome-shell';
-
 import St from '@girs/st-13';
 import GObject from '@girs/gobject-2.0';
 
-// const { St, GObject } = imports.gi;
+// import { ui } from '@girs/gnome-shell';
+import { Extension, gettext as _ } from '@girs/gnome-shell/extensions/extension';
+import * as panelMenu from '@girs/gnome-shell/ui/panelMenu';
+import { PopupMenuItem } from '@girs/gnome-shell/ui/popupMenu';
+import * as Main from '@girs/gnome-shell/ui/main';
 
-const ExtensionUtils = misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const Main = ui.main;
-const PanelMenuButton = ui.panelMenu.Button;
-const { PopupMenuItem } = ui.popupMenu;
-
-const _ = ExtensionUtils.gettext;
-const GETTEXT_DOMAIN = 'my-indicator-extension';
+const PanelMenuButton = panelMenu.Button;
 
 class TIndicator extends PanelMenuButton {
     constructor() {
@@ -37,19 +32,14 @@ class TIndicator extends PanelMenuButton {
 
 const Indicator = GObject.registerClass(TIndicator);
 
-class Extension {
-    _uuid: string;
-    _indicator: TIndicator | null = null;
-    constructor(uuid: string) {
-        this._uuid = uuid;
+export default class HelloWorldExtension extends Extension {
 
-        ExtensionUtils.initTranslations(GETTEXT_DOMAIN);
-    }
+    _indicator: TIndicator | null = null;
 
     enable() {
-        log(`enabling ${JSON.stringify(Me.metadata, null, 2)}`);
+        log(`enabling ${JSON.stringify(this.metadata, null, 2)}`);
         this._indicator = new Indicator();
-        Main.panel.addToStatusArea(this._uuid, this._indicator);
+        Main.panel.addToStatusArea(this.uuid, this._indicator);
     }
 
     disable() {
@@ -57,8 +47,4 @@ class Extension {
         this._indicator?.destroy();
         this._indicator = null;
     }
-}
-
-function init(meta: ExtensionMetadata) {
-    return new Extension(meta.uuid);
 }

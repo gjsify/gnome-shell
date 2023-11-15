@@ -1,0 +1,1 @@
+export * from 'resource:///org/gnome/shell/misc/config.js';
