@@ -1,1 +1,1 @@
-module.exports = imports.ui.switcherPopup;
+export * from 'resource:///org/gnome/shell/ui/switcherPopup.js';

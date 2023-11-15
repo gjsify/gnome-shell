@@ -1,1 +1,1 @@
-module.exports = imports.ui.messageTray;
+export * from 'resource:///org/gnome/shell/ui/messageTray.js';

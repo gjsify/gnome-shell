@@ -3,6 +3,7 @@
     "version": "3.0.0",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
     "main": "src/index.js",
+    "type": "module",
     "private": true,
     "typedoc": {
         "entryPoint": "./src/index.d.ts",
@@ -41,8 +42,8 @@
         "url": "https://github.com/gjsify/gnome-shell/issues"
     },
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
-    "packageManager": "yarn@3.5.1",
+    "packageManager": "yarn@4.0.2",
     "devDependencies": {
-        "typescript": "^5.0.4"
+        "typescript": "^5.2.2"
     }
 }

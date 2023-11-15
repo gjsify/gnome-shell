@@ -1,1 +1,1 @@
-module.exports = imports.ui.appFavorites;
+export * from 'resource:///org/gnome/shell/ui/appFavorites.js';

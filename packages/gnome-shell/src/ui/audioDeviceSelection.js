@@ -1,1 +1,1 @@
-module.exports = imports.ui.audioDeviceSelection;
+export * from 'resource:///org/gnome/shell/ui/audioDeviceSelection.js';

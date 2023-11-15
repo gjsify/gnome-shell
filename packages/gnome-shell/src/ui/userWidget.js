@@ -1,1 +1,1 @@
-module.exports = imports.ui.userWidget;
+export * from 'resource:///org/gnome/shell/ui/userWidget.js';

@@ -1,1 +1,1 @@
-module.exports = imports.ui.accessDialog;
+export * from 'resource:///org/gnome/shell/ui/accessDialog.js';

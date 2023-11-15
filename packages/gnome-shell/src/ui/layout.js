@@ -1,1 +1,1 @@
-module.exports = imports.ui.layout;
+export * from 'resource:///org/gnome/shell/ui/layout.js';

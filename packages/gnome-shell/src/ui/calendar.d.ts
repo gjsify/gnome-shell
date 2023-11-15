@@ -2,8 +2,8 @@
 
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-12';
-import type Clutter from '@girs/clutter-12';
+import type St from '@girs/st-13';
+import type Clutter from '@girs/clutter-13';
 
 import type { Message, MessageListSection } from './messageList.js';
 import type { Notification, MessageTray, Source } from './messageTray.js';

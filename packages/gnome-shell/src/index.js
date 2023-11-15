@@ -1,4 +1,2 @@
-module.exports = {
-  misc: imports.misc,
-  ui: imports.ui
-}
+export const misc = imports.misc;
+export const ui = imports.ui;

@@ -1,1 +1,1 @@
-module.exports = imports.ui.checkBox;
+export * from 'resource:///org/gnome/shell/ui/checkBox.js';

@@ -1,3 +1,1 @@
-module.exports = imports.misc.gnomeSession;
-
-  
+export * from 'resource:///org/gnome/shell/misc/gnomeSession.js';

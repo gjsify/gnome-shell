@@ -1,1 +1,1 @@
-module.exports = imports.ui.notificationDaemon;
+export * from 'resource:///org/gnome/shell/ui/notificationDaemon.js';

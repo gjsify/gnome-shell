@@ -1,1 +1,1 @@
-module.exports = imports.ui.messageList;
+export * from 'resource:///org/gnome/shell/ui/messageList.js';

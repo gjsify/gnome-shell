@@ -1,1 +1,1 @@
-module.exports = imports.ui.mpris;
+export * from 'resource:///org/gnome/shell/ui/mpris.js';

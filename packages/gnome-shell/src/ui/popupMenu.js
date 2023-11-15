@@ -1,1 +1,1 @@
-module.exports = imports.ui.popupMenu;
+export * from 'resource:///org/gnome/shell/ui/popupMenu.js';

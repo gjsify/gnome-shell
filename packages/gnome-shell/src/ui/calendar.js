@@ -1,1 +1,1 @@
-module.exports = imports.ui.calendar;
+export * from 'resource:///org/gnome/shell/ui/calendar.js';

@@ -1,4 +1,4 @@
-// https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/components/__init__.js
+// https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/components.js
 export class ComponentManager {
     constructor();
     _sessionUpdated(): void;

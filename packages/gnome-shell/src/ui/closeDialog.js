@@ -1,1 +1,1 @@
-module.exports = imports.ui.closeDialog;
+export * from 'resource:///org/gnome/shell/ui/closeDialog.js';

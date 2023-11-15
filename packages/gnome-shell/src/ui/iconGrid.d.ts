@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/iconGrid.js
 
-import type Clutter from '@girs/clutter-12';
-import type St from '@girs/st-12';
-import type Shell from '@girs/shell-12';
+import type Clutter from '@girs/clutter-13';
+import type St from '@girs/st-13';
+import type Shell from '@girs/shell-13';
 
 export namespace BaseIcon {
     export interface ConstructorProperties {

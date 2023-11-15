@@ -1,8 +1,13 @@
-const { build } = require("esbuild");
-const fs = require("fs");
-const path = require("path");
-const AdmZip = require("adm-zip");
-const metadata = require("./src/metadata.json");
+import { build } from "esbuild";
+import { copyFileSync } from "fs";
+import { resolve, dirname } from "path";
+import { fileURLToPath } from 'url';
+import AdmZip from "adm-zip";
+import metadata from "./src/metadata.json" assert { type: 'json' };
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+console.debug(`Building ${metadata.name} v${metadata.version}...`);
 
 build({
     entryPoints: ['src/extension.ts'],
@@ -16,21 +21,21 @@ build({
     // firefox91  // Since GJS 1.71.1
     // firefox102 // Since GJS 1.73.2
     target: "firefox78",
+    platform: "neutral",
     platform: "node",
-    // platform: "neutral",
     // mainFields: ['main'],
     // conditions: ['require', 'default'],
-    // format: 'cjs',
-    external: ['gi://*', 'system', 'gettext', 'cairo'],
+    format: 'esm',
+    external: ['gi://*', 'resource://*', 'system', 'gettext', 'cairo'],
 }).then(() => {
-    const metaSrc = path.resolve(__dirname, "src/metadata.json");
-    const metaDist = path.resolve(__dirname, "dist/metadata.json");
+    const metaSrc = resolve(__dirname, "src/metadata.json");
+    const metaDist = resolve(__dirname, "dist/metadata.json");
     const zipFilename = `${metadata.uuid}.zip`;
-    const zipDist = path.resolve(__dirname, zipFilename);
-    fs.copyFileSync(metaSrc, metaDist);
+    const zipDist = resolve(__dirname, zipFilename);
+    copyFileSync(metaSrc, metaDist);
 
     const zip = new AdmZip();
-    zip.addLocalFolder(path.resolve(__dirname, "dist"));
+    zip.addLocalFolder(resolve(__dirname, "dist"));
     zip.writeZip(zipDist);
 
     console.log(`Build complete. Zip file: ${zipFilename}\n`);

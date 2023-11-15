@@ -1,1 +1,1 @@
-module.exports = imports.ui.iconGrid;
+export * from 'resource:///org/gnome/shell/ui/iconGrid.js';

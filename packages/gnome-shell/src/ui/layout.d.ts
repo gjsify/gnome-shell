@@ -2,9 +2,9 @@
 
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
-import type Clutter from '@girs/clutter-12';
-import type St from '@girs/st-12';
-import type Meta from '@girs/meta-12';
+import type Clutter from '@girs/clutter-13';
+import type St from '@girs/st-13';
+import type Meta from '@girs/meta-13';
 
 import { EventEmitter } from '../misc/signals.js';
 

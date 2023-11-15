@@ -1,1 +1,1 @@
-module.exports = imports.ui.appMenu;
+export * from 'resource:///org/gnome/shell/ui/appMenu.js';

@@ -1,1 +1,1 @@
-module.exports = imports.ui.ripples;
+export * from 'resource:///org/gnome/shell/ui/ripples.js';

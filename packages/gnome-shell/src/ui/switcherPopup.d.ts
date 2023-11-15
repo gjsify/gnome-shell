@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/switcherPopup.js
 
 import type GLib from '@girs/glib-2.0';
-import type St from '@girs/st-12';
-import type Clutter from '@girs/clutter-12';
+import type St from '@girs/st-13';
+import type Clutter from '@girs/clutter-13';
 
 export abstract class SwitcherPopup extends St.Widget {
     /** @hidden Only defined to resolve type conflict */

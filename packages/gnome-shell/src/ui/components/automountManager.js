@@ -1,3 +1,1 @@
-module.exports = imports.ui.components.automountManager;
-
-  
+export * from 'resource:///org/gnome/shell/ui/components/automountManager.js';

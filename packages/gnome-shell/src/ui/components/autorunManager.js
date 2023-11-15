@@ -1,3 +1,1 @@
-module.exports = imports.ui.components.autorunManager;
-
-  
+export * from 'resource:///org/gnome/shell/ui/components/autorunManager.js';

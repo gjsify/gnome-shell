@@ -1,1 +1,1 @@
-module.exports = imports.ui.boxpointer;
+export * from 'resource:///org/gnome/shell/ui/boxpointer.js';

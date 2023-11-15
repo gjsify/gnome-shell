@@ -1,1 +1,1 @@
-module.exports = imports.ui.backgroundMenu;
+export * from 'resource:///org/gnome/shell/ui/backgroundMenu.js';

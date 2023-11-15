@@ -1,1 +1,1 @@
-module.exports = imports.ui.background;
+export * from 'resource:///org/gnome/shell/ui/background.js';

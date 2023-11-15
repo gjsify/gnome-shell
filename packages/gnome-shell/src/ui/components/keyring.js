@@ -1,1 +1,1 @@
-module.exports = imports.ui.components.keyring;
+export * from 'resource:///org/gnome/shell/ui/components/keyring.js';

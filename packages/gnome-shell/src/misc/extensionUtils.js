@@ -1,1 +1,1 @@
-module.exports = imports.misc.extensionUtils;
+export * from 'resource:///org/gnome/shell/misc/extensionUtils.js';

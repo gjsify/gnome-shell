@@ -1,1 +1,1 @@
-module.exports = imports.ui.animation;
+export * from 'resource:///org/gnome/shell/ui/animation.js';

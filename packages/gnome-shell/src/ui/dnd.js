@@ -1,1 +1,1 @@
-module.exports = imports.ui.dnd;
+export * from 'resource:///org/gnome/shell/ui/dnd.js';

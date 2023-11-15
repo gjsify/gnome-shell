@@ -1,1 +1,1 @@
-module.exports = imports.ui.modalDialog;
+export * from 'resource:///org/gnome/shell/ui/modalDialog.js';

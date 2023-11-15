@@ -2,8 +2,8 @@
 
 
 
-import type Clutter from '@girs/clutter-12';
-import type St from '@girs/st-12';
+import type Clutter from '@girs/clutter-13';
+import type St from '@girs/st-13';
 
 export class Ripples {
     _x: number;

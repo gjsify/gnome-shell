@@ -1,1 +1,1 @@
-module.exports = imports.ui.dialog;
+export * from 'resource:///org/gnome/shell/ui/dialog.js';

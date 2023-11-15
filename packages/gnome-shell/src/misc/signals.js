@@ -1,3 +1,1 @@
-module.exports = imports.misc.signals;
-
-  
+export * from 'resource:///org/gnome/shell/misc/signals.js';

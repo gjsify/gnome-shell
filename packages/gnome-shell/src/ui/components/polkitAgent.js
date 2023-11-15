@@ -1,1 +1,1 @@
-module.exports = imports.ui.components.polkitAgent;
+export * from 'resource:///org/gnome/shell/ui/components/polkitAgent.js';

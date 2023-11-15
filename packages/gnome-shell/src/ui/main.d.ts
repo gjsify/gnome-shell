@@ -1,6 +1,6 @@
 import type Gio from '@girs/gio-2.0';
 
-import { ComponentManager } from './components/__init__.js';
+import { ComponentManager } from './components.js';
 import { AccessDialogDBus } from './accessDialog.js';
 // const AudioDeviceSelection = imports.ui.audioDeviceSelection;
 // const Components = imports.ui.components;

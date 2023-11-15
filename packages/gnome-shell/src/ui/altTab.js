@@ -1,1 +1,1 @@
-module.exports = imports.ui.altTab;
+export * from 'resource:///org/gnome/shell/ui/altTab.js';

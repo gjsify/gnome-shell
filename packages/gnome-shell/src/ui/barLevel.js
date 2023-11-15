@@ -1,1 +1,1 @@
-module.exports = imports.ui.barLevel;
+export * from 'resource:///org/gnome/shell/ui/barLevel.js';

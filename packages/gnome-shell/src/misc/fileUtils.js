@@ -1,1 +1,1 @@
-module.exports = imports.misc.fileUtils;
+export * from 'resource:///org/gnome/shell/misc/fileUtils.js';

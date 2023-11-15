@@ -3,6 +3,7 @@
     "version": "3.0.0",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
     "main": "src/index.js",
+    "type": "module",
     "typedoc": {
         "entryPoint": "./src/index.d.ts",
         "readmeFile": "./README.md",
@@ -16,24 +17,24 @@
         "publish:next": "yarn npm publish --tolerate-republish --tag next --access public"
     },
     "dependencies": {
-        "@girs/atk-1.0": "^2.45.1-3.0.0",
-        "@girs/cally-12": "^12.0.0-3.0.0",
-        "@girs/clutter-12": "^12.0.0-3.0.0",
-        "@girs/cogl-2.0": "^2.0.0-3.0.0",
-        "@girs/gcr-4": "^4.0.0-3.0.0",
-        "@girs/gio-2.0": "^2.76.1-3.0.0",
-        "@girs/gjs": "^3.0.0",
-        "@girs/glib-2.0": "^2.76.1-3.0.0",
-        "@girs/gnomebg-4.0": "^4.0.0-3.0.0",
-        "@girs/gnomedesktop-4.0": "^4.0.0-3.0.0",
-        "@girs/gobject-2.0": "^2.76.1-3.0.0",
-        "@girs/meta-12": "^12.0.0-3.0.0",
-        "@girs/shell-12": "^12.0.0-3.0.0",
-        "@girs/shew-0": "^0.0.0-3.0.0",
-        "@girs/st-12": "^12.0.0-3.0.0"
+        "@girs/atk-1.0": "^2.50.0-3.2.4",
+        "@girs/cally-13": "^13.0.0-3.2.4",
+        "@girs/clutter-13": "^13.0.0-3.2.4",
+        "@girs/cogl-2.0": "^2.0.0-3.2.4",
+        "@girs/gcr-4": "^4.1.0-3.2.4",
+        "@girs/gio-2.0": "^2.78.0-3.2.4",
+        "@girs/gjs": "^3.2.4",
+        "@girs/glib-2.0": "^2.78.0-3.2.4",
+        "@girs/gnomebg-4.0": "^4.0.0-3.2.4",
+        "@girs/gnomedesktop-4.0": "^4.0.0-3.2.4",
+        "@girs/gobject-2.0": "^2.78.0-3.2.4",
+        "@girs/meta-13": "^13.0.0-3.2.4",
+        "@girs/shell-13": "^13.0.0-3.2.4",
+        "@girs/shew-0": "^0.0.0-3.2.4",
+        "@girs/st-13": "^13.0.0-3.2.4"
     },
     "devDependencies": {
-        "typescript": "^5.0.4"
+        "typescript": "^5.2.2"
     },
     "keywords": [
         "Gir",

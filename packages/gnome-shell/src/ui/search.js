@@ -1,1 +1,1 @@
-module.exports = imports.ui.search;
+export * from 'resource:///org/gnome/shell/ui/search.js';

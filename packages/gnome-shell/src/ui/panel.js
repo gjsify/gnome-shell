@@ -1,1 +1,1 @@
-module.exports = imports.ui.panel;
+export * from 'resource:///org/gnome/shell/ui/panel.js';

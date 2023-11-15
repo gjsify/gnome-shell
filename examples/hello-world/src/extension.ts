@@ -1,6 +1,9 @@
 import { misc, ui, ExtensionMetadata } from '@girs/gnome-shell';
 
-const { St, GObject } = imports.gi;
+import St from '@girs/st-13';
+import GObject from '@girs/gobject-2.0';
+
+// const { St, GObject } = imports.gi;
 
 const ExtensionUtils = misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();

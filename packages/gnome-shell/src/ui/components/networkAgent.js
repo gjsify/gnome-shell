@@ -1,1 +1,1 @@
-module.exports = imports.ui.components.networkAgent;
+export * from 'resource:///org/gnome/shell/ui/components/networkAgent.js';

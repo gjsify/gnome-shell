@@ -1,1 +1,1 @@
-module.exports = imports.misc.parentalControlsManager;
+export * from 'resource:///org/gnome/shell/misc/parentalControlsManager.js';

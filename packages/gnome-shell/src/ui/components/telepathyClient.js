@@ -1,1 +1,1 @@
-module.exports = imports.ui.components.telepathyClient;
+export * from 'resource:///org/gnome/shell/ui/components/telepathyClient.js';

@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js
 
-import type Clutter from '@girs/clutter-12';
-import type St from '@girs/st-12';
+import type Clutter from '@girs/clutter-13';
+import type St from '@girs/st-13';
 
 export interface ButtonInfo {
     action: () => void;
