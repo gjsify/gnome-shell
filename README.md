@@ -10,3 +10,45 @@ This is a monorepo for [@girs/gnome-shell](https://www.npmjs.com/package/@girs/g
 ## TODO
 
 * Write a script to autogenerate the `index` files.
+
+## Development
+
+Build the types:
+
+```bash
+yarn build:types
+
+# or
+cd ./packages/gnome-shell
+yarn build
+```
+
+Validate the types:
+
+```bash
+yarn validate:types
+
+# or
+cd ./packages/gnome-shell
+yarn validate
+```
+
+Build the example:
+
+```bash
+yarn build:example
+
+# or
+cd ./examples/hello-world
+yarn build
+```
+
+Validate the example:
+
+```bash
+yarn validate:example
+
+# or
+cd ./examples/hello-world
+yarn validate
+```
