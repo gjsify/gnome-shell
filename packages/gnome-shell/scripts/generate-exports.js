@@ -3,7 +3,7 @@ import { loadJsonFile, writeJsonFile } from './utils/json.js';
 import { TYPE_DIR, __dirname } from './config.js';
 import { resolve, extname, basename } from 'path';
 
-const createExport = (filePath) => {
+const generateExport = (filePath) => {
     const relativePath = filePath.replace(TYPE_DIR, '');
     const withoutExtension = relativePath.replace(extname(relativePath), '').replace('.d', '');
     const esmJsPath = withoutExtension + '.js';
@@ -37,7 +37,7 @@ const start = async () => {
     let exports = {};
 
     for (const absolutePath of typeFiles) {
-        exports = { ...exports, ...createExport(absolutePath) }
+        exports = { ...exports, ...generateExport(absolutePath) }
     }
 
     pkg.exports = exports;

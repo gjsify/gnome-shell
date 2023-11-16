@@ -1,3 +1,5 @@
+import './autorunManager-ambient';
+
 declare class AutorunManager {
     constructor();
 

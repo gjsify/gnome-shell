@@ -1,7 +1,7 @@
 import { stat, readdir } from 'fs/promises';
 import { resolve, extname } from 'path';
 
-export const getAllFiles = async (dirPath, allowedExtensionNames, filesList = []) => {
+export const getAllFiles = async (dirPath, allowedExtensionNames, ignoreDirs = [], filesList = []) => {
     const files = await readdir(dirPath);
 
     for (const file of files) {
@@ -9,7 +9,8 @@ export const getAllFiles = async (dirPath, allowedExtensionNames, filesList = []
         const _stat = await stat(filePath);
 
         if (_stat.isDirectory()) {
-            filesList = await getAllFiles(filePath, allowedExtensionNames, filesList);
+            if(ignoreDirs.find((ignoreDir) => filePath.endsWith(ignoreDir))) continue;
+            filesList = await getAllFiles(filePath, allowedExtensionNames, ignoreDirs, filesList);
             continue;
         }
 

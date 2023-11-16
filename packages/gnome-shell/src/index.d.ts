@@ -1,4 +1,5 @@
 import "@girs/gjs";
+import "./ambient"
 
 export * from './types/index.js';
 

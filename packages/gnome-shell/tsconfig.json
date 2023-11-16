@@ -3,8 +3,8 @@
     "lib": ["ESNext"],
     "types": [],
     "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "node"
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
   },
   "include": [],
   "files": [

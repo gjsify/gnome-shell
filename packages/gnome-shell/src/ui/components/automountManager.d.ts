@@ -1,3 +1,5 @@
+import './automountManager-ambient';
+
 declare class AutomountManager {
     constructor()
 
