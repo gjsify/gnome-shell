@@ -4,16 +4,6 @@
   "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
   "type": "module",
   "exports": {
-    "./extensions/extension-ambient": {
-      "import": {
-        "types": "./dist/extensions/extension-ambient.d.ts",
-        "default": "./dist/extensions/extension-ambient.js"
-      },
-      "require": {
-        "types": "./dist/extensions/extension-ambient.d.ts",
-        "default": "./dist/extensions/extension-ambient.cjs"
-      }
-    },
     "./extensions/extension": {
       "import": {
         "types": "./dist/extensions/extension.d.ts",
@@ -24,16 +14,18 @@
         "default": "./dist/extensions/extension.cjs"
       }
     },
-    "./extensions/sharedInternals": {
+    "./extensions/extension/ambient": "./dist/extensions/extension-ambient.d.ts",
+    "./extensions": {
       "import": {
-        "types": "./dist/extensions/sharedInternals.d.ts",
-        "default": "./dist/extensions/sharedInternals.js"
+        "types": "./dist/extensions/index.d.ts",
+        "default": "./dist/extensions/index.js"
       },
       "require": {
-        "types": "./dist/extensions/sharedInternals.d.ts",
-        "default": "./dist/extensions/sharedInternals.cjs"
+        "types": "./dist/extensions/index.d.ts",
+        "default": "./dist/extensions/index.cjs"
       }
     },
+    "./extensions/ambient": "./dist/extensions/index-ambient.d.ts",
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
@@ -44,16 +36,7 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./misc/animationUtils-ambient": {
-      "import": {
-        "types": "./dist/misc/animationUtils-ambient.d.ts",
-        "default": "./dist/misc/animationUtils-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/animationUtils-ambient.d.ts",
-        "default": "./dist/misc/animationUtils-ambient.cjs"
-      }
-    },
+    "./ambient": "./dist/index-ambient.d.ts",
     "./misc/animationUtils": {
       "import": {
         "types": "./dist/misc/animationUtils.d.ts",
@@ -64,16 +47,7 @@
         "default": "./dist/misc/animationUtils.cjs"
       }
     },
-    "./misc/config-ambient": {
-      "import": {
-        "types": "./dist/misc/config-ambient.d.ts",
-        "default": "./dist/misc/config-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/config-ambient.d.ts",
-        "default": "./dist/misc/config-ambient.cjs"
-      }
-    },
+    "./misc/animationUtils/ambient": "./dist/misc/animationUtils-ambient.d.ts",
     "./misc/config": {
       "import": {
         "types": "./dist/misc/config.d.ts",
@@ -84,16 +58,7 @@
         "default": "./dist/misc/config.cjs"
       }
     },
-    "./misc/dbusUtils-ambient": {
-      "import": {
-        "types": "./dist/misc/dbusUtils-ambient.d.ts",
-        "default": "./dist/misc/dbusUtils-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/dbusUtils-ambient.d.ts",
-        "default": "./dist/misc/dbusUtils-ambient.cjs"
-      }
-    },
+    "./misc/config/ambient": "./dist/misc/config-ambient.d.ts",
     "./misc/dbusUtils": {
       "import": {
         "types": "./dist/misc/dbusUtils.d.ts",
@@ -104,16 +69,7 @@
         "default": "./dist/misc/dbusUtils.cjs"
       }
     },
-    "./misc/extensionUtils-ambient": {
-      "import": {
-        "types": "./dist/misc/extensionUtils-ambient.d.ts",
-        "default": "./dist/misc/extensionUtils-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/extensionUtils-ambient.d.ts",
-        "default": "./dist/misc/extensionUtils-ambient.cjs"
-      }
-    },
+    "./misc/dbusUtils/ambient": "./dist/misc/dbusUtils-ambient.d.ts",
     "./misc/extensionUtils": {
       "import": {
         "types": "./dist/misc/extensionUtils.d.ts",
@@ -124,16 +80,7 @@
         "default": "./dist/misc/extensionUtils.cjs"
       }
     },
-    "./misc/fileUtils-ambient": {
-      "import": {
-        "types": "./dist/misc/fileUtils-ambient.d.ts",
-        "default": "./dist/misc/fileUtils-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/fileUtils-ambient.d.ts",
-        "default": "./dist/misc/fileUtils-ambient.cjs"
-      }
-    },
+    "./misc/extensionUtils/ambient": "./dist/misc/extensionUtils-ambient.d.ts",
     "./misc/fileUtils": {
       "import": {
         "types": "./dist/misc/fileUtils.d.ts",
@@ -144,16 +91,7 @@
         "default": "./dist/misc/fileUtils.cjs"
       }
     },
-    "./misc/gnomeSession-ambient": {
-      "import": {
-        "types": "./dist/misc/gnomeSession-ambient.d.ts",
-        "default": "./dist/misc/gnomeSession-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/gnomeSession-ambient.d.ts",
-        "default": "./dist/misc/gnomeSession-ambient.cjs"
-      }
-    },
+    "./misc/fileUtils/ambient": "./dist/misc/fileUtils-ambient.d.ts",
     "./misc/gnomeSession": {
       "import": {
         "types": "./dist/misc/gnomeSession.d.ts",
@@ -164,16 +102,18 @@
         "default": "./dist/misc/gnomeSession.cjs"
       }
     },
-    "./misc/parentalControlsManager-ambient": {
+    "./misc/gnomeSession/ambient": "./dist/misc/gnomeSession-ambient.d.ts",
+    "./misc": {
       "import": {
-        "types": "./dist/misc/parentalControlsManager-ambient.d.ts",
-        "default": "./dist/misc/parentalControlsManager-ambient.js"
+        "types": "./dist/misc/index.d.ts",
+        "default": "./dist/misc/index.js"
       },
       "require": {
-        "types": "./dist/misc/parentalControlsManager-ambient.d.ts",
-        "default": "./dist/misc/parentalControlsManager-ambient.cjs"
+        "types": "./dist/misc/index.d.ts",
+        "default": "./dist/misc/index.cjs"
       }
     },
+    "./misc/ambient": "./dist/misc/index-ambient.d.ts",
     "./misc/parentalControlsManager": {
       "import": {
         "types": "./dist/misc/parentalControlsManager.d.ts",
@@ -184,16 +124,7 @@
         "default": "./dist/misc/parentalControlsManager.cjs"
       }
     },
-    "./misc/signals-ambient": {
-      "import": {
-        "types": "./dist/misc/signals-ambient.d.ts",
-        "default": "./dist/misc/signals-ambient.js"
-      },
-      "require": {
-        "types": "./dist/misc/signals-ambient.d.ts",
-        "default": "./dist/misc/signals-ambient.cjs"
-      }
-    },
+    "./misc/parentalControlsManager/ambient": "./dist/misc/parentalControlsManager-ambient.d.ts",
     "./misc/signals": {
       "import": {
         "types": "./dist/misc/signals.d.ts",
@@ -204,36 +135,7 @@
         "default": "./dist/misc/signals.cjs"
       }
     },
-    "./types/extension-metadata": {
-      "import": {
-        "types": "./dist/types/extension-metadata.ts",
-        "default": "./dist/types/extension-metadata.js"
-      },
-      "require": {
-        "types": "./dist/types/extension-metadata.ts",
-        "default": "./dist/types/extension-metadata.cjs"
-      }
-    },
-    "./types": {
-      "import": {
-        "types": "./dist/types/index.ts",
-        "default": "./dist/types/index.js"
-      },
-      "require": {
-        "types": "./dist/types/index.ts",
-        "default": "./dist/types/index.cjs"
-      }
-    },
-    "./ui/accessDialog-ambient": {
-      "import": {
-        "types": "./dist/ui/accessDialog-ambient.d.ts",
-        "default": "./dist/ui/accessDialog-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/accessDialog-ambient.d.ts",
-        "default": "./dist/ui/accessDialog-ambient.cjs"
-      }
-    },
+    "./misc/signals/ambient": "./dist/misc/signals-ambient.d.ts",
     "./ui/accessDialog": {
       "import": {
         "types": "./dist/ui/accessDialog.d.ts",
@@ -244,16 +146,7 @@
         "default": "./dist/ui/accessDialog.cjs"
       }
     },
-    "./ui/altTab-ambient": {
-      "import": {
-        "types": "./dist/ui/altTab-ambient.d.ts",
-        "default": "./dist/ui/altTab-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/altTab-ambient.d.ts",
-        "default": "./dist/ui/altTab-ambient.cjs"
-      }
-    },
+    "./ui/accessDialog/ambient": "./dist/ui/accessDialog-ambient.d.ts",
     "./ui/altTab": {
       "import": {
         "types": "./dist/ui/altTab.d.ts",
@@ -264,16 +157,7 @@
         "default": "./dist/ui/altTab.cjs"
       }
     },
-    "./ui/animation-ambient": {
-      "import": {
-        "types": "./dist/ui/animation-ambient.d.ts",
-        "default": "./dist/ui/animation-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/animation-ambient.d.ts",
-        "default": "./dist/ui/animation-ambient.cjs"
-      }
-    },
+    "./ui/altTab/ambient": "./dist/ui/altTab-ambient.d.ts",
     "./ui/animation": {
       "import": {
         "types": "./dist/ui/animation.d.ts",
@@ -284,16 +168,7 @@
         "default": "./dist/ui/animation.cjs"
       }
     },
-    "./ui/appDisplay-ambient": {
-      "import": {
-        "types": "./dist/ui/appDisplay-ambient.d.ts",
-        "default": "./dist/ui/appDisplay-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/appDisplay-ambient.d.ts",
-        "default": "./dist/ui/appDisplay-ambient.cjs"
-      }
-    },
+    "./ui/animation/ambient": "./dist/ui/animation-ambient.d.ts",
     "./ui/appDisplay": {
       "import": {
         "types": "./dist/ui/appDisplay.d.ts",
@@ -304,16 +179,7 @@
         "default": "./dist/ui/appDisplay.cjs"
       }
     },
-    "./ui/appFavorites-ambient": {
-      "import": {
-        "types": "./dist/ui/appFavorites-ambient.d.ts",
-        "default": "./dist/ui/appFavorites-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/appFavorites-ambient.d.ts",
-        "default": "./dist/ui/appFavorites-ambient.cjs"
-      }
-    },
+    "./ui/appDisplay/ambient": "./dist/ui/appDisplay-ambient.d.ts",
     "./ui/appFavorites": {
       "import": {
         "types": "./dist/ui/appFavorites.d.ts",
@@ -324,16 +190,7 @@
         "default": "./dist/ui/appFavorites.cjs"
       }
     },
-    "./ui/appMenu-ambient": {
-      "import": {
-        "types": "./dist/ui/appMenu-ambient.d.ts",
-        "default": "./dist/ui/appMenu-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/appMenu-ambient.d.ts",
-        "default": "./dist/ui/appMenu-ambient.cjs"
-      }
-    },
+    "./ui/appFavorites/ambient": "./dist/ui/appFavorites-ambient.d.ts",
     "./ui/appMenu": {
       "import": {
         "types": "./dist/ui/appMenu.d.ts",
@@ -344,16 +201,7 @@
         "default": "./dist/ui/appMenu.cjs"
       }
     },
-    "./ui/audioDeviceSelection-ambient": {
-      "import": {
-        "types": "./dist/ui/audioDeviceSelection-ambient.d.ts",
-        "default": "./dist/ui/audioDeviceSelection-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/audioDeviceSelection-ambient.d.ts",
-        "default": "./dist/ui/audioDeviceSelection-ambient.cjs"
-      }
-    },
+    "./ui/appMenu/ambient": "./dist/ui/appMenu-ambient.d.ts",
     "./ui/audioDeviceSelection": {
       "import": {
         "types": "./dist/ui/audioDeviceSelection.d.ts",
@@ -364,16 +212,7 @@
         "default": "./dist/ui/audioDeviceSelection.cjs"
       }
     },
-    "./ui/background-ambient": {
-      "import": {
-        "types": "./dist/ui/background-ambient.d.ts",
-        "default": "./dist/ui/background-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/background-ambient.d.ts",
-        "default": "./dist/ui/background-ambient.cjs"
-      }
-    },
+    "./ui/audioDeviceSelection/ambient": "./dist/ui/audioDeviceSelection-ambient.d.ts",
     "./ui/background": {
       "import": {
         "types": "./dist/ui/background.d.ts",
@@ -384,16 +223,7 @@
         "default": "./dist/ui/background.cjs"
       }
     },
-    "./ui/backgroundMenu-ambient": {
-      "import": {
-        "types": "./dist/ui/backgroundMenu-ambient.d.ts",
-        "default": "./dist/ui/backgroundMenu-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/backgroundMenu-ambient.d.ts",
-        "default": "./dist/ui/backgroundMenu-ambient.cjs"
-      }
-    },
+    "./ui/background/ambient": "./dist/ui/background-ambient.d.ts",
     "./ui/backgroundMenu": {
       "import": {
         "types": "./dist/ui/backgroundMenu.d.ts",
@@ -404,16 +234,7 @@
         "default": "./dist/ui/backgroundMenu.cjs"
       }
     },
-    "./ui/barLevel-ambient": {
-      "import": {
-        "types": "./dist/ui/barLevel-ambient.d.ts",
-        "default": "./dist/ui/barLevel-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/barLevel-ambient.d.ts",
-        "default": "./dist/ui/barLevel-ambient.cjs"
-      }
-    },
+    "./ui/backgroundMenu/ambient": "./dist/ui/backgroundMenu-ambient.d.ts",
     "./ui/barLevel": {
       "import": {
         "types": "./dist/ui/barLevel.d.ts",
@@ -424,16 +245,7 @@
         "default": "./dist/ui/barLevel.cjs"
       }
     },
-    "./ui/boxpointer-ambient": {
-      "import": {
-        "types": "./dist/ui/boxpointer-ambient.d.ts",
-        "default": "./dist/ui/boxpointer-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/boxpointer-ambient.d.ts",
-        "default": "./dist/ui/boxpointer-ambient.cjs"
-      }
-    },
+    "./ui/barLevel/ambient": "./dist/ui/barLevel-ambient.d.ts",
     "./ui/boxpointer": {
       "import": {
         "types": "./dist/ui/boxpointer.d.ts",
@@ -444,16 +256,7 @@
         "default": "./dist/ui/boxpointer.cjs"
       }
     },
-    "./ui/calendar-ambient": {
-      "import": {
-        "types": "./dist/ui/calendar-ambient.d.ts",
-        "default": "./dist/ui/calendar-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/calendar-ambient.d.ts",
-        "default": "./dist/ui/calendar-ambient.cjs"
-      }
-    },
+    "./ui/boxpointer/ambient": "./dist/ui/boxpointer-ambient.d.ts",
     "./ui/calendar": {
       "import": {
         "types": "./dist/ui/calendar.d.ts",
@@ -464,16 +267,7 @@
         "default": "./dist/ui/calendar.cjs"
       }
     },
-    "./ui/checkBox-ambient": {
-      "import": {
-        "types": "./dist/ui/checkBox-ambient.d.ts",
-        "default": "./dist/ui/checkBox-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/checkBox-ambient.d.ts",
-        "default": "./dist/ui/checkBox-ambient.cjs"
-      }
-    },
+    "./ui/calendar/ambient": "./dist/ui/calendar-ambient.d.ts",
     "./ui/checkBox": {
       "import": {
         "types": "./dist/ui/checkBox.d.ts",
@@ -484,16 +278,7 @@
         "default": "./dist/ui/checkBox.cjs"
       }
     },
-    "./ui/closeDialog-ambient": {
-      "import": {
-        "types": "./dist/ui/closeDialog-ambient.d.ts",
-        "default": "./dist/ui/closeDialog-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/closeDialog-ambient.d.ts",
-        "default": "./dist/ui/closeDialog-ambient.cjs"
-      }
-    },
+    "./ui/checkBox/ambient": "./dist/ui/checkBox-ambient.d.ts",
     "./ui/closeDialog": {
       "import": {
         "types": "./dist/ui/closeDialog.d.ts",
@@ -504,16 +289,7 @@
         "default": "./dist/ui/closeDialog.cjs"
       }
     },
-    "./ui/components/automountManager-ambient": {
-      "import": {
-        "types": "./dist/ui/components/automountManager-ambient.d.ts",
-        "default": "./dist/ui/components/automountManager-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/automountManager-ambient.d.ts",
-        "default": "./dist/ui/components/automountManager-ambient.cjs"
-      }
-    },
+    "./ui/closeDialog/ambient": "./dist/ui/closeDialog-ambient.d.ts",
     "./ui/components/automountManager": {
       "import": {
         "types": "./dist/ui/components/automountManager.d.ts",
@@ -524,16 +300,7 @@
         "default": "./dist/ui/components/automountManager.cjs"
       }
     },
-    "./ui/components/autorunManager-ambient": {
-      "import": {
-        "types": "./dist/ui/components/autorunManager-ambient.d.ts",
-        "default": "./dist/ui/components/autorunManager-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/autorunManager-ambient.d.ts",
-        "default": "./dist/ui/components/autorunManager-ambient.cjs"
-      }
-    },
+    "./ui/components/automountManager/ambient": "./dist/ui/components/automountManager-ambient.d.ts",
     "./ui/components/autorunManager": {
       "import": {
         "types": "./dist/ui/components/autorunManager.d.ts",
@@ -544,106 +311,7 @@
         "default": "./dist/ui/components/autorunManager.cjs"
       }
     },
-    "./components": {
-      "import": {
-        "types": "./dist/ui/components/index.d.ts",
-        "default": "./dist/ui/components/index.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/index.d.ts",
-        "default": "./dist/ui/components/index.cjs"
-      }
-    },
-    "./ui/components/keyring-ambient": {
-      "import": {
-        "types": "./dist/ui/components/keyring-ambient.d.ts",
-        "default": "./dist/ui/components/keyring-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/keyring-ambient.d.ts",
-        "default": "./dist/ui/components/keyring-ambient.cjs"
-      }
-    },
-    "./ui/components/keyring": {
-      "import": {
-        "types": "./dist/ui/components/keyring.d.ts",
-        "default": "./dist/ui/components/keyring.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/keyring.d.ts",
-        "default": "./dist/ui/components/keyring.cjs"
-      }
-    },
-    "./ui/components/networkAgent-ambient": {
-      "import": {
-        "types": "./dist/ui/components/networkAgent-ambient.d.ts",
-        "default": "./dist/ui/components/networkAgent-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/networkAgent-ambient.d.ts",
-        "default": "./dist/ui/components/networkAgent-ambient.cjs"
-      }
-    },
-    "./ui/components/networkAgent": {
-      "import": {
-        "types": "./dist/ui/components/networkAgent.d.ts",
-        "default": "./dist/ui/components/networkAgent.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/networkAgent.d.ts",
-        "default": "./dist/ui/components/networkAgent.cjs"
-      }
-    },
-    "./ui/components/polkitAgent-ambient": {
-      "import": {
-        "types": "./dist/ui/components/polkitAgent-ambient.d.ts",
-        "default": "./dist/ui/components/polkitAgent-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/polkitAgent-ambient.d.ts",
-        "default": "./dist/ui/components/polkitAgent-ambient.cjs"
-      }
-    },
-    "./ui/components/polkitAgent": {
-      "import": {
-        "types": "./dist/ui/components/polkitAgent.d.ts",
-        "default": "./dist/ui/components/polkitAgent.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/polkitAgent.d.ts",
-        "default": "./dist/ui/components/polkitAgent.cjs"
-      }
-    },
-    "./ui/components/telepathyClient-ambient": {
-      "import": {
-        "types": "./dist/ui/components/telepathyClient-ambient.d.ts",
-        "default": "./dist/ui/components/telepathyClient-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/telepathyClient-ambient.d.ts",
-        "default": "./dist/ui/components/telepathyClient-ambient.cjs"
-      }
-    },
-    "./ui/components/telepathyClient": {
-      "import": {
-        "types": "./dist/ui/components/telepathyClient.d.ts",
-        "default": "./dist/ui/components/telepathyClient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/telepathyClient.d.ts",
-        "default": "./dist/ui/components/telepathyClient.cjs"
-      }
-    },
-    "./ui/components-ambient": {
-      "import": {
-        "types": "./dist/ui/components-ambient.d.ts",
-        "default": "./dist/ui/components-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components-ambient.d.ts",
-        "default": "./dist/ui/components-ambient.cjs"
-      }
-    },
+    "./ui/components/autorunManager/ambient": "./dist/ui/components/autorunManager-ambient.d.ts",
     "./ui/components": {
       "import": {
         "types": "./dist/ui/components.d.ts",
@@ -654,16 +322,51 @@
         "default": "./dist/ui/components.cjs"
       }
     },
-    "./ui/dialog-ambient": {
+    "./ui/components/ambient": "./dist/ui/components-ambient.d.ts",
+    "./ui/components/keyring": {
       "import": {
-        "types": "./dist/ui/dialog-ambient.d.ts",
-        "default": "./dist/ui/dialog-ambient.js"
+        "types": "./dist/ui/components/keyring.d.ts",
+        "default": "./dist/ui/components/keyring.js"
       },
       "require": {
-        "types": "./dist/ui/dialog-ambient.d.ts",
-        "default": "./dist/ui/dialog-ambient.cjs"
+        "types": "./dist/ui/components/keyring.d.ts",
+        "default": "./dist/ui/components/keyring.cjs"
       }
     },
+    "./ui/components/keyring/ambient": "./dist/ui/components/keyring-ambient.d.ts",
+    "./ui/components/networkAgent": {
+      "import": {
+        "types": "./dist/ui/components/networkAgent.d.ts",
+        "default": "./dist/ui/components/networkAgent.js"
+      },
+      "require": {
+        "types": "./dist/ui/components/networkAgent.d.ts",
+        "default": "./dist/ui/components/networkAgent.cjs"
+      }
+    },
+    "./ui/components/networkAgent/ambient": "./dist/ui/components/networkAgent-ambient.d.ts",
+    "./ui/components/polkitAgent": {
+      "import": {
+        "types": "./dist/ui/components/polkitAgent.d.ts",
+        "default": "./dist/ui/components/polkitAgent.js"
+      },
+      "require": {
+        "types": "./dist/ui/components/polkitAgent.d.ts",
+        "default": "./dist/ui/components/polkitAgent.cjs"
+      }
+    },
+    "./ui/components/polkitAgent/ambient": "./dist/ui/components/polkitAgent-ambient.d.ts",
+    "./ui/components/telepathyClient": {
+      "import": {
+        "types": "./dist/ui/components/telepathyClient.d.ts",
+        "default": "./dist/ui/components/telepathyClient.js"
+      },
+      "require": {
+        "types": "./dist/ui/components/telepathyClient.d.ts",
+        "default": "./dist/ui/components/telepathyClient.cjs"
+      }
+    },
+    "./ui/components/telepathyClient/ambient": "./dist/ui/components/telepathyClient-ambient.d.ts",
     "./ui/dialog": {
       "import": {
         "types": "./dist/ui/dialog.d.ts",
@@ -674,16 +377,7 @@
         "default": "./dist/ui/dialog.cjs"
       }
     },
-    "./ui/dnd-ambient": {
-      "import": {
-        "types": "./dist/ui/dnd-ambient.d.ts",
-        "default": "./dist/ui/dnd-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/dnd-ambient.d.ts",
-        "default": "./dist/ui/dnd-ambient.cjs"
-      }
-    },
+    "./ui/dialog/ambient": "./dist/ui/dialog-ambient.d.ts",
     "./ui/dnd": {
       "import": {
         "types": "./dist/ui/dnd.d.ts",
@@ -694,16 +388,7 @@
         "default": "./dist/ui/dnd.cjs"
       }
     },
-    "./ui/iconGrid-ambient": {
-      "import": {
-        "types": "./dist/ui/iconGrid-ambient.d.ts",
-        "default": "./dist/ui/iconGrid-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/iconGrid-ambient.d.ts",
-        "default": "./dist/ui/iconGrid-ambient.cjs"
-      }
-    },
+    "./ui/dnd/ambient": "./dist/ui/dnd-ambient.d.ts",
     "./ui/iconGrid": {
       "import": {
         "types": "./dist/ui/iconGrid.d.ts",
@@ -714,16 +399,18 @@
         "default": "./dist/ui/iconGrid.cjs"
       }
     },
-    "./ui/layout-ambient": {
+    "./ui/iconGrid/ambient": "./dist/ui/iconGrid-ambient.d.ts",
+    "./ui": {
       "import": {
-        "types": "./dist/ui/layout-ambient.d.ts",
-        "default": "./dist/ui/layout-ambient.js"
+        "types": "./dist/ui/index.d.ts",
+        "default": "./dist/ui/index.js"
       },
       "require": {
-        "types": "./dist/ui/layout-ambient.d.ts",
-        "default": "./dist/ui/layout-ambient.cjs"
+        "types": "./dist/ui/index.d.ts",
+        "default": "./dist/ui/index.cjs"
       }
     },
+    "./ui/ambient": "./dist/ui/index-ambient.d.ts",
     "./ui/layout": {
       "import": {
         "types": "./dist/ui/layout.d.ts",
@@ -734,16 +421,7 @@
         "default": "./dist/ui/layout.cjs"
       }
     },
-    "./ui/main-ambient": {
-      "import": {
-        "types": "./dist/ui/main-ambient.d.ts",
-        "default": "./dist/ui/main-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/main-ambient.d.ts",
-        "default": "./dist/ui/main-ambient.cjs"
-      }
-    },
+    "./ui/layout/ambient": "./dist/ui/layout-ambient.d.ts",
     "./ui/main": {
       "import": {
         "types": "./dist/ui/main.d.ts",
@@ -754,16 +432,7 @@
         "default": "./dist/ui/main.cjs"
       }
     },
-    "./ui/messageList-ambient": {
-      "import": {
-        "types": "./dist/ui/messageList-ambient.d.ts",
-        "default": "./dist/ui/messageList-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/messageList-ambient.d.ts",
-        "default": "./dist/ui/messageList-ambient.cjs"
-      }
-    },
+    "./ui/main/ambient": "./dist/ui/main-ambient.d.ts",
     "./ui/messageList": {
       "import": {
         "types": "./dist/ui/messageList.d.ts",
@@ -774,16 +443,7 @@
         "default": "./dist/ui/messageList.cjs"
       }
     },
-    "./ui/messageTray-ambient": {
-      "import": {
-        "types": "./dist/ui/messageTray-ambient.d.ts",
-        "default": "./dist/ui/messageTray-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/messageTray-ambient.d.ts",
-        "default": "./dist/ui/messageTray-ambient.cjs"
-      }
-    },
+    "./ui/messageList/ambient": "./dist/ui/messageList-ambient.d.ts",
     "./ui/messageTray": {
       "import": {
         "types": "./dist/ui/messageTray.d.ts",
@@ -794,16 +454,7 @@
         "default": "./dist/ui/messageTray.cjs"
       }
     },
-    "./ui/modalDialog-ambient": {
-      "import": {
-        "types": "./dist/ui/modalDialog-ambient.d.ts",
-        "default": "./dist/ui/modalDialog-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/modalDialog-ambient.d.ts",
-        "default": "./dist/ui/modalDialog-ambient.cjs"
-      }
-    },
+    "./ui/messageTray/ambient": "./dist/ui/messageTray-ambient.d.ts",
     "./ui/modalDialog": {
       "import": {
         "types": "./dist/ui/modalDialog.d.ts",
@@ -814,16 +465,7 @@
         "default": "./dist/ui/modalDialog.cjs"
       }
     },
-    "./ui/mpris-ambient": {
-      "import": {
-        "types": "./dist/ui/mpris-ambient.d.ts",
-        "default": "./dist/ui/mpris-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/mpris-ambient.d.ts",
-        "default": "./dist/ui/mpris-ambient.cjs"
-      }
-    },
+    "./ui/modalDialog/ambient": "./dist/ui/modalDialog-ambient.d.ts",
     "./ui/mpris": {
       "import": {
         "types": "./dist/ui/mpris.d.ts",
@@ -834,16 +476,7 @@
         "default": "./dist/ui/mpris.cjs"
       }
     },
-    "./ui/notificationDaemon-ambient": {
-      "import": {
-        "types": "./dist/ui/notificationDaemon-ambient.d.ts",
-        "default": "./dist/ui/notificationDaemon-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/notificationDaemon-ambient.d.ts",
-        "default": "./dist/ui/notificationDaemon-ambient.cjs"
-      }
-    },
+    "./ui/mpris/ambient": "./dist/ui/mpris-ambient.d.ts",
     "./ui/notificationDaemon": {
       "import": {
         "types": "./dist/ui/notificationDaemon.d.ts",
@@ -854,16 +487,7 @@
         "default": "./dist/ui/notificationDaemon.cjs"
       }
     },
-    "./ui/panel-ambient": {
-      "import": {
-        "types": "./dist/ui/panel-ambient.d.ts",
-        "default": "./dist/ui/panel-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/panel-ambient.d.ts",
-        "default": "./dist/ui/panel-ambient.cjs"
-      }
-    },
+    "./ui/notificationDaemon/ambient": "./dist/ui/notificationDaemon-ambient.d.ts",
     "./ui/panel": {
       "import": {
         "types": "./dist/ui/panel.d.ts",
@@ -874,16 +498,7 @@
         "default": "./dist/ui/panel.cjs"
       }
     },
-    "./ui/panelMenu-ambient": {
-      "import": {
-        "types": "./dist/ui/panelMenu-ambient.d.ts",
-        "default": "./dist/ui/panelMenu-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/panelMenu-ambient.d.ts",
-        "default": "./dist/ui/panelMenu-ambient.cjs"
-      }
-    },
+    "./ui/panel/ambient": "./dist/ui/panel-ambient.d.ts",
     "./ui/panelMenu": {
       "import": {
         "types": "./dist/ui/panelMenu.d.ts",
@@ -894,16 +509,7 @@
         "default": "./dist/ui/panelMenu.cjs"
       }
     },
-    "./ui/popupMenu-ambient": {
-      "import": {
-        "types": "./dist/ui/popupMenu-ambient.d.ts",
-        "default": "./dist/ui/popupMenu-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/popupMenu-ambient.d.ts",
-        "default": "./dist/ui/popupMenu-ambient.cjs"
-      }
-    },
+    "./ui/panelMenu/ambient": "./dist/ui/panelMenu-ambient.d.ts",
     "./ui/popupMenu": {
       "import": {
         "types": "./dist/ui/popupMenu.d.ts",
@@ -914,16 +520,7 @@
         "default": "./dist/ui/popupMenu.cjs"
       }
     },
-    "./ui/ripples-ambient": {
-      "import": {
-        "types": "./dist/ui/ripples-ambient.d.ts",
-        "default": "./dist/ui/ripples-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/ripples-ambient.d.ts",
-        "default": "./dist/ui/ripples-ambient.cjs"
-      }
-    },
+    "./ui/popupMenu/ambient": "./dist/ui/popupMenu-ambient.d.ts",
     "./ui/ripples": {
       "import": {
         "types": "./dist/ui/ripples.d.ts",
@@ -934,16 +531,7 @@
         "default": "./dist/ui/ripples.cjs"
       }
     },
-    "./ui/search-ambient": {
-      "import": {
-        "types": "./dist/ui/search-ambient.d.ts",
-        "default": "./dist/ui/search-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/search-ambient.d.ts",
-        "default": "./dist/ui/search-ambient.cjs"
-      }
-    },
+    "./ui/ripples/ambient": "./dist/ui/ripples-ambient.d.ts",
     "./ui/search": {
       "import": {
         "types": "./dist/ui/search.d.ts",
@@ -954,16 +542,7 @@
         "default": "./dist/ui/search.cjs"
       }
     },
-    "./ui/switcherPopup-ambient": {
-      "import": {
-        "types": "./dist/ui/switcherPopup-ambient.d.ts",
-        "default": "./dist/ui/switcherPopup-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/switcherPopup-ambient.d.ts",
-        "default": "./dist/ui/switcherPopup-ambient.cjs"
-      }
-    },
+    "./ui/search/ambient": "./dist/ui/search-ambient.d.ts",
     "./ui/switcherPopup": {
       "import": {
         "types": "./dist/ui/switcherPopup.d.ts",
@@ -974,16 +553,7 @@
         "default": "./dist/ui/switcherPopup.cjs"
       }
     },
-    "./ui/userWidget-ambient": {
-      "import": {
-        "types": "./dist/ui/userWidget-ambient.d.ts",
-        "default": "./dist/ui/userWidget-ambient.js"
-      },
-      "require": {
-        "types": "./dist/ui/userWidget-ambient.d.ts",
-        "default": "./dist/ui/userWidget-ambient.cjs"
-      }
-    },
+    "./ui/switcherPopup/ambient": "./dist/ui/switcherPopup-ambient.d.ts",
     "./ui/userWidget": {
       "import": {
         "types": "./dist/ui/userWidget.d.ts",
@@ -993,7 +563,8 @@
         "types": "./dist/ui/userWidget.d.ts",
         "default": "./dist/ui/userWidget.cjs"
       }
-    }
+    },
+    "./ui/userWidget/ambient": "./dist/ui/userWidget-ambient.d.ts"
   },
   "typedoc": {
     "entryPoint": "./src/index.d.ts",
@@ -1003,14 +574,15 @@
   },
   "scripts": {
     "clear": "rm -rf ./dist",
-    "build": "yarn run copy:files && yarn run generate:files && yarn run generate:exports && yarn run validate",
+    "build": "yarn run generate:types && yarn run generate:files && yarn run generate:index && yarn run generate:exports && yarn run validate",
     "validate": "tsc --noEmit",
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:latest": "yarn npm publish --tolerate-republish --tag latest --access public",
     "publish:next": "yarn npm publish --tolerate-republish --tag next --access public",
     "generate:exports": "node ./scripts/generate-exports.js && yarn install",
     "generate:files": "node ./scripts/generate-files.js",
-    "copy:files": "node ./scripts/copy-files.js"
+    "generate:index": "node ./scripts/generate-index.js",
+    "generate:types": "node ./scripts/generate-types.js"
   },
   "dependencies": {
     "@girs/atk-1.0": "^2.50.0-3.2.5",

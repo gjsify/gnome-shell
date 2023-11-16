@@ -7,10 +7,6 @@ The types are currently in a very experimental state and rely on your contributi
 
 This is a monorepo for [@girs/gnome-shell](https://www.npmjs.com/package/@girs/gnome-shell), for more information see [./packages/gnome-shell](packages/gnome-shell/README.md).
 
-## TODO
-
-* Write a script to autogenerate the `index` files.
-
 ## Development
 
 Build the types:

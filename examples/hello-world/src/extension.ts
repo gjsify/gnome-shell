@@ -6,6 +6,8 @@ import * as panelMenu from '@girs/gnome-shell/ui/panelMenu';
 import { PopupMenuItem } from '@girs/gnome-shell/ui/popupMenu';
 import * as Main from '@girs/gnome-shell/ui/main';
 
+import * as test from '@girs/gnome-shell/extensions';
+
 const PanelMenuButton = panelMenu.Button;
 
 class TIndicator extends PanelMenuButton {
@@ -39,6 +41,7 @@ export default class HelloWorldExtension extends Extension {
         log(`enabling ${JSON.stringify(this.metadata, null, 2)}`);
         this._indicator = new Indicator();
         Main.panel.addToStatusArea(this.uuid, this._indicator);
+        log(`enabled test ${typeof test.extension.gettext}`);
     }
 
     disable() {

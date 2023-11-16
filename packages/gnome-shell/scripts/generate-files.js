@@ -1,14 +1,16 @@
+// Generates ambient, esm and cjs files from the typescript files
+
 import { getAllFiles } from './utils/files.js';
 import { DIST_DIR, __dirname } from './config.js';
-import { resolve, extname, basename } from 'path';
+import { extname, basename } from 'path';
 import { writeFile } from 'fs/promises';
 
-const AMBIENT_TEMPLATE = (path, fileName) => `declare module "resource:///org/gnome${path}/${fileName}.js" {
+const AMBIENT_TEMPLATE = (path, fileName) => `declare module "resource:///org/gnome/shell${path}/${fileName}.js" {
     import * as ns from "@girs/gnome-shell${path}/${fileName}";
     export = ns;
 }`
 
-const ESM_TEMPLATE = (path, fileName) => `export * from 'resource:///org/gnome${path}/${fileName}.js';`;
+const ESM_TEMPLATE = (path, fileName) => `export * from 'resource:///org/gnome/shell${path}/${fileName}.js';`;
 const CJS_TEMPLATE = (path, fileName) => `module.exports = imports${path.replaceAll('/', '.')}.${fileName};`;
 
 const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts']
@@ -22,7 +24,7 @@ const generateFiles = async (absolutePath) => {
 
     if(IGNORE_FILENAMES.includes(fileName)) return;
 
-    if(fileName.endsWith('-ambient.d.ts')) return;
+    if(fileName.endsWith('ambient.d.ts')) return;
 
     const relativeWithoutExtension = relativePath.replace(extname(relativePath), '').replace('.d', '');
     
