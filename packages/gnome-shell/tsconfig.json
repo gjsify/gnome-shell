@@ -8,6 +8,6 @@
   },
   "include": [],
   "files": [
-    "src/index.d.ts",
+    "dist/index.d.ts",
   ]
 }
