@@ -12,10 +12,15 @@
         "tsconfig": "./tsconfig.doc.json"
     },
     "scripts": {
-        "validate": "yarn workspace @girs/gnome-shell validate",
+        "validate": "yarn validate:types && yarn validate:example",
+        "validate:types": "yarn workspace @girs/gnome-shell validate",
+        "validate:example": "yarn workspace @gjsify/gnome-shell-hello-world-example validate",
         "publish": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --access public",
         "publish:latest": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --tag latest --access public",
-        "publish:next": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --tag next --access public"
+        "publish:next": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --tag next --access public",
+        "build": "yarn build:types && yarn build:example",
+        "build:example": "yarn workspace @gjsify/gnome-shell-hello-world-example build",
+        "build:types": "yarn workspace @girs/gnome-shell build"
     },
     "workspaces": [
         "packages/*",

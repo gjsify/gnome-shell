@@ -27,11 +27,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - name: Validate Typescript
-      run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate
+    - name: Build Types
+      run: yarn run build:types
+    - name: Validate Types
+      run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate:types
     - name: Build Example
-      working-directory: ./examples/hello-world
-      run: yarn run build
+      run: yarn run build:example
     - name: Validate Example Typescript
-      working-directory: ./examples/hello-world
-      run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate
+      run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate:example
