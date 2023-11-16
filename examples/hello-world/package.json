@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@girs/gnome-shell": "workspace:^",
-    "@girs/gobject-2.0": "^2.78.0-3.2.4",
-    "@girs/st-13": "^13.0.0-3.2.4"
+    "@girs/gobject-2.0": "^2.78.0-3.2.5",
+    "@girs/st-13": "^13.0.0-3.2.5"
   }
 }

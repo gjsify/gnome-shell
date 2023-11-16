@@ -1,10 +1,10 @@
 import { getAllFiles, fileExists } from './utils/files.js';
 import { loadJsonFile, writeJsonFile } from './utils/json.js';
-import { TYPE_DIR, __dirname } from './config.js';
+import { DIST_DIR, __dirname } from './config.js';
 import { resolve, extname, basename } from 'path';
 
 const generateExport = (filePath) => {
-    const relativePath = filePath.replace(TYPE_DIR, '');
+    const relativePath = filePath.replace(DIST_DIR, '');
     const withoutExtension = relativePath.replace(extname(relativePath), '').replace('.d', '');
     const esmJsPath = withoutExtension + '.js';
     const cjsJsPath = withoutExtension + '.cjs';
@@ -17,12 +17,12 @@ const generateExport = (filePath) => {
 
     exp[exportName] = {
         import: {
-            types: `./src${relativePath}`,
-            default: `./src${esmJsPath}`
+            types: `./dist${relativePath}`,
+            default: `./dist${esmJsPath}`
         },
         require: {
-            types: `./src${relativePath}`,
-            default: `./src${cjsJsPath}`
+            types: `./dist${relativePath}`,
+            default: `./dist${cjsJsPath}`
         }
     }
 
@@ -32,7 +32,7 @@ const generateExport = (filePath) => {
 const start = async () => {
     const pkg = await loadJsonFile(resolve(__dirname, '../package.json'));
     
-    const typeFiles = await getAllFiles(TYPE_DIR, ['.ts']);
+    const typeFiles = await getAllFiles(DIST_DIR, ['.ts']);
 
     let exports = {};
 

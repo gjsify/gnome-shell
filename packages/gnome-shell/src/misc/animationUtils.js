@@ -1,1 +1,1 @@
-module.exports = imports.misc.animationUtils;export * from 'resource:///org/gnome/shell/misc/animationUtils.js';
+export * from 'resource:///org/gnome/shell/misc/animationUtils.js';
