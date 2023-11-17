@@ -5,17 +5,20 @@ import { DIST_DIR, __dirname } from './config.js';
 import { extname, basename } from 'path';
 import { writeFile } from 'fs/promises';
 
-const AMBIENT_TEMPLATE = (path, fileName) => `declare module "resource:///org/gnome/shell${path}/${fileName}.js" {
-    import * as ns from "@girs/gnome-shell${path}/${fileName}";
-    export = ns;
+const RESOURCE_PATH = (path, fileName) => `${path}/${fileName}` === "/extensions/prefs"
+    ? `resource:///org/gnome/Shell/Extensions/js${path}/${fileName}.js`
+    : `resource:///org/gnome/shell${path}/${fileName}.js`;
+
+const AMBIENT_TEMPLATE = (path, fileName) => `declare module "${RESOURCE_PATH(path, fileName)}" {
+    export * from "@girs/gnome-shell${path}/${fileName}";
 }`
 
-const ESM_TEMPLATE = (path, fileName) => `export * from 'resource:///org/gnome/shell${path}/${fileName}.js';`;
+const ESM_TEMPLATE = (path, fileName) => `export * from '${RESOURCE_PATH(path, fileName)}';`;
 const CJS_TEMPLATE = (path, fileName) => `module.exports = imports${path.replaceAll('/', '.')}.${fileName};`;
 
-const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts']
+const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts'];
 
-const IGNORE_DIRS = ['types']
+const IGNORE_DIRS = ['types'];
 
 
 const generateFiles = async (absolutePath) => {
@@ -27,7 +30,7 @@ const generateFiles = async (absolutePath) => {
     if(fileName.endsWith('ambient.d.ts')) return;
 
     const relativeWithoutExtension = relativePath.replace(extname(relativePath), '').replace('.d', '');
-    
+
     const fileNameWithoutExt = basename(relativeWithoutExtension);
     const relativeFilePath = relativePath.split('/').slice(0, -1).join('/')
 
@@ -44,7 +47,7 @@ const generateFiles = async (absolutePath) => {
     await writeFile(cjsDestPath, cjsContent, 'utf-8')
 }
 
-const start = async () => {    
+const start = async () => {
     const typeFiles = await getAllFiles(DIST_DIR, ['.ts'], IGNORE_DIRS);
 
     for (const absolutePath of typeFiles) {
