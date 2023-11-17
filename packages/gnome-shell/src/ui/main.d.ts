@@ -6,7 +6,6 @@ import type Clutter from '@girs/clutter-13';
 import type St from '@girs/st-13';
 import type Meta from '@girs/meta-13';
 
-
 import { ComponentManager } from './components.js';
 import { AccessDialogDBus } from './accessDialog.js';
 import { AudioDeviceSelectionDBus } from './audioDeviceSelection.js';
@@ -39,7 +38,7 @@ import { NotificationDaemon } from './notificationDaemon.js';
 // import * as SessionMode from './sessionMode.js';
 // import * as ShellDBus from './shellDBus.js';
 // import * as ShellMountOperation from './shellMountOperation.js';
-// import * as WindowManager from './windowManager.js';
+import { WindowManager } from './windowManager.js';
 // import * as Magnifier from './magnifier.js';
 // import * as XdndHandler from './xdndHandler.js';
 // import * as KbdA11yDialog from './kbdA11yDialog.js';
@@ -48,6 +47,7 @@ import { NotificationDaemon } from './notificationDaemon.js';
 // import * as ParentalControlsManager from '../misc/parentalControlsManager.js'
 // import * as Config from '../misc/config.js'
 // import * as Util from '../misc/util.js'
+
 
 export declare const componentManager: ComponentManager;
 
@@ -102,6 +102,8 @@ export declare const actionMode: Shell.ActionMode.NONE;
 export declare const modalActorFocusStack: any[];
 
 export declare const uiGroup: any;
+
+export declare const wm: WindowManager;
 
 export declare const magnifier: any;
 

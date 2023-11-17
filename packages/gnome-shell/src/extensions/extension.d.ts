@@ -4,7 +4,7 @@ import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
 
 export class Extension extends ExtensionBase {
     static lookupByUUID(uuid: string): Extension | null;
-    static defineTranslationFunctions(url: string): void;
+    static defineTranslationFunctions(url: string): TranslationFunctions;
 
     /**
      * Open the extension's preferences window
