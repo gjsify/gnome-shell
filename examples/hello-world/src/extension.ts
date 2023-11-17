@@ -1,3 +1,4 @@
+import '@girs/gjs'; // For global types like `log()`
 import St from '@girs/st-13';
 import GObject from '@girs/gobject-2.0';
 

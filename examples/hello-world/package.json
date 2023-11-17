@@ -19,6 +19,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@girs/gjs": "^3.2.5",
     "@girs/gnome-shell": "workspace:^",
     "@girs/gobject-2.0": "^2.78.0-3.2.5",
     "@girs/st-13": "^13.0.0-3.2.5"

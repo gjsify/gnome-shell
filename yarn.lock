@@ -870,6 +870,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gjsify/gnome-shell-hello-world-example@workspace:examples/hello-world"
   dependencies:
+    "@girs/gjs": "npm:^3.2.5"
     "@girs/gnome-shell": "workspace:^"
     "@girs/gobject-2.0": "npm:^2.78.0-3.2.5"
     "@girs/st-13": "npm:^13.0.0-3.2.5"
