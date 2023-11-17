@@ -3,6 +3,7 @@
   "version": "45.0.0-beta1",
   "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
   "type": "module",
+  "main": "./dist/index.js",
   "exports": {
     "./extensions/extension": {
       "import": {
