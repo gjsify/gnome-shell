@@ -63,7 +63,7 @@ export declare const lookingGlass: any;
 
 export declare const welcomeDialog: any;
 
-export declare const wm: any;
+export declare const wm: WindowManager;
 
 export declare const messageTray: any;
 
@@ -102,8 +102,6 @@ export declare const actionMode: Shell.ActionMode.NONE;
 export declare const modalActorFocusStack: any[];
 
 export declare const uiGroup: any;
-
-export declare const wm: WindowManager;
 
 export declare const magnifier: any;
 
