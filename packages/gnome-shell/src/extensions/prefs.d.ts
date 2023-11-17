@@ -14,7 +14,7 @@ export class ExtensionPreferences extends ExtensionBase {
    * @returns {Gtk.Widget}
    * @throws {GObject.NotImplementedError}
    */
-  getPreferencesWidget(): void;
+  getPreferencesWidget(): any; // TODO: Change this to Gtk.Widget as soon as this is implemented or extended
 
   /**
    * Fill the preferences window with preferences.
