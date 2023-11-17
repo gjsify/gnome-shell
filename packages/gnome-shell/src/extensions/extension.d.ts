@@ -1,7 +1,6 @@
-import type { ExtensionMetadata } from '../types/extension-metadata.js';
+export type { ExtensionMetadata } from '../types/extension-metadata.js';
 import type { ExtensionType, ExtensionState } from '../misc/extensionUtils.js';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
-
 export class Extension extends ExtensionBase {
     static lookupByUUID(uuid: string): Extension | null;
     static defineTranslationFunctions(url: string): TranslationFunctions;

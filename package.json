@@ -1,6 +1,6 @@
 {
     "name": "gnome-shell",
-    "version": "45.0.0-beta1",
+    "version": "45.0.0-beta2",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
     "main": "src/index.js",
     "type": "module",
