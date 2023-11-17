@@ -64,7 +64,7 @@ export class ExtensionBase {
 
     get dir(): Gio.File
 
-    get path(): string 
+    get path(): string
 
     /**
      * Get a GSettings object for schema, using schema files in
@@ -75,7 +75,7 @@ export class ExtensionBase {
      *
      * @returns {}
      */
-    getSettings(schema: string): Gio.Settings
+    getSettings(schema?: string): Gio.Settings
 
     /**
      * Initialize Gettext to load translations from extensionsdir/locale. If
