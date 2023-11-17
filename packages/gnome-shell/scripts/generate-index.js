@@ -1,9 +1,10 @@
 // Generates index and ambient files for each file
 
 import { getAllFiles, getAllDirs } from './utils/files.js';
+import { capitalized } from './utils/string.js';
 import { DIST_DIR, __dirname } from './config.js';
 import { resolve, extname, basename } from 'path';
-import { writeFile, readdir } from 'fs/promises';
+import { writeFile } from 'fs/promises';
 
 const IGNORE_DIRS = ['types']
 const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts']
@@ -15,8 +16,8 @@ const appendDir = async (dirPath, data) => {
     const dirName = basename(dirPath);
     const dirIndexName = `${dirName}/index`;
 
-    data.esm += EXPORT_ESM_TEMPLATE(dirName, dirIndexName) + '\n';
-    data.cjs += EXPORT_CJS_TEMPLATE(dirName, dirIndexName) + '\n';
+    data.esm += EXPORT_ESM_TEMPLATE(capitalized(dirName), dirIndexName) + '\n';
+    data.cjs += EXPORT_CJS_TEMPLATE(capitalized(dirName), dirIndexName) + '\n';
     data.ambient += IMPORT_AMBIENT_TEMPLATE(dirIndexName) + '\n';
 
     return data;
