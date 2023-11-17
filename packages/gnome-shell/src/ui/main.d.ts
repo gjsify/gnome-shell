@@ -32,7 +32,7 @@ import { NotificationDaemon } from './notificationDaemon.js';
 // const SessionMode = imports.ui.sessionMode;
 // const ShellDBus = imports.ui.shellDBus;
 // const ShellMountOperation = imports.ui.shellMountOperation;
-// const WindowManager = imports.ui.windowManager;
+import { WindowManager } from './windowManager.js';
 // const Magnifier = imports.ui.magnifier;
 // const XdndHandler = imports.ui.xdndHandler;
 // const KbdA11yDialog = imports.ui.kbdA11yDialog;
@@ -69,6 +69,8 @@ export declare const shellAudioSelectionDBusService: any;
 export declare const screenSaverDBus: any;
 
 export declare const uiGroup: any;
+
+export declare const wm: WindowManager;
 
 export declare const magnifier: any;
 
