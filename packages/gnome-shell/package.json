@@ -114,6 +114,17 @@
       }
     },
     "./misc/ambient": "./dist/misc/index-ambient.d.ts",
+    "./misc/loginManager": {
+      "import": {
+        "types": "./dist/misc/loginManager.d.ts",
+        "default": "./dist/misc/loginManager.js"
+      },
+      "require": {
+        "types": "./dist/misc/loginManager.d.ts",
+        "default": "./dist/misc/loginManager.cjs"
+      }
+    },
+    "./misc/loginManager/ambient": "./dist/misc/loginManager-ambient.d.ts",
     "./misc/parentalControlsManager": {
       "import": {
         "types": "./dist/misc/parentalControlsManager.d.ts",
@@ -125,6 +136,17 @@
       }
     },
     "./misc/parentalControlsManager/ambient": "./dist/misc/parentalControlsManager-ambient.d.ts",
+    "./misc/permissionStore": {
+      "import": {
+        "types": "./dist/misc/permissionStore.d.ts",
+        "default": "./dist/misc/permissionStore.js"
+      },
+      "require": {
+        "types": "./dist/misc/permissionStore.d.ts",
+        "default": "./dist/misc/permissionStore.cjs"
+      }
+    },
+    "./misc/permissionStore/ambient": "./dist/misc/permissionStore-ambient.d.ts",
     "./misc/signals": {
       "import": {
         "types": "./dist/misc/signals.d.ts",
@@ -136,6 +158,17 @@
       }
     },
     "./misc/signals/ambient": "./dist/misc/signals-ambient.d.ts",
+    "./misc/systemActions": {
+      "import": {
+        "types": "./dist/misc/systemActions.d.ts",
+        "default": "./dist/misc/systemActions.js"
+      },
+      "require": {
+        "types": "./dist/misc/systemActions.d.ts",
+        "default": "./dist/misc/systemActions.cjs"
+      }
+    },
+    "./misc/systemActions/ambient": "./dist/misc/systemActions-ambient.d.ts",
     "./ui/accessDialog": {
       "import": {
         "types": "./dist/ui/accessDialog.d.ts",
@@ -521,6 +554,17 @@
       }
     },
     "./ui/popupMenu/ambient": "./dist/ui/popupMenu-ambient.d.ts",
+    "./ui/quickSettings": {
+      "import": {
+        "types": "./dist/ui/quickSettings.d.ts",
+        "default": "./dist/ui/quickSettings.js"
+      },
+      "require": {
+        "types": "./dist/ui/quickSettings.d.ts",
+        "default": "./dist/ui/quickSettings.cjs"
+      }
+    },
+    "./ui/quickSettings/ambient": "./dist/ui/quickSettings-ambient.d.ts",
     "./ui/ripples": {
       "import": {
         "types": "./dist/ui/ripples.d.ts",
@@ -543,6 +587,237 @@
       }
     },
     "./ui/search/ambient": "./dist/ui/search-ambient.d.ts",
+    "./ui/slider": {
+      "import": {
+        "types": "./dist/ui/slider.d.ts",
+        "default": "./dist/ui/slider.js"
+      },
+      "require": {
+        "types": "./dist/ui/slider.d.ts",
+        "default": "./dist/ui/slider.cjs"
+      }
+    },
+    "./ui/slider/ambient": "./dist/ui/slider-ambient.d.ts",
+    "./ui/status/accessibility": {
+      "import": {
+        "types": "./dist/ui/status/accessibility.d.ts",
+        "default": "./dist/ui/status/accessibility.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/accessibility.d.ts",
+        "default": "./dist/ui/status/accessibility.cjs"
+      }
+    },
+    "./ui/status/accessibility/ambient": "./dist/ui/status/accessibility-ambient.d.ts",
+    "./ui/status/autoRotate": {
+      "import": {
+        "types": "./dist/ui/status/autoRotate.d.ts",
+        "default": "./dist/ui/status/autoRotate.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/autoRotate.d.ts",
+        "default": "./dist/ui/status/autoRotate.cjs"
+      }
+    },
+    "./ui/status/autoRotate/ambient": "./dist/ui/status/autoRotate-ambient.d.ts",
+    "./ui/status/backgroundApps": {
+      "import": {
+        "types": "./dist/ui/status/backgroundApps.d.ts",
+        "default": "./dist/ui/status/backgroundApps.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/backgroundApps.d.ts",
+        "default": "./dist/ui/status/backgroundApps.cjs"
+      }
+    },
+    "./ui/status/backgroundApps/ambient": "./dist/ui/status/backgroundApps-ambient.d.ts",
+    "./ui/status/backlight": {
+      "import": {
+        "types": "./dist/ui/status/backlight.d.ts",
+        "default": "./dist/ui/status/backlight.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/backlight.d.ts",
+        "default": "./dist/ui/status/backlight.cjs"
+      }
+    },
+    "./ui/status/backlight/ambient": "./dist/ui/status/backlight-ambient.d.ts",
+    "./ui/status/bluetooth": {
+      "import": {
+        "types": "./dist/ui/status/bluetooth.d.ts",
+        "default": "./dist/ui/status/bluetooth.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/bluetooth.d.ts",
+        "default": "./dist/ui/status/bluetooth.cjs"
+      }
+    },
+    "./ui/status/bluetooth/ambient": "./dist/ui/status/bluetooth-ambient.d.ts",
+    "./ui/status/brightness": {
+      "import": {
+        "types": "./dist/ui/status/brightness.d.ts",
+        "default": "./dist/ui/status/brightness.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/brightness.d.ts",
+        "default": "./dist/ui/status/brightness.cjs"
+      }
+    },
+    "./ui/status/brightness/ambient": "./dist/ui/status/brightness-ambient.d.ts",
+    "./ui/status/camera": {
+      "import": {
+        "types": "./dist/ui/status/camera.d.ts",
+        "default": "./dist/ui/status/camera.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/camera.d.ts",
+        "default": "./dist/ui/status/camera.cjs"
+      }
+    },
+    "./ui/status/camera/ambient": "./dist/ui/status/camera-ambient.d.ts",
+    "./ui/status/darkMode": {
+      "import": {
+        "types": "./dist/ui/status/darkMode.d.ts",
+        "default": "./dist/ui/status/darkMode.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/darkMode.d.ts",
+        "default": "./dist/ui/status/darkMode.cjs"
+      }
+    },
+    "./ui/status/darkMode/ambient": "./dist/ui/status/darkMode-ambient.d.ts",
+    "./ui/status/dwellClick": {
+      "import": {
+        "types": "./dist/ui/status/dwellClick.d.ts",
+        "default": "./dist/ui/status/dwellClick.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/dwellClick.d.ts",
+        "default": "./dist/ui/status/dwellClick.cjs"
+      }
+    },
+    "./ui/status/dwellClick/ambient": "./dist/ui/status/dwellClick-ambient.d.ts",
+    "./ui/status": {
+      "import": {
+        "types": "./dist/ui/status/index.d.ts",
+        "default": "./dist/ui/status/index.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/index.d.ts",
+        "default": "./dist/ui/status/index.cjs"
+      }
+    },
+    "./ui/status/ambient": "./dist/ui/status/index-ambient.d.ts",
+    "./ui/status/keyboard": {
+      "import": {
+        "types": "./dist/ui/status/keyboard.d.ts",
+        "default": "./dist/ui/status/keyboard.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/keyboard.d.ts",
+        "default": "./dist/ui/status/keyboard.cjs"
+      }
+    },
+    "./ui/status/keyboard/ambient": "./dist/ui/status/keyboard-ambient.d.ts",
+    "./ui/status/location": {
+      "import": {
+        "types": "./dist/ui/status/location.d.ts",
+        "default": "./dist/ui/status/location.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/location.d.ts",
+        "default": "./dist/ui/status/location.cjs"
+      }
+    },
+    "./ui/status/location/ambient": "./dist/ui/status/location-ambient.d.ts",
+    "./ui/status/network": {
+      "import": {
+        "types": "./dist/ui/status/network.d.ts",
+        "default": "./dist/ui/status/network.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/network.d.ts",
+        "default": "./dist/ui/status/network.cjs"
+      }
+    },
+    "./ui/status/network/ambient": "./dist/ui/status/network-ambient.d.ts",
+    "./ui/status/nightLight": {
+      "import": {
+        "types": "./dist/ui/status/nightLight.d.ts",
+        "default": "./dist/ui/status/nightLight.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/nightLight.d.ts",
+        "default": "./dist/ui/status/nightLight.cjs"
+      }
+    },
+    "./ui/status/nightLight/ambient": "./dist/ui/status/nightLight-ambient.d.ts",
+    "./ui/status/powerProfiles": {
+      "import": {
+        "types": "./dist/ui/status/powerProfiles.d.ts",
+        "default": "./dist/ui/status/powerProfiles.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/powerProfiles.d.ts",
+        "default": "./dist/ui/status/powerProfiles.cjs"
+      }
+    },
+    "./ui/status/powerProfiles/ambient": "./dist/ui/status/powerProfiles-ambient.d.ts",
+    "./ui/status/remoteAccess": {
+      "import": {
+        "types": "./dist/ui/status/remoteAccess.d.ts",
+        "default": "./dist/ui/status/remoteAccess.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/remoteAccess.d.ts",
+        "default": "./dist/ui/status/remoteAccess.cjs"
+      }
+    },
+    "./ui/status/remoteAccess/ambient": "./dist/ui/status/remoteAccess-ambient.d.ts",
+    "./ui/status/rfkill": {
+      "import": {
+        "types": "./dist/ui/status/rfkill.d.ts",
+        "default": "./dist/ui/status/rfkill.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/rfkill.d.ts",
+        "default": "./dist/ui/status/rfkill.cjs"
+      }
+    },
+    "./ui/status/rfkill/ambient": "./dist/ui/status/rfkill-ambient.d.ts",
+    "./ui/status/system": {
+      "import": {
+        "types": "./dist/ui/status/system.d.ts",
+        "default": "./dist/ui/status/system.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/system.d.ts",
+        "default": "./dist/ui/status/system.cjs"
+      }
+    },
+    "./ui/status/system/ambient": "./dist/ui/status/system-ambient.d.ts",
+    "./ui/status/thunderbolt": {
+      "import": {
+        "types": "./dist/ui/status/thunderbolt.d.ts",
+        "default": "./dist/ui/status/thunderbolt.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/thunderbolt.d.ts",
+        "default": "./dist/ui/status/thunderbolt.cjs"
+      }
+    },
+    "./ui/status/thunderbolt/ambient": "./dist/ui/status/thunderbolt-ambient.d.ts",
+    "./ui/status/volume": {
+      "import": {
+        "types": "./dist/ui/status/volume.d.ts",
+        "default": "./dist/ui/status/volume.js"
+      },
+      "require": {
+        "types": "./dist/ui/status/volume.d.ts",
+        "default": "./dist/ui/status/volume.cjs"
+      }
+    },
+    "./ui/status/volume/ambient": "./dist/ui/status/volume-ambient.d.ts",
     "./ui/switcherPopup": {
       "import": {
         "types": "./dist/ui/switcherPopup.d.ts",
@@ -585,21 +860,27 @@
     "generate:types": "node ./scripts/generate-types.js"
   },
   "dependencies": {
+    "@girs/accountsservice-1.0": "^1.0.0-3.2.5",
     "@girs/atk-1.0": "^2.50.0-3.2.5",
     "@girs/cally-13": "^13.0.0-3.2.5",
     "@girs/clutter-13": "^13.0.0-3.2.5",
     "@girs/cogl-2.0": "^2.0.0-3.2.5",
     "@girs/gcr-4": "^4.1.0-3.2.5",
+    "@girs/gdm-1.0": "^1.0.0-3.2.5",
     "@girs/gio-2.0": "^2.78.0-3.2.5",
     "@girs/gjs": "^3.2.5",
     "@girs/glib-2.0": "^2.78.0-3.2.5",
     "@girs/gnomebg-4.0": "^4.0.0-3.2.5",
+    "@girs/gnomebluetooth-3.0": "^3.0.0-3.2.5",
     "@girs/gnomedesktop-4.0": "^4.0.0-3.2.5",
     "@girs/gobject-2.0": "^2.78.0-3.2.5",
+    "@girs/gvc-1.0": "^1.0.0-3.2.5",
     "@girs/meta-13": "^13.0.0-3.2.5",
+    "@girs/polkit-1.0": "^1.0.0-3.2.5",
     "@girs/shell-13": "^13.0.0-3.2.5",
     "@girs/shew-0": "^0.0.0-3.2.5",
-    "@girs/st-13": "^13.0.0-3.2.5"
+    "@girs/st-13": "^13.0.0-3.2.5",
+    "@girs/upowerglib-1.0": "^0.99.1-3.2.5"
   },
   "devDependencies": {
     "typescript": "^5.2.2"

@@ -159,6 +159,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@girs/accountsservice-1.0@npm:^1.0.0-3.2.5":
+  version: 1.0.0-3.2.5
+  resolution: "@girs/accountsservice-1.0@npm:1.0.0-3.2.5"
+  dependencies:
+    "@girs/gio-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gjs": "npm:^3.2.5"
+    "@girs/glib-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.2.5"
+  checksum: 2340c3f41245c21d24b480724aee65f1748e1aed413c53a568f0d6be4b5ad3cc81e82b36dde1eca1e196eb634db6168514892d2585c23cd743280e9f93b1976c
+  languageName: node
+  linkType: hard
+
 "@girs/atk-1.0@npm:^2.50.0-3.2.5":
   version: 2.50.0-3.2.5
   resolution: "@girs/atk-1.0@npm:2.50.0-3.2.5"
@@ -353,6 +365,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@girs/gdm-1.0@npm:^1.0.0-3.2.5":
+  version: 1.0.0-3.2.5
+  resolution: "@girs/gdm-1.0@npm:1.0.0-3.2.5"
+  dependencies:
+    "@girs/gio-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gjs": "npm:^3.2.5"
+    "@girs/glib-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.2.5"
+  checksum: baf22387d44d3cf2afd0e69de730970e80c135a0b0122ba1f839c1d56864bae11904c98c60db47358e6afd378b9dbf26b75da9df3d17cb8067d7c6492c88a031
+  languageName: node
+  linkType: hard
+
 "@girs/gio-2.0@npm:^2.78.0-3.2.5":
   version: 2.78.0-3.2.5
   resolution: "@girs/gio-2.0@npm:2.78.0-3.2.5"
@@ -409,21 +433,27 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@girs/gnome-shell@workspace:packages/gnome-shell"
   dependencies:
+    "@girs/accountsservice-1.0": "npm:^1.0.0-3.2.5"
     "@girs/atk-1.0": "npm:^2.50.0-3.2.5"
     "@girs/cally-13": "npm:^13.0.0-3.2.5"
     "@girs/clutter-13": "npm:^13.0.0-3.2.5"
     "@girs/cogl-2.0": "npm:^2.0.0-3.2.5"
     "@girs/gcr-4": "npm:^4.1.0-3.2.5"
+    "@girs/gdm-1.0": "npm:^1.0.0-3.2.5"
     "@girs/gio-2.0": "npm:^2.78.0-3.2.5"
     "@girs/gjs": "npm:^3.2.5"
     "@girs/glib-2.0": "npm:^2.78.0-3.2.5"
     "@girs/gnomebg-4.0": "npm:^4.0.0-3.2.5"
+    "@girs/gnomebluetooth-3.0": "npm:^3.0.0-3.2.5"
     "@girs/gnomedesktop-4.0": "npm:^4.0.0-3.2.5"
     "@girs/gobject-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gvc-1.0": "npm:^1.0.0-3.2.5"
     "@girs/meta-13": "npm:^13.0.0-3.2.5"
+    "@girs/polkit-1.0": "npm:^1.0.0-3.2.5"
     "@girs/shell-13": "npm:^13.0.0-3.2.5"
     "@girs/shew-0": "npm:^0.0.0-3.2.5"
     "@girs/st-13": "npm:^13.0.0-3.2.5"
+    "@girs/upowerglib-1.0": "npm:^0.99.1-3.2.5"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -447,6 +477,18 @@ __metadata:
     "@girs/pango-1.0": "npm:^1.51.0-3.2.5"
     "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.5"
   checksum: 654a9e6c3dba1ca755c39bf591c01d5bee95d0c2ad14271a9862996e3ea806b456fd3185db19a14c2b87c7d72630b9f572a3d4c6cf3c153767db1eda8f16110f
+  languageName: node
+  linkType: hard
+
+"@girs/gnomebluetooth-3.0@npm:^3.0.0-3.2.5":
+  version: 3.0.0-3.2.5
+  resolution: "@girs/gnomebluetooth-3.0@npm:3.0.0-3.2.5"
+  dependencies:
+    "@girs/gio-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gjs": "npm:^3.2.5"
+    "@girs/glib-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.2.5"
+  checksum: 4ca81497c470587c66104713160543a0c8e213d14cf456f9faa4ce249fd2a6caa240fbccf88dea5105a12fbe140f3ac2b4f7f62e928bbf6ac493b74158c193fa
   languageName: node
   linkType: hard
 
@@ -765,6 +807,18 @@ __metadata:
     "@girs/xfixes-4.0": "npm:^4.0.0-3.2.5"
     "@girs/xlib-2.0": "npm:^2.0.0-3.2.5"
   checksum: f10bc3bb9794e4578818ffab430b23f923a31bb8c7396fc1eeaa01151c5a1d947cdd0b391d5930cd314885ee512edda289548b9bc2d6cabd8446b2e5f73638fd
+  languageName: node
+  linkType: hard
+
+"@girs/upowerglib-1.0@npm:^0.99.1-3.2.5":
+  version: 0.99.1-3.2.5
+  resolution: "@girs/upowerglib-1.0@npm:0.99.1-3.2.5"
+  dependencies:
+    "@girs/gio-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gjs": "npm:^3.2.5"
+    "@girs/glib-2.0": "npm:^2.78.0-3.2.5"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.2.5"
+  checksum: 607008df4923bc7e334ab3bacf360d9539a7e0134fcae6a7715a37972344b1910bbd1c4be585f21eed55637c1a61e6930f803f8bb78d15a48173bd725bab5428
   languageName: node
   linkType: hard
 
