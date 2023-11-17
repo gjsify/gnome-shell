@@ -1,42 +1,77 @@
-
 # GNOME Shell TypeScript Type Definitions
 
-GJS TypeScript type definitions for GNOME Shell Extensions.
+## Overview
+This NPM package, `@girs/gnome-shell`, provides TypeScript type definitions for developing GNOME Shell Extensions. It is tailored to enhance the development experience for those using TypeScript. The types are currently in an experimental phase, and community contributions play a significant role in their refinement and expansion.
 
-The types are currently in a very experimental state and rely on your contributions. Therefore, this project can be seen as a basic structure for further development. The typescript types of the `.gir` files [are generated](https://www.npmjs.com/package/@girs/gjs) with [ts-for-gir](https://github.com/gjsify/ts-for-gir), the rest is written by hand and contained in this repository.
-
-## Install
-
-To use this type definitions, install them with NPM like this:
+## Installation
+To integrate these type definitions into your project, install the package via NPM:
 
 ```bash
-npm install @girs/gnome-shell
+npm install @girs/gnome-shell --save-dev
 ```
 
 ## Usage
 
-You can import this package into your project like this:
+To use this package in your project, you can import it using either ESM or CommonJS syntax:
+
+ESM syntax:
 
 ```ts
 import GnomeShell from '@girs/gnome-shell';
 ```
 
-If you prefer CommonJS, you can also use this:
+CommonJS syntax:
 
 ```ts
 const GnomeShell = require('@girs/gnome-shell');
 ```
 
-## ESM vs. CommonJS
+## Ambient Module Type Definitions
 
-GJS supports two different import syntaxes. The new modern ESM syntax and the old global imports syntax.
+This package also includes Ambient module type definitions, allowing for imports similar to standard JavaScript practices. This method can be preferable for some developers and does not necessarily require a bundler.
 
-In TypeScript projects for GJS and GNOME Shell extensions, you have the flexibility to use `ESM` syntax and then decide the import syntax for your bundled file. If your bundler is configured to use `CommonJS`, it will convert to the GJS-specific global imports syntax, like `const moduleName = imports.gi[moduleName]`. This is different from the traditional `require` syntax seen in Node.js. The global imports syntax is chosen because it aligns with the CommonJS format supported by NPM, which is used for the generated type definitions and this package.
+To import all Ambient modules at once, use:
 
-On the other hand, if you configure your bundler to use ESM, it will retain the ESM import syntax. It's crucial to ensure that your bundler is set up to correctly translate and bundle these imports into either CommonJS or ESM format, depending on your project's requirements.
+```ts
+import '@girs/gnome-shell/ambient';
+```
 
-This approach is particularly important due to the `@girs` types, which include both `*.cjs `files, using the GJS global imports syntax, and `*.js` files, which utilize the ESM syntax. By appropriately setting up your bundler, you can control which syntax—CommonJS or ESM—is used in your project. The choice of CommonJS in this context is also due to the similarity between the GJS-specific global imports and CommonJS syntax, allowing for easier management and bundling in these specific types of projects.
+For specific Ambient module imports, such as:
+    
+```ts
+import '@girs/gnome-shell/ui/ambient';  // For UI-related types
+```
 
-If you build an GNOME Shell extension for the GNOME Shell < 45, you need to use CommonJS because it has [no support for ESM](https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1499) and you need to use the global imports syntax, but since GNOME Shell 45 you can use the ESM syntax.
+or even more specifically:
 
-We recommended to use [esbuild](https://esbuild.github.io/) for bundling, which we also use [in our example](examples/hello-world).
+```ts
+import '@girs/gnome-shell/ui/components/automountManager/ambient';  // For a specific component
+```
+
+These Ambient types can be integrated into your project by including them in your `tsconfig.json` or by importing them at the top of your main project file, typically `extension.ts`.
+
+## ESM vs. CommonJS in GJS
+
+GJS supports two import syntaxes: the modern ESM syntax and the traditional global imports syntax. This package is designed to accommodate both, depending on your project's setup and requirements.
+
+* **CommonJS:** If your bundler (like esbuild) is configured for CommonJS, it converts the imports to GJS-specific global imports syntax (`const moduleName = imports.gi[moduleName]`). This syntax differs from Node.js's traditional `require` but aligns well with CommonJS format. It's suitable for GNOME Shell versions prior to 45, which do not support ESM.
+
+* **ESM:** For GNOME Shell 45 and later, you can utilize the ESM syntax. Ensure your bundler is set up to handle ESM correctly.
+
+The `@girs/*` types include both `*.cjs` and `*.js` files, corresponding to CommonJS and ESM syntaxes, respectively. Proper bundler configuration is crucial to leverage the appropriate syntax for your project.
+
+## Example and Bundling
+
+For an example of how to bundle an extension, refer to our [Hello World example](https://github.com/gjsify/gnome-shell/tree/main/examples/hello-world), which uses [esbuild](https://esbuild.github.io/) (other bundlers can also be used). This example demonstrates effective bundling practices for ESM in the context of GJS and GNOME Shell extensions.
+
+## Contributing
+
+We welcome contributions to improve and expand the type definitions in this package. If you encounter missing types necessary for your extension or have suggestions for enhancements, please consider contributing. Your input is invaluable in making this resource more comprehensive for all users.
+
+or information on how to contribute, please refer to the [main repository's README](https://github.com/gjsify/gnome-shell).
+
+## Contact and Support
+
+For questions or support related to this package, feel free to open an issue in the repository. We appreciate your feedback and contributions to the GNOME Shell TypeScript Type Definitions project!
+
+Thank you for using `@girs/gnome-shell`!
