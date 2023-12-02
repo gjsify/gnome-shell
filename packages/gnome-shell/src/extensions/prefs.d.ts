@@ -1,4 +1,5 @@
 import type Adw from '@girs/adw-1';
+import type Gtk from '@girs/gtk-4.0';
 
 import type { Extension } from './extension.js';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
@@ -14,7 +15,7 @@ export class ExtensionPreferences extends ExtensionBase {
      * @returns {Gtk.Widget}
      * @throws {GObject.NotImplementedError}
      */
-    getPreferencesWidget(): never;
+    getPreferencesWidget(): Gtk.Widget;
 
     /**
      * Fill the preferences window with preferences.
