@@ -5,7 +5,6 @@ import type { Extension } from './extension.js';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
 
 export class ExtensionPreferences extends ExtensionBase {
-    static lookupByUUID(uuid: string): Extension | null;
     static defineTranslationFunctions(url: string): TranslationFunctions;
 
     /**
