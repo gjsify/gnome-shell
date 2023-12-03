@@ -471,6 +471,7 @@ __metadata:
     "@girs/gnomebluetooth-3.0": "npm:^3.0.0-3.2.6"
     "@girs/gnomedesktop-4.0": "npm:^4.0.0-3.2.6"
     "@girs/gobject-2.0": "npm:^2.78.0-3.2.6"
+    "@girs/gtk-4.0": "npm:^4.12.3-3.2.6"
     "@girs/gvc-1.0": "npm:^1.0.0-3.2.6"
     "@girs/meta-13": "npm:^13.0.0-3.2.6"
     "@girs/polkit-1.0": "npm:^1.0.0-3.2.6"
