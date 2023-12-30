@@ -58,11 +58,15 @@ export namespace PopupMenuItem {
 export class PopupMenuItem extends PopupBaseMenuItem {
     constructor(text: string, params?: PopupMenuItem.ConstructorProperties);
     override _init(text: string, params?: PopupMenuItem.ConstructorProperties): void;
+
+    readonly label: St.Label;
 }
 
 export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
-    constructor(text: string);
-    override _init(text: string): void;
+    constructor(text?: string);
+    override _init(text?: string): void;
+
+    readonly label: St.Label;
 }
 
 export class Switch extends St.Bin {
@@ -184,14 +188,14 @@ export class PopupSubMenu extends PopupMenuBase {
 export class PopupMenuSection extends PopupMenuBase {
     constructor();
 
-    readonly sensitive: boolean;
-
     open(): void;
     close(): void;
 }
 
 export class PopupSubMenuMenuItem extends PopupBaseMenuItem {
     readonly menu: PopupSubMenu;
+
+    readonly label: St.Label;
 
     constructor(text: string, wantIcon?: boolean);
     override _init(text: string, wantIcon?: boolean): void;
