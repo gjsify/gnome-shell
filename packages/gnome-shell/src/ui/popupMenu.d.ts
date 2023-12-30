@@ -128,10 +128,10 @@ declare class PopupMenuBase extends Signals.EventEmitter {
     sensitive: boolean;
     readonly firstMenuItem: PopupBaseMenuItem | null;
     readonly numMenuItems: number;
-   
+
     getSensitive(): boolean;
     setSensitive(sensitive: boolean): void;
-    addAction(title: string, callback: () => void, icon: Gio.Icon): void;
+    addAction(title: string, callback: () => void, icon?: Gio.Icon): void;
     addSettingsAction(title: string, desktopFile: string): void;
     isEmpty(): boolean;
     itemActivated(animate: boolean): void;
