@@ -118,7 +118,11 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
     setIcon(icon: Gio.Icon): void;
 }
 
-declare class PopupMenuBase extends Signals.EventEmitter {
+export namespace PopupMenuBase {
+    interface SignalMap {}
+}
+
+export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
     protected constructor(sourceActor: St.Widget, styleClass?: string);
     readonly sourceActor: St.Widget;
     readonly focusActor: St.Widget;
@@ -142,7 +146,11 @@ declare class PopupMenuBase extends Signals.EventEmitter {
     destroy(): void;
 }
 
-export class PopupMenu extends PopupMenuBase {
+export namespace PopupMenu {
+    interface SignalMap extends PopupMenuBase.SignalMap {}
+}
+
+export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     constructor(sourceActor: St.Widget, arrowAlignment: number, arrowSide: St.Side);
 
     setArrowOrigin(origin: number): void;
@@ -164,7 +172,11 @@ export class PopupDummyMenu extends Signals.EventEmitter {
     destroy(): void;
 }
 
-export class PopupSubMenu extends PopupMenuBase {
+export namespace PopupSubMenu {
+    interface SignalMap extends PopupMenuBase.SignalMap {}
+}
+
+export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMap> extends PopupMenuBase<S> {
     actor: St.ScrollView;
 
     constructor(sourceActor: St.Widget, sourceArrow: St.Widget);
@@ -177,6 +189,10 @@ export class PopupSubMenu extends PopupMenuBase {
 }
 
 
+export namespace PopupMenuSection {
+    interface SignalMap extends PopupMenuBase.SignalMap {}
+}
+
 /**
  * PopupMenuSection:
  *
@@ -185,7 +201,7 @@ export class PopupSubMenu extends PopupMenuBase {
  * can add it to another menu), but is completely transparent
  * to the user
  */
-export class PopupMenuSection extends PopupMenuBase {
+export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S>{
     constructor();
 
     open(): void;
