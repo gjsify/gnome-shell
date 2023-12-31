@@ -171,10 +171,10 @@ export class Notification extends GObject.Object {
     protected _soundFile: Gio.File | null;
     protected _soundPlayed: boolean;
 
-    constructor(source: Source, title: string, banner: string, params: Notification.Params);
+    constructor(source: Source, title: string, banner: string, params?: Notification.Params);
     /** @hidden */
     override _init(config?: GObject.Object.ConstructorProperties): void;
-    public _init(source: Source, title: string, banner: string, params: Notification.Params): void;
+    public _init(source: Source, title: string, banner: string, params?: Notification.Params): void;
 
     /**
      * Updates the notification by regenerating its icon and updating
@@ -185,7 +185,7 @@ export class Notification extends GObject.Object {
      * @param banner the new banner
      * @param params as in the Notification constructor
      */
-    public update(title: string, banner: string, params: Notification.Params): void;
+    public update(title: string, banner: string, params?: Notification.Params): void;
 
     /**
      * @param label the label for the action's button
