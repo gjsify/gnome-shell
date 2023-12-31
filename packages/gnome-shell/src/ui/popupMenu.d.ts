@@ -120,6 +120,13 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
 
 export namespace PopupMenuBase {
     interface SignalMap {}
+
+    // PopupMenuBase.addMenuItem explicitly checks for any of these specific
+    // types
+    type MenuItemType = PopupMenuSection |
+        PopupSubMenuMenuItem |
+        PopupSeparatorMenuItem |
+        PopupBaseMenuItem
 }
 
 export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
@@ -130,7 +137,8 @@ export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.Signal
     readonly isOpen: boolean;
     readonly box: St.BoxLayout;
     sensitive: boolean;
-    readonly firstMenuItem: PopupBaseMenuItem | null;
+    // PopupMenuBase._getMenuItems explicitly filters for these two types
+    readonly firstMenuItem: PopupBaseMenuItem | PopupMenuSection;
     readonly numMenuItems: number;
 
     getSensitive(): boolean;
@@ -139,8 +147,8 @@ export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.Signal
     addSettingsAction(title: string, desktopFile: string): void;
     isEmpty(): boolean;
     itemActivated(animate: boolean): void;
-    moveMenuItem(item: PopupBaseMenuItem, position: number): void;
-    addMenuItem(item: PopupBaseMenuItem, position?: number): void;
+    moveMenuItem(item: PopupMenuBase.MenuItemType, position: number): void;
+    addMenuItem(item: PopupMenuBase.MenuItemType, position?: number): void;
     removeAll(): void;
     toggle(): void;
     destroy(): void;
