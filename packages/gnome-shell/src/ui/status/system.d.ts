@@ -4,7 +4,7 @@ import Clutter from '@girs/clutter-13';
 import Gio from '@girs/gio-2.0';
 import St from '@girs/st-13';
 
-import { QuickSettingsItem, QuickToggle, SystemIndicator } from '../quickSettings';
+import { QuickSettingsItem, QuickToggle, SystemIndicator } from '../quickSettings.js';
 
 declare const BUS_NAME: string;
 declare const OBJECT_PATH: string;
