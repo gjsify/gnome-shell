@@ -291,7 +291,7 @@ export class Source extends GObject.Object {
      */
     public createIcon(size: number): St.Icon;
 
-    public getIcon(): Gio.ThemedIcon;
+    public getIcon(): Gio.Icon;
 
     public pushNotification(notification: Notification): void;
 
