@@ -5,12 +5,13 @@ import type Clutter from '@girs/clutter-13';
 import type Meta from '@girs/meta-13';
 
 import type { Button } from './panelMenu.js';
+import type { DateMenuButton } from "./dateMenu.js";
 
 export class Panel extends St.Widget {
 
     statusArea: {
         appMenu: any;
-        dateMenu: any;
+        dateMenu: DateMenuButton;
         quickSettings: any;
     };
 

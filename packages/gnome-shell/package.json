@@ -412,6 +412,17 @@
       }
     },
     "./ui/components/telepathyClient/ambient": "./dist/ui/components/telepathyClient-ambient.d.ts",
+    "./ui/dateMenu": {
+      "import": {
+        "types": "./dist/ui/dateMenu.d.ts",
+        "default": "./dist/ui/dateMenu.js"
+      },
+      "require": {
+        "types": "./dist/ui/dateMenu.d.ts",
+        "default": "./dist/ui/dateMenu.cjs"
+      }
+    },
+    "./ui/dateMenu/ambient": "./dist/ui/dateMenu-ambient.d.ts",
     "./ui/dialog": {
       "import": {
         "types": "./dist/ui/dialog.d.ts",
