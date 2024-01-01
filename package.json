@@ -15,7 +15,7 @@
         "validate": "yarn validate:types && yarn validate:example",
         "validate:types": "yarn workspace @girs/gnome-shell validate",
         "validate:example": "yarn workspace @gjsify/gnome-shell-hello-world-example validate",
-        "publish": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --access public",
+        "publish": "yarn publish:latest",
         "publish:latest": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --tag latest --access public",
         "publish:next": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --tag next --access public",
         "build": "yarn build:types && yarn build:example",
@@ -49,6 +49,6 @@
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
     "packageManager": "yarn@4.0.2",
     "devDependencies": {
-        "typescript": "^5.3.2"
+        "typescript": "5.3.3"
     }
 }

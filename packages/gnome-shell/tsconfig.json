@@ -4,10 +4,10 @@
     "types": [],
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
   },
-  "include": [],
+  "include": ["./dist/**/*.d.ts"],
   "files": [
-    "dist/index.d.ts",
-  ]
+    "./dist/index.d.ts",
+  ],
 }

@@ -5,6 +5,9 @@
     "**/.pnp.*": true
   },
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsserver.maxTsServerMemory": 14336,
+  // "typescript.tsserver.log": "verbose",
+  // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "cSpell.words": [
     "girs"
   ]
