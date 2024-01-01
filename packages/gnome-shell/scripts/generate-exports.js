@@ -5,7 +5,7 @@ import { loadJsonFile, writeJsonFile } from './utils/json.js';
 import { DIST_DIR, __dirname } from './config.js';
 import { resolve, extname, basename } from 'path';
 
-const IGNORE_FILENAMES = ['sharedInternals.d.ts']
+const IGNORE_FILENAMES = ['sharedInternals.d.ts', 'global.d.ts']
 const IGNORE_DIRS = ['types']
 
 /** */
@@ -44,17 +44,19 @@ const generateExport = (filePath) => {
 
 const start = async () => {
     const pkg = await loadJsonFile(resolve(__dirname, '../package.json'));
-    
+
     const typeFiles = await getAllFiles(DIST_DIR, ['.ts'], IGNORE_DIRS);
 
-    let exports = {};
+    let exports = {
+        "./extensions/global": "./dist/extensions/global.d.ts"
+    };
 
     for (const absolutePath of typeFiles) {
         exports = { ...exports, ...generateExport(absolutePath) }
     }
 
     pkg.exports = exports;
-    
+
     writeJsonFile(resolve(__dirname, '../package.json'), pkg);
 }
 

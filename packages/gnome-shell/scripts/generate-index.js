@@ -7,7 +7,7 @@ import { resolve, extname, basename } from 'path';
 import { writeFile } from 'fs/promises';
 
 const IGNORE_DIRS = ['types']
-const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts']
+const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts', 'global.d.ts']
 const EXPORT_ESM_TEMPLATE = (exportName, fileName) => `export * as ${exportName} from './${fileName}.js';`;
 const EXPORT_CJS_TEMPLATE = (exportName, fileName) => `module.exports.${exportName} = require('./${fileName}.cjs');`;
 const IMPORT_AMBIENT_TEMPLATE = (fileName) => `import './${fileName}-ambient.d.ts';`;
@@ -35,7 +35,7 @@ const appendFile = async (filePath, data) => {
 }
 
 
-const start = async () => {    
+const start = async () => {
     const dirs = await getAllDirs(DIST_DIR, IGNORE_DIRS, true);
 
     for (const absoluteDir of dirs) {
@@ -61,7 +61,7 @@ const start = async () => {
         await writeFile(resolve(absoluteDir, 'index.js'), data.esm, 'utf-8');
         await writeFile(resolve(absoluteDir, 'index.cjs'), data.cjs, 'utf-8');
         await writeFile(resolve(absoluteDir, 'index-ambient.d.ts'), data.ambient, 'utf-8');
-        
+
     }
 
     const rootDirs = await getAllDirs(DIST_DIR, IGNORE_DIRS, false);

@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "exports": {
+    "./extensions/global": "./dist/extensions/global.d.ts",
     "./extensions/extension": {
       "import": {
         "types": "./dist/extensions/extension.d.ts",
