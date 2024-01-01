@@ -7,8 +7,8 @@ import Gio from '@girs/gio-2.0';
 import GLib from '@girs/glib-2.0';
 import GObject from '@girs/gobject-2.0';
 
-import { SessionManager } from './gnomeSession';
-import * as LoginManager from './loginManager';
+import { SessionManager } from './gnomeSession.js';
+import * as LoginManager from './loginManager.js';
 
 export interface ActionDetails {
     name: string;

@@ -17,7 +17,7 @@ import { AudioDeviceSelectionDBus } from './audioDeviceSelection.js';
 // import * as InputMethod from '../misc/inputMethod.js'
 // import * as Introspect from '../misc/introspect.js'
 // import * as Keyboard from './keyboard.js';
-// import * as MessageTray from './messageTray.js';
+import { MessageTray } from './messageTray.js';
 // import * as ModalDialog from './modalDialog.js';
 // import * as OsdWindow from './osdWindow.js';
 // import * as OsdMonitorLabeler from './osdMonitorLabeler.js';
@@ -65,7 +65,7 @@ export declare const welcomeDialog: any;
 
 export declare const wm: WindowManager;
 
-export declare const messageTray: any;
+export declare const messageTray: MessageTray;
 
 export declare const screenShield: any;
 

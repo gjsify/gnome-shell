@@ -2,8 +2,8 @@
 
 import Gio from '@girs/gio-2.0';
 
-import * as Signals from '../../misc/signals';
-import { SystemIndicator } from '../quickSettings';
+import * as Signals from '../../misc/signals.js';
+import { SystemIndicator } from '../quickSettings.js';
 import * as MessageTray from '../messageTray.js';
 
 declare const BoltClientInterface: string;

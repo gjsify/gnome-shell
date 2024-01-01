@@ -16,12 +16,12 @@ export enum State {
 
 export namespace ModalDialog {
     export interface ConstructorProperties {
-        shellReactive: boolean;
-        styleClass: string | null;
-        actionMode: Shell.ActionMode;
-        shouldFadeIn: boolean;
-        shouldFadeOut: boolean;
-        destroyOnClose: boolean;
+        shellReactive?: boolean;
+        styleClass?: string | null;
+        actionMode?: Shell.ActionMode;
+        shouldFadeIn?: boolean;
+        shouldFadeOut?: boolean;
+        destroyOnClose?: boolean;
     }
 }
 

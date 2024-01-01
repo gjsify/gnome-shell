@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/slider.js
 
 import Clutter from '@girs/clutter-13';
-import * as BarLevel from './barLevel';
+import * as BarLevel from './barLevel.js';
 
 /**
  * Represents a slider UI component extending the BarLevel.
