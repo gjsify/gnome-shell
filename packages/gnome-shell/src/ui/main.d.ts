@@ -11,7 +11,7 @@ import { AccessDialogDBus } from './accessDialog.js';
 import { AudioDeviceSelectionDBus } from './audioDeviceSelection.js';
 // import * as CtrlAltTab from './ctrlAltTab.js';
 // import * as EndSessionDialog from './endSessionDialog.js';
-// import { ExtensionManager } from './extensionSystem.js';
+import { ExtensionManager } from './extensionSystem.js';
 // import * as ExtensionSystem from './extensionSystem.js';
 // import * as ExtensionDownloader from './extensionDownloader.js';
 // import * as InputMethod from '../misc/inputMethod.js'
@@ -51,7 +51,7 @@ import { WindowManager } from './windowManager.js';
 
 export declare const componentManager: ComponentManager;
 
-export declare const extensionManager: any;
+export declare const extensionManager: ExtensionManager;
 
 export declare const panel: Panel;
 
