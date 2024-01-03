@@ -446,6 +446,17 @@
       }
     },
     "./ui/dnd/ambient": "./dist/ui/dnd-ambient.d.ts",
+    "./ui/extensionSystem": {
+      "import": {
+        "types": "./dist/ui/extensionSystem.d.ts",
+        "default": "./dist/ui/extensionSystem.js"
+      },
+      "require": {
+        "types": "./dist/ui/extensionSystem.d.ts",
+        "default": "./dist/ui/extensionSystem.cjs"
+      }
+    },
+    "./ui/extensionSystem/ambient": "./dist/ui/extensionSystem-ambient.d.ts",
     "./ui/iconGrid": {
       "import": {
         "types": "./dist/ui/iconGrid.d.ts",
