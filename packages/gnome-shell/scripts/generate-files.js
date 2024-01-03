@@ -16,7 +16,7 @@ const AMBIENT_TEMPLATE = (path, fileName) => `declare module "${RESOURCE_PATH(pa
 const ESM_TEMPLATE = (path, fileName) => `export * from '${RESOURCE_PATH(path, fileName)}';`;
 const CJS_TEMPLATE = (path, fileName) => `module.exports = imports${path.replaceAll('/', '.')}.${fileName};`;
 
-const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts'];
+const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts', 'global.d.ts'];
 
 const IGNORE_DIRS = ['types'];
 

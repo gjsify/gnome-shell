@@ -4,7 +4,7 @@ import { getAllFiles } from './utils/files.js';
 import { copyFile, mkdir } from 'fs/promises';
 import { SRC_DIR, DIST_DIR, __dirname } from './config.js';
 
-const start = async () => {    
+const start = async () => {
     const srcFiles = await getAllFiles(SRC_DIR, ['.ts', '.js', '.cjs']);
 
     for (const srcFile of srcFiles) {

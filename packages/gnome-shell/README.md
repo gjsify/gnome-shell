@@ -50,6 +50,17 @@ import '@girs/gnome-shell/ui/components/automountManager/ambient';  // For a spe
 
 These Ambient types can be integrated into your project by including them in your `tsconfig.json` or by importing them at the top of your main project file, typically `extension.ts`.
 
+## GNOME Shell globals
+
+GNOME Shell defines some specific globals and monkey-patches some built-in GJS objects.
+To import the corresponding types, use:
+
+```ts
+import '@girs/gnome-shell/extensions/global';
+```
+
+Note that these globals are not available in the environment that runs the preferences code from `prefs.js`.  If You make use of these global types take care in `prefs.js`.
+
 ## ESM vs. CommonJS in GJS
 
 GJS supports two import syntaxes: the modern ESM syntax and the traditional global imports syntax. This package is designed to accommodate both, depending on your project's setup and requirements.
