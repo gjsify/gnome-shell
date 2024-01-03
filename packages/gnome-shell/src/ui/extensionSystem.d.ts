@@ -67,7 +67,7 @@ export class ExtensionManager<
 
   logExtensionError(uuid: string, error: unknown): void;
 
-  createExtensionObject(uuid: string, dir: Gio.File, type: ExtensionType);
+  createExtensionObject(uuid: string, dir: Gio.File, type: ExtensionType): void;
 
   loadExtension(extension: ExtensionObject): Promise<void>;
 
