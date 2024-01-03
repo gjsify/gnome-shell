@@ -2,7 +2,7 @@ import '@girs/gjs'; // For global types like `log()`
 import St from '@girs/st-13';
 import GObject from '@girs/gobject-2.0';
 
-import "@girs/gnome-shell/global"; // For global shell types
+import "@girs/gnome-shell/extensions/global"; // For global shell types
 import { Extension, gettext as _ } from '@girs/gnome-shell/extensions/extension';
 import * as panelMenu from '@girs/gnome-shell/ui/panelMenu';
 import { PopupMenuItem } from '@girs/gnome-shell/ui/popupMenu';
