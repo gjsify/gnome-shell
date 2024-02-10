@@ -481,6 +481,7 @@ __metadata:
     "@girs/gtk-4.0": "npm:^4.12.4-3.2.7"
     "@girs/gvc-1.0": "npm:^1.0.0-3.2.7"
     "@girs/meta-13": "npm:^13.0.0-3.2.7"
+    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
     "@girs/polkit-1.0": "npm:^1.0.0-3.2.7"
     "@girs/shell-13": "npm:^13.0.0-3.2.7"
     "@girs/shew-0": "npm:^0.0.0-3.2.7"
