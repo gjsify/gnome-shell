@@ -5,6 +5,7 @@ import type Gio from '@girs/gio-2.0';
 import type Clutter from '@girs/clutter-13';
 import type St from '@girs/st-13';
 import type Meta from '@girs/meta-13';
+import type Mtk from '@girs/mtk-13';
 
 import { EventEmitter } from '../misc/signals.js';
 
@@ -207,7 +208,7 @@ export class LayoutManager extends GObject.Object {
      */
     public removeChrome(actor: Clutter.Actor): void;
 
-    public getWorkAreaForMonitor(monitorIndex: number) : void
+    public getWorkAreaForMonitor(monitorIndex: number): Mtk.Rectangle;
 
     /**
      * This call guarantees that we return some monitor to simplify usage of it
