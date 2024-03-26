@@ -20,8 +20,8 @@ class TIndicator extends PanelMenuButton {
         super._init(0.0, _('My Shiny Indicator'));
 
         this.add_child(new St.Icon({
-            icon_name: 'face-smile-symbolic',
-            style_class: 'system-status-icon',
+            iconName: 'face-smile-symbolic',
+            styleClass: 'system-status-icon',
         }));
 
         let item = new PopupMenuItem(_('Show Notification'));
