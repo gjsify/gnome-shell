@@ -1,7 +1,7 @@
 // https://github.com/GNOME/gnome-shell/blob/main/js/misc/systemActions.js
 
 import AccountsService from '@girs/accountsservice-1.0';
-import Clutter from '@girs/clutter-13';
+import Clutter from '@girs/clutter-14';
 import Gdm from '@girs/gdm-1.0';
 import Gio from '@girs/gio-2.0';
 import GLib from '@girs/glib-2.0';

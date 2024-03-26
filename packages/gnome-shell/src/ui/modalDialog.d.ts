@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js
 
-import type St from '@girs/st-13';
-import type Shell from '@girs/shell-13';
+import type St from '@girs/st-14';
+import type Shell from '@girs/shell-14';
 
 import type { MonitorConstraint } from './layout.js';
 import type { Dialog } from './dialog.js';

@@ -5,457 +5,543 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@esbuild/aix-ppc64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/aix-ppc64@npm:0.19.11"
+"@esbuild/aix-ppc64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/aix-ppc64@npm:0.20.2"
   conditions: os=aix & cpu=ppc64
   languageName: node
   linkType: hard
 
-"@esbuild/android-arm64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/android-arm64@npm:0.19.11"
+"@esbuild/android-arm64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/android-arm64@npm:0.20.2"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/android-arm@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/android-arm@npm:0.19.11"
+"@esbuild/android-arm@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/android-arm@npm:0.20.2"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@esbuild/android-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/android-x64@npm:0.19.11"
+"@esbuild/android-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/android-x64@npm:0.20.2"
   conditions: os=android & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/darwin-arm64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/darwin-arm64@npm:0.19.11"
+"@esbuild/darwin-arm64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/darwin-arm64@npm:0.20.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/darwin-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/darwin-x64@npm:0.19.11"
+"@esbuild/darwin-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/darwin-x64@npm:0.20.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/freebsd-arm64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/freebsd-arm64@npm:0.19.11"
+"@esbuild/freebsd-arm64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/freebsd-arm64@npm:0.20.2"
   conditions: os=freebsd & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/freebsd-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/freebsd-x64@npm:0.19.11"
+"@esbuild/freebsd-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/freebsd-x64@npm:0.20.2"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-arm64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-arm64@npm:0.19.11"
+"@esbuild/linux-arm64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-arm64@npm:0.20.2"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-arm@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-arm@npm:0.19.11"
+"@esbuild/linux-arm@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-arm@npm:0.20.2"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@esbuild/linux-ia32@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-ia32@npm:0.19.11"
+"@esbuild/linux-ia32@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-ia32@npm:0.20.2"
   conditions: os=linux & cpu=ia32
   languageName: node
   linkType: hard
 
-"@esbuild/linux-loong64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-loong64@npm:0.19.11"
+"@esbuild/linux-loong64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-loong64@npm:0.20.2"
   conditions: os=linux & cpu=loong64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-mips64el@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-mips64el@npm:0.19.11"
+"@esbuild/linux-mips64el@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-mips64el@npm:0.20.2"
   conditions: os=linux & cpu=mips64el
   languageName: node
   linkType: hard
 
-"@esbuild/linux-ppc64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-ppc64@npm:0.19.11"
+"@esbuild/linux-ppc64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-ppc64@npm:0.20.2"
   conditions: os=linux & cpu=ppc64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-riscv64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-riscv64@npm:0.19.11"
+"@esbuild/linux-riscv64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-riscv64@npm:0.20.2"
   conditions: os=linux & cpu=riscv64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-s390x@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-s390x@npm:0.19.11"
+"@esbuild/linux-s390x@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-s390x@npm:0.20.2"
   conditions: os=linux & cpu=s390x
   languageName: node
   linkType: hard
 
-"@esbuild/linux-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/linux-x64@npm:0.19.11"
+"@esbuild/linux-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/linux-x64@npm:0.20.2"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/netbsd-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/netbsd-x64@npm:0.19.11"
+"@esbuild/netbsd-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/netbsd-x64@npm:0.20.2"
   conditions: os=netbsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/openbsd-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/openbsd-x64@npm:0.19.11"
+"@esbuild/openbsd-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/openbsd-x64@npm:0.20.2"
   conditions: os=openbsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/sunos-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/sunos-x64@npm:0.19.11"
+"@esbuild/sunos-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/sunos-x64@npm:0.20.2"
   conditions: os=sunos & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/win32-arm64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/win32-arm64@npm:0.19.11"
+"@esbuild/win32-arm64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/win32-arm64@npm:0.20.2"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/win32-ia32@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/win32-ia32@npm:0.19.11"
+"@esbuild/win32-ia32@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/win32-ia32@npm:0.20.2"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@esbuild/win32-x64@npm:0.19.11":
-  version: 0.19.11
-  resolution: "@esbuild/win32-x64@npm:0.19.11"
+"@esbuild/win32-x64@npm:0.20.2":
+  version: 0.20.2
+  resolution: "@esbuild/win32-x64@npm:0.20.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@girs/accountsservice-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/accountsservice-1.0@npm:1.0.0-3.2.7"
+"@girs/accountsservice-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/accountsservice-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: f24e7c9107477cb24e2f0e60c02e8649629a0ea89162b47cf4445d7f2eef896ce2792599531e6671d2c7f99017779d4280679540c6a955429484db888faf3a70
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/aad3bca23658750fda10f6c1493fd1ad69394bcde0eca95236d7fb2f3307b272f595d38dbc49c0c240da2e3b53ed25767ed6b5f611effb4345032f5a50e39f13
   languageName: node
   linkType: hard
 
-"@girs/adw-1@npm:^1.4.2-3.2.7":
-  version: 1.4.2-3.2.7
-  resolution: "@girs/adw-1@npm:1.4.2-3.2.7"
+"@girs/adw-1@npm:^1.4.3-3.3.0":
+  version: 1.4.3-3.3.0
+  resolution: "@girs/adw-1@npm:1.4.3-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gsk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gtk-4.0": "npm:^4.12.4-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 6d08c12f3f43a8c42114254cc893bd39e443181e696f11b098d38728724b1c828879b556bffdf90526970ed36957ab12abefd5089b23a30c758b7a737aa558d9
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gsk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gtk-4.0": "npm:^4.12.5-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/4ac1e632d29fde42da1937b9be27691e953843ffa78b7ce9a3f914cf46b16edc41f16a16a0c6a4a284a2b8274d69cda8e110fa629aebe2affa2f7ed9886ec787
   languageName: node
   linkType: hard
 
-"@girs/atk-1.0@npm:^2.50.0-3.2.7":
-  version: 2.50.0-3.2.7
-  resolution: "@girs/atk-1.0@npm:2.50.0-3.2.7"
+"@girs/atk-1.0@npm:^2.50.1-3.3.0":
+  version: 2.50.1-3.3.0
+  resolution: "@girs/atk-1.0@npm:2.50.1-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: ea642fa5824c8e77944cf60c8d5b74cdeb8a6666febee93af8b18c42ff28dee4bd6329bc4c949abe6a68a97243eb9b7704d11d67516ce5bade6e21276c95ef22
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/934422b904b2b17ed2e902e7b7e4153e3f43c49f5e01569040988499277eea830893a0c61d0f3b2888106ebb8340b5e38138e6245449bc92ed44273e2b503204
   languageName: node
   linkType: hard
 
-"@girs/cairo-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/cairo-1.0@npm:1.0.0-3.2.7"
+"@girs/cairo-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/cairo-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 66a6a892d1afded0ba6a243072c510a5df42c6b1b2e32d649cd3d21d71084a8c3f020da13d3a77f35b0b90d2b0658553152f8bc01f65c63c2758153b630f0459
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/249c3c9d91b01bd3292c179f093ce5bf17ab7df8374a6e2bfb893b68b7328aef706a620f24a714e812d18944cbf4bec47bea922f06a49b7866914ad5fe14039c
   languageName: node
   linkType: hard
 
-"@girs/cally-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/cally-13@npm:13.0.0-3.2.7"
+"@girs/cally-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/cally-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/atk-1.0": "npm:^2.50.0-3.2.7"
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/clutter-13": "npm:^13.0.0-3.2.7"
-    "@girs/cogl-13": "npm:^13.0.0-3.2.7"
-    "@girs/coglpango-13": "npm:^13.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/json-1.0": "npm:^1.7.1-3.2.7"
-    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 2cf5a6380b03e20e424a987f494dff86fc0a2ed5df024bf4a8ec03126534bf580750542c2927cc63e2409d36cfde21618a4ea3476fc646191f2be3c0c3d05480
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/clutter-13": "npm:^13.0.0-3.3.0"
+    "@girs/cogl-13": "npm:^13.0.0-3.3.0"
+    "@girs/coglpango-13": "npm:^13.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/json-1.0": "npm:^1.7.1-3.3.0"
+    "@girs/mtk-13": "npm:^13.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/9c89d41dde472b6dec4a2aade557b07ea20e05e84d428aa1ed37d23277402cd0e0d42cc52689ccdee9f07841f7e08bef8738c1ff6262a719e96d542381ea9942
   languageName: node
   linkType: hard
 
-"@girs/clutter-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/clutter-13@npm:13.0.0-3.2.7"
+"@girs/cally-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/cally-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/atk-1.0": "npm:^2.50.0-3.2.7"
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/cogl-13": "npm:^13.0.0-3.2.7"
-    "@girs/coglpango-13": "npm:^13.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/json-1.0": "npm:^1.7.1-3.2.7"
-    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 15e51e817226316755b2beb8d40b40febb5a6c4616528c9b226e3c335ae91f429a3c33cae2dbfa60667064e0b7eb5b854b29d3bf1f66994e08bbe61be9307c10
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/clutter-14": "npm:^14.0.0-3.3.0"
+    "@girs/cogl-14": "npm:^14.0.0-3.3.0"
+    "@girs/coglpango-14": "npm:^14.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/b71d2887a7f1b6e86e312de95d27346ff0f4bc9070261b52604924889966eed6bdf2ebf30d7be4d96f2fc9b9e13c774e9427cdf076c9eab2ed58222b0b00ec5a
   languageName: node
   linkType: hard
 
-"@girs/cogl-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/cogl-13@npm:13.0.0-3.2.7"
+"@girs/clutter-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/clutter-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 2775fc58a125f8b6fab22cb0dfb2dea2ab604c6cbada1d016ae66515d7265d7d4bb444377967543902a226003462221c2a91f43bf77fc6305bc7bee6c7e97fb0
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cogl-13": "npm:^13.0.0-3.3.0"
+    "@girs/coglpango-13": "npm:^13.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/json-1.0": "npm:^1.7.1-3.3.0"
+    "@girs/mtk-13": "npm:^13.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/e08a806a8172d2213b9c390b41b6a38396dcfcec2945865215ecf0bf7a745a3b6c1ebcf26048acbfb528a7567b6275d4d3b4656fdd02c8b2044210110382443d
   languageName: node
   linkType: hard
 
-"@girs/cogl-2.0@npm:^2.0.0-3.2.7":
-  version: 2.0.0-3.2.7
-  resolution: "@girs/cogl-2.0@npm:2.0.0-3.2.7"
+"@girs/clutter-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/clutter-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 193019c28b8125416de84d7a8d14b324c30a69a4b2323d21e33f0c2c3695b54b87e26fb203583c0e05011336377dacc44f2d936b4b6ea5fb105902afafefbd33
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cogl-14": "npm:^14.0.0-3.3.0"
+    "@girs/coglpango-14": "npm:^14.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/0113103b886318a1eb4574357ecf7693cdd1f75aac8c0ac40190039fc153d54e388cf798fd2d7734d28885d12c270707d0df13238dcd20cb8a951f56ff0f57ca
   languageName: node
   linkType: hard
 
-"@girs/coglpango-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/coglpango-13@npm:13.0.0-3.2.7"
+"@girs/cogl-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/cogl-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/cogl-13": "npm:^13.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: b0ee9157407930afe8c2b23870a37d8f5c6b6ab6d81d85099fb0394612cd27a8f33433a4ffe694438d9de78059551155f7f7703be960f251b634571249ba45c0
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/cf125981b5278bd93dff67471c738917345bfb6c671ffc28f2444a68163d2a9aa07106647b69c39531e86f2ccabba851ad57e1d61fa7817c3f517fc4cd9d8594
   languageName: node
   linkType: hard
 
-"@girs/freetype2-2.0@npm:^2.0.0-3.2.7":
-  version: 2.0.0-3.2.7
-  resolution: "@girs/freetype2-2.0@npm:2.0.0-3.2.7"
+"@girs/cogl-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/cogl-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: f32dcc25fb872faa1fc84c88426248130446cf743c5570c09ac1232e3900ec481d65aeb058a4f0037a93682ec91e6237e776c8173759018252073af63f3768d9
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/e9d16cba0f73134ca51b442b638488a293a711d0e8c1dcf42cc170350b743459b236ddf452a382973d842df3624888e00ce07946fa3573f065d777d0a4899d94
   languageName: node
   linkType: hard
 
-"@girs/gck-2@npm:^4.1.0-3.2.7":
-  version: 4.1.0-3.2.7
-  resolution: "@girs/gck-2@npm:4.1.0-3.2.7"
+"@girs/cogl-2.0@npm:^2.0.0-3.3.0":
+  version: 2.0.0-3.3.0
+  resolution: "@girs/cogl-2.0@npm:2.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 467d67defbb6a9cf5fb1e2a63334d3c397032df8c01079dc807689d810a1345011db7d46bd7c8843075641dd3d82f87f4682de86472374ba13530ae3b91353ab
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/c8692d0f7bccd58ffd1a7039440c8c509a6ef5cee40740e36ec3c035a5f4a58823b9fc263d6fac9658e3a17eac19d1902c6cf1bcfa8253712488c7e62e25953d
   languageName: node
   linkType: hard
 
-"@girs/gcr-4@npm:^4.1.0-3.2.7":
-  version: 4.1.0-3.2.7
-  resolution: "@girs/gcr-4@npm:4.1.0-3.2.7"
+"@girs/coglpango-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/coglpango-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/gck-2": "npm:^4.1.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 6c1126a915cdd907342e14f0e2996fc7c07559dec1a33094a99d6b38c24574ebf9332dfb8f032320fa147c16ccf2a588cd99ebfc0c4e2161c173ed392d466a1d
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cogl-13": "npm:^13.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/519a0d2440972b9454af339c1421dbfdfab972b855afaf9c94bdf8f7657c4b1f3abead51725ec32fed3c85f479f821d67a80a7f9de8bc670d7c1ce8bc09fd034
   languageName: node
   linkType: hard
 
-"@girs/gdesktopenums-3.0@npm:^3.0.0-3.2.7":
-  version: 3.0.0-3.2.7
-  resolution: "@girs/gdesktopenums-3.0@npm:3.0.0-3.2.7"
+"@girs/coglpango-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/coglpango-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: ede15341ecd60f7860dd79e8e0038bcc2dc1ac8a135100d240b23611a45551ed2e2c3abb5175f39bbd40ce6259e355fc3e1c2bc22d47fd14452982e11286a9d9
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cogl-14": "npm:^14.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/239348342c47755e15c520c2996dcc5f2b78eade0542471f49af885e174835e4d08e43df0dc397901cb733ea7fa4c16cc8796fd2583658510dc6b8cf80c5634a
   languageName: node
   linkType: hard
 
-"@girs/gdk-4.0@npm:^4.0.0-3.2.7":
-  version: 4.0.0-3.2.7
-  resolution: "@girs/gdk-4.0@npm:4.0.0-3.2.7"
+"@girs/freetype2-2.0@npm:^2.0.0-3.3.0":
+  version: 2.0.0-3.3.0
+  resolution: "@girs/freetype2-2.0@npm:2.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 547afd2fc0f7e75ac57648a995f4c4fcb80d3be3186fc8699ad2733e2c1d147eab7649ecfe36811edb9f792fb34a1fd8bcf9e85e36eac967ad4177f6236f3ee0
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/c82b90d3b8cd902a0e584ab242456cfe765b91cc6164348719d360a397815df79691dabcae484d96069d6083d34de22c322dbf1d8f15dad11446360c3d34aac1
   languageName: node
   linkType: hard
 
-"@girs/gdkpixbuf-2.0@npm:^2.0.0-3.2.7":
-  version: 2.0.0-3.2.7
-  resolution: "@girs/gdkpixbuf-2.0@npm:2.0.0-3.2.7"
+"@girs/gck-2@npm:^4.1.0-3.3.0":
+  version: 4.1.0-3.3.0
+  resolution: "@girs/gck-2@npm:4.1.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 527dbf27fac5e11a902f03db43624d56e781828a32da65fc04efa02f8d3875978689b3c75291f59e3e4928bdbc78b2afcb3281bd269c388d5e0161158dc7f536
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/1fd638764826e38f7db644a95b3908101d2a5fae28bd6f4a9bc7db5b3d9065e8f03bbda2abf72e0300c467e2631bb8e5fef524bb38cca0307556abbc1b0b9ce8
   languageName: node
   linkType: hard
 
-"@girs/gdm-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/gdm-1.0@npm:1.0.0-3.2.7"
+"@girs/gcr-4@npm:^4.1.0-3.3.0":
+  version: 4.1.0-3.3.0
+  resolution: "@girs/gcr-4@npm:4.1.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: be933e579408eefbfc8c7fc7d014044bf49c9e6ea085e0fd9e136e078146d6ac06da15a3c540cee9079e6fc841876936a73550e32c6685c74846902f879c6996
+    "@girs/gck-2": "npm:^4.1.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/1b0f51952b44b0cfa95e08e14a4a23371a16dd1749d310b6199420e33df71ec67ed5625a17bb42c08906190f84f026f9137c0c496a9ce512967091ba6d073691
   languageName: node
   linkType: hard
 
-"@girs/gio-2.0@npm:^2.78.0-3.2.7":
-  version: 2.78.0-3.2.7
-  resolution: "@girs/gio-2.0@npm:2.78.0-3.2.7"
+"@girs/gdesktopenums-3.0@npm:^3.0.0-3.3.0":
+  version: 3.0.0-3.3.0
+  resolution: "@girs/gdesktopenums-3.0@npm:3.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: a4f133292cc496e9d5f4a31eadc893c68a02a9922d9152cf1b5ccfca7fc09170b16ac3c3305b4cb0b0a4c8727bb760d6e6dc1e7296428ad8775d77d18f3b2144
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/40693f8fd990f17fdad528ac2463b195bd156aa2ac05a58d92834c910b5b0ca48dc64a8842557cc72ddf40edcb170c9255b1bc65ca27eca4bc892df08aedf124
   languageName: node
   linkType: hard
 
-"@girs/gjs@npm:^3.2.7":
-  version: 3.2.7
-  resolution: "@girs/gjs@npm:3.2.7"
+"@girs/gdk-4.0@npm:^4.0.0-3.3.0":
+  version: 4.0.0-3.3.0
+  resolution: "@girs/gdk-4.0@npm:4.0.0-3.3.0"
   dependencies:
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 6ea54c468c0a2ea5a85f129f9472a2291ee1bc28dff197ba3494b1e52a3d2fb185e1d4e3c036c778d4a2bafe5d5934184f01f115548e8c4ca881b6236bfb8842
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/06c249df8c1298ba092ff853f22a68b26cce3e0a8520329efcdeeba5f83a8538e595957cdd9ac8339f267b57f9432f6fcee5a65992b205a4948371e2bcce624b
   languageName: node
   linkType: hard
 
-"@girs/gl-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/gl-1.0@npm:1.0.0-3.2.7"
+"@girs/gdkpixbuf-2.0@npm:^2.0.0-3.3.0":
+  version: 2.0.0-3.3.0
+  resolution: "@girs/gdkpixbuf-2.0@npm:2.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: fa332319f630c8f7e8aadcbe285a3f5c2c3b2f535415a49404704bfe3e6eea01d556308a4ef34c8c6905aff6b00f2ac95820d1593d7fec061692138caf37ddad
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/712ba3c811d05a417cd979107c197f248c48b558e86dd2d9fd77ab1b20713171028f5dafc612a1bc83585a54a521faed7e38d9ad2989f4df02615a1901cbbd32
   languageName: node
   linkType: hard
 
-"@girs/glib-2.0@npm:^2.78.0-3.2.7":
-  version: 2.78.0-3.2.7
-  resolution: "@girs/glib-2.0@npm:2.78.0-3.2.7"
+"@girs/gdm-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/gdm-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: e8f3e3578d52d1c6d4dcea720ce5aa61f2f795e4ddafbb15dd3eda60a174280c9bf7169481d04cd13ce93700a6d488ef7db84edc56bb5546eee22ae50b57ca78
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/31176b4f89c12811cfe912ac06c0242d54467e9a6392d2b0ffdb60f7f369af9185a4e225f979c9678c967ae20b5fc8d51c5aa5327f3be45cacabd1d70085bd7f
   languageName: node
   linkType: hard
 
-"@girs/gmodule-2.0@npm:^2.0.0-3.2.7":
-  version: 2.0.0-3.2.7
-  resolution: "@girs/gmodule-2.0@npm:2.0.0-3.2.7"
+"@girs/gio-2.0@npm:^2.78.0-3.3.0":
+  version: 2.78.0-3.3.0
+  resolution: "@girs/gio-2.0@npm:2.78.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: a476fed8ac639f28e717ac788e42e5d28c32a969b4d3db3e7f8a81e7a08c31815227574ffafc1e42201a52822d68afc5c8ecc045e7d8500f55e8f8e7cfe4db18
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/ad83ca5f552e55e421bd8a1adf48f3f63a8c4d88af8760fed1531b5eb8e4af27ae4dcbf271685d599a938ddadbd13a7b4c40bc4a1bbfd2a0fb3e1d976ebd3d59
+  languageName: node
+  linkType: hard
+
+"@girs/gjs@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@girs/gjs@npm:3.3.0"
+  dependencies:
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/e926fce8185b0fc457ce174d673b1d6506bb390b9024d610a7223e47a9b49797f1d0f5b12773cd893b29486a552fed16a15a33dd9b151b80760bb539a7e04e90
+  languageName: node
+  linkType: hard
+
+"@girs/gl-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/gl-1.0@npm:1.0.0-3.3.0"
+  dependencies:
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/cccdcaacb7a781cc0ce6c218722d6d80c8951e0376e4b2212efed7a54e226f6ab81b52db44a2ca90ca4886f854bc43180dcc3b5068a7cbe3a236564a18146066
+  languageName: node
+  linkType: hard
+
+"@girs/glib-2.0@npm:^2.78.0-3.3.0":
+  version: 2.78.0-3.3.0
+  resolution: "@girs/glib-2.0@npm:2.78.0-3.3.0"
+  dependencies:
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/2b9e169edad04e0543476f226f9abb29509d1bcd23f89bc2b460267604cef70bb80460675b115e06a345601fb72e17b9d16e9a4bcde5c603649f0ce0c210faef
+  languageName: node
+  linkType: hard
+
+"@girs/gmodule-2.0@npm:^2.0.0-3.3.0":
+  version: 2.0.0-3.3.0
+  resolution: "@girs/gmodule-2.0@npm:2.0.0-3.3.0"
+  dependencies:
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/9076fab739836cfaa377c0d1c777f2a18a7b6dbfd8165f9bfd84b735894ed6e1db6bcb6e1ac912649b99b0b8a9cb25688df3ebfc9e75032e8299bfc814be10e1
   languageName: node
   linkType: hard
 
@@ -463,415 +549,484 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@girs/gnome-shell@workspace:packages/gnome-shell"
   dependencies:
-    "@girs/accountsservice-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/adw-1": "npm:^1.4.2-3.2.7"
-    "@girs/atk-1.0": "npm:^2.50.0-3.2.7"
-    "@girs/cally-13": "npm:^13.0.0-3.2.7"
-    "@girs/clutter-13": "npm:^13.0.0-3.2.7"
-    "@girs/cogl-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gcr-4": "npm:^4.1.0-3.2.7"
-    "@girs/gdm-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gnomebg-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gnomebluetooth-3.0": "npm:^3.0.0-3.2.7"
-    "@girs/gnomedesktop-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gtk-4.0": "npm:^4.12.4-3.2.7"
-    "@girs/gvc-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/meta-13": "npm:^13.0.0-3.2.7"
-    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
-    "@girs/polkit-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/shell-13": "npm:^13.0.0-3.2.7"
-    "@girs/shew-0": "npm:^0.0.0-3.2.7"
-    "@girs/st-13": "npm:^13.0.0-3.2.7"
-    "@girs/upowerglib-1.0": "npm:^0.99.1-3.2.7"
-    typescript: "npm:5.3.3"
+    "@girs/accountsservice-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/adw-1": "npm:^1.4.3-3.3.0"
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cally-14": "npm:^14.0.0-3.3.0"
+    "@girs/clutter-14": "npm:^14.0.0-3.3.0"
+    "@girs/cogl-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gcr-4": "npm:^4.1.0-3.3.0"
+    "@girs/gdm-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gnomebg-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gnomebluetooth-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gnomedesktop-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gtk-4.0": "npm:^4.12.5-3.3.0"
+    "@girs/gvc-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/meta-14": "npm:^14.0.0-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/polkit-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/shell-14": "npm:^14.0.0-3.3.0"
+    "@girs/shew-0": "npm:^0.0.0-3.3.0"
+    "@girs/st-14": "npm:^14.0.0-3.3.0"
+    "@girs/upowerglib-1.0": "npm:^0.99.1-3.3.0"
+    typescript: "npm:5.4.3"
   languageName: unknown
   linkType: soft
 
-"@girs/gnomebg-4.0@npm:^4.0.0-3.2.7":
-  version: 4.0.0-3.2.7
-  resolution: "@girs/gnomebg-4.0@npm:4.0.0-3.2.7"
+"@girs/gnomebg-4.0@npm:^4.0.0-3.3.0":
+  version: 4.0.0-3.3.0
+  resolution: "@girs/gnomebg-4.0@npm:4.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.2.7"
-    "@girs/gdk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gnomedesktop-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: ba1f971e9a027cb2637775548e65e5a0a617c4cca270b5ca8efa0d1241de8e4ca17033a1b1fe0be91591250eccf3b843f815e8007b2a81ae70f1f2e766dd128e
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gdk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gnomedesktop-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/dab8d309e105ce25572949e35c318bf2893b34112dcfd8b69a0bba39a6fba45436c28ed3c19e578e69c4b44780dea93dc8e9735f6036a9e6d778083f6c8a0d5a
   languageName: node
   linkType: hard
 
-"@girs/gnomebluetooth-3.0@npm:^3.0.0-3.2.7":
-  version: 3.0.0-3.2.7
-  resolution: "@girs/gnomebluetooth-3.0@npm:3.0.0-3.2.7"
+"@girs/gnomebluetooth-3.0@npm:^3.0.0-3.3.0":
+  version: 3.0.0-3.3.0
+  resolution: "@girs/gnomebluetooth-3.0@npm:3.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: cc88afe50daeb6e88d6483da337b49b867843f2e706c12559f15f1ac5f9809913abaffbbb3c743bf318049ad1264d408defba3f9d57c2a5507bcee5244d10339
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/0ed77c0a5dc13e7f02d8a3b363c54d5abd84f58c57ffb5b23f241004b50a28de8c0ae5d5797a855854c054e129c3001c0535ec04ff8c56c345875481a7928219
   languageName: node
   linkType: hard
 
-"@girs/gnomedesktop-4.0@npm:^4.0.0-3.2.7":
-  version: 4.0.0-3.2.7
-  resolution: "@girs/gnomedesktop-4.0@npm:4.0.0-3.2.7"
+"@girs/gnomedesktop-4.0@npm:^4.0.0-3.3.0":
+  version: 4.0.0-3.3.0
+  resolution: "@girs/gnomedesktop-4.0@npm:4.0.0-3.3.0"
   dependencies:
-    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 40aba59c43551c6e5cc0d4a3a94bc70b3f55ea310ecc9d4094ab3b29035dbb07c2d0480b1628c58e7087f9c93a76242fe94746cd7f5b1143d405bdb7f2cfe260
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/5ec4b99929c955607dbfe7b6e9e23778b1d5bdc756368216a31452f892d555c95c638bde2cad5cff701ac2d8fd8ba265670e68b170d0d6ac98ab22f9cf9e3c8f
   languageName: node
   linkType: hard
 
-"@girs/gobject-2.0@npm:^2.78.0-3.2.7":
-  version: 2.78.0-3.2.7
-  resolution: "@girs/gobject-2.0@npm:2.78.0-3.2.7"
+"@girs/gobject-2.0@npm:^2.78.0-3.3.0":
+  version: 2.78.0-3.3.0
+  resolution: "@girs/gobject-2.0@npm:2.78.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 023931ac863240ab55b52dd1ab7c9aceae62e2843d2931748a9e513d56fb84da7650404e8d47ebeaca3bc2d2faec4bbd35260e2d6f353871a619142e97f492e0
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/92232f8e8918b7735d42a219fab4a9002d807ffa5a5b3373a604ba6e3131ecae38f5d8454fce448d9f6a03e5a13511c176931fb805d7ca8b475a8c0daf142c1c
   languageName: node
   linkType: hard
 
-"@girs/graphene-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/graphene-1.0@npm:1.0.0-3.2.7"
+"@girs/graphene-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/graphene-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: af4c829e1f178324831a0939ba732a57273cccf8ad1024840bdba6ef7224b8db3d95f60a1f1780a7d9084583674cf30fe0047ee489f4db0361fb2c41e7d7080b
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/471fe795a262ea162d156026775550ceb0a544b15e19e4c6693903edd6e4124814329731e0218bf34ec8e21af2c5395b6665d86947b452b1ff99f52bc1c7d010
   languageName: node
   linkType: hard
 
-"@girs/gsk-4.0@npm:^4.0.0-3.2.7":
-  version: 4.0.0-3.2.7
-  resolution: "@girs/gsk-4.0@npm:4.0.0-3.2.7"
+"@girs/gsk-4.0@npm:^4.0.0-3.3.0":
+  version: 4.0.0-3.3.0
+  resolution: "@girs/gsk-4.0@npm:4.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 6d7d4ca4d3b11a63455f5bf10fe803dd75095da76c22fd28f52feb3fbb26f67485d4054fcb543e0ce645fba3b8fbb039c85b136663d03ac5a8561c1e21355c8d
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/46122383ae27a443e84dcfb49c1a6f65cfbf9d008eb910fb84074cbdfd362a9a00a29dd1f12e8b20a5aca13202ee3532d135217c89ac50c0986a3389951e7b77
   languageName: node
   linkType: hard
 
-"@girs/gtk-4.0@npm:^4.12.4-3.2.7":
-  version: 4.12.4-3.2.7
-  resolution: "@girs/gtk-4.0@npm:4.12.4-3.2.7"
+"@girs/gtk-4.0@npm:^4.12.5-3.3.0":
+  version: 4.12.5-3.3.0
+  resolution: "@girs/gtk-4.0@npm:4.12.5-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gsk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: f29f5b6c97c083ec4d98000f76e739eb6fc78a6f141e48bfda9af7fffb6a5710fe17cb877ab19c09de57072f43e590a2c1208a7f93e5dc8138562ec449031c0f
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gsk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/0a207e7ed185cd225a2d34526b0b07e2336675b069419ea7fc7c626704f736c6fbe23a02bfb77959b907e831b9d5d242c1c2bebe3e56077b6eb62b9cafeacfc6
   languageName: node
   linkType: hard
 
-"@girs/gvc-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/gvc-1.0@npm:1.0.0-3.2.7"
+"@girs/gvc-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/gvc-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 19e38a45e289a089be17ae32d887cc0fbd8e424bd183efdf4be25249e6eb59ef5167ad495d7b69c3662c25540d2752f9eb3e1e230fbc80f7ff4731805992cd6b
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/5385acd96eab7611ec740207fc87cbfa7da4b2356d4c98ffe19c13374d94978c966324cd0307c1c0f132fc51ff6fd492447befd6df0ea53bdf25d31e55a023fe
   languageName: node
   linkType: hard
 
-"@girs/harfbuzz-0.0@npm:^8.2.1-3.2.7":
-  version: 8.2.1-3.2.7
-  resolution: "@girs/harfbuzz-0.0@npm:8.2.1-3.2.7"
+"@girs/harfbuzz-0.0@npm:^8.2.1-3.3.0":
+  version: 8.2.1-3.3.0
+  resolution: "@girs/harfbuzz-0.0@npm:8.2.1-3.3.0"
   dependencies:
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: e97b221d72034b95f4a2b91e81904693a3fb3c8894c0f248e45579e7fe49ca55f00676b3f977cb35721e7958a228960f85d286cd52c6af5911587fb61489cf4c
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/ba87b5009aaf885797572babc7ef256dca351544662493499ecdec5696ea6342cd1cd0864cb69f1b7f01e78c7524aec6383ee15330f41c314a1f43be1b15d6c7
   languageName: node
   linkType: hard
 
-"@girs/json-1.0@npm:^1.7.1-3.2.7":
-  version: 1.7.1-3.2.7
-  resolution: "@girs/json-1.0@npm:1.7.1-3.2.7"
+"@girs/json-1.0@npm:^1.7.1-3.3.0":
+  version: 1.7.1-3.3.0
+  resolution: "@girs/json-1.0@npm:1.7.1-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 79c4049382957a80acc3253feebe89390ec7abe9f9ca81cee1b6938e835ab5c3833a9a94fa52a7f719e18292ead9e3410c4847e2c1e9761a7e8edcaa7ec15a53
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/ee640d2dbfb1b1096775fde35466c8ef0c82849ac37525180e0bd680bdbd1fcd51e0cab25109ed408abde5f0ea89b0c9eb413a0c7303cd3828d26baf4da808bf
   languageName: node
   linkType: hard
 
-"@girs/meta-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/meta-13@npm:13.0.0-3.2.7"
+"@girs/meta-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/meta-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/atk-1.0": "npm:^2.50.0-3.2.7"
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/clutter-13": "npm:^13.0.0-3.2.7"
-    "@girs/cogl-13": "npm:^13.0.0-3.2.7"
-    "@girs/coglpango-13": "npm:^13.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/json-1.0": "npm:^1.7.1-3.2.7"
-    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/xfixes-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/xlib-2.0": "npm:^2.0.0-3.2.7"
-  checksum: a1588c3c9c9bfc8c36f066d6668cd656bb2791b78fd61773cd80802cef8803e062a2f8ead9db137241558bca74f9acd892e032c4822241d33adc6eac9656d7f7
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/clutter-13": "npm:^13.0.0-3.3.0"
+    "@girs/cogl-13": "npm:^13.0.0-3.3.0"
+    "@girs/coglpango-13": "npm:^13.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/json-1.0": "npm:^1.7.1-3.3.0"
+    "@girs/mtk-13": "npm:^13.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xfixes-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/5120cbe70a3d8bdafe781d5be40bb5a301a339d77d509d187006fd2763a8dbaa3f678b49d4bf9a8de6888d3d0d041b123f2bb8af00f7b759051e5e71fb7c3e4a
   languageName: node
   linkType: hard
 
-"@girs/mtk-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/mtk-13@npm:13.0.0-3.2.7"
+"@girs/meta-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/meta-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-  checksum: bbbb7e242492296ad9f030f897be3655ef51f73552280ef3139086b76c521311d15e0fac095aa138c1a2b34903faf820b0ed0981b73613e4096b145df252c8af
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/clutter-14": "npm:^14.0.0-3.3.0"
+    "@girs/cogl-14": "npm:^14.0.0-3.3.0"
+    "@girs/coglpango-14": "npm:^14.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xfixes-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/b91fd4126d43faf7707d9007dbabb47dfdae0684067a29921bd9d64dee5fa321b604cf6d2a5c75f875dfdabcf8fe351c2326202f58e9c4e9c4df81af0ef3d9a9
   languageName: node
   linkType: hard
 
-"@girs/nm-1.0@npm:^1.45.1-3.2.7":
-  version: 1.45.1-3.2.7
-  resolution: "@girs/nm-1.0@npm:1.45.1-3.2.7"
+"@girs/mtk-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/mtk-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 595f2f1fa388f47d32d6c683430082acc7d04b128060594aa20c1a7a27938f9f3bcd3ce2e3de90624cdb896e978f097eb1687bc809b5f118e352b1465a35f044
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/1b1e25f5f992369998c1355caac8cd1156071ce2d4726ec81035b4caa917b4726d4626a3b7fffdcd46410085d53d9c999aaae49970064f3db54450420f75ebc0
   languageName: node
   linkType: hard
 
-"@girs/pango-1.0@npm:^1.51.0-3.2.7":
-  version: 1.51.0-3.2.7
-  resolution: "@girs/pango-1.0@npm:1.51.0-3.2.7"
+"@girs/mtk-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/mtk-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-  checksum: 4d8b4fd272fedda8ea9aec212a6df7d573fbfaaf4c7584dd106e5a5fb3317607cfc92a13ec7e9b8e52561afd657441279fac2faf6b15b65f5c3730d50c4fe99c
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/bc9c95b64d1aaa09ae05869874a6a771fe809af9cfa9860e1625fb887a3d6007a8d2578d126d9d27d841dbbe1e6b6b3aca8a49fe06bb666a95982fd598b0b6ab
   languageName: node
   linkType: hard
 
-"@girs/pangocairo-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/pangocairo-1.0@npm:1.0.0-3.2.7"
+"@girs/nm-1.0@npm:^1.45.1-3.3.0":
+  version: 1.45.1-3.3.0
+  resolution: "@girs/nm-1.0@npm:1.45.1-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-  checksum: 873ee11240044bbf7a0bac20cc0d379c019ef09b442e9b734e27df9f2bd74b41f37ac624acc669d629bd29195620498ec69ee7d47a6dc309007797e47b0c1fa3
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/c0e412a9ae26c2549c213ceba02995c522ec0773b21e54472a8fe0a9cccbb7b3e2e028a967be2d4971f4d59301c07b1f107ab3610b94bfb31e26a884dbc41086
   languageName: node
   linkType: hard
 
-"@girs/polkit-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/polkit-1.0@npm:1.0.0-3.2.7"
+"@girs/pango-1.0@npm:^1.51.0-3.3.0":
+  version: 1.51.0-3.3.0
+  resolution: "@girs/pango-1.0@npm:1.51.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 83c68d1e196cc5fbcb60ee39b619ee48eebad38d4e4f69e0bdccb65689896e1a393cbfb4fd02f7ab3f2c201ade79d3bd5967eac5ec4a38061deeb1acb1092b59
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+  checksum: 10/dea7accafecb426c5c6d443c5dd829c344589da84d02c3cb9dd27b0e262b89af6dc05480c486b4e3a508eb85b10ccbe83adc65b971651e03f0b8836f16d5c801
   languageName: node
   linkType: hard
 
-"@girs/polkitagent-1.0@npm:^1.0.0-3.2.7":
-  version: 1.0.0-3.2.7
-  resolution: "@girs/polkitagent-1.0@npm:1.0.0-3.2.7"
+"@girs/pangocairo-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/pangocairo-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/polkit-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 36a4659825a108f19d32fab3bdeb88df7ab39085e73b4c729adb4c0c4e84483a827eec99735c5ead655955307ecb2ac4d8e5b632bf1be100cf5c87b8acf22af8
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+  checksum: 10/9cd36c9254299dc7a2a245b631b6683084a7b33d9781f0fe65c8b3cd5c64de476583c0a1c58d812532059d7d88844b5aac8b2f2bcd0a6a66f09880a4e4d9b5dd
   languageName: node
   linkType: hard
 
-"@girs/shell-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/shell-13@npm:13.0.0-3.2.7"
+"@girs/polkit-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/polkit-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/atk-1.0": "npm:^2.50.0-3.2.7"
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/cally-13": "npm:^13.0.0-3.2.7"
-    "@girs/clutter-13": "npm:^13.0.0-3.2.7"
-    "@girs/cogl-13": "npm:^13.0.0-3.2.7"
-    "@girs/coglpango-13": "npm:^13.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gck-2": "npm:^4.1.0-3.2.7"
-    "@girs/gcr-4": "npm:^4.1.0-3.2.7"
-    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gvc-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/json-1.0": "npm:^1.7.1-3.2.7"
-    "@girs/meta-13": "npm:^13.0.0-3.2.7"
-    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
-    "@girs/nm-1.0": "npm:^1.45.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/polkit-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/polkitagent-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/st-13": "npm:^13.0.0-3.2.7"
-    "@girs/xfixes-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/xlib-2.0": "npm:^2.0.0-3.2.7"
-  checksum: c23fbf11a2fbd7fce5c4a102cf445c2982792a8b1812dbf5a9178302990b285123cf760d01411575a38c94d9252447dc910db98562fe16f9a9dd157dd9887dc6
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/fb105679fd6c95f81eb61acb728c1ef01222d43860290b5ba6a63dd7397f17b4c7e65d58dce60eb7918a33d9acc62ff627a85a221d55e771f77c70508ff03202
   languageName: node
   linkType: hard
 
-"@girs/shew-0@npm:^0.0.0-3.2.7":
-  version: 0.0.0-3.2.7
-  resolution: "@girs/shew-0@npm:0.0.0-3.2.7"
+"@girs/polkitagent-1.0@npm:^1.0.0-3.3.0":
+  version: 1.0.0-3.3.0
+  resolution: "@girs/polkitagent-1.0@npm:1.0.0-3.3.0"
   dependencies:
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/gsk-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/gtk-4.0": "npm:^4.12.4-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-  checksum: 5b16ce7f37f7fcfa06fbd861621e123f10c0ec8cce957318140e945de64f0ad5aa148b6ca154e9755ca28eaa53f3c7c4c4456df955fbddce64478ce5d7801af1
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/polkit-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/4b9a006df245ad6df339f46a52bf0a4f8eb36761bf2562d1cc1ea8881a67b019b9b81f0cb5d717d84613ae7a25001958aaf94792530bf91864d62d430b1cfc81
   languageName: node
   linkType: hard
 
-"@girs/st-13@npm:^13.0.0-3.2.7":
-  version: 13.0.0-3.2.7
-  resolution: "@girs/st-13@npm:13.0.0-3.2.7"
+"@girs/shell-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/shell-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/atk-1.0": "npm:^2.50.0-3.2.7"
-    "@girs/cairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/cally-13": "npm:^13.0.0-3.2.7"
-    "@girs/clutter-13": "npm:^13.0.0-3.2.7"
-    "@girs/cogl-13": "npm:^13.0.0-3.2.7"
-    "@girs/coglpango-13": "npm:^13.0.0-3.2.7"
-    "@girs/freetype2-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.2.7"
-    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gl-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gmodule-2.0": "npm:^2.0.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/graphene-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.2.7"
-    "@girs/json-1.0": "npm:^1.7.1-3.2.7"
-    "@girs/meta-13": "npm:^13.0.0-3.2.7"
-    "@girs/mtk-13": "npm:^13.0.0-3.2.7"
-    "@girs/pango-1.0": "npm:^1.51.0-3.2.7"
-    "@girs/pangocairo-1.0": "npm:^1.0.0-3.2.7"
-    "@girs/xfixes-4.0": "npm:^4.0.0-3.2.7"
-    "@girs/xlib-2.0": "npm:^2.0.0-3.2.7"
-  checksum: ccdbd80ca2aab21fb88502769fb16104c1e9f2b0ac2bfc4e3b250621105a6812b4eeea76c25278fdced1151a61f595e6ce420d591874959d08cd080cc3d48731
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cally-14": "npm:^14.0.0-3.3.0"
+    "@girs/clutter-14": "npm:^14.0.0-3.3.0"
+    "@girs/cogl-14": "npm:^14.0.0-3.3.0"
+    "@girs/coglpango-14": "npm:^14.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gck-2": "npm:^4.1.0-3.3.0"
+    "@girs/gcr-4": "npm:^4.1.0-3.3.0"
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gvc-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/meta-14": "npm:^14.0.0-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/nm-1.0": "npm:^1.45.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/polkit-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/polkitagent-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/st-14": "npm:^14.0.0-3.3.0"
+    "@girs/xfixes-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/9b77715db6c23540e97b9d3d1441e28e20503844ac53d872f8d63c924c48e50c34f2d33dcfa2fb41078bc25892bf830a5490483f7060b65602c4b06f84221b62
   languageName: node
   linkType: hard
 
-"@girs/upowerglib-1.0@npm:^0.99.1-3.2.7":
-  version: 0.99.1-3.2.7
-  resolution: "@girs/upowerglib-1.0@npm:0.99.1-3.2.7"
+"@girs/shew-0@npm:^0.0.0-3.3.0":
+  version: 0.0.0-3.3.0
+  resolution: "@girs/shew-0@npm:0.0.0-3.3.0"
   dependencies:
-    "@girs/gio-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/glib-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 4feefde680c0b12c70dedded59b42bf3d1bbe44702387333cddc5b3ada1b3ef7b709b59c39c3c8679afb43f2bc1f8ff2a43065e8fb65fd1984dd4aae27924c7c
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/gsk-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/gtk-4.0": "npm:^4.12.5-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+  checksum: 10/aa70f5255de38c643720e62808b654e819f743c0e35711b44e4b04c9bf5dfcbb079e7168632cb4e3d35aa756945cd8d6f5fad133484093266dcb9034931718b1
   languageName: node
   linkType: hard
 
-"@girs/xfixes-4.0@npm:^4.0.0-3.2.7":
-  version: 4.0.0-3.2.7
-  resolution: "@girs/xfixes-4.0@npm:4.0.0-3.2.7"
+"@girs/st-13@npm:^13.0.0-3.3.0":
+  version: 13.0.0-3.3.0
+  resolution: "@girs/st-13@npm:13.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: 1f1c63dbf48372a0f8afd7dc6fccbdc196ba3f220098fd52824aeb4b6ebd0776584a0e01cef7a9fbc76ae6f03f80fd0badedd4c891f1d3fc6fe6c6081f9dbe5a
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cally-13": "npm:^13.0.0-3.3.0"
+    "@girs/clutter-13": "npm:^13.0.0-3.3.0"
+    "@girs/cogl-13": "npm:^13.0.0-3.3.0"
+    "@girs/coglpango-13": "npm:^13.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/json-1.0": "npm:^1.7.1-3.3.0"
+    "@girs/meta-13": "npm:^13.0.0-3.3.0"
+    "@girs/mtk-13": "npm:^13.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xfixes-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/37ac14e407724dedef73adbe9f6dbe2e5a69d8e7cf307f3dd460189108714461adba877b08266b3b11e5a87707c03256ded85d3b1b132e777119c296b7ff9323
   languageName: node
   linkType: hard
 
-"@girs/xlib-2.0@npm:^2.0.0-3.2.7":
-  version: 2.0.0-3.2.7
-  resolution: "@girs/xlib-2.0@npm:2.0.0-3.2.7"
+"@girs/st-14@npm:^14.0.0-3.3.0":
+  version: 14.0.0-3.3.0
+  resolution: "@girs/st-14@npm:14.0.0-3.3.0"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-  checksum: f829367c5e8ae494da39236af7ca77fa51ddb5a107193bdf7f02b625bf7b41892655ea1578311d4534338bea465338c80c5f0d328f007cc16d9c96efdaf00a87
+    "@girs/atk-1.0": "npm:^2.50.1-3.3.0"
+    "@girs/cairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/cally-14": "npm:^14.0.0-3.3.0"
+    "@girs/clutter-14": "npm:^14.0.0-3.3.0"
+    "@girs/cogl-14": "npm:^14.0.0-3.3.0"
+    "@girs/coglpango-14": "npm:^14.0.0-3.3.0"
+    "@girs/freetype2-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gdesktopenums-3.0": "npm:^3.0.0-3.3.0"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gl-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gmodule-2.0": "npm:^2.0.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/graphene-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/harfbuzz-0.0": "npm:^8.2.1-3.3.0"
+    "@girs/meta-14": "npm:^14.0.0-3.3.0"
+    "@girs/mtk-14": "npm:^14.0.0-3.3.0"
+    "@girs/pango-1.0": "npm:^1.51.0-3.3.0"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-3.3.0"
+    "@girs/xfixes-4.0": "npm:^4.0.0-3.3.0"
+    "@girs/xlib-2.0": "npm:^2.0.0-3.3.0"
+  checksum: 10/dbcc5c470bec12522bfac759a3d0c6eb22ad43f160cf46da9eb3fcea7331dc9d2817449386d86dc47722595314e1a29528742c52844a37f9e52bfe57cab4d695
+  languageName: node
+  linkType: hard
+
+"@girs/upowerglib-1.0@npm:^0.99.1-3.3.0":
+  version: 0.99.1-3.3.0
+  resolution: "@girs/upowerglib-1.0@npm:0.99.1-3.3.0"
+  dependencies:
+    "@girs/gio-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/glib-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/b980d59d2c5255877de9fc84becdc1400c11ed5174b1adffc1543a5390651911adc9d4dfdb56f53031d280fdf143af500f1163ec1540ec8cedb83ef52e1ad3b8
+  languageName: node
+  linkType: hard
+
+"@girs/xfixes-4.0@npm:^4.0.0-3.3.0":
+  version: 4.0.0-3.3.0
+  resolution: "@girs/xfixes-4.0@npm:4.0.0-3.3.0"
+  dependencies:
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/b01a84ef1a881503d4740c0059b965aeb4a165a95d891584a97ca2b3920a699a940ff9e08ad5faba7d442b5087642b0979ef2c94541e0f11de03074f25d9b4a2
+  languageName: node
+  linkType: hard
+
+"@girs/xlib-2.0@npm:^2.0.0-3.3.0":
+  version: 2.0.0-3.3.0
+  resolution: "@girs/xlib-2.0@npm:2.0.0-3.3.0"
+  dependencies:
+    "@girs/gjs": "npm:^3.3.0"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+  checksum: 10/f4186d90e8411575fc60360aa75f3de9db17fdfff58f3ffb6867d1cae94d5173893a46050e759a0a4e2f7a59e931a09fb24c9e7d389878049d9d4afd6444145f
   languageName: node
   linkType: hard
 
@@ -879,50 +1034,50 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gjsify/gnome-shell-hello-world-example@workspace:examples/hello-world"
   dependencies:
-    "@girs/gjs": "npm:^3.2.7"
+    "@girs/gjs": "npm:^3.3.0"
     "@girs/gnome-shell": "workspace:^"
-    "@girs/gobject-2.0": "npm:^2.78.0-3.2.7"
-    "@girs/st-13": "npm:^13.0.0-3.2.7"
-    adm-zip: "npm:^0.5.10"
-    esbuild: "npm:^0.19.11"
-    typescript: "npm:5.3.3"
+    "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
+    "@girs/st-13": "npm:^13.0.0-3.3.0"
+    adm-zip: "npm:^0.5.12"
+    esbuild: "npm:^0.20.2"
+    typescript: "npm:5.4.3"
   languageName: unknown
   linkType: soft
 
-"adm-zip@npm:^0.5.10":
-  version: 0.5.10
-  resolution: "adm-zip@npm:0.5.10"
-  checksum: c5ab79b77114d8277f0cbfd6cca830198d6c7ee4971f6960f48e08cd2375953b11dc71729b7f396abd51d2d6cce8c862fad185ea90cb2c84ab5161c37ed1b099
+"adm-zip@npm:^0.5.12":
+  version: 0.5.12
+  resolution: "adm-zip@npm:0.5.12"
+  checksum: 10/258bfd115f452a0b259d8199ae826896dc53d16bc0cb9cf9ca50903d30b9cc901d093c5c33db68bcfccb5b230e49bea5f72155caf43510c2bbe2d67ad83ab6d4
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.19.11":
-  version: 0.19.11
-  resolution: "esbuild@npm:0.19.11"
+"esbuild@npm:^0.20.2":
+  version: 0.20.2
+  resolution: "esbuild@npm:0.20.2"
   dependencies:
-    "@esbuild/aix-ppc64": "npm:0.19.11"
-    "@esbuild/android-arm": "npm:0.19.11"
-    "@esbuild/android-arm64": "npm:0.19.11"
-    "@esbuild/android-x64": "npm:0.19.11"
-    "@esbuild/darwin-arm64": "npm:0.19.11"
-    "@esbuild/darwin-x64": "npm:0.19.11"
-    "@esbuild/freebsd-arm64": "npm:0.19.11"
-    "@esbuild/freebsd-x64": "npm:0.19.11"
-    "@esbuild/linux-arm": "npm:0.19.11"
-    "@esbuild/linux-arm64": "npm:0.19.11"
-    "@esbuild/linux-ia32": "npm:0.19.11"
-    "@esbuild/linux-loong64": "npm:0.19.11"
-    "@esbuild/linux-mips64el": "npm:0.19.11"
-    "@esbuild/linux-ppc64": "npm:0.19.11"
-    "@esbuild/linux-riscv64": "npm:0.19.11"
-    "@esbuild/linux-s390x": "npm:0.19.11"
-    "@esbuild/linux-x64": "npm:0.19.11"
-    "@esbuild/netbsd-x64": "npm:0.19.11"
-    "@esbuild/openbsd-x64": "npm:0.19.11"
-    "@esbuild/sunos-x64": "npm:0.19.11"
-    "@esbuild/win32-arm64": "npm:0.19.11"
-    "@esbuild/win32-ia32": "npm:0.19.11"
-    "@esbuild/win32-x64": "npm:0.19.11"
+    "@esbuild/aix-ppc64": "npm:0.20.2"
+    "@esbuild/android-arm": "npm:0.20.2"
+    "@esbuild/android-arm64": "npm:0.20.2"
+    "@esbuild/android-x64": "npm:0.20.2"
+    "@esbuild/darwin-arm64": "npm:0.20.2"
+    "@esbuild/darwin-x64": "npm:0.20.2"
+    "@esbuild/freebsd-arm64": "npm:0.20.2"
+    "@esbuild/freebsd-x64": "npm:0.20.2"
+    "@esbuild/linux-arm": "npm:0.20.2"
+    "@esbuild/linux-arm64": "npm:0.20.2"
+    "@esbuild/linux-ia32": "npm:0.20.2"
+    "@esbuild/linux-loong64": "npm:0.20.2"
+    "@esbuild/linux-mips64el": "npm:0.20.2"
+    "@esbuild/linux-ppc64": "npm:0.20.2"
+    "@esbuild/linux-riscv64": "npm:0.20.2"
+    "@esbuild/linux-s390x": "npm:0.20.2"
+    "@esbuild/linux-x64": "npm:0.20.2"
+    "@esbuild/netbsd-x64": "npm:0.20.2"
+    "@esbuild/openbsd-x64": "npm:0.20.2"
+    "@esbuild/sunos-x64": "npm:0.20.2"
+    "@esbuild/win32-arm64": "npm:0.20.2"
+    "@esbuild/win32-ia32": "npm:0.20.2"
+    "@esbuild/win32-x64": "npm:0.20.2"
   dependenciesMeta:
     "@esbuild/aix-ppc64":
       optional: true
@@ -972,7 +1127,7 @@ __metadata:
       optional: true
   bin:
     esbuild: bin/esbuild
-  checksum: a40b3858c29618c8c893389372f469245a6b2d1319782af75d33d8ba5dcadfe181fcc935f8e1a907be667946384950a4cf482ebe1e79c99c932d2b8eb35a09d0
+  checksum: 10/663215ab7e599651e00d61b528a63136e1f1d397db8b9c3712540af928c9476d61da95aefa81b7a8dfc7a9fdd7616fcf08395c27be68be8c99953fb461863ce4
   languageName: node
   linkType: hard
 
@@ -980,26 +1135,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gnome-shell@workspace:."
   dependencies:
-    typescript: "npm:5.3.3"
+    typescript: "npm:5.4.3"
   languageName: unknown
   linkType: soft
 
-"typescript@npm:5.3.3":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
+"typescript@npm:5.4.3":
+  version: 5.4.3
+  resolution: "typescript@npm:5.4.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 6e4e6a14a50c222b3d14d4ea2f729e79f972fa536ac1522b91202a9a65af3605c2928c4a790a4a50aa13694d461c479ba92cedaeb1e7b190aadaa4e4b96b8e18
+  checksum: 10/de4c69f49a7ad4b1ea66a6dcc8b055ac34eb56af059a069d8988dd811c5e649be07e042e5bf573e8d0ac3ec2f30e6c999aa651cd09f6e9cbc6113749e8b6be20
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+"typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>":
+  version: 5.4.3
+  resolution: "typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: c93786fcc9a70718ba1e3819bab56064ead5817004d1b8186f8ca66165f3a2d0100fee91fa64c840dcd45f994ca5d615d8e1f566d39a7470fc1e014dbb4cf15d
+  checksum: 10/5aedd97595582b08aadb8a70e8e3ddebaf5a9c1e5ad4d6503c2fcfc15329b5cf8d01145b09913e9555683ac16c5123a96be32b6d72614098ebd42df520eed9b1
   languageName: node
   linkType: hard

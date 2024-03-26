@@ -1,5 +1,5 @@
 import type GObject from '@girs/gobject-2.0';
-import type Meta from '@girs/meta-13';
+import type Meta from '@girs/meta-14';
 
 import { Dialog, MessageDialogContent } from './dialog.js'
 

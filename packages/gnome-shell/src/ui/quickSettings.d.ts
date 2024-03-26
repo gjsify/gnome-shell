@@ -1,9 +1,9 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js
 
-import Clutter from '@girs/clutter-13';
+import Clutter from '@girs/clutter-14';
 import Gio from '@girs/gio-2.0';
 import GObject from '@girs/gobject-2.0';
-import St from '@girs/st-13';
+import St from '@girs/st-14';
 
 import * as PopupMenu from './popupMenu.js';
 import { Slider } from './slider.js';
@@ -175,26 +175,26 @@ export declare class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
      * Method for setting the container.
      */
-    vfunc_set_container(container: Clutter.Container): void;
+    vfunc_set_container(container: Clutter.Actor): void;
 
     /**
      * Method to get preferred width.
      */
-    vfunc_get_preferred_width(container: Clutter.Container, forHeight: number): [number, number];
+    vfunc_get_preferred_width(container: Clutter.Actor, forHeight: number): [number, number];
 
     /**
      * Method to get preferred height.
      */
-    vfunc_get_preferred_height(container: Clutter.Container, forWidth: number): [number, number];
+    vfunc_get_preferred_height(container: Clutter.Actor, forWidth: number): [number, number];
 
     /**
      * Method to allocate space.
      */
-    vfunc_allocate(container: Clutter.Container, box: Clutter.ActorBox): void;
+    vfunc_allocate(container: Clutter.Actor, box: Clutter.ActorBox): void;
 
-    private _getColSpan(container: Clutter.Container, child: Clutter.Actor): number;
-    private _getMaxChildWidth(container: Clutter.Container): [number, number];
-    private _getRows(container: Clutter.Container): Clutter.Actor[][];
+    private _getColSpan(container: Clutter.Actor, child: Clutter.Actor): number;
+    private _getMaxChildWidth(container: Clutter.Actor): [number, number];
+    private _getRows(container: Clutter.Actor): Clutter.Actor[][];
     private _getRowHeight(children: Clutter.Actor[]): [number, number];
 }
 

@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js
 
-import type Clutter from '@girs/clutter-13';
-import type St from '@girs/st-13';
+import type Clutter from '@girs/clutter-14';
+import type St from '@girs/st-14';
 
 export interface ButtonInfo {
     action: () => void;
@@ -66,5 +66,7 @@ export class ListSectionItem extends St.BoxLayout {
     public iconActor: St.Widget;
 
     constructor(params: { style_class?: string | null });
+    /** @hidden Defined to resolve version conflicts */
+    public _init(config?: St.BoxLayout.ConstructorProperties): void;
     public _init(params: { style_class?: string | null }): void;
 }

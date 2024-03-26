@@ -3,8 +3,8 @@
 import type GObject from '@girs/gobject-2.0';
 import type GLib from '@girs/glib-2.0';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-13';
-import type Clutter from '@girs/clutter-13';
+import type St from '@girs/st-14';
+import type Clutter from '@girs/clutter-14';
 import type GnomeDesktop from '@girs/gnomedesktop-4.0';
 
 import type { NotificationMessage } from './calendar.js';

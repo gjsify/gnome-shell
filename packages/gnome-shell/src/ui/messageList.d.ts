@@ -2,8 +2,8 @@
 
 
 
-import type St from '@girs/st-13';
-import type Clutter from '@girs/clutter-13';
+import type St from '@girs/st-14';
+import type Clutter from '@girs/clutter-14';
 
 declare function _fixMarkup(text: string, allowMarkup?: boolean): string;
 
@@ -29,17 +29,17 @@ declare class ScaleLayout extends Clutter.BinLayout {
     constructor(params?: Clutter.BinLayout.ConstructorProperties);
     public _init(params?: Clutter.BinLayout.ConstructorProperties): void;
 
-    public vfunc_get_preferred_width(container: Clutter.Container, forHeight: number): [number, number];
-    public vfunc_get_preferred_height(container: Clutter.Container, forWidth: number): [number, number];
+    public vfunc_get_preferred_width(container: Clutter.Actor, forHeight: number): [number, number];
+    public vfunc_get_preferred_height(container: Clutter.Actor, forWidth: number): [number, number];
 
-    protected _connectContainer(container: Clutter.Container): void;
+    protected _connectContainer(container: Clutter.Actor): void;
 }
 
 declare class LabelExpanderLayout extends Clutter.LayoutManager {
 
     protected _expansion: number;
     protected _expandLines: number;
-    protected _container: Clutter.Container;
+    protected _container: Clutter.Actor;
 
     public expansion: number;
     public readonly expandLines: number;
@@ -48,10 +48,10 @@ declare class LabelExpanderLayout extends Clutter.LayoutManager {
     constructor(params?: Clutter.LayoutManager.ConstructorProperties)
     _init(params?: Clutter.LayoutManager.ConstructorProperties): void;
 
-    vfunc_set_container(container: Clutter.Container): void;
-    vfunc_get_preferred_width(container: Clutter.Container, forHeight: number): [number, number];
-    vfunc_get_preferred_height(container: Clutter.Container, forWidth: number): [number, number];
-    vfunc_allocate(container: Clutter.Container, box: Clutter.ActorBox): void;
+    vfunc_set_container(container: Clutter.Actor): void;
+    vfunc_get_preferred_width(container: Clutter.Actor, forHeight: number): [number, number];
+    vfunc_get_preferred_height(container: Clutter.Actor, forWidth: number): [number, number];
+    vfunc_allocate(container: Clutter.Actor, box: Clutter.ActorBox): void;
 }
 
 export class Message extends St.Button {

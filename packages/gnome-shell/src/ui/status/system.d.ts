@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/system.js
 
-import Clutter from '@girs/clutter-13';
+import Clutter from '@girs/clutter-14';
 import Gio from '@girs/gio-2.0';
-import St from '@girs/st-13';
+import St from '@girs/st-14';
 
 import { QuickSettingsItem, QuickToggle, SystemIndicator } from '../quickSettings.js';
 

@@ -1,4 +1,4 @@
-import type Shell from "@girs/shell-13";
+import type Shell from "@girs/shell-14";
 
 declare global {
   /**
