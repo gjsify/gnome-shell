@@ -21,6 +21,13 @@ export interface Geometry {
     height: number;
 }
 
+export interface MonitorConstraintProps extends Clutter.Constraint.ConstructorProperties {
+    primary?: boolean;
+    index?: number;
+    workArea?: boolean;
+}
+
+
 export class MonitorConstraint extends Clutter.Constraint {
 
     protected _primary: boolean;
@@ -31,8 +38,8 @@ export class MonitorConstraint extends Clutter.Constraint {
     public index: number;
     public workArea: boolean;
 
-    constructor(props: Clutter.Constraint.ConstructorProperties);
-    public _init(props: Clutter.Constraint.ConstructorProperties): void;
+    constructor(props: MonitorConstraintProps);
+    public _init(props: MonitorConstraintProps): void;
 
     public vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
 }
