@@ -42,6 +42,9 @@ export namespace ExtensionManager {
   }
 }
 
+/**
+ * @version 46
+ */
 export class ExtensionManager<
   S extends Signals.SignalMap<S> = ExtensionManager.SignalMap
 > extends Signals.EventEmitter<S> {

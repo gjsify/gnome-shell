@@ -8,12 +8,21 @@ import type Meta from '@girs/meta-14';
 
 import * as Signals from '../misc/signals.js';
 
+/**
+ * @version 46
+ */
 export enum Ornament {
     NONE = 0,
     DOT = 1,
     CHECK = 2,
     HIDDEN = 3,
+    NO_DOT = 4
 }
+
+/**
+ * @version 46
+ */
+export function arrowIcon(side: St.Side): St.Icon;
 
 declare namespace PopupBaseMenuItem {
     export interface ConstructorProperties {
@@ -25,6 +34,9 @@ declare namespace PopupBaseMenuItem {
     }
 }
 
+/**
+ * @version 46
+ */
 declare class PopupBaseMenuItem extends St.BoxLayout {
     readonly actor: PopupBaseMenuItem;
     active: boolean;
@@ -55,6 +67,9 @@ export namespace PopupMenuItem {
     export interface ConstructorProperties extends PopupBaseMenuItem.ConstructorProperties {}
 }
 
+/**
+ * @version 46
+ */
 export class PopupMenuItem extends PopupBaseMenuItem {
     constructor(text: string, params?: PopupMenuItem.ConstructorProperties);
     override _init(text: string, params?: PopupMenuItem.ConstructorProperties): void;
@@ -62,6 +77,9 @@ export class PopupMenuItem extends PopupBaseMenuItem {
     readonly label: St.Label;
 }
 
+/**
+ * @version 46
+ */
 export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
     constructor(text?: string);
     override _init(text?: string): void;
@@ -69,6 +87,9 @@ export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
     readonly label: St.Label;
 }
 
+/**
+ * @version 46
+ */
 export class Switch extends St.Bin {
     state: boolean;
     constructor(state: boolean);
@@ -94,6 +115,9 @@ export namespace PopupSwitchMenuItem {
     export interface ConstructorProperties extends PopupBaseMenuItem.ConstructorProperties {}
 }
 
+/**
+ * @version 46
+ */
 export class PopupSwitchMenuItem extends PopupBaseMenuItem {
     readonly state: boolean;
 
@@ -111,11 +135,15 @@ export namespace PopupImageMenuItem {
     export interface ConstructorProperties extends PopupBaseMenuItem.ConstructorProperties {}
 }
 
+/**
+ * @version 46
+ */
 export class PopupImageMenuItem extends PopupBaseMenuItem {
-    constructor(text: string, icon: Gio.Icon, params?: PopupImageMenuItem.ConstructorProperties);
-    override _init(text: string, icon: Gio.Icon, params?: PopupImageMenuItem.ConstructorProperties): void;
 
-    setIcon(icon: Gio.Icon): void;
+    constructor(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProperties);
+    override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProperties): void;
+
+    setIcon(icon: Gio.Icon | string): void;
 }
 
 export namespace PopupMenuBase {
@@ -129,6 +157,9 @@ export namespace PopupMenuBase {
         PopupBaseMenuItem
 }
 
+/**
+ * @version 46
+ */
 export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
     protected constructor(sourceActor: St.Widget, styleClass?: string);
     readonly sourceActor: St.Widget;
@@ -158,6 +189,9 @@ export namespace PopupMenu {
     interface SignalMap extends PopupMenuBase.SignalMap {}
 }
 
+/**
+ * @version 46
+ */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     constructor(sourceActor: St.Widget, arrowAlignment: number, arrowSide: St.Side);
 
@@ -168,6 +202,9 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
     destroy(): void;
 }
 
+/**
+ * @version 46
+ */
 export class PopupDummyMenu extends Signals.EventEmitter {
     constructor(sourceActor: St.Widget);
 
@@ -208,6 +245,8 @@ export namespace PopupMenuSection {
  * (you can add and remove items, you can destroy it, you
  * can add it to another menu), but is completely transparent
  * to the user
+ *
+ * @version 46
  */
 export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S>{
     constructor();
@@ -216,6 +255,9 @@ export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.
     close(): void;
 }
 
+/**
+ * @version 46
+ */
 export class PopupSubMenuMenuItem extends PopupBaseMenuItem {
     readonly menu: PopupSubMenu;
 
@@ -235,6 +277,9 @@ export namespace PopupMenuManager {
     }
 }
 
+/**
+ * @version 46
+ */
 export class PopupMenuManager {
     constructor(owner: any, grabParams?: PopupMenuManager.ConstructorProperties);
 

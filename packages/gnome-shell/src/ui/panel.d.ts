@@ -7,6 +7,9 @@ import type Meta from '@girs/meta-14';
 import type { Button } from './panelMenu.js';
 import type { DateMenuButton } from "./dateMenu.js";
 
+/**
+ * @version 46
+ */
 export class Panel extends St.Widget {
 
     statusArea: {
