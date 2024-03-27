@@ -1,6 +1,6 @@
 {
   "name": "@gjsify/gnome-shell-hello-world-example",
-  "version": "46.0.0-beta1",
+  "version": "46.0.0-beta2",
   "description": "Simple Gnome Shell Hello World Extension example",
   "type": "module",
   "main": "dist/extension.js",
