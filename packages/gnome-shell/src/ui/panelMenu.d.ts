@@ -33,15 +33,3 @@ export class Button extends ButtonBox {
     setSensitive(sensitive: boolean): void;
     setMenu(menu: PopupMenu | PopupDummyMenu): void;
 }
-
-/**
- * SystemIndicator:
- * This class manages one system indicator, which are the icons
- * that you see at the top right. A system indicator is composed
- * of an icon and a menu section, which will be composed into the
- * aggregate menu.
- */
-export class SystemIndicator extends St.BoxLayout {
-    constructor();
-    _init(): void;
-}
