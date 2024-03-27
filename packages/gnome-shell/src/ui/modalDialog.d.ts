@@ -67,7 +67,6 @@ export class ModalDialog extends St.Widget {
      * e.g., if a user clicked "Log Out" then the dialog should go away
      * immediately, but the lightbox should remain until the logout is
      * complete.
-     * @param timestamp 
      */
     protected _fadeOutDialog(timestamp: number): void;
 
@@ -75,14 +74,14 @@ export class ModalDialog extends St.Widget {
     public setButtons(buttons: any[]): void;
     public addButton(buttonInfo: any): void;
     public setInitialKeyFocus(actor: St.Widget): void;
-    public open(timestamp: number, onPrimary: boolean): boolean;
-    public close(timestamp: number): boolean;
+    public open(): boolean;
+    public close(): boolean;
     /**
      * Drop modal status without closing the dialog; this makes the
      * dialog insensitive as well, so it needs to be followed shortly
      * by either a close() or a pushModal()
      * @param timestamp 
      */
-    public popModal(timestamp: number): void;
-    public pushModal(timestamp: number): void;
+    public popModal(): void;
+    public pushModal(): void;
 }
