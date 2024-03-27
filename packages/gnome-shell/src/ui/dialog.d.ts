@@ -32,12 +32,17 @@ export class Dialog extends St.Widget {
     protected _setInitialKeyFocus(actor: St.Widget): void;
 }
 
+export interface MessageDialogContentProps extends St.BoxLayout.ConstructorProperties{
+    title?: string;
+    description?: string;
+}
+
 export class MessageDialogContent extends St.BoxLayout {
     public title: string;
     public description: string;
 
-    constructor(params: St.BoxLayout.ConstructorProperties);
-    public _init(params: St.BoxLayout.ConstructorProperties): void;
+    constructor(params: MessageDialogContentProps);
+    public _init(params: MessageDialogContentProps): void;
 
     protected _onDestroy(): void;
     protected _updateTitleStyle(): void;
