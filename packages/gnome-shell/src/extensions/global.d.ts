@@ -5,6 +5,7 @@ declare global {
    * Global shell object created by GNOME Shell on startup.
    *
    * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/8a8539ee6766058b39d0a5c0961a08f76799f4da/js/ui/environment.js#L253
+   * @version 46
    */
   const global: Shell.Global;
 
