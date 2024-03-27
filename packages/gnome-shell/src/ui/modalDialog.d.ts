@@ -4,7 +4,7 @@ import type St from '@girs/st-14';
 import type Shell from '@girs/shell-14';
 
 import type { MonitorConstraint } from './layout.js';
-import type { Dialog } from './dialog.js';
+import type { ButtonInfo, Dialog } from './dialog.js';
 
 export enum State {
     OPENED = 0,
@@ -71,8 +71,8 @@ export class ModalDialog extends St.Widget {
     protected _fadeOutDialog(timestamp: number): void;
 
     public clearButtons(): void;
-    public setButtons(buttons: any[]): void;
-    public addButton(buttonInfo: any): void;
+    public setButtons(buttons: ButtonInfo[]): void;
+    public addButton(buttonInfo: ButtonInfo): St.Button;
     public setInitialKeyFocus(actor: St.Widget): void;
     public open(): boolean;
     public close(): boolean;

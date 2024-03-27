@@ -24,7 +24,7 @@ export class Dialog extends St.Widget {
     public _init(parentActor: St.Widget, styleClass?: string | null): void;
     public makeInactive(): void;
     public vfunc_event(event: Clutter.Event): boolean;
-    public addButton(buttonInfo: ButtonInfo): void;
+    public addButton(buttonInfo: ButtonInfo): St.Button;
     public clearButtons(): void;
 
     protected _createDialog(): void;
