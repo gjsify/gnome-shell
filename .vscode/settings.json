@@ -10,5 +10,6 @@
   // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "cSpell.words": [
     "girs"
-  ]
+  ],
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
 }
