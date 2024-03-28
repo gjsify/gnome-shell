@@ -2,10 +2,14 @@
 
 import type St from '@girs/st-14';
 import type Shell from '@girs/shell-14';
+import type Clutter from '@girs/clutter-14';
 
 import type { MonitorConstraint } from './layout.js';
-import type { Dialog } from './dialog.js';
+import type { ButtonInfo, Dialog } from './dialog.js';
 
+/**
+ * @version 46
+ */
 export enum State {
     OPENED = 0,
     CLOSED = 1,
@@ -14,8 +18,11 @@ export enum State {
     FADED_OUT = 4,
 }
 
+/**
+ * @version 46
+ */
 export namespace ModalDialog {
-    export interface ConstructorProperties {
+    export interface ConstructorProperties extends St.Widget.ConstructorProperties {
         shellReactive?: boolean;
         styleClass?: string | null;
         actionMode?: Shell.ActionMode;
@@ -25,8 +32,10 @@ export namespace ModalDialog {
     }
 }
 
+/**
+ * @version 46
+ */
 export class ModalDialog extends St.Widget {
-
     protected _state: State;
     protected _hasModal: boolean;
     protected _actionMode: Shell.ActionMode;
@@ -46,10 +55,8 @@ export class ModalDialog extends St.Widget {
     public buttonLayout: Dialog['buttonLayout'];
     public state: State;
 
-    constructor(params?: ModalDialog.ConstructorProperties)
+    constructor(params?: ModalDialog.ConstructorProperties);
 
-    /** @hidden */
-    public _init(params?: St.Widget.ConstructorProperties): void;
     public _init(params?: ModalDialog.ConstructorProperties): void;
 
     protected _setState(state: State): void;
@@ -67,22 +74,24 @@ export class ModalDialog extends St.Widget {
      * e.g., if a user clicked "Log Out" then the dialog should go away
      * immediately, but the lightbox should remain until the logout is
      * complete.
-     * @param timestamp 
      */
     protected _fadeOutDialog(timestamp: number): void;
 
+    public vfunc_key_press_event(event: Clutter.Event): boolean;
+    public vfunc_captured_event(event: Clutter.Event): boolean;
+
     public clearButtons(): void;
-    public setButtons(buttons: any[]): void;
-    public addButton(buttonInfo: any): void;
+    public setButtons(buttons: ButtonInfo[]): void;
+    public addButton(buttonInfo: ButtonInfo): St.Button;
     public setInitialKeyFocus(actor: St.Widget): void;
-    public open(timestamp: number, onPrimary: boolean): boolean;
-    public close(timestamp: number): boolean;
+    public open(): boolean;
+    //note: upstream has timestamp as paramater here, but it only will be used to call popModal, which doesn't accept that paramater anymore, so this is just a bug upstream
+    public close(): boolean;
     /**
      * Drop modal status without closing the dialog; this makes the
      * dialog insensitive as well, so it needs to be followed shortly
      * by either a close() or a pushModal()
-     * @param timestamp 
      */
-    public popModal(timestamp: number): void;
-    public pushModal(timestamp: number): void;
+    public popModal(): void;
+    public pushModal(): void;
 }

@@ -490,6 +490,17 @@
       }
     },
     "./ui/layout/ambient": "./dist/ui/layout-ambient.d.ts",
+    "./ui/lightbox": {
+      "import": {
+        "types": "./dist/ui/lightbox.d.ts",
+        "default": "./dist/ui/lightbox.js"
+      },
+      "require": {
+        "types": "./dist/ui/lightbox.d.ts",
+        "default": "./dist/ui/lightbox.cjs"
+      }
+    },
+    "./ui/lightbox/ambient": "./dist/ui/lightbox-ambient.d.ts",
     "./ui/main": {
       "import": {
         "types": "./dist/ui/main.d.ts",
