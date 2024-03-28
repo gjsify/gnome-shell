@@ -221,6 +221,9 @@ export namespace PopupSubMenu {
     interface SignalMap extends PopupMenuBase.SignalMap {}
 }
 
+/**
+ * @version 46
+ */
 export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMap> extends PopupMenuBase<S> {
     actor: St.ScrollView;
 
