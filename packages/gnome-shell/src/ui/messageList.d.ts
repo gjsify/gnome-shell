@@ -1,13 +1,20 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js
 
-
-
+import type GObject from "@girs/gobject-2.0";
+import type Gio from "@girs/gio-2.0";
+import type GLib from "@girs/glib-2.0";
 import type St from '@girs/st-14';
 import type Clutter from '@girs/clutter-14';
 
-declare function _fixMarkup(text: string, allowMarkup?: boolean): string;
+/**
+ * @version 46
+ */
+export function _fixMarkup(text: string, allowMarkup?: boolean): string;
 
-declare class URLHighlighter extends St.Label {
+/**
+ * @version 46
+ */
+export class URLHighlighter extends St.Label {
 
     constructor(text?: string, lineWrap?: boolean, allowMarkup?: boolean);
 
@@ -19,89 +26,89 @@ declare class URLHighlighter extends St.Label {
     public vfunc_button_release_event(buttonEvent: Clutter.ButtonEvent): boolean;
     public vfunc_motion_event(motionEvent: Clutter.MotionEvent): boolean;
     public vfunc_leave_event(crossingEvent: Clutter.CrossingEvent): boolean;
-    public setMarkup(text: string, allowMarkup?: boolean): void;
+    public setMarkup(text?: string, allowMarkup?: boolean): void;
 
     protected _highlightUrls(): void;
     protected _findUrlAtPos(event: Clutter.Event): [number, number];
 }
 
-declare class ScaleLayout extends Clutter.BinLayout {
-    constructor(params?: Clutter.BinLayout.ConstructorProperties);
-    public _init(params?: Clutter.BinLayout.ConstructorProperties): void;
+export declare namespace Source {
+    interface ObjectProperties {
+        title: string;
+        icon: Gio.Icon;
+        iconName: string | null;
+    }
 
-    public vfunc_get_preferred_width(container: Clutter.Actor, forHeight: number): [number, number];
-    public vfunc_get_preferred_height(container: Clutter.Actor, forWidth: number): [number, number];
-
-    protected _connectContainer(container: Clutter.Actor): void;
+    type ConstructorProperties = Partial<Source.ObjectProperties> & GObject.Object.ConstructorProperties;
 }
 
-declare class LabelExpanderLayout extends Clutter.LayoutManager {
+/**
+ * @version 46
+ */
+export class Source extends GObject.Object implements Source.ObjectProperties {
+    constructor(params?: Source.ConstructorProperties);
 
-    protected _expansion: number;
-    protected _expandLines: number;
-    protected _container: Clutter.Actor;
+    public title: string;
+    public icon: Gio.Icon;
 
-    public expansion: number;
-    public readonly expandLines: number;
+    public get iconName(): string | null;
 
-
-    constructor(params?: Clutter.LayoutManager.ConstructorProperties)
-    _init(params?: Clutter.LayoutManager.ConstructorProperties): void;
-
-    vfunc_set_container(container: Clutter.Actor): void;
-    vfunc_get_preferred_width(container: Clutter.Actor, forHeight: number): [number, number];
-    vfunc_get_preferred_height(container: Clutter.Actor, forWidth: number): [number, number];
-    vfunc_allocate(container: Clutter.Actor, box: Clutter.ActorBox): void;
+    public set iconName(iconName: string);
 }
 
+/**
+ * @version 46
+ */
 export class Message extends St.Button {
-    constructor(title: string, body: string);
-    /** @hidden */
-    public _init(params?: St.Button.ConstructorProperties): void;
-    public _init(title: string, body: string): void;
+
+    constructor(source: Source);
+
+    public title: string | null;
+    public body: string | null;
+    public useBodyMarkup: boolean;
+    public icon: Gio.Icon | null;
+    public datetime: GLib.DateTime | null;
+
+    public expanded: boolean;
 
     public close(): void;
-    public setIcon(actor: St.Widget): void;
-    public setSecondaryActor(actor: St.Widget): void;
-    public setTitle(text: string): void;
-    public setBody(text: string): void;
-    public setUseBodyMarkup(enable: boolean): void;
-    public setActionArea(actor: St.Widget): void;
+
+    public setActionArea(actor: Clutter.Actor): void;
+
     public addMediaControl(iconName: string, callback: () => void): void;
-    public setExpandedBody(actor: St.Widget): void;
-    public setExpandedLines(nLines: number): void;
+
     public expand(animate?: boolean): void;
+
     public unexpand(animate?: boolean): void;
+
     public canClose(): boolean;
+
     public vfunc_key_press_event(keyEvent: Clutter.KeyEvent): boolean;
 
-    protected _sync(): void;
     protected _onDestroy(): void;
 }
 
+/**
+ * @version 46
+ */
 export class MessageListSection extends St.BoxLayout {
 
-    protected _list: St.BoxLayout;
-    protected _empty: boolean;
-    protected _canClear: boolean;
-    protected readonly _messages: St.Widget[];
-
-    public readonly empty: boolean;
     public readonly canClear: boolean;
+    public readonly empty: boolean;
+
     public readonly allowed: boolean;
 
     constructor();
-    /** @hidden */
-    public _init(params?: St.BoxLayout.ConstructorProperties): void;
-    public _init(): void;
 
     public addMessage(message: Message, animate?: boolean): void;
+
     public addMessageAtIndex(message: Message, index: number, animate?: boolean): void;
+
     public moveMessage(message: Message, newIndex: number, animate?: boolean): void;
+
     public removeMessage(message: Message, animate?: boolean): void;
+
     public clear(): void;
 
     protected _onKeyFocusIn(messageActor: St.Widget): void;
-    protected _shouldShow(): boolean;
-    protected _sync(): void;
 }

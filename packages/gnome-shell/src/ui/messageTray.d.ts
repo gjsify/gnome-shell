@@ -6,16 +6,20 @@ import type Gio from '@girs/gio-2.0';
 import type St from '@girs/st-14';
 import type Clutter from '@girs/clutter-14';
 import type GnomeDesktop from '@girs/gnomedesktop-4.0';
+import type Shell from "@girs/shell-14";
 
 import type { NotificationMessage } from './calendar.js';
 import type { Presence, PresenceStatus } from '../misc/gnomeSession.js';
+import type * as MessageList from './messageList.js';
 
 /**
- * We delay hiding of the tray if the mouse is within `MOUSE_LEFT_ACTOR_THRESHOLD`
- * range from the point where it left the tray.
+ * @version 46
  */
-declare const MOUSE_LEFT_ACTOR_THRESHOLD: number;
+export const ANIMATION_TIME: number;
 
+/**
+ * @version 46
+ */
 export enum State {
     HIDDEN =  0,
     SHOWING = 1,
@@ -31,6 +35,8 @@ export enum State {
  * notifications that were requested to be destroyed by the associated source,
  * and REPLACED for notifications that were destroyed as a consequence of a
  * newer version having replaced them.
+ *
+ * @version 46
  */
 export enum NotificationDestroyedReason {
     EXPIRED = 1,
@@ -44,6 +50,8 @@ export enum NotificationDestroyedReason {
  * urgency values map to the corresponding values for the notifications received
  * through the notification daemon. HIGH urgency value is used for chats received
  * through the Telepathy client.
+ *
+ * @version 46
  */
 export enum Urgency {
     LOW = 0,
@@ -59,56 +67,47 @@ export enum Urgency {
  * contain information private to the physical system (for example, battery
  * status) and hence the same for every user. This affects whether the content
  * of a notification is shown on the lock screen.
+ *
+ * @version 46
  */
 export enum PrivacyScope {
     USER = 0,
     SYSTEM = 1,
 }
 
-declare class FocusGrabber {
-
-    protected _actor: Clutter.Actor;
-    protected _prevKeyFocusActor: Clutter.Actor | null;
-    protected _focused: boolean;
-
-    constructor(actor: Clutter.Actor);
-
-    public grabFocus(): void;
-    public ungrabFocus(): void;
-
-    protected _focusUngrabbed(): boolean;
-    protected _focusActorChanged(): void;
-}
-
 /**
  * An object that holds all bits of configurable policy related to a notification
  * source, such as whether to play sound or honour the critical bit.
- * 
+ *
  * A notification without a policy object will inherit the default one.
+ *
+ * @version 46
  */
 export abstract class NotificationPolicy extends GObject.Object {
+    readonly enable: boolean;
+    readonly enableSound: boolean;
+    readonly showBanners: boolean;
+    readonly forceExpanded: boolean;
+    readonly showInLockScreen: boolean;
+    readonly detailsInLockScreen: boolean;
 
-    public readonly enable: boolean;
-    public readonly enableSound: boolean;
-    public readonly showBanners: boolean;
-    public readonly forceExpanded: boolean;
-    public readonly showInLockScreen: boolean;
-    public readonly detailsInLockScreen: boolean;
+    public static newForApp(app: Shell.App): NotificationPolicy;
 
     /**
      * Do nothing for the default policy. These methods are only useful for the
      * GSettings policy.
      */
-    protected store(): void;
-    protected destroy(): void;
+    store(): void;
+
+    destroy(): void;
 }
 
+/**
+ * @version 46
+ */
 export class NotificationGenericPolicy extends NotificationPolicy {
 
     public id: string;
-
-    public readonly showBanners: boolean;
-    public readonly showInLockScreen: boolean;
 
     protected _masterSettings: Gio.Settings;
 
@@ -120,14 +119,11 @@ export class NotificationGenericPolicy extends NotificationPolicy {
     protected _changed(settings: Gio.Settings, key: string): void;
 }
 
+/**
+ * @version 46
+ */
 export class NotificationApplicationPolicy extends NotificationPolicy {
     public id: string;
-    public readonly enable: boolean;
-    public readonly enableSound: boolean;
-    public readonly showBanners: boolean;
-    public readonly forceExpanded: boolean;
-    public readonly showInLockScreen: boolean;
-    public readonly detailsInLockScreen: boolean;
 
     protected _masterSettings: Gio.Settings;
     protected _canonicalId: string;
@@ -143,6 +139,26 @@ export class NotificationApplicationPolicy extends NotificationPolicy {
     protected _canonicalizeId(id: string): string;
 }
 
+/**
+ * @version 46
+ */
+export class Sound extends GObject.Object {
+    constructor(file: Gio.File | null | undefined, themedName?: string);
+
+    public play(): void
+}
+
+/**
+ * @version 46
+ */
+export class Action extends GObject.Object {
+    constructor(label: string, callback: () => void);
+
+    public readonly label: string;
+
+    public activate(): void;
+}
+
 export namespace Notification {
     export interface Params {
         gicon?: Gio.Icon | null;
@@ -155,205 +171,118 @@ export namespace Notification {
     }
 }
 
-export class Notification extends GObject.Object {
-
-    public source: Source;
-    public title: string;
-    public urgency: Urgency;
-    public isTransient: boolean;
-    public privacyScope: PrivacyScope;
-    public forFeedback: boolean;
-    public bannerBodyText: string | null;
-    public bannerBodyMarkup: boolean;
-    public actions: string[];
-
-    protected _soundName: string | null;
-    protected _soundFile: Gio.File | null;
-    protected _soundPlayed: boolean;
-
-    constructor(source: Source, title: string, banner: string, params?: Notification.Params);
-    /** @hidden */
-    override _init(config?: GObject.Object.ConstructorProperties): void;
-    public _init(source: Source, title: string, banner: string, params?: Notification.Params): void;
-
-    /**
-     * Updates the notification by regenerating its icon and updating
-     * the title/banner. If @params.clear is %true, it will also
-     * remove any additional actors/action buttons previously added.
-     * 
-     * @param title the new title
-     * @param banner the new banner
-     * @param params as in the Notification constructor
-     */
-    public update(title: string, banner: string, params?: Notification.Params): void;
-
-    /**
-     * @param label the label for the action's button
-     * @param callback the callback for the action
-     */
-    public addAction(label: string, callback: () => void): void;
-
-    public setUrgency(urgency: Urgency): void;
-
-    public setResident(resident: boolean): void;
-
-    public setTransient(isTransient: boolean): void;
-
-    public setForFeedback(forFeedback: boolean): void;
-
-    public setPrivacyScope(privacyScope: PrivacyScope): void;
-
-    public playSound(): void;
-
-    /**
-     * Allow customizing the banner UI:
-     * the default implementation defers the creation to
-     * the source (which will create a {@link NotificationBanner}),
-     * so customization can be done by subclassing either
-     * Notification or Source
-     */
-    public createBanner(): NotificationBanner;
-
-    public activate(): void;
-
-    public destroy(reason?: NotificationDestroyedReason): void;
+export declare namespace Source {
+    export interface ConstructorProperties extends MessageList.Source.ConstructorProperties {
+        policy?: NotificationPolicy
+    }
 }
 
-declare class NotificationBanner extends NotificationMessage {
-    protected _buttonBox: St.BoxLayout | null;
+/**
+ * @version 46
+ */
+export class Source extends MessageList.Source {
+    constructor(params?: Source.ConstructorProperties);
 
-    public can_focus: boolean;
-    
-    constructor(notification: Notification);
+    public readonly notifications: readonly Notification[];
 
-    /** @hidden */
-    override _init(params?: St.Button.ConstructorProperties): void;
-    /** @hidden */
-    override _init(title: string, body: string): void;
-    public _init(notification: Notification): void;
+    public policy: NotificationPolicy;
 
-    public addButton(button: St.Button, callback: () => void): void;
-    public addAction(label: string, callback: () => void): void;
+    public readonly count: number
 
-    protected _onUpdated(n: Notification, clear?: boolean): void;
-    protected _addActions(): void;
-    protected _addSecondaryIcon(): void;
-}
+    public readonly unseenCount: number;
 
-export class SourceActor extends St.Widget {
+    public readonly countVisible: number;
 
-    protected _source: Source;
-    protected _size: number;
-    protected _iconBin: St.Bin;
-
-    constructor(source: Source, size: number);
-    /** @hidden */
-    public _init(params?: St.Widget.ConstructorProperties): void;
-    public _init(source: Source, size: number): void;
-
-    public setIcon(icon: Gio.Icon): void;
-
-    protected _updateIcon(): void;
-}
-
-export class Source extends GObject.Object {
-
-    _policy: NotificationPolicy;
-
-    SOURCE_ICON_SIZE: number;
-    iconName: string;
-    isChat: boolean;
-    notifications: Notification[];
-    policy: NotificationPolicy;
-    title: string;
-    readonly count: number;
-    readonly unseenCount: number;
-    readonly countVisible: boolean;
-    readonly narrowestPrivacyScope: PrivacyScope;
-
-
-    constructor(title: string, iconName: string);
-    /** @hidden */
-    public _init(config?: GObject.Object.ConstructorProperties): void;
-    public _init(title: string, iconName: string): void;
-    
     public countUpdated(): void;
-    
-    public setTitle(newTitle: string): void;
-    
-    public createBanner(notification: Notification): NotificationBanner;
 
-    /**
-     * Called to create a new icon actor.
-     * Provides a sane default implementation, override if you need
-     * something more fancy.
-     * @param size the size of the icon
-     */
-    public createIcon(size: number): St.Icon;
+    public readonly narrowestPrivacyScope: PrivacyScope;
 
-    public getIcon(): Gio.Icon;
-
-    public pushNotification(notification: Notification): void;
-
-    public showNotification(notification: Notification): void;
+    public addNotification(notification: Notification): void
 
     public destroy(reason: NotificationDestroyedReason): void;
 
-    public iconUpdated(): void;
-
-    /** To be overridden by subclasses */
     public open(): void;
 
     public destroyNonResidentNotifications(): void;
-
-    protected _createPolicy(): NotificationPolicy;
-    protected _onNotificationDestroy(notification: Notification): void;
 }
+
+export declare namespace Notification {
+    export interface ObjectProperties {
+        source: Source | null;
+        title: string | null;
+        body: string | null;
+        useBodyMarkup: boolean;
+        gicon: Gio.Icon | null;
+        iconName: string | null;
+        sound: Sound | null;
+        datetime: GLib.DateTime | null;
+        privacyScope: PrivacyScope;
+        urgency: Urgency;
+        acknowledged: boolean;
+        resident: boolean;
+        forFeedback: boolean;
+        isTransient: boolean;
+    }
+
+    export type ConstructorProperties = Partial<ObjectProperties> & GObject.Object.ConstructorProperties;
+}
+
+/**
+ * @version 46
+ */
+export class Notification extends GObject.Object implements Notification.ObjectProperties {
+    constructor(params?: Notification.ConstructorProperties);
+
+    readonly actions: Action[];
+
+    source: Source | null;
+    title: string | null;
+    body: string | null;
+    useBodyMarkup: boolean;
+    gicon: Gio.Icon | null;
+    sound: Sound | null;
+    datetime: GLib.DateTime;
+    acknowledged: boolean;
+    resident: boolean;
+    forFeedback: boolean;
+    isTransient: boolean;
+
+    get iconName(): string | null;
+    set iconName(iconName: string);
+
+    privacyScope: PrivacyScope;
+
+    urgency: Urgency;
+
+    /**
+     *
+     * @param label the label for the action's button
+     * @param callback the callback for the action
+     */
+    addAction(label: string, callback: () => void): void;
+
+    clearActions(): void;
+
+    playSound(): void;
+
+    activate(): void;
+
+    destroy(reason?: NotificationDestroyedReason): void;
+}
+
 
 export class MessageTray extends St.Widget {
 
-    protected _presence: ReturnType<typeof Presence>;
-    protected _busy: boolean;
-    protected _bannerBlocked: boolean;
-    protected _bannerBin: St.Widget;
-    protected _notificationFocusGrabber: FocusGrabber;
-    protected _notificationQueue: Notification[];
-    protected _notification: Notification | null;
-    protected _banner: NotificationBanner | null;
-    protected _userActiveWhileNotificationShown: boolean;
-    protected _useLongerNotificationLeftTimeout: boolean;
-
-    /**
-     * pointerInNotification is sort of a misnomer -- it tracks whether
-     * a message tray notification should expand. The value is
-     * partially driven by the hover state of the notification, but has
-     * a lot of complex state related to timeouts and the current
-     * state of the pointer when a notification pops up.
-     */
-    protected _pointerInNotification: boolean;
-
-    /**
-     * This tracks this._bannerBin.hover and is used to fizzle
-     * out non-changing hover notifications in onNotificationHoverChanged.
-     */
-    protected _notificationHovered: boolean;
-
-    protected _notificationState: State;
-    protected _notificationTimeoutId: number;
-    protected _notificationRemoved: boolean;
-    protected _sources: Set<Source>;
+    constructor()
 
     public idleMonitor: GnomeDesktop.IdleMonitor;
+
     public bannerAlignment: number;
+
     public readonly queueCount: number;
+
     public bannerBlocked: boolean;
 
-    constructor();
-    /** @hidden */
-    public _init(params?: St.Widget.ConstructorProperties): void;
-    public _init(): void;
-
-    /** @hidden */
     public contains(descendant: Clutter.Actor): boolean
     public contains(source: Source): boolean;
     public add(source: Source): void;
@@ -362,18 +291,18 @@ export class MessageTray extends St.Widget {
     protected _sessionUpdated(): void;
     protected _onDragBegin(): void;
     protected _onDragEnd(): void;
+
     protected _onNotificationKeyRelease(actor: St.Widget, event: Clutter.Event): boolean;
     protected _expireNotification(): void;
     protected _addSource(source: Source): void;
     protected _removeSource(source: Source): void;
     protected _onSourceEnableChanged(policy: NotificationPolicy, source: Source): void;
-    protected _onNotificationDestroy(notification: Notification): void;
+    protected _onNotificationRemoved(source: Source, notification: Notification): void;
     protected _onNotificationShow(_source: Source, notification: Notification): void;
     protected _resetNotificationLeftTimeout(): void;
     protected _onNotificationHoverChanged(): void;
     protected _onStatusChanged(status: PresenceStatus): void;
     protected _onNotificationLeftTimeout(): void;
-    protected _escapeTray(): void;
 
     /**
      * All of the logic for what happens when occurs here; the various
@@ -397,11 +326,7 @@ export class MessageTray extends St.Widget {
     protected _ensureBannerFocused(): void;
 }
 
-export class SystemNotificationSource extends Source {
-    constructor(title: string, iconName: string);
-    /** @hidden */
-    public _init(title: string, iconName: string): void;
-    public _init(): void;
-
-    public open(): void;
-}
+/**
+ * The {Source} that should be used to send system notifications.
+ */
+export function getSystemSource(): Source;
