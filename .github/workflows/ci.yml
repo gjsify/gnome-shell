@@ -33,6 +33,8 @@ jobs:
     - run: yarn install
     - name: Build Types
       run: yarn run build:types
+    - name: Validate Formatting
+      run: yarn run prettier:check
     - name: Validate Types
       run: NODE_OPTIONS=--max_old_space_size=9216 yarn run validate:types
     - name: Build Example
