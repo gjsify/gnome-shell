@@ -22,7 +22,7 @@ export enum State {
  * @version 46
  */
 export namespace ModalDialog {
-    export interface ConstructorProperties {
+    export interface ConstructorProperties extends St.Widget.ConstructorProperties {
         shellReactive?: boolean;
         styleClass?: string | null;
         actionMode?: Shell.ActionMode;
@@ -36,7 +36,6 @@ export namespace ModalDialog {
  * @version 46
  */
 export class ModalDialog extends St.Widget {
-
     protected _state: State;
     protected _hasModal: boolean;
     protected _actionMode: Shell.ActionMode;
@@ -56,10 +55,8 @@ export class ModalDialog extends St.Widget {
     public buttonLayout: Dialog['buttonLayout'];
     public state: State;
 
-    constructor(params?: ModalDialog.ConstructorProperties)
+    constructor(params?: ModalDialog.ConstructorProperties);
 
-    /** @hidden */
-    public _init(params?: St.Widget.ConstructorProperties): void;
     public _init(params?: ModalDialog.ConstructorProperties): void;
 
     protected _setState(state: State): void;

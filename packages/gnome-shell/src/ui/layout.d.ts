@@ -20,18 +20,22 @@ export interface Geometry {
     width: number;
     height: number;
 }
+/**
+ * @version 46
+ */
 
-export interface MonitorConstraintProps extends Clutter.Constraint.ConstructorProperties {
-    primary?: boolean;
-    index?: number;
-    workArea?: boolean;
+export namespace MonitorConstraint {
+    export interface ConstructorProperties extends Clutter.Constraint.ConstructorProperties {
+        primary?: boolean;
+        index?: number;
+        workArea?: boolean;
+    }
 }
 
 /**
  * @version 46
  */
 export class MonitorConstraint extends Clutter.Constraint {
-
     protected _primary: boolean;
     protected _index: number;
     protected _workArea: boolean;
@@ -40,19 +44,17 @@ export class MonitorConstraint extends Clutter.Constraint {
     public index: number;
     public workArea: boolean;
 
-    constructor(props: MonitorConstraintProps);
-    public _init(props: MonitorConstraintProps): void;
+    constructor(props: MonitorConstraint.ConstructorProperties);
+    public _init(props: MonitorConstraint.ConstructorProperties): void;
 
     public vfunc_set_actor(actor: Clutter.Actor): void;
     public vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
 }
 
-
 /**
  * @version 46
  */
 declare class Monitor {
-
     public index: number;
     public geometryScale: number;
     public x: number;
@@ -90,7 +92,6 @@ declare class ScreenTransition extends Clutter.Actor {
  * overview.
  */
 declare class HotCorner extends Clutter.Actor {
-
     protected _entered: boolean;
     protected _monitor: Monitor;
     protected _x: number;
@@ -114,13 +115,16 @@ declare class HotCorner extends Clutter.Actor {
 }
 
 export class LayoutManager extends GObject.Object {
-
     protected _rtl: boolean;
     protected _keyboardIndex: number;
     protected _rightPanelBarrier: Meta.Barrier | null;
     protected _inOverview: boolean;
     protected _updateRegionIdle: number;
-    protected _trackedActors: { trackFullscreen: boolean; affectsStruts: boolean; affectsInputRegion: boolean; }[];
+    protected _trackedActors: {
+        trackFullscreen: boolean;
+        affectsStruts: boolean;
+        affectsInputRegion: boolean;
+    }[];
     protected _keyboardHeightNotifyId: number;
     protected _backgroundGroup: Meta.BackgroundGroup;
     protected _interfaceSettings: Gio.Settings;
@@ -165,12 +169,12 @@ export class LayoutManager extends GObject.Object {
      * function before you show the menu to ensure it is at the right
      * position and has the right size.
      * @param x
-     * @param y 
-     * @param width 
-     * @param height 
+     * @param y
+     * @param width
+     * @param height
      */
     public setDummyCursorGeometry(x: number, y: number, width: number, height: number): void;
-    
+
     /**
      * Adds `actor` to the chrome, and (unless `affectsInputRegion` in
      * `params` is `false`) extends the input region to include it.
@@ -190,27 +194,48 @@ export class LayoutManager extends GObject.Object {
      * @param actor An actor to add to the chrome
      * @param params Additional params
      */
-    public addChrome(actor: Clutter.Actor, params?: { affectsStruts?: boolean; affectsInputRegion?: boolean; trackFullscreen?: boolean; }): void;
+    public addChrome(
+        actor: Clutter.Actor,
+        params?: {
+            affectsStruts?: boolean;
+            affectsInputRegion?: boolean;
+            trackFullscreen?: boolean;
+        }
+    ): void;
 
     /**
      * Like {@link addChrome()}, but adds `actor` above all windows, including popups.
      * @param actor An actor to add to the chrome
      * @param params Additional params
      */
-    public addTopChrome(actor: Clutter.Actor, params?: { affectsStruts?: boolean; affectsInputRegion?: boolean; trackFullscreen?: boolean; }): void;
-    
+    public addTopChrome(
+        actor: Clutter.Actor,
+        params?: {
+            affectsStruts?: boolean;
+            affectsInputRegion?: boolean;
+            trackFullscreen?: boolean;
+        }
+    ): void;
+
     /**
      * Tells the chrome to track `actor`. This can be used to extend the
      * struts or input region to cover specific children.
-     * 
+     *
      * `params` can have any of the same values as in {@link addChrome()},
      * though some possibilities don't make sense. By default, `actor` has
      * the same params as its chrome ancestor.
-     * 
+     *
      * @param actor a descendant of the chrome to begin tracking
      * @param params parameters describing how to track `actor`
      */
-    public trackChrome(actor: Clutter.Actor, params?: { affectsStruts?: boolean; affectsInputRegion?: boolean; trackFullscreen?: boolean; }): void;
+    public trackChrome(
+        actor: Clutter.Actor,
+        params?: {
+            affectsStruts?: boolean;
+            affectsInputRegion?: boolean;
+            trackFullscreen?: boolean;
+        }
+    ): void;
 
     /**
      * Undoes the effect of {@link trackChrome()}
@@ -230,14 +255,13 @@ export class LayoutManager extends GObject.Object {
     /**
      * This call guarantees that we return some monitor to simplify usage of it
      * In practice all tracked actors should be visible on some monitor anyway
-     * @param actor 
+     * @param actor
      */
-    public findIndexForActor(actor: Clutter.Actor): number
+    public findIndexForActor(actor: Clutter.Actor): number;
 
-    public findMonitorForActor(actor: Clutter.Actor): Monitor | undefined
+    public findMonitorForActor(actor: Clutter.Actor): Monitor | undefined;
 
     public modalEnded(): void;
-
 
     protected _sessionUpdated(): void;
     protected _updateMonitors(): void;
@@ -276,7 +300,14 @@ export class LayoutManager extends GObject.Object {
     protected _startupAnimationSession(): void;
     protected _startupAnimationComplete(): void;
     protected _findActor(actor: Clutter.Actor): number;
-    protected _trackActor(actor: Clutter.Actor, params?: { affectsStruts?: boolean; affectsInputRegion?: boolean; trackFullscreen?: boolean; }): void;
+    protected _trackActor(
+        actor: Clutter.Actor,
+        params?: {
+            affectsStruts?: boolean;
+            affectsInputRegion?: boolean;
+            trackFullscreen?: boolean;
+        }
+    ): void;
     protected _untrackActor(actor: Clutter.Actor): void;
     protected _updateActorVisibility(actorData: any): void;
     protected _updateVisibility(): void;
@@ -287,7 +318,6 @@ export class LayoutManager extends GObject.Object {
 }
 
 declare class PressureBarrier extends EventEmitter {
-
     protected _threshold: number;
     protected _timeout: number;
     protected _actionMode: number;
@@ -315,4 +345,3 @@ declare class PressureBarrier extends EventEmitter {
     protected _trigger(): void;
     protected _onBarrierHit(barrier: Meta.Barrier, event: any): void;
 }
-

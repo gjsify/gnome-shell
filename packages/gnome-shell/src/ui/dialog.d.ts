@@ -15,7 +15,6 @@ export interface ButtonInfo {
  * @version 46
  */
 export class Dialog extends St.Widget {
-
     protected _parentActor: St.Widget;
     protected _dialog: St.BoxLayout;
     protected _initialKeyFocus: St.Widget;
@@ -35,11 +34,15 @@ export class Dialog extends St.Widget {
     protected _setInitialKeyFocus(actor: St.Widget): void;
 }
 
-export interface MessageDialogContentProps extends St.BoxLayout.ConstructorProperties {
-    title?: string;
-    description?: string;
+/**
+ * @version 46
+ */
+export namespace MessageDialogContent {
+    export interface ConstructorProperties extends St.BoxLayout.ConstructorProperties {
+        title?: string;
+        description?: string;
+    }
 }
-
 /**
  * @version 46
  */
@@ -47,8 +50,8 @@ export class MessageDialogContent extends St.BoxLayout {
     public title: string;
     public description: string;
 
-    constructor(params: MessageDialogContentProps);
-    public _init(params: MessageDialogContentProps): void;
+    constructor(params: MessageDialogContent.ConstructorProperties);
+    public _init(params: MessageDialogContent.ConstructorProperties): void;
 
     protected _onDestroy(): void;
     protected _updateTitleStyle(): void | false;
@@ -62,7 +65,6 @@ export interface ListSectionProps extends St.BoxLayout.ConstructorProperties {
  * @version 46
  */
 export class ListSection extends St.BoxLayout {
-
     protected _listScrollView: St.ScrollView;
     protected _title: St.Label;
 
@@ -84,7 +86,6 @@ export interface ListSectionItemProps extends St.BoxLayout.ConstructorProperties
  * @version 46
  */
 export class ListSectionItem extends St.BoxLayout {
-
     protected _iconActorBin: St.Bin;
     protected _title: St.Label;
 
