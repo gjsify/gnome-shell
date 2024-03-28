@@ -5,11 +5,11 @@
  * @param iface iface the interface name
  * @returns the interface XML or null if not found
  */
-export function loadInterfaceXML(iface: string): string | null
+export function loadInterfaceXML(iface: string): string | null;
 
 /**
  * Load an subinterface xml file
  * @param iface the interface name
  * @param ifaceFile the interface XML string or null if it is not found
  */
-export function loadSubInterfaceXML(iface: string, ifaceFile: string): string | null
+export function loadSubInterfaceXML(iface: string, ifaceFile: string): string | null;

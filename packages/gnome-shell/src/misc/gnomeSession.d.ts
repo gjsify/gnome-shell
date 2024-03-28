@@ -47,16 +47,15 @@ interface InhibitorIface {
 
 /**
  * Create a new DBus proxy for the inhibitor interface
- * 
+ *
  * Note inhibitors are immutable objects, so they don't
  * change at runtime (changes always come in the form
  * of new inhibitors)
- * @param objectPath 
- * @param initCallback 
- * @param cancellable 
+ * @param objectPath
+ * @param initCallback
+ * @param cancellable
  */
 export function Inhibitor(objectPath: string, initCallback: Function | null, cancellable: Gio.Cancellable | null): Gio.DBusProxy & InhibitorIface;
-
 
 /**
  * The interface of `org.gnome.SessionManager`

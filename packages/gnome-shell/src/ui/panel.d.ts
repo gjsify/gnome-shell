@@ -5,13 +5,12 @@ import type Clutter from '@girs/clutter-14';
 import type Meta from '@girs/meta-14';
 
 import type { Button } from './panelMenu.js';
-import type { DateMenuButton } from "./dateMenu.js";
+import type { DateMenuButton } from './dateMenu.js';
 
 /**
  * @version 46
  */
 export class Panel extends St.Widget {
-
     statusArea: {
         appMenu: any;
         dateMenu: DateMenuButton;
@@ -20,7 +19,7 @@ export class Panel extends St.Widget {
 
     boxOpacity: number;
 
-    constructor()
+    constructor();
     _init(): void;
 
     _tryDragWindow(event: Clutter.Event): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE;

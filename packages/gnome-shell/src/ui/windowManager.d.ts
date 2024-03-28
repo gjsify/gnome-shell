@@ -6,19 +6,9 @@ import type Shell from 'gi://Shell';
 export class WindowManager {
     insertWorkspace(pos: number): void;
 
-    setCustomKeybindingHandler(
-        name: string,
-        modes: Shell.ActionMode,
-        handler: Meta.KeyHandlerFunc
-    ): void;
+    setCustomKeybindingHandler(name: string, modes: Shell.ActionMode, handler: Meta.KeyHandlerFunc): void;
 
-    addKeybinding(
-        name: string,
-        settings: Gio.Settings,
-        flags: Meta.KeyBindingFlags,
-        modes: Shell.ActionMode,
-        handler: Meta.KeyHandlerFunc
-    ): number;
+    addKeybinding(name: string, settings: Gio.Settings, flags: Meta.KeyBindingFlags, modes: Shell.ActionMode, handler: Meta.KeyHandlerFunc): number;
 
     removeKeybinding(name: string): void;
 

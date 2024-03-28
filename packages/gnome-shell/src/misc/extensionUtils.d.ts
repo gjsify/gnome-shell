@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/blob/main/js/misc/extensionUtils.js
 
-import type { Extension } from "../extensions/extension.js";
+import type { Extension } from '../extensions/extension.js';
 
 export enum ExtensionType {
     SYSTEM = 1,

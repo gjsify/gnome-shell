@@ -109,17 +109,16 @@ import type { LayoutManager, Monitor } from './layout.js';
  * Also used to share file monitors.
  */
 declare class BackgroundCache extends EventEmitter {
-
     protected _backgroundSources: Map<string, BackgroundSource>;
     protected _fileMonitors: Map<string, Gio.FileMonitor>;
     protected _animations: Map<string, Animation>;
 
     constructor();
 
-    public monitorFile(file: Gio.File): Gio.FileMonitor
-    public getAnimation(params?: { file?: Gio.File | null; settingsSchema?: Gio.SettingsSchema | null; onLoaded: (animation: Animation) => void; }): void
-    public getBackgroundSource(layoutManager: LayoutManager, settingsSchema: Gio.SettingsSchema): BackgroundSource
-    public releaseBackgroundSource(settingsSchema: Gio.SettingsSchema): void
+    public monitorFile(file: Gio.File): Gio.FileMonitor;
+    public getAnimation(params?: { file?: Gio.File | null; settingsSchema?: Gio.SettingsSchema | null; onLoaded: (animation: Animation) => void }): void;
+    public getBackgroundSource(layoutManager: LayoutManager, settingsSchema: Gio.SettingsSchema): BackgroundSource;
+    public releaseBackgroundSource(settingsSchema: Gio.SettingsSchema): void;
 }
 
 /**
@@ -127,7 +126,6 @@ declare class BackgroundCache extends EventEmitter {
  * schema for the background.
  */
 declare class Background extends Meta.Background {
-
     protected _settings: Gio.Settings | null;
     protected _file: Gio.File | null;
     protected _style: string | null;
@@ -140,36 +138,35 @@ declare class Background extends Meta.Background {
 
     public isLoaded: boolean;
 
-    constructor(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null; })
+    constructor(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null });
 
     /** @hidden */
-    public _init(params?: Meta.Background.ConstructorProperties): void
-    public _init(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null; }): void
+    public _init(params?: Meta.Background.ConstructorProperties): void;
+    public _init(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null }): void;
 
-    public destroy(): void
-    public updateResolution(): void
+    public destroy(): void;
+    public updateResolution(): void;
 
-    protected _emitChangedSignal(): void
-    protected _refreshAnimation(): void
-    protected _setLoaded(): void
-    protected _loadPattern(): void
-    protected _watchFile(file: Gio.File): void
-    protected _removeAnimationTimeout(): void
-    protected _updateAnimation(): void
-    protected _queueUpdateAnimation(): void
-    protected _loadAnimation(file: Gio.File): void
-    protected _loadImage(file: Gio.File): void
-    protected _loadFile(file: Gio.File): Promise<void>
-    protected _load(): void
+    protected _emitChangedSignal(): void;
+    protected _refreshAnimation(): void;
+    protected _setLoaded(): void;
+    protected _loadPattern(): void;
+    protected _watchFile(file: Gio.File): void;
+    protected _removeAnimationTimeout(): void;
+    protected _updateAnimation(): void;
+    protected _queueUpdateAnimation(): void;
+    protected _loadAnimation(file: Gio.File): void;
+    protected _loadImage(file: Gio.File): void;
+    protected _loadFile(file: Gio.File): Promise<void>;
+    protected _load(): void;
 }
 
 export class SystemBackground extends Meta.BackgroundActor {
-
     constructor();
 
     /** @hidden */
-    public _init(params?: Meta.BackgroundActor.ConstructorProperties): void
-    public _init(): void
+    public _init(params?: Meta.BackgroundActor.ConstructorProperties): void;
+    public _init(): void;
 }
 
 /**
@@ -178,7 +175,6 @@ export class SystemBackground extends Meta.BackgroundActor {
  * and holds a reference to shared Background objects.
  */
 declare class BackgroundSource {
-
     protected _layoutManager: LayoutManager;
     protected _overrideImage: string | null;
     protected _settings: Gio.Settings;
@@ -188,10 +184,10 @@ declare class BackgroundSource {
 
     constructor(layoutManager: LayoutManager, settingsSchema: Gio.SettingsSchema);
 
-    public getBackground(monitorIndex: number): Background
-    public destroy(): void
+    public getBackground(monitorIndex: number): Background;
+    public destroy(): void;
 
-    protected _onMonitorsChanged(): void
+    protected _onMonitorsChanged(): void;
 }
 
 /**
@@ -199,18 +195,17 @@ declare class BackgroundSource {
  * wrapper for GnomeBG.BGSlideShow
  */
 declare class Animation extends GnomeBG.BGSlideShow {
-
-    public _init(params?: GnomeBG.BGSlideShow.ConstructorProperties): void
+    public _init(params?: GnomeBG.BGSlideShow.ConstructorProperties): void;
 
     /** @hidden */
-    load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void
+    load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
     /**
      * Tries to load the slide show asynchronously.
      * @param cancellable a #GCancellable
      * @param callback the callback
      */
-    load_async(cancellable: Gio.Cancellable | null, callback?: () => void): void
-    update(monitor: Monitor): void
+    load_async(cancellable: Gio.Cancellable | null, callback?: () => void): void;
+    update(monitor: Monitor): void;
 }
 
 /**
@@ -234,11 +229,11 @@ export class BackgroundManager extends EventEmitter {
 
     public backgroundActor: Meta.BackgroundActor;
 
-    constructor(params: { container?: Clutter.Actor | null; layoutManager?: LayoutManager; monitorIndex?: number | null; vignette?: boolean; controlPosition?: boolean; settingsSchema?: Gio.SettingsSchema; useContentSize?: boolean; });
+    constructor(params: { container?: Clutter.Actor | null; layoutManager?: LayoutManager; monitorIndex?: number | null; vignette?: boolean; controlPosition?: boolean; settingsSchema?: Gio.SettingsSchema; useContentSize?: boolean });
 
-    public destroy(): void
+    public destroy(): void;
 
-    protected _swapBackgroundActor(): void
-    protected _updateBackgroundActor(): void
-    protected _createBackgroundActor(): Meta.BackgroundActor
+    protected _swapBackgroundActor(): void;
+    protected _updateBackgroundActor(): void;
+    protected _createBackgroundActor(): Meta.BackgroundActor;
 }

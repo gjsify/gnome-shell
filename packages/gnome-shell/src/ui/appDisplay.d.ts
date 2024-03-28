@@ -10,7 +10,6 @@ import { IconGrid, BaseIcon } from './iconGrid.js';
 import { DragMotionResult } from './dnd.js';
 
 export class AppGrid extends IconGrid {
-
     public indicatorsPadding: number;
 
     /** @hidden */
@@ -18,7 +17,6 @@ export class AppGrid extends IconGrid {
     public _init(layoutParams?: IconGrid.ConstructorProperties): void;
 
     protected _updatePadding(): void;
-
 }
 
 export abstract class BaseAppView extends St.Widget {
@@ -33,7 +31,7 @@ export abstract class BaseAppView extends St.Widget {
     protected _swipeUpdate(tracker: any, progress: number): void;
     protected _swipeEnd(tracker: any, duration: number, endProgress: number): void;
     protected _connectDnD(): void;
-    protected _disconnectDnD(): void
+    protected _disconnectDnD(): void;
     protected _maybeMoveItem(dragEvent: Clutter.Event): void;
     protected _removeDelayedMove(): void;
     protected _resetDragPageSwitch(): void;
@@ -110,7 +108,6 @@ export class AppSearchProvider {
 }
 
 export class AppViewItem extends St.Button {
-
     readonly id: string;
     readonly app: any;
 
@@ -145,7 +142,6 @@ export namespace AppIcon {
 }
 
 export class AppIcon extends AppViewItem {
-
     public app: any;
     public icon: BaseIcon;
 

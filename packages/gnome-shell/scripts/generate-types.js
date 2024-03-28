@@ -12,6 +12,6 @@ const start = async () => {
         await mkdir(destFile.split('/').slice(0, -1).join('/'), { recursive: true });
         await copyFile(srcFile, destFile);
     }
-}
+};
 
 await start();

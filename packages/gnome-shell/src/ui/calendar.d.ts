@@ -40,7 +40,6 @@ declare class CalendarEvent {
  * Interface for appointments/events - e.g. the contents of a calendar
  */
 declare abstract class EventSourceBase extends GObject.Object {
-
     public abstract readonly isLoading: boolean;
     public abstract readonly hasCalendars: boolean;
 
@@ -79,8 +78,7 @@ declare function _datesEqual(dateA: Date, dateB: Date): boolean;
 declare function _eventOverlapsInterval(e0: Date, e1: Date, i0: Date, i1: Date): boolean;
 
 declare class DBusEventSource extends EventSourceBase {
-
-    protected _events: Map<string, CalendarEvent>
+    protected _events: Map<string, CalendarEvent>;
     protected _isLoading: boolean;
     protected _initialized: boolean;
     protected _dbusProxy: Gio.DBusProxy;
@@ -112,7 +110,6 @@ declare class DBusEventSource extends EventSourceBase {
 }
 
 export class Calendar extends St.Widget {
-
     protected _weekStart: number;
     protected _settings: Gio.Settings;
     protected _useWeekdate: boolean;
@@ -157,7 +154,6 @@ export class Calendar extends St.Widget {
 
     public vfunc_scroll_event(event: Clutter.ScrollEvent): boolean;
 
-
     protected _buildHeader(): void;
     protected _onPrevMonthButtonClicked(): void;
     protected _onNextMonthButtonClicked(): void;
@@ -181,7 +177,6 @@ export class NotificationMessage extends Message {
 }
 
 declare class TimeLabel extends St.Label {
-
     _datetime: Date;
 
     /** @hidden */
@@ -192,7 +187,6 @@ declare class TimeLabel extends St.Label {
 }
 
 declare class NotificationSection extends MessageListSection {
-
     public readonly allowed: boolean;
 
     /** @hidden */
@@ -216,19 +210,17 @@ declare class Placeholder extends St.BoxLayout {
 }
 
 declare class DoNotDisturbSwitch extends Switch {
-
     protected _settings: Gio.Settings;
 
     constructor();
     /** @hidden */
-    override _init(config?: St.Bin.ConstructorProperties): void
+    override _init(config?: St.Bin.ConstructorProperties): void;
     /** @hidden */
     override _init(state: boolean): void;
     public _init(): void;
 }
 
 export class CalendarMessageList extends St.Widget {
-
     _placeholder: Placeholder;
     _scrollView: St.ScrollView;
     _dndSwitch: DoNotDisturbSwitch;
@@ -241,7 +233,7 @@ export class CalendarMessageList extends St.Widget {
     visible: boolean;
 
     /** @hidden */
-    override _init(config?: St.Widget.ConstructorProperties): void
+    override _init(config?: St.Widget.ConstructorProperties): void;
     public _init(): void;
 
     protected _addSection(section: MessageListSection): void;

@@ -3,8 +3,8 @@ import './autorunManager-ambient';
 declare class AutorunManager {
     constructor();
 
-    enable(): void
-    disable(): void
+    enable(): void;
+    disable(): void;
 }
 
-export declare const Component: typeof AutorunManager
+export declare const Component: typeof AutorunManager;

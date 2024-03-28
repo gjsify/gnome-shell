@@ -3,8 +3,8 @@
 import type Gio from '@girs/gio-2.0';
 
 export interface SubdirInfo {
-    dir: Gio.File
-    info: Gio.FileInfo
+    dir: Gio.File;
+    info: Gio.FileInfo;
 }
 
 /**
@@ -14,7 +14,7 @@ export interface SubdirInfo {
  * @param {boolean} includeUserDir - whether the user's data directory should also be searched in addition to the system data directories
  * @returns {IterableIterator<SubdirInfo>} - a generator which yields file info for subdirectories named `subdir` within data directories
  */
-export function collectFromDatadirs(subdir: string, includeUserDir: boolean): IterableIterator<SubdirInfo>
+export function collectFromDatadirs(subdir: string, includeUserDir: boolean): IterableIterator<SubdirInfo>;
 
 /**
  * Recursively delete a directory and its contents
@@ -22,7 +22,7 @@ export function collectFromDatadirs(subdir: string, includeUserDir: boolean): It
  * @param {Gio.File} dir - the file object for the directory to delete
  * @param {boolean} deleteParent - whether to delete the parent directory
  */
-export function recursivelyDeleteDir(dir: Gio.File, deleteParent: boolean): void
+export function recursivelyDeleteDir(dir: Gio.File, deleteParent: boolean): void;
 
 /**
  * Recursively move a directory and its contents
@@ -30,16 +30,16 @@ export function recursivelyDeleteDir(dir: Gio.File, deleteParent: boolean): void
  * @param {Gio.File} srcDir - the file object for the directory to move
  * @param {Gio.File} destDir - the file object for the destination directory
  */
-export function recursivelyMoveDir(srcDir: Gio.File, destDir: Gio.File): void
+export function recursivelyMoveDir(srcDir: Gio.File, destDir: Gio.File): void;
 
 /**
  * Load an interface xml file
  * @param {string} name - the name of the interface file to load
-*/
-export var loadInterfaceXML: (name: string) => any
+ */
+export var loadInterfaceXML: (name: string) => any;
 
 /**
  * Load an subinterface xml file
  * @param {string} name - the name of the subinterface file to load
-*/
-export function loadSubInterfaceXML(name: string): any
+ */
+export function loadSubInterfaceXML(name: string): any;

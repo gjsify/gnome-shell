@@ -17,8 +17,8 @@ export declare class QuickSettingsItem extends St.Button {
 
     /**
      * Initializes a new instance of `QuickSettingsItem`.
-     */    
-    _init(config?: St.Button.ConstructorProperties): void
+     */
+    _init(config?: St.Button.ConstructorProperties): void;
 }
 
 /**
@@ -165,7 +165,7 @@ export declare class QuickSettingsLayout extends Clutter.LayoutManager {
      */
     constructor(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProperties);
 
-    _init(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProperties): void
+    _init(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProperties): void;
 
     /**
      * Method to get child metadata type.

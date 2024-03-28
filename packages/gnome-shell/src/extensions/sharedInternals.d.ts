@@ -12,7 +12,7 @@ export interface TranslationFunctions {
      *
      * @returns {string} the translated string
      */
-    gettext(str: string): string
+    gettext(str: string): string;
     /**
      * Translate `str` and choose plural form using the extension's
      * gettext domain
@@ -23,7 +23,7 @@ export interface TranslationFunctions {
      *
      * @returns {string} the translated string
      */
-    ngettext(str: string, strPlural: string, n: number): string
+    ngettext(str: string, strPlural: string, n: number): string;
 
     /**
      * Translate `str` in the context of `context` using the extension's
@@ -34,38 +34,38 @@ export interface TranslationFunctions {
      *
      * @returns {string} the translated string
      */
-    pgettext(context: string, str: string): string
+    pgettext(context: string, str: string): string;
 }
 
 export class ExtensionBase {
     #gettextDomain: string | null;
 
-    readonly metadata: ExtensionMetadata
+    readonly metadata: ExtensionMetadata;
 
     /**
      * Look up an extension by URL (usually 'import.meta.url')
      *
      * @param url - a file:// URL
      */
-    static lookupByURL(url: string): Extension | null
+    static lookupByURL(url: string): Extension | null;
 
     /**
      * Look up an extension by UUID
      *
      * @param {string} _uuid
      */
-    static lookupByUUID(_uuid: string): Extension | null
+    static lookupByUUID(_uuid: string): Extension | null;
 
     /**
      * @param metadata - metadata passed in when loading the extension
      */
-    constructor(metadata: ExtensionMetadata)
+    constructor(metadata: ExtensionMetadata);
 
-    get uuid(): string
+    get uuid(): string;
 
-    get dir(): Gio.File
+    get dir(): Gio.File;
 
-    get path(): string
+    get path(): string;
 
     /**
      * Get a GSettings object for schema, using schema files in
@@ -76,7 +76,7 @@ export class ExtensionBase {
      *
      * @returns {}
      */
-    getSettings(schema?: string): Gio.Settings
+    getSettings(schema?: string): Gio.Settings;
 
     /**
      * Initialize Gettext to load translations from extensionsdir/locale. If
@@ -85,7 +85,7 @@ export class ExtensionBase {
      *
      * @param {string=} domain - the gettext domain to use
      */
-    initTranslations(domain: string): void
+    initTranslations(domain: string): void;
 
     /**
      * Translate `str` using the extension's gettext domain
@@ -94,7 +94,7 @@ export class ExtensionBase {
      *
      * @returns the translated string
      */
-    gettext(str: string): string
+    gettext(str: string): string;
 
     /**
      * Translate `str` and choose plural form using the extension's
@@ -106,7 +106,7 @@ export class ExtensionBase {
      *
      * @returns {string} the translated string
      */
-    ngettext(str: string, strPlural: string, n: number): string
+    ngettext(str: string, strPlural: string, n: number): string;
 
     /**
      * Translate `str` in the context of `context` using the extension's
@@ -117,29 +117,29 @@ export class ExtensionBase {
      *
      * @returns {string} the translated string
      */
-    pgettext(context: string, str: string): string
+    pgettext(context: string, str: string): string;
 
     /**
      * @param {string} func
      */
-    #checkGettextDomain(func: string)
+    #checkGettextDomain(func: string);
 }
 
 export class GettextWrapper {
     #url: string | null;
     #extensionClass: ExtensionBase;
 
-    constructor(extensionClass: ExtensionBase, url: string)
+    constructor(extensionClass: ExtensionBase, url: string);
 
-    #detectUrl(): string | null
+    #detectUrl(): string | null;
 
-    #lookupExtension(funcName: string): ExtensionBase
+    #lookupExtension(funcName: string): ExtensionBase;
 
-    #gettext(str: string): string
+    #gettext(str: string): string;
 
-    #ngettext(str: string, strPlural: string, n: number): string
+    #ngettext(str: string, strPlural: string, n: number): string;
 
-    #pgettext(context:any, str: string): string
+    #pgettext(context: any, str: string): string;
 
-    defineTranslationFunctions(): TranslationFunctions
+    defineTranslationFunctions(): TranslationFunctions;
 }

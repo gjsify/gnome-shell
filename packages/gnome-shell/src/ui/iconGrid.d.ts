@@ -8,23 +8,21 @@ export namespace BaseIcon {
     export interface ConstructorProperties {
         createIcon?: any | null;
         setSizeManually?: boolean;
-        showLabel?: boolean
+        showLabel?: boolean;
     }
 }
 
 export class BaseIcon extends Shell.SquareBin {
-
     public createIcon: any | null;
     public icon: St.Icon | null;
     public label: St.Label | null;
 
     protected _setSizeManually?: boolean;
 
-    constructor(label: string, params?: BaseIcon.ConstructorProperties)
+    constructor(label: string, params?: BaseIcon.ConstructorProperties);
 
     public _init(params?: Shell.SquareBin.ConstructorProperties): void;
     public _init(label: string, params?: BaseIcon.ConstructorProperties): void;
-
 }
 
 export namespace IconGrid {
@@ -43,7 +41,6 @@ export namespace IconGrid {
 }
 
 export class IconGrid extends St.Viewport {
-
     public currentPage: number;
     public readonly nPages: number;
     public readonly itemsPerPage: number;

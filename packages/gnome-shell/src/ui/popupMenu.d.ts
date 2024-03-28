@@ -16,7 +16,7 @@ export enum Ornament {
     DOT = 1,
     CHECK = 2,
     HIDDEN = 3,
-    NO_DOT = 4
+    NO_DOT = 4,
 }
 
 /**
@@ -48,14 +48,14 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
     activate(event: Clutter.Event): void;
 
     // General signal handler methods
-    connect(sigName: string, callback: (...args: any[]) => void): number
-    connect_after(sigName: string, callback: (...args: any[]) => void): number
-    emit(sigName: string, ...args: any[]): void
-    disconnect(id: number): void
+    connect(sigName: string, callback: (...args: any[]) => void): number;
+    connect_after(sigName: string, callback: (...args: any[]) => void): number;
+    emit(sigName: string, ...args: any[]): void;
+    disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: "activate", callback: (($obj: PopupBaseMenuItem, event: Clutter.Event) => void)): number
-    connect_after(sigName: "activate", callback: (($obj: PopupBaseMenuItem, event: Clutter.Event) => void)): number
+    connect(sigName: 'activate', callback: ($obj: PopupBaseMenuItem, event: Clutter.Event) => void): number;
+    connect_after(sigName: 'activate', callback: ($obj: PopupBaseMenuItem, event: Clutter.Event) => void): number;
 
     syncSensitive(): boolean;
     getSensitive(): boolean;
@@ -94,21 +94,21 @@ export class Switch extends St.Bin {
     state: boolean;
     constructor(state: boolean);
     /** @hidden Defined only to resolve type conflicts */
-    override _init(config?: St.Bin.ConstructorProperties): void
+    override _init(config?: St.Bin.ConstructorProperties): void;
     override _init(state: boolean): void;
 
     setToggleState(state: boolean): void;
     toggle(): void;
 
     // General signal handler methods
-    connect(sigName: string, callback: (...args: any[]) => void): number
-    connect_after(sigName: string, callback: (...args: any[]) => void): number
-    emit(sigName: string, ...args: any[]): void
-    disconnect(id: number): void
+    connect(sigName: string, callback: (...args: any[]) => void): number;
+    connect_after(sigName: string, callback: (...args: any[]) => void): number;
+    emit(sigName: string, ...args: any[]): void;
+    disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: "notify::state", callback: (($obj: Switch) => void)): number
-    connect_after(sigName: "notify::state", callback: (($obj: Switch) => void)): number
+    connect(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
+    connect_after(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
 }
 
 export namespace PopupSwitchMenuItem {
@@ -139,7 +139,6 @@ export namespace PopupImageMenuItem {
  * @version 46
  */
 export class PopupImageMenuItem extends PopupBaseMenuItem {
-
     constructor(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProperties);
     override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProperties): void;
 
@@ -151,10 +150,7 @@ export namespace PopupMenuBase {
 
     // PopupMenuBase.addMenuItem explicitly checks for any of these specific
     // types
-    type MenuItemType = PopupMenuSection |
-        PopupSubMenuMenuItem |
-        PopupSeparatorMenuItem |
-        PopupBaseMenuItem
+    type MenuItemType = PopupMenuSection | PopupSubMenuMenuItem | PopupSeparatorMenuItem | PopupBaseMenuItem;
 }
 
 /**
@@ -236,7 +232,6 @@ export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMa
     close(animate: boolean): void;
 }
 
-
 export namespace PopupMenuSection {
     interface SignalMap extends PopupMenuBase.SignalMap {}
 }
@@ -251,7 +246,7 @@ export namespace PopupMenuSection {
  *
  * @version 46
  */
-export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S>{
+export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S> {
     constructor();
 
     open(): void;

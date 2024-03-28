@@ -1,10 +1,10 @@
 import './automountManager-ambient';
 
 declare class AutomountManager {
-    constructor()
+    constructor();
 
-    enable(): void
-    disable(): void
+    enable(): void;
+    disable(): void;
 }
 
-export declare const Component: typeof AutomountManager
+export declare const Component: typeof AutomountManager;

@@ -6,21 +6,21 @@ import type Clutter from '@girs/clutter-14';
 import { EventEmitter } from '../misc/signals.js';
 
 export enum DragMotionResult {
-    NO_DROP =   0,
+    NO_DROP = 0,
     COPY_DROP = 1,
     MOVE_DROP = 2,
-    CONTINUE =  3,
+    CONTINUE = 3,
 }
 
 export enum DragState {
-    INIT =      0,
-    DRAGGING =  1,
+    INIT = 0,
+    DRAGGING = 1,
     CANCELLED = 2,
 }
 
 export enum DragDropResult {
-    FAILURE =  0,
-    SUCCESS =  1,
+    FAILURE = 0,
+    SUCCESS = 1,
     CONTINUE = 2,
 }
 
@@ -39,7 +39,6 @@ declare namespace _Draggable {
 }
 
 declare class _Draggable extends EventEmitter {
-
     public actor: Clutter.Actor;
 
     constructor(actor: Clutter.Actor, params: _Draggable.ConstructorProperties);
@@ -88,7 +87,7 @@ declare class _Draggable extends EventEmitter {
     protected _getRestoreLocation(): [number, number, number];
     protected _cancelDrag(eventTime: number): void;
     protected _restoreDragActor(eventTime: number): void;
-    protected _animateDragEnd(eventTime: number, params: { opacity: number; mode: Clutter.AnimationMode; onComplete: () => void; }): void;
+    protected _animateDragEnd(eventTime: number, params: { opacity: number; mode: Clutter.AnimationMode; onComplete: () => void }): void;
     protected _finishAnimation(): void;
     protected _onAnimationComplete(dragActor: Clutter.Actor, eventTime: number): void;
     protected _dragComplete(): void;

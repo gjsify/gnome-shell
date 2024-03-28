@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js
 
-import type GObject from "@girs/gobject-2.0";
-import type Gio from "@girs/gio-2.0";
-import type GLib from "@girs/glib-2.0";
+import type GObject from '@girs/gobject-2.0';
+import type Gio from '@girs/gio-2.0';
+import type GLib from '@girs/glib-2.0';
 import type St from '@girs/st-14';
 import type Clutter from '@girs/clutter-14';
 
@@ -15,7 +15,6 @@ export function _fixMarkup(text: string, allowMarkup?: boolean): string;
  * @version 46
  */
 export class URLHighlighter extends St.Label {
-
     constructor(text?: string, lineWrap?: boolean, allowMarkup?: boolean);
 
     /** @hidden */
@@ -60,7 +59,6 @@ export class Source extends GObject.Object implements Source.ObjectProperties {
  * @version 46
  */
 export class Message extends St.Button {
-
     constructor(source: Source);
 
     public title: string | null;
@@ -92,7 +90,6 @@ export class Message extends St.Button {
  * @version 46
  */
 export class MessageListSection extends St.BoxLayout {
-
     public readonly canClear: boolean;
     public readonly empty: boolean;
 

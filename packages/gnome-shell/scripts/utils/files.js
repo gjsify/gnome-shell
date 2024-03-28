@@ -9,19 +9,19 @@ export const getAllFiles = async (dirPath, allowedExtensionNames, ignoreDirs = [
         const _stat = await stat(filePath);
 
         if (_stat.isDirectory()) {
-            if(!recursive) continue;
-            if(ignoreDirs.find((ignoreDir) => filePath.endsWith(ignoreDir))) continue;
+            if (!recursive) continue;
+            if (ignoreDirs.find((ignoreDir) => filePath.endsWith(ignoreDir))) continue;
             filesList = await getAllFiles(filePath, allowedExtensionNames, ignoreDirs, recursive, filesList);
             continue;
         }
 
-        if(allowedExtensionNames && !allowedExtensionNames.includes(extname(filePath))) continue;
-        
+        if (allowedExtensionNames && !allowedExtensionNames.includes(extname(filePath))) continue;
+
         filesList.push(filePath);
     }
 
     return filesList;
-}
+};
 
 export const getAllDirs = async (dirPath, ignoreDirs = [], recursive = true, dirList = []) => {
     const files = await readdir(dirPath);
@@ -34,13 +34,13 @@ export const getAllDirs = async (dirPath, ignoreDirs = [], recursive = true, dir
             continue;
         }
 
-        if(recursive) dirList.push(...await getAllDirs(currentPath, ignoreDirs, dirList));
+        if (recursive) dirList.push(...(await getAllDirs(currentPath, ignoreDirs, dirList)));
 
-        dirList.push(currentPath);   
+        dirList.push(currentPath);
     }
 
     return dirList;
-}
+};
 
 export const fileExists = async (path) => {
     try {
@@ -48,4 +48,4 @@ export const fileExists = async (path) => {
     } catch (e) {
         return false;
     }
-}
+};

@@ -52,7 +52,7 @@ export enum AuthMode {
 /**
  * A proxy wrapper for a Bolt device.
  */
-export const BoltDeviceProxy: Gio.DBusProxy 
+export const BoltDeviceProxy: Gio.DBusProxy;
 
 /**
  * Client class for interacting with Bolt service.
@@ -136,7 +136,6 @@ export class AuthRobot extends Signals.EventEmitter {
  * System indicator for Thunderbolt devices.
  */
 export class Indicator extends SystemIndicator {
-
     _source: MessageTray.Source | null;
 
     _init(): void;
@@ -159,5 +158,4 @@ export class Indicator extends SystemIndicator {
     _onEnrollDevice(obj: any, device: any, policy: any): void;
 
     _onEnrollFailed(obj: any, device: any, error: any): void;
-
 }

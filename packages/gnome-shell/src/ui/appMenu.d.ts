@@ -9,7 +9,6 @@ import type { getAppFavorites } from './appFavorites.js';
 import type { getDefault } from '../misc/parentalControlsManager.js';
 
 export class AppMenu extends PopupMenu {
-
     protected _app: Shell.App | null;
     protected _appSystem: Shell.AppSystem;
     protected _parentalControlsManager: ReturnType<typeof getDefault>;
@@ -35,7 +34,7 @@ export class AppMenu extends PopupMenu {
      * @param params.favoritesSection - show items to add/remove favorite
      * @param params.showSingleWindow - show window section for a single window
      */
-    constructor(sourceActor: Clutter.Actor, side?: St.Side, params?: { favoritesSection?: boolean; showSingleWindow: boolean; })
+    constructor(sourceActor: Clutter.Actor, side?: St.Side, params?: { favoritesSection?: boolean; showSingleWindow: boolean });
 
     protected _onAppStateChanged(sys: any, app: any): void;
     protected _updateQuitItem(): void;
@@ -47,7 +46,6 @@ export class AppMenu extends PopupMenu {
     protected _getNonDefaultLaunchGpu(): Shell.AppLaunchGpu;
     protected _queueUpdateWindowsSection(): void;
     protected _updateWindowsSection(): void;
-
 
     public destroy(): void;
 
