@@ -1,0 +1,7 @@
+.vscode/
+.github/
+.yarn/
+packages/gnome-shell/dist/
+*.md
+.prettierrc
+.yarnrc.yml
