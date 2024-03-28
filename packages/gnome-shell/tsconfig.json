@@ -1,13 +1,18 @@
 {
-  "compilerOptions": {   
-    "lib": ["ESNext"],
-    "types": [],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-  },
-  "include": ["./dist/**/*.d.ts"],
-  "files": [
-    "./dist/index.d.ts",
-  ],
+    "compilerOptions": {
+        "lib": ["ESNext"],
+        "types": [],
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "strictPropertyInitialization": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["./dist/**/*.d.ts"],
+    "files": ["./dist/index.d.ts"]
 }

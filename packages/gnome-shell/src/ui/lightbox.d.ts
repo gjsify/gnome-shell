@@ -36,8 +36,6 @@ export class RadialShaderEffect extends Shell.GLSLEffect {
 
 export interface LightboxAdditionalParameters {
     inhibitEvents?: boolean;
-    width?: number;
-    height?: number;
     fadeFactor?: number;
     radialEffect?: boolean;
 }
