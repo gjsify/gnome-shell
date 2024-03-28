@@ -20,7 +20,12 @@
         "publish:next": "yarn workspace @girs/gnome-shell npm publish --tolerate-republish --tag next --access public",
         "build": "yarn build:types && yarn build:example",
         "build:example": "yarn workspace @gjsify/gnome-shell-hello-world-example build",
-        "build:types": "yarn workspace @girs/gnome-shell build"
+        "build:types": "yarn workspace @girs/gnome-shell build",
+        "prettier:check": "prettier --check .",
+        "prettier:fix": "prettier --write ."
+    },
+    "gitHooks": {
+        "pre-commit": "npm run prettier:check"
     },
     "workspaces": [
         "packages/*",
@@ -49,6 +54,7 @@
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
     "packageManager": "yarn@4.1.1",
     "devDependencies": {
+        "prettier": "^3.2.5",
         "typescript": "5.4.3"
     }
 }
