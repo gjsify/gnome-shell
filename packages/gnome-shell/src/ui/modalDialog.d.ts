@@ -2,10 +2,14 @@
 
 import type St from '@girs/st-14';
 import type Shell from '@girs/shell-14';
+import type Clutter from '@girs/clutter-14';
 
 import type { MonitorConstraint } from './layout.js';
 import type { ButtonInfo, Dialog } from './dialog.js';
 
+/**
+ * @version 46
+ */
 export enum State {
     OPENED = 0,
     CLOSED = 1,
@@ -14,6 +18,9 @@ export enum State {
     FADED_OUT = 4,
 }
 
+/**
+ * @version 46
+ */
 export namespace ModalDialog {
     export interface ConstructorProperties {
         shellReactive?: boolean;
@@ -25,6 +32,9 @@ export namespace ModalDialog {
     }
 }
 
+/**
+ * @version 46
+ */
 export class ModalDialog extends St.Widget {
 
     protected _state: State;
@@ -70,17 +80,20 @@ export class ModalDialog extends St.Widget {
      */
     protected _fadeOutDialog(timestamp: number): void;
 
+    public vfunc_key_press_event(event: Clutter.Event): boolean;
+    public vfunc_captured_event(event: Clutter.Event): boolean;
+
     public clearButtons(): void;
     public setButtons(buttons: ButtonInfo[]): void;
     public addButton(buttonInfo: ButtonInfo): St.Button;
     public setInitialKeyFocus(actor: St.Widget): void;
     public open(): boolean;
+    //note: upstream has timestamp as paramater here, but it only will be used to call popModal, which doesn't accept that paramater anymore, so this is just a bug upstream
     public close(): boolean;
     /**
      * Drop modal status without closing the dialog; this makes the
      * dialog insensitive as well, so it needs to be followed shortly
      * by either a close() or a pushModal()
-     * @param timestamp 
      */
     public popModal(): void;
     public pushModal(): void;
