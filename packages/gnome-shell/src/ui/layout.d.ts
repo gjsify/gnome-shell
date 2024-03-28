@@ -27,7 +27,9 @@ export interface MonitorConstraintProps extends Clutter.Constraint.ConstructorPr
     workArea?: boolean;
 }
 
-
+/**
+ * @version 46
+ */
 export class MonitorConstraint extends Clutter.Constraint {
 
     protected _primary: boolean;
@@ -41,9 +43,14 @@ export class MonitorConstraint extends Clutter.Constraint {
     constructor(props: MonitorConstraintProps);
     public _init(props: MonitorConstraintProps): void;
 
+    public vfunc_set_actor(actor: Clutter.Actor): void;
     public vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
 }
 
+
+/**
+ * @version 46
+ */
 declare class Monitor {
 
     public index: number;
@@ -57,6 +64,9 @@ declare class Monitor {
     constructor(index: number, geometry: Geometry, geometryScale: number);
 }
 
+/**
+ * @version 46
+ */
 declare class UiActor extends St.Widget {
     public constructor(props?: St.Widget.ConstructorProperties);
     public _init(props?: St.Widget.ConstructorProperties): void;
