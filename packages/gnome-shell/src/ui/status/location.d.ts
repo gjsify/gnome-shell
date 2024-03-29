@@ -5,8 +5,7 @@ import St from '@girs/st-14';
 
 import * as ModalDialog from '../modalDialog.js';
 import * as PermissionStore from '../../misc/permissionStore.js';
-import {SystemIndicator} from '../quickSettings.js';
-
+import { SystemIndicator } from '../quickSettings.js';
 
 /**
  * Enum for representing accuracy levels of geolocation services.
@@ -36,7 +35,7 @@ export declare class GeoclueAgent extends GObject.Object {
     readonly inUse: boolean;
     // The maximum accuracy level that can be requested.
     readonly maxAccuracyLevel: GeoclueAccuracyLevel;
-    
+
     // Authorizes an app asynchronously to access location services.
     AuthorizeAppAsync(params: any, invocation: any): Promise<void>;
     // Gets the maximum accuracy level.
@@ -75,7 +74,7 @@ export declare class AppAuthorizer {
  */
 export declare class GeolocationDialog extends ModalDialog.ModalDialog {
     constructor(name: string, reason: string, reqAccuracyLevel: GeoclueAccuracyLevel);
-    
+
     // Handles the 'Grant Access' action.
     private _onGrantClicked(): void;
     // Handles the 'Deny Access' action.

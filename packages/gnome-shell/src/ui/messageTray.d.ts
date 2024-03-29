@@ -6,7 +6,7 @@ import type Gio from '@girs/gio-2.0';
 import type St from '@girs/st-14';
 import type Clutter from '@girs/clutter-14';
 import type GnomeDesktop from '@girs/gnomedesktop-4.0';
-import type Shell from "@girs/shell-14";
+import type Shell from '@girs/shell-14';
 
 import type { NotificationMessage } from './calendar.js';
 import type { Presence, PresenceStatus } from '../misc/gnomeSession.js';
@@ -21,10 +21,10 @@ export const ANIMATION_TIME: number;
  * @version 46
  */
 export enum State {
-    HIDDEN =  0,
+    HIDDEN = 0,
     SHOWING = 1,
-    SHOWN =   2,
-    HIDING =  3,
+    SHOWN = 2,
+    HIDING = 3,
 }
 
 /**
@@ -106,7 +106,6 @@ export abstract class NotificationPolicy extends GObject.Object {
  * @version 46
  */
 export class NotificationGenericPolicy extends NotificationPolicy {
-
     public id: string;
 
     protected _masterSettings: Gio.Settings;
@@ -145,7 +144,7 @@ export class NotificationApplicationPolicy extends NotificationPolicy {
 export class Sound extends GObject.Object {
     constructor(file: Gio.File | null | undefined, themedName?: string);
 
-    public play(): void
+    public play(): void;
 }
 
 /**
@@ -173,7 +172,7 @@ export namespace Notification {
 
 export declare namespace Source {
     export interface ConstructorProperties extends MessageList.Source.ConstructorProperties {
-        policy?: NotificationPolicy
+        policy?: NotificationPolicy;
     }
 }
 
@@ -187,7 +186,7 @@ export class Source extends MessageList.Source {
 
     public policy: NotificationPolicy;
 
-    public readonly count: number
+    public readonly count: number;
 
     public readonly unseenCount: number;
 
@@ -197,7 +196,7 @@ export class Source extends MessageList.Source {
 
     public readonly narrowestPrivacyScope: PrivacyScope;
 
-    public addNotification(notification: Notification): void
+    public addNotification(notification: Notification): void;
 
     public destroy(reason: NotificationDestroyedReason): void;
 
@@ -270,10 +269,8 @@ export class Notification extends GObject.Object implements Notification.ObjectP
     destroy(reason?: NotificationDestroyedReason): void;
 }
 
-
 export class MessageTray extends St.Widget {
-
-    constructor()
+    constructor();
 
     public idleMonitor: GnomeDesktop.IdleMonitor;
 
@@ -283,7 +280,7 @@ export class MessageTray extends St.Widget {
 
     public bannerBlocked: boolean;
 
-    public contains(descendant: Clutter.Actor): boolean
+    public contains(descendant: Clutter.Actor): boolean;
     public contains(source: Source): boolean;
     public add(source: Source): void;
     public getSources(): Source[];

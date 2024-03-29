@@ -4,37 +4,37 @@ import type GLib from '@girs/glib-2.0';
 import type Clutter from '@girs/clutter-14';
 import type Meta from '@girs/meta-14';
 
-import { SwitcherPopup } from './switcherPopup.js'
+import { SwitcherPopup } from './switcherPopup.js';
 
 export class AppSwitcherPopup extends SwitcherPopup {
-    constructor()
-    _init(): void
+    constructor();
+    _init(): void;
 
-    _initialSelection(backward: any, binding: any): void
+    _initialSelection(backward: any, binding: any): void;
 
-    _nextWindow(): void
+    _nextWindow(): void;
 
-    _previousWindow(): void
+    _previousWindow(): void;
 
-    _closeAppWindow(appIndex: number, windowIndex: number): void
+    _closeAppWindow(appIndex: number, windowIndex: number): void;
 
-    _quitApplication(appIndex: number): void
+    _quitApplication(appIndex: number): void;
 
-    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE
+    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE;
 
     _scrollHandler(direction: Clutter.ScrollDirection): void;
 
-    _itemActivatedHandler(n: any): void
+    _itemActivatedHandler(n: any): void;
 
-    _windowActivated(thumbnailSwitcher: any, n: any): void
+    _windowActivated(thumbnailSwitcher: any, n: any): void;
 
-    _windowEntered(thumbnailSwitcher: any, n: any): void
+    _windowEntered(thumbnailSwitcher: any, n: any): void;
 
-    _windowRemoved(thumbnailSwitcher: any, n: number): void
+    _windowRemoved(thumbnailSwitcher: any, n: number): void;
 
-    _finish(timestamp: number): void
+    _finish(timestamp: number): void;
 
-    _onDestroy(): void
+    _onDestroy(): void;
 
     /**
      * _select:
@@ -61,54 +61,52 @@ export class AppSwitcherPopup extends SwitcherPopup {
      * then @app will be highlighted, and @window outlined, and the
      * app list will have the keyboard focus.
      */
-    _select(app: number, window?: number, forceAppFocus?: undefined): void
+    _select(app: number, window?: number, forceAppFocus?: undefined): void;
 
-    _timeoutPopupThumbnails(): typeof GLib.SOURCE_REMOVE | typeof GLib.SOURCE_CONTINUE
+    _timeoutPopupThumbnails(): typeof GLib.SOURCE_REMOVE | typeof GLib.SOURCE_CONTINUE;
 
-    _destroyThumbnails(): void
+    _destroyThumbnails(): void;
 
-    _createThumbnails(): void
-
+    _createThumbnails(): void;
 }
 
 declare class CyclerPopup extends SwitcherPopup {
-    constructor()
-    _init(): void
+    constructor();
+    _init(): void;
 
-    _highlightItem(index: number, _justOutline: boolean): void
+    _highlightItem(index: number, _justOutline: boolean): void;
 
-    _finish(): void
+    _finish(): void;
 
-    onDestroy(): void
+    onDestroy(): void;
 }
 
 export class GroupCyclerPopup extends CyclerPopup {
-    constructor()
-    _init(): void
+    constructor();
+    _init(): void;
 
-    _getWindows(): Meta.Window[]
+    _getWindows(): Meta.Window[];
 
-    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE
+    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE;
 }
 
 export class WindowSwitcherPopup extends SwitcherPopup {
-    constructor()
-    _init(): void
+    constructor();
+    _init(): void;
 
-    _getWindowList(): Meta.Window[]
+    _getWindowList(): Meta.Window[];
 
-    _closeWindow(windowIndex: number): void
+    _closeWindow(windowIndex: number): void;
 
-    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE
+    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE;
 
-    _finish(): void
-
+    _finish(): void;
 }
 
 export class WindowCyclerPopup extends CyclerPopup {
-    init(): void
+    init(): void;
 
-    _getWindows(): Meta.Window[]
+    _getWindows(): Meta.Window[];
 
-    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE
+    _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE;
 }

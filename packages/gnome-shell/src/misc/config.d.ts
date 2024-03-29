@@ -12,6 +12,6 @@ export const LOCALEDIR: string;
 export const LIBEXECDIR: string;
 export const PKGDATADIR: string;
 /* g-i package versions */
-export const LIBMUTTER_API_VERSION: string
+export const LIBMUTTER_API_VERSION: string;
 
-export const HAVE_BLUETOOTH: number
+export const HAVE_BLUETOOTH: number;

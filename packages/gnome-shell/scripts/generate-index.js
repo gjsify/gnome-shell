@@ -6,8 +6,8 @@ import { DIST_DIR, __dirname } from './config.js';
 import { resolve, extname, basename } from 'path';
 import { writeFile } from 'fs/promises';
 
-const IGNORE_DIRS = ['types']
-const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts', 'global.d.ts']
+const IGNORE_DIRS = ['types'];
+const IGNORE_FILENAMES = ['index.d.ts', 'index.ts', 'sharedInternals.d.ts', 'global.d.ts'];
 const EXPORT_ESM_TEMPLATE = (exportName, fileName) => `export * as ${exportName} from './${fileName}.js';`;
 const EXPORT_CJS_TEMPLATE = (exportName, fileName) => `module.exports.${exportName} = require('./${fileName}.cjs');`;
 const IMPORT_AMBIENT_TEMPLATE = (fileName) => `import './${fileName}-ambient.d.ts';`;
@@ -21,7 +21,7 @@ const appendDir = async (dirPath, data) => {
     data.ambient += IMPORT_AMBIENT_TEMPLATE(dirIndexName) + '\n';
 
     return data;
-}
+};
 
 const appendFile = async (filePath, data) => {
     const fileName = basename(filePath);
@@ -32,36 +32,33 @@ const appendFile = async (filePath, data) => {
     data.ambient += IMPORT_AMBIENT_TEMPLATE(withoutExtension) + '\n';
 
     return data;
-}
-
+};
 
 const start = async () => {
     const dirs = await getAllDirs(DIST_DIR, IGNORE_DIRS, true);
 
     for (const absoluteDir of dirs) {
         const childDirs = await getAllDirs(absoluteDir, IGNORE_DIRS, false);
-        const files = (await getAllFiles(absoluteDir, ['.ts'], IGNORE_DIRS, false))
-        .filter((file) => !file.endsWith('ambient.d.ts') && !IGNORE_FILENAMES.includes(basename(file)));
+        const files = (await getAllFiles(absoluteDir, ['.ts'], IGNORE_DIRS, false)).filter((file) => !file.endsWith('ambient.d.ts') && !IGNORE_FILENAMES.includes(basename(file)));
 
         const data = {
             esm: '',
             cjs: '',
-            ambient: ''
-        }
+            ambient: '',
+        };
 
         for (const file of files) {
-            appendFile(file, data)
+            appendFile(file, data);
         }
 
         for (const childDir of childDirs) {
-            appendDir(childDir, data)
+            appendDir(childDir, data);
         }
 
         await writeFile(resolve(absoluteDir, 'index.d.ts'), data.esm, 'utf-8');
         await writeFile(resolve(absoluteDir, 'index.js'), data.esm, 'utf-8');
         await writeFile(resolve(absoluteDir, 'index.cjs'), data.cjs, 'utf-8');
         await writeFile(resolve(absoluteDir, 'index-ambient.d.ts'), data.ambient, 'utf-8');
-
     }
 
     const rootDirs = await getAllDirs(DIST_DIR, IGNORE_DIRS, false);
@@ -69,17 +66,17 @@ const start = async () => {
     const data = {
         esm: '',
         cjs: '',
-        ambient: ''
-    }
+        ambient: '',
+    };
 
     for (const rootDir of rootDirs) {
-        appendDir(rootDir, data)
+        appendDir(rootDir, data);
     }
 
     await writeFile(resolve(DIST_DIR, 'index.d.ts'), data.esm, 'utf-8');
     await writeFile(resolve(DIST_DIR, 'index.js'), data.esm, 'utf-8');
     await writeFile(resolve(DIST_DIR, 'index.cjs'), data.cjs, 'utf-8');
     await writeFile(resolve(DIST_DIR, 'index-ambient.d.ts'), data.ambient, 'utf-8');
-}
+};
 
 await start();

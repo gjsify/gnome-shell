@@ -7,7 +7,7 @@ import * as PopupMenu from '../popupMenu.js';
 import { Spinner } from '../animation.js';
 import { QuickToggle, SystemIndicator } from '../quickSettings.js';
 
-declare const BackgroundMonitorProxy: typeof Gio.DBusProxy
+declare const BackgroundMonitorProxy: typeof Gio.DBusProxy;
 
 /**
  * Class for a menu item related to background applications.

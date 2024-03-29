@@ -14,7 +14,7 @@ import { QuickToggle, SystemIndicator } from '../quickSettings.js';
 declare const BUS_NAME: string;
 declare const OBJECT_PATH: string;
 declare const RfkillManagerInterface: string;
-declare const rfkillManagerInfo: Gio.DBusInterfaceInfo
+declare const rfkillManagerInfo: Gio.DBusInterfaceInfo;
 
 /**
  * Class representing the RFKill Manager.

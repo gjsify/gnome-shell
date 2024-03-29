@@ -5,7 +5,7 @@ import type { LayoutManager } from './layout.js';
 
 export enum PopupAnimation {
     NONE = 0,
-    SLIDE =1 << 0,
+    SLIDE = 1 << 0,
     FADE = 1 << 1,
     FULL = ~0,
 }
@@ -40,7 +40,7 @@ export class BoxPointer extends St.Widget {
      * @param arrowSide side to draw the arrow on
      * @param binProperties Properties to set on contained bin
      */
-    constructor(arrowSide: St.Side, binProperties?: St.Bin.ConstructorProperties)
+    constructor(arrowSide: St.Side, binProperties?: St.Bin.ConstructorProperties);
 
     /** @hidden */
     public _init(params?: St.Widget.ConstructorProperties): void;

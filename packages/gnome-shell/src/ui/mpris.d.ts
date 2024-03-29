@@ -7,7 +7,6 @@ import type { EventEmitter } from '../misc/signals.js';
 import type { Message, MessageListSection } from './messageList.js';
 
 declare class MediaMessage extends Message {
-
     protected _player: MprisPlayer;
     protected _icon: St.Icon;
     protected _secondaryBin: St.Bin;
@@ -27,11 +26,10 @@ declare class MediaMessage extends Message {
     public vfunc_clicked(): void;
 
     protected _updateNavButton(button: St.Button, sensitive?: boolean): void;
-    protected _update(): void
+    protected _update(): void;
 }
 
 declare class MprisPlayer extends EventEmitter {
-
     readonly status: string;
     readonly trackArtists: string;
     readonly trackTitle: string;
@@ -53,7 +51,6 @@ declare class MprisPlayer extends EventEmitter {
 }
 
 export class MediaSection extends MessageListSection {
-
     _players: Map<string, MprisPlayer>;
     _proxy: Gio.DBusProxy;
 
@@ -62,7 +59,6 @@ export class MediaSection extends MessageListSection {
     /** @hidden */
     public _init(params?: St.BoxLayout.ConstructorProperties): void;
     public _init(): void;
-
 
     _addPlayer(busName: string): void;
     _onProxyReady(): Promise<void>;

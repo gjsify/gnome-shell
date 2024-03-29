@@ -5,7 +5,7 @@ import type St from '@girs/st-14';
 import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
 
 declare namespace ButtonBox {
-    interface ConstructorProperties extends St.Widget.ConstructorProperties { }
+    interface ConstructorProperties extends St.Widget.ConstructorProperties {}
 }
 
 /**
@@ -17,7 +17,6 @@ declare class ButtonBox extends St.Widget {
     _init(params: ButtonBox.ConstructorProperties): void;
     container: St.Bin;
 }
-
 
 /**
  * @version 46

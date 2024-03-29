@@ -5,7 +5,6 @@ import type Shell from '@girs/shell-14';
 import { EventEmitter } from '../misc/signals.js';
 
 declare class AppFavorites extends EventEmitter {
-
     protected _favorites: Map<string, Shell.App>;
 
     constructor();

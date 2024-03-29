@@ -48,7 +48,6 @@ import { WindowManager } from './windowManager.js';
 // import * as Config from '../misc/config.js'
 // import * as Util from '../misc/util.js'
 
-
 export declare const componentManager: ComponentManager;
 
 export declare const extensionManager: ExtensionManager;
@@ -147,7 +146,7 @@ export declare const locatePointer: any;
  *
  * @returns The grab handle created
  */
-export function pushModal(actor: any /* Clutter.Actor */, params?: any): any /* Clutter.Grab */;
+export function pushModal(actor: any /* Clutter.Actor */, params?: any): any; /* Clutter.Grab */
 
 /**
  * popModal:
@@ -266,7 +265,6 @@ export function loadTheme(): void;
  */
 export function notify(msg: string, details: string): void;
 
-
 /**
  * See shell_global_notify_problem().
  *
@@ -316,7 +314,6 @@ export function pushModal(actor: Clutter.Actor, params?: any): Clutter.Grab;
  * @param timestamp - optional timestamp
  */
 export function popModal(grab: Clutter.Grab, timestamp?: number): void;
-
 
 /**
  * Creates the looking glass panel

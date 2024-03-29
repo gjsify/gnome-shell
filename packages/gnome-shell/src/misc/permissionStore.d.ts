@@ -24,13 +24,7 @@ export declare class PermissionStoreProxy extends Gio.DBusProxy {
      * @param initCallback Callback function for initialization.
      * @param cancellable A Gio.Cancellable or null.
      */
-    constructor(
-        connection: Gio.DBusConnection,
-        name: string,
-        objectPath: string,
-        initCallback: Function,
-        cancellable: Gio.Cancellable | null
-    );
+    constructor(connection: Gio.DBusConnection, name: string, objectPath: string, initCallback: Function, cancellable: Gio.Cancellable | null);
 }
 
 /**
@@ -39,7 +33,4 @@ export declare class PermissionStoreProxy extends Gio.DBusProxy {
  * @param cancellable A Gio.Cancellable to cancel the operation, or null.
  * @returns An instance of the Permission Store proxy.
  */
-export declare function PermissionStore(
-    initCallback: Function,
-    cancellable: Gio.Cancellable | null
-): PermissionStoreProxy
+export declare function PermissionStore(initCallback: Function, cancellable: Gio.Cancellable | null): PermissionStoreProxy;

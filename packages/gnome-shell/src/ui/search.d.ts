@@ -5,13 +5,11 @@ import type Clutter from '@girs/clutter-14';
 
 import { AppSearchProvider } from './appDisplay.js';
 
-export class MaxWidthBox extends St.BoxLayout {
-
-}
+export class MaxWidthBox extends St.BoxLayout {}
 
 export class SearchResult extends St.Button {
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProperties): void
+    public _init(config?: St.Button.ConstructorProperties): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
     activate(): void;
@@ -19,16 +17,15 @@ export class SearchResult extends St.Button {
 
 export class ListSearchResult extends SearchResult {
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProperties): void
+    public _init(config?: St.Button.ConstructorProperties): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 }
 
 export class GridSearchResult extends SearchResult {
-
     public readonly focusChild: St.Widget;
 
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProperties): void
+    public _init(config?: St.Button.ConstructorProperties): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
     protected _onDestroy(): void;
@@ -43,9 +40,9 @@ export class GridSearchResult extends SearchResult {
 export abstract class SearchResultsBase extends St.BoxLayout {
     /** @hidden */
     public _init(config?: St.BoxLayout.ConstructorProperties): void;
-     /** @hidden */
+    /** @hidden */
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
-    public _init(props?: { style_class?: string, vertical?: boolean }): void;
+    public _init(props?: { style_class?: string; vertical?: boolean }): void;
 
     public activateDefault(): void;
     public highlightDefault(highlight: boolean): void;
@@ -60,7 +57,7 @@ export class ListSearchResults extends SearchResultsBase {
     /** @hidden */
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
     /** @hidden */
-    public _init(props?: { style_class?: string, vertical?: boolean }): void;
+    public _init(props?: { style_class?: string; vertical?: boolean }): void;
 
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
 
@@ -74,7 +71,6 @@ export class ListSearchResults extends SearchResultsBase {
 }
 
 export class GridSearchResultsLayout extends Clutter.LayoutManager {
-
     public spacing: number;
 
     /** @hidden */
@@ -88,7 +84,7 @@ export class GridSearchResults extends SearchResultsBase {
     /** @hidden */
     public _init(config?: St.BoxLayout.ConstructorProperties): void;
     /** @hidden */
-    public _init(props?: { style_class?: string, vertical?: boolean }): void;
+    public _init(props?: { style_class?: string; vertical?: boolean }): void;
 
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
 
@@ -103,7 +99,6 @@ export class GridSearchResults extends SearchResultsBase {
 }
 
 export class SearchResultsView extends St.BoxLayout {
-
     public readonly terms: string[];
     public readonly searchInProgress: boolean;
 
@@ -137,11 +132,10 @@ export class SearchResultsView extends St.BoxLayout {
 }
 
 export class ProviderInfo extends St.Button {
-
     readonly PROVIDER_ICON_SIZE: number;
 
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProperties): void
+    public _init(config?: St.Button.ConstructorProperties): void;
 
     public _init(provider: AppSearchProvider): void;
 

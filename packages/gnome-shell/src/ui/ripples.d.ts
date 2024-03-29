@@ -1,7 +1,5 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/ripples.js
 
-
-
 import type Clutter from '@girs/clutter-14';
 import type St from '@girs/st-14';
 
@@ -27,12 +25,12 @@ export class Ripples {
      * linearly to zero it fades away too quickly, so we use a separate
      * tween to give a non-linear curve to the fade-away and make
      * it more visible in the middle section.
-     * @param ripple 
-     * @param delay 
-     * @param duration 
-     * @param startScale 
-     * @param startOpacity 
-     * @param finalScale 
+     * @param ripple
+     * @param delay
+     * @param duration
+     * @param startScale
+     * @param startOpacity
+     * @param finalScale
      */
     protected _animRipple(ripple: St.BoxLayout, delay: number, duration: number, startScale: number, startOpacity: number, finalScale: number): void;
 }

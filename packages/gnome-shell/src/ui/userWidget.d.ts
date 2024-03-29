@@ -2,6 +2,4 @@
 
 import type St from '@girs/st-14';
 
-export class UserWidget extends St.BoxLayout {
-
-}
+export class UserWidget extends St.BoxLayout {}

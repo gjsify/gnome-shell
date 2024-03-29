@@ -1,7 +1,6 @@
 import type St from '@girs/st-14';
 
 export class CheckBox extends St.Button {
-
     protected _box: St.Bin;
     protected _label: St.Label;
 
@@ -12,5 +11,4 @@ export class CheckBox extends St.Button {
 
     public setLabel(label: string): void;
     public getLabelActor(): St.Label;
-
 }

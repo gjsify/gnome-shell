@@ -95,9 +95,8 @@ export declare class InputSourcePopup extends SwitcherPopup.SwitcherPopup {
  * Class representing a switcher for input sources.
  */
 export declare class InputSourceSwitcher extends SwitcherPopup.SwitcherList {
-
     _init(config?: St.Widget.ConstructorProperties): void;
-    _init(squareItems: any[]): void
+    _init(squareItems: any[]): void;
 
     /**
      * Initializes a new instance of `InputSourceSwitcher`.

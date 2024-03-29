@@ -60,7 +60,7 @@ export interface SignalMethods<S extends SignalMap<S> = any> {
     /**
      * Disconnects all signal handlers for an object.
      */
-    disconnectAll(): void
+    disconnectAll(): void;
     /**
      * Checks if a handler ID is connected.
      * @param id The ID of the handler to be disconnected
@@ -75,11 +75,11 @@ export interface EventEmitter<S extends SignalMap<S> = any> extends SignalMethod
  * @version 46
  */
 export class EventEmitter<S extends SignalMap<S> = any> {
-    connectObject(...args: any[]): number // TODO: return type is return type of imports.misc.signalTracker.connectObject
+    connectObject(...args: any[]): number; // TODO: return type is return type of imports.misc.signalTracker.connectObject
 
-    disconnectObject(...args: any[]): number // TODO: return type is return type of imports.misc.signalTracker.disconnectObject
+    disconnectObject(...args: any[]): number; // TODO: return type is return type of imports.misc.signalTracker.disconnectObject
 
-    connect_object(...args: any[]): ReturnType<typeof this.connectObject>
+    connect_object(...args: any[]): ReturnType<typeof this.connectObject>;
 
-    disconnect_object(...args: any[]): ReturnType<typeof this.disconnectObject>
+    disconnect_object(...args: any[]): ReturnType<typeof this.disconnectObject>;
 }

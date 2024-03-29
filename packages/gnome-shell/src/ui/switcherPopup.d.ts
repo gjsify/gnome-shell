@@ -15,23 +15,23 @@ export abstract class SwitcherPopup extends St.Widget {
     show(): boolean;
     show(backward: boolean, binding: any, mask: any): boolean;
 
-    _showImmediately(): void
+    _showImmediately(): void;
 
     _next(): any;
 
     _previous(): any;
 
-    _keyPressHandler(_keysym: any, _action: any): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP
+    _keyPressHandler(_keysym: any, _action: any): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
-    vfunc_key_press_event(keyEvent: Clutter.KeyEvent): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP
+    vfunc_key_press_event(keyEvent: Clutter.KeyEvent): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
-    vfunc_key_release_event(keyEvent: Clutter.KeyEvent): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP
+    vfunc_key_release_event(keyEvent: Clutter.KeyEvent): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
-    vfunc_button_press_event(): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP
+    vfunc_button_press_event(): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
     _scrollHandler(direction: any): void;
 
-    vfunc_scroll_event(scrollEvent: any /* Clutter.ScrollEvent */): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP
+    vfunc_scroll_event(scrollEvent: any /* Clutter.ScrollEvent */): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
     _itemActivatedHandler(n: number): void;
 
@@ -63,7 +63,7 @@ export abstract class SwitcherPopup extends St.Widget {
 export class SwitcherList extends St.Widget {
     /** @hidden Defined only to resolve type conflicts */
     _init(config?: St.Widget.ConstructorProperties): void;
-    _init(squareItems: any[]): void
+    _init(squareItems: any[]): void;
 
     addItem(item: any, label: string): void;
 
@@ -71,27 +71,27 @@ export class SwitcherList extends St.Widget {
 
     addAccessibleState(index: number, state: any): void;
 
-    removeAccessibleState(index: number, state: any): void
+    removeAccessibleState(index: number, state: any): void;
 
-    _onItemClicked(item: any): void
+    _onItemClicked(item: any): void;
 
-    _onItemMotion(item: any): void
+    _onItemMotion(item: any): void;
 
-    highlight(index: number, justOutline: boolean): void
+    highlight(index: number, justOutline: boolean): void;
 
-    _scrollToLeft(index: number): void
+    _scrollToLeft(index: number): void;
 
-    _scrollToRight(index: number): void
+    _scrollToRight(index: number): void;
 
-    _itemActivated(n: number): void
+    _itemActivated(n: number): void;
 
-    _itemEntered(n: number): void
+    _itemEntered(n: number): void;
 
-    _maxChildWidth(forHeight: number): number
+    _maxChildWidth(forHeight: number): number;
 
-    vfunc_get_preferred_width(forHeight: number): [number, number]
+    vfunc_get_preferred_width(forHeight: number): [number, number];
 
-    vfunc_get_preferred_height(_forWidth: number): [number, number]
+    vfunc_get_preferred_height(_forWidth: number): [number, number];
 
-    vfunc_allocate(box: any): void
+    vfunc_allocate(box: any): void;
 }
