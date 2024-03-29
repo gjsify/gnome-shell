@@ -490,6 +490,7 @@ __metadata:
     "@girs/shew-0": "npm:^0.0.0-3.3.0"
     "@girs/st-14": "npm:^14.0.0-3.3.0"
     "@girs/upowerglib-1.0": "npm:^0.99.1-3.3.0"
+    "@tsconfig/strictest": "npm:^2.0.5"
     typescript: "npm:5.4.3"
   languageName: unknown
   linkType: soft
@@ -870,11 +871,19 @@ __metadata:
     "@girs/gnome-shell": "workspace:^"
     "@girs/gobject-2.0": "npm:^2.78.0-3.3.0"
     "@girs/st-14": "npm:^14.0.0-3.3.0"
+    "@tsconfig/strictest": "npm:^2.0.5"
     adm-zip: "npm:^0.5.12"
     esbuild: "npm:^0.20.2"
     typescript: "npm:5.4.3"
   languageName: unknown
   linkType: soft
+
+"@tsconfig/strictest@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "@tsconfig/strictest@npm:2.0.5"
+  checksum: 10/c1dfc581c6b46218034aa05a0ea2d0284ae8dc3508a38bee7014dd6868ed681e6b88d4d13a8e1b7f35221e84cd020ffab18f3991bc9e652ce441775e2fcbad57
+  languageName: node
+  linkType: hard
 
 "adm-zip@npm:^0.5.12":
   version: 0.5.12

@@ -1,17 +1,12 @@
 {
+    "extends": "@tsconfig/strictest/tsconfig.json",
     "compilerOptions": {
         "lib": ["ESNext"],
         "types": [],
         "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "strict": true,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "noImplicitThis": true,
-        "alwaysStrict": true,
-        "strictPropertyInitialization": true,
-        "allowSyntheticDefaultImports": true
+        "skipLibCheck": false
     },
     "include": ["./dist/**/*.d.ts"],
     "files": ["./dist/index.d.ts"]

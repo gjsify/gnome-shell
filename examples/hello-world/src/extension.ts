@@ -7,9 +7,13 @@ import PanelMenu from '@girs/gnome-shell/ui/panelMenu';
 import * as Main from '@girs/gnome-shell/ui/main';
 
 export default class ExampleExtension extends Extension {
-    _indicator: PanelMenu.Button;
+    private _indicator: PanelMenu.Button | null = null;
 
-    enable() {
+    override enable() {
+        if (this._indicator !== null) {
+            return;
+        }
+
         // Create a panel button
         this._indicator = new PanelMenu.Button(0.0, this.metadata.name, false);
 
@@ -24,7 +28,7 @@ export default class ExampleExtension extends Extension {
         Main.panel.addToStatusArea(this.uuid, this._indicator);
     }
 
-    disable() {
+    override disable() {
         this._indicator?.destroy();
         this._indicator = null;
     }
