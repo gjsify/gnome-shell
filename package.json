@@ -25,7 +25,7 @@
         "prettier:fix": "prettier --write ."
     },
     "gitHooks": {
-        "pre-commit": "npm run prettier:check"
+        "pre-commit": "yarn run prettier:check"
     },
     "workspaces": [
         "packages/*",
