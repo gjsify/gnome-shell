@@ -7,6 +7,7 @@ import type Clutter from '@girs/clutter-14';
 import type Meta from '@girs/meta-14';
 
 import * as Signals from '../misc/signals.js';
+import * as BoxPointer from './boxpointer.js';
 
 /**
  * @version 46
@@ -190,6 +191,7 @@ export namespace PopupMenu {
  */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     constructor(sourceActor: St.Widget, arrowAlignment: number, arrowSide: St.Side);
+    readonly actor: BoxPointer.BoxPointer;
 
     setArrowOrigin(origin: number): void;
     setSourceAlignment(alignment: number): void;
@@ -204,6 +206,7 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
 export class PopupDummyMenu extends Signals.EventEmitter {
     constructor(sourceActor: St.Widget);
 
+    readonly actor: St.Widget;
     readonly sensitive: boolean;
 
     getSensitive(): boolean;
@@ -248,6 +251,8 @@ export namespace PopupMenuSection {
  */
 export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S> {
     constructor();
+
+    readonly actor: St.BoxLayout;
 
     open(): void;
     close(): void;
