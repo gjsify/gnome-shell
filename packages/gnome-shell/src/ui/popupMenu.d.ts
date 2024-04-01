@@ -205,7 +205,7 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
  */
 export class PopupDummyMenu extends Signals.EventEmitter {
     constructor(sourceActor: St.Widget);
-    
+
     readonly actor: St.Widget;
     readonly sensitive: boolean;
 
