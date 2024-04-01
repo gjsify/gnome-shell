@@ -7,6 +7,7 @@ import type Clutter from '@girs/clutter-14';
 import type Meta from '@girs/meta-14';
 
 import * as Signals from '../misc/signals.js';
+import * as BoxPointer from './boxpointer.js';
 
 /**
  * @version 46
@@ -190,6 +191,7 @@ export namespace PopupMenu {
  */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     constructor(sourceActor: St.Widget, arrowAlignment: number, arrowSide: St.Side);
+    readonly actor: BoxPointer.BoxPointer;
 
     setArrowOrigin(origin: number): void;
     setSourceAlignment(alignment: number): void;
