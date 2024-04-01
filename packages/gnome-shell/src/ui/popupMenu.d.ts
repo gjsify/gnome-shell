@@ -205,7 +205,8 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
  */
 export class PopupDummyMenu extends Signals.EventEmitter {
     constructor(sourceActor: St.Widget);
-
+    
+    readonly actor: St.Widget;
     readonly sensitive: boolean;
 
     getSensitive(): boolean;
@@ -250,6 +251,8 @@ export namespace PopupMenuSection {
  */
 export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S> {
     constructor();
+
+    readonly actor: St.BoxLayout;
 
     open(): void;
     close(): void;
