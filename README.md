@@ -18,6 +18,9 @@ This project provides TypeScript type definitions for GNOME Shell Extensions. It
 ## How It Works
 The TypeScript types for the used libraries are generated from the `.gir` files using [ts-for-gir](https://github.com/gjsify/ts-for-gir) and are available as NPM packages. A significant portion of GNOME Shell is written in JavaScript, lacking `.gir` files. Therefore, these type definitions need to be manually created, which is the primary focus of this project. These additional definitions are manually written and included in this repository. Our build scripts automatically generate *.js (for ESM) and *.cjs files, Ambient Module Definitions, and index files. The structure for these files can be found on [./packages/gnome-shell/src](./packages/gnome-shell/src) and should align with the structure of GNOME Shell's JavaScript source code, available [here](https://gitlab.gnome.org/GNOME/gnome-shell/-/tree/main/js). This setup allows contributors to primarily focus on the TypeScript type definitions, with the rest being automatically generated, including the exports in the package.json.
 
+## Showcase
+* We are happy if you link your project through a PR here 😊
+
 ## Contributing
 **Every contribution, regardless of its size, is incredibly valuable.** If you're using these types and discover missing types necessary for your GNOME Shell Extension, contributing just those types is immensely helpful. This approach ensures the types are tested in real-world scenarios, vital for a project as extensive as the GNOME Shell.
 
