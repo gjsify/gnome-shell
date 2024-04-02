@@ -1,4 +1,16 @@
-# GNOME Shell TypeScript Type Definitions
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gjsify/gnome-shell/main/.github/avatar_x8.png" />
+  <h1 align="center">TypeScript <small>for</small> GNOME Shell</h1>
+</p>
+
+<p align="center">
+  <a href="https://github.com/gjsify/gnome-shell/actions"><img src="https://img.shields.io/github/actions/workflow/status/gjsify/gnome-shell/ci.yml" /></a>
+  <a href="https://github.com/gjsify/gnome-shell/blob/main/LICENSE"><img src="https://img.shields.io/github/license/gjsify/gnome-shell" /></a>
+  <a href="https://www.npmjs.com/package/@girs/gnome-shell"><img src="https://img.shields.io/npm/v/@girs/gnome-shell" /></a>
+  <a href="https://www.npmjs.com/package/@girs/gnome-shell"><img src="https://img.shields.io/npm/dw/@girs/gnome-shell" /></a>
+</p>
+
+<p align="center">Write GNOME Shell Extensions in TypeScript</p>
 
 ## Overview
 This NPM package, `@girs/gnome-shell`, provides TypeScript type definitions for developing GNOME Shell Extensions. It is tailored to enhance the development experience for those using TypeScript. The types are currently in an experimental phase, and community contributions play a significant role in their refinement and expansion.
