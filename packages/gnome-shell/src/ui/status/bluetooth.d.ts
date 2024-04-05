@@ -88,7 +88,7 @@ export declare class BluetoothToggle extends QuickMenuToggle {
     private _placeholderItem: PopupMenu.PopupMenuItem;
 
     /** @hidden */
-    _init(params: St.Button.ConstructorProperties): void;
+    _init(params: St.Button.ConstructorProps): void;
 
     /**
      * Initializes a new instance of `BluetoothToggle`.

@@ -72,7 +72,7 @@ export declare class InputSourcePopup extends SwitcherPopup.SwitcherPopup {
     private _switcherList: InputSourceSwitcher;
 
     /** @hidden Only defined to resolve type conflict */
-    _init(props: St.Widget.ConstructorProperties): void;
+    _init(props: St.Widget.ConstructorProps): void;
     _init(items: any[]): void;
 
     /**
@@ -95,7 +95,7 @@ export declare class InputSourcePopup extends SwitcherPopup.SwitcherPopup {
  * Class representing a switcher for input sources.
  */
 export declare class InputSourceSwitcher extends SwitcherPopup.SwitcherList {
-    _init(config?: St.Widget.ConstructorProperties): void;
+    _init(config?: St.Widget.ConstructorProps): void;
     _init(squareItems: any[]): void;
 
     /**

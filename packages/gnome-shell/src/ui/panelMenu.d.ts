@@ -5,16 +5,16 @@ import type St from '@girs/st-14';
 import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
 
 declare namespace ButtonBox {
-    interface ConstructorProperties extends St.Widget.ConstructorProperties {}
+    interface ConstructorProps extends St.Widget.ConstructorProps {}
 }
 
 /**
  * @version 46
  */
 declare class ButtonBox extends St.Widget {
-    constructor(params?: ButtonBox.ConstructorProperties);
+    constructor(params?: ButtonBox.ConstructorProps);
     /** @hidden Defined to resolve version conflicts */
-    _init(params: ButtonBox.ConstructorProperties): void;
+    _init(params: ButtonBox.ConstructorProps): void;
     container: St.Bin;
 }
 
@@ -27,7 +27,7 @@ export class Button extends ButtonBox {
     constructor(menuAlignment: number, nameText: string, dontCreateMenu?: boolean);
 
     /** @hidden Defined to resolve version conflicts */
-    _init(params?: ButtonBox.ConstructorProperties): void;
+    _init(params?: ButtonBox.ConstructorProps): void;
     _init(menuAlignment: number, nameText: string, dontCreateMenu?: boolean): void;
     setSensitive(sensitive: boolean): void;
     setMenu(menu: PopupMenu | PopupDummyMenu): void;

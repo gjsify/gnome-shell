@@ -139,7 +139,7 @@ export class Calendar extends St.Widget {
 
     constructor();
     /** @hidden */
-    public _init(params?: St.Widget.ConstructorProperties): void;
+    public _init(params?: St.Widget.ConstructorProps): void;
     public _init(): void;
 
     public setEventSource(eventSource: EventSourceBase): void;
@@ -164,7 +164,7 @@ export class Calendar extends St.Widget {
 
 export class NotificationMessage extends Message {
     /** @hidden */
-    override _init(params?: St.Button.ConstructorProperties): void;
+    override _init(params?: St.Button.ConstructorProps): void;
     /** @hidden */
     override _init(title: string, body: string): void;
     public _init(notification: Notification): void;
@@ -180,7 +180,7 @@ declare class TimeLabel extends St.Label {
     _datetime: Date;
 
     /** @hidden */
-    public _init(params?: St.Label.ConstructorProperties): void;
+    public _init(params?: St.Label.ConstructorProps): void;
     public _init(datetime: Date): void;
 
     public vfunc_map(): void;
@@ -190,7 +190,7 @@ declare class NotificationSection extends MessageListSection {
     public readonly allowed: boolean;
 
     /** @hidden */
-    public _init(params?: St.BoxLayout.ConstructorProperties): void;
+    public _init(params?: St.BoxLayout.ConstructorProps): void;
     public _init(): void;
 
     public vfunc_map(): void;
@@ -205,7 +205,7 @@ declare class Placeholder extends St.BoxLayout {
     protected _label: St.Label;
 
     /** @hidden */
-    override _init(params?: St.BoxLayout.ConstructorProperties): void;
+    override _init(params?: St.BoxLayout.ConstructorProps): void;
     public _init(): void;
 }
 
@@ -214,7 +214,7 @@ declare class DoNotDisturbSwitch extends Switch {
 
     constructor();
     /** @hidden */
-    override _init(config?: St.Bin.ConstructorProperties): void;
+    override _init(config?: St.Bin.ConstructorProps): void;
     /** @hidden */
     override _init(state: boolean): void;
     public _init(): void;
@@ -230,10 +230,10 @@ export class CalendarMessageList extends St.Widget {
     _mediaSection: MediaSection;
     _notificationSection: NotificationSection;
 
-    visible: boolean;
+    // visible: boolean;
 
     /** @hidden */
-    override _init(config?: St.Widget.ConstructorProperties): void;
+    override _init(config?: St.Widget.ConstructorProps): void;
     public _init(): void;
 
     protected _addSection(section: MessageListSection): void;

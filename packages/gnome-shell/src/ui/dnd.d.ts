@@ -29,7 +29,7 @@ export function addDragMonitor(monitor: _Draggable): void;
 export function removeDragMonitor(monitor: _Draggable): void;
 
 declare namespace _Draggable {
-    export interface ConstructorProperties {
+    export interface ConstructorProps {
         manualMode?: boolean;
         timeoutThreshold?: number;
         restoreOnSuccess?: boolean;
@@ -41,7 +41,7 @@ declare namespace _Draggable {
 declare class _Draggable extends EventEmitter {
     public actor: Clutter.Actor;
 
-    constructor(actor: Clutter.Actor, params: _Draggable.ConstructorProperties);
+    constructor(actor: Clutter.Actor, params: _Draggable.ConstructorProps);
 
     /**
      * fakeRelease:

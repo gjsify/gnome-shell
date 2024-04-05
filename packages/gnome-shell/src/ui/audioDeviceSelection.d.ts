@@ -15,9 +15,9 @@ declare class AudioDeviceSelectionDialog extends ModalDialog {
     constructor(devices: number);
 
     /** @hidden */
-    public _init(params?: St.Widget.ConstructorProperties): void;
+    public _init(params?: St.Widget.ConstructorProps): void;
     /** @hidden */
-    public _init(props?: ModalDialog.ConstructorProperties): void;
+    public _init(props?: ModalDialog.ConstructorProps): void;
     public _init(devices: number): void;
 
     protected _buildLayout(): void;

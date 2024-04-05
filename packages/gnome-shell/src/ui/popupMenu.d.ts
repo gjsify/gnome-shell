@@ -26,7 +26,7 @@ export enum Ornament {
 export function arrowIcon(side: St.Side): St.Icon;
 
 declare namespace PopupBaseMenuItem {
-    export interface ConstructorProperties {
+    export interface ConstructorProps {
         reactive?: boolean;
         activate?: boolean;
         hover?: boolean;
@@ -43,7 +43,7 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
     active: boolean;
     sensitive: boolean;
 
-    constructor(params?: PopupBaseMenuItem.ConstructorProperties);
+    constructor(params?: PopupBaseMenuItem.ConstructorProps);
     override _init(...args: any[]): void;
 
     activate(event: Clutter.Event): void;
@@ -65,15 +65,15 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
 }
 
 export namespace PopupMenuItem {
-    export interface ConstructorProperties extends PopupBaseMenuItem.ConstructorProperties {}
+    export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {}
 }
 
 /**
  * @version 46
  */
 export class PopupMenuItem extends PopupBaseMenuItem {
-    constructor(text: string, params?: PopupMenuItem.ConstructorProperties);
-    override _init(text: string, params?: PopupMenuItem.ConstructorProperties): void;
+    constructor(text: string, params?: PopupMenuItem.ConstructorProps);
+    override _init(text: string, params?: PopupMenuItem.ConstructorProps): void;
 
     readonly label: St.Label;
 }
@@ -95,7 +95,7 @@ export class Switch extends St.Bin {
     state: boolean;
     constructor(state: boolean);
     /** @hidden Defined only to resolve type conflicts */
-    override _init(config?: St.Bin.ConstructorProperties): void;
+    override _init(config?: St.Bin.ConstructorProps): void;
     override _init(state: boolean): void;
 
     setToggleState(state: boolean): void;
@@ -113,7 +113,7 @@ export class Switch extends St.Bin {
 }
 
 export namespace PopupSwitchMenuItem {
-    export interface ConstructorProperties extends PopupBaseMenuItem.ConstructorProperties {}
+    export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {}
 }
 
 /**
@@ -122,8 +122,8 @@ export namespace PopupSwitchMenuItem {
 export class PopupSwitchMenuItem extends PopupBaseMenuItem {
     readonly state: boolean;
 
-    constructor(text: string, active: boolean, params?: PopupSwitchMenuItem.ConstructorProperties);
-    override _init(text: string, active: boolean, params?: PopupSwitchMenuItem.ConstructorProperties): void;
+    constructor(text: string, active: boolean, params?: PopupSwitchMenuItem.ConstructorProps);
+    override _init(text: string, active: boolean, params?: PopupSwitchMenuItem.ConstructorProps): void;
 
     setStatus(text: string): void;
     activate(event: Clutter.Event): void;
@@ -133,15 +133,15 @@ export class PopupSwitchMenuItem extends PopupBaseMenuItem {
 }
 
 export namespace PopupImageMenuItem {
-    export interface ConstructorProperties extends PopupBaseMenuItem.ConstructorProperties {}
+    export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {}
 }
 
 /**
  * @version 46
  */
 export class PopupImageMenuItem extends PopupBaseMenuItem {
-    constructor(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProperties);
-    override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProperties): void;
+    constructor(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProps);
+    override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProps): void;
 
     setIcon(icon: Gio.Icon | string): void;
 }
@@ -275,7 +275,7 @@ export class PopupSubMenuMenuItem extends PopupBaseMenuItem {
 }
 
 export namespace PopupMenuManager {
-    export interface ConstructorProperties {
+    export interface ConstructorProps {
         actionMode?: Shell.ActionMode;
     }
 }
@@ -284,7 +284,7 @@ export namespace PopupMenuManager {
  * @version 46
  */
 export class PopupMenuManager {
-    constructor(owner: any, grabParams?: PopupMenuManager.ConstructorProperties);
+    constructor(owner: any, grabParams?: PopupMenuManager.ConstructorProps);
 
     addMenu(menu: PopupMenuBase, position: number): void;
     removeMenu(menu: PopupMenuBase): void;

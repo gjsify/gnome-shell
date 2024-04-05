@@ -4,10 +4,7 @@ import type St from '@girs/st-14';
 import type Atk from '@girs/atk-1.0';
 
 export namespace BarLevel {
-    export interface ConstructorProperties extends St.DrawingArea.ConstructorProperties {
-        style_class?: string | null;
-        accessible_role?: Atk.Role;
-    }
+    export interface ConstructorProps extends St.DrawingArea.ConstructorProps {}
 }
 
 export class BarLevel extends St.DrawingArea {
@@ -20,8 +17,8 @@ export class BarLevel extends St.DrawingArea {
     public maximumValue: number;
     public overdriveStart: number;
 
-    constructor(params?: BarLevel.ConstructorProperties);
-    public _init(params?: BarLevel.ConstructorProperties): void;
+    constructor(params?: BarLevel.ConstructorProps);
+    public _init(params?: BarLevel.ConstructorProps): void;
 
     public vfunc_repaint(): void;
 

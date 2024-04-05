@@ -5,7 +5,7 @@ import type St from '@girs/st-14';
 import type Shell from '@girs/shell-14';
 
 export namespace BaseIcon {
-    export interface ConstructorProperties {
+    export interface ConstructorProps {
         createIcon?: any | null;
         setSizeManually?: boolean;
         showLabel?: boolean;
@@ -19,14 +19,14 @@ export class BaseIcon extends Shell.SquareBin {
 
     protected _setSizeManually?: boolean;
 
-    constructor(label: string, params?: BaseIcon.ConstructorProperties);
+    constructor(label: string, params?: BaseIcon.ConstructorProps);
 
-    public _init(params?: Shell.SquareBin.ConstructorProperties): void;
-    public _init(label: string, params?: BaseIcon.ConstructorProperties): void;
+    public _init(params?: Shell.SquareBin.ConstructorProps): void;
+    public _init(label: string, params?: BaseIcon.ConstructorProps): void;
 }
 
 export namespace IconGrid {
-    export interface ConstructorProperties {
+    export interface ConstructorProps {
         allow_incomplete_pages?: boolean;
         orientation?: Clutter.Orientation;
         columns_per_page: number;
@@ -47,11 +47,11 @@ export class IconGrid extends St.Viewport {
 
     protected _currentPage: number;
 
-    constructor(layoutParams?: IconGrid.ConstructorProperties);
+    constructor(layoutParams?: IconGrid.ConstructorProps);
 
     /** @hidden */
-    public _init(params?: St.Viewport.ConstructorProperties): void;
-    public _init(layoutParams?: IconGrid.ConstructorProperties): void;
+    public _init(params?: St.Viewport.ConstructorProps): void;
+    public _init(layoutParams?: IconGrid.ConstructorProps): void;
 
     protected _childAdded(grid: IconGrid, child: St.Widget): void;
     protected _ensureItemIsVisible(item: St.Widget): void;

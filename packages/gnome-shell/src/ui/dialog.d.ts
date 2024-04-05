@@ -38,7 +38,7 @@ export class Dialog extends St.Widget {
  * @version 46
  */
 export namespace MessageDialogContent {
-    export interface ConstructorProperties extends St.BoxLayout.ConstructorProperties {
+    export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
         title?: string;
         description?: string;
     }
@@ -50,14 +50,14 @@ export class MessageDialogContent extends St.BoxLayout {
     public title: string;
     public description: string;
 
-    constructor(params: MessageDialogContent.ConstructorProperties);
-    public _init(params: MessageDialogContent.ConstructorProperties): void;
+    constructor(params: MessageDialogContent.ConstructorProps);
+    public _init(params: MessageDialogContent.ConstructorProps): void;
 
     protected _onDestroy(): void;
     protected _updateTitleStyle(): void | false;
 }
 
-export interface ListSectionProps extends St.BoxLayout.ConstructorProperties {
+export interface ListSectionProps extends St.BoxLayout.ConstructorProps {
     title?: string;
 }
 
@@ -70,13 +70,13 @@ export class ListSection extends St.BoxLayout {
 
     public list: St.BoxLayout;
     public title: string;
-    public label_actor: St.Label;
+    // public label_actor: St.Label;
 
     constructor(params: ListSectionProps);
     public _init(params: ListSectionProps): void;
 }
 
-export interface ListSectionItemProps extends St.BoxLayout.ConstructorProperties {
+export interface ListSectionItemProps extends St.BoxLayout.ConstructorProps {
     title?: string;
     description?: string;
     // note: iconActor hasn't: GObject.ParamFlags.CONSTRUCT, but might work anyways?

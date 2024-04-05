@@ -22,7 +22,7 @@ export declare class BackgroundAppMenuItem extends PopupMenu.PopupImageMenuItem 
     /** @hidden */
     override _init(...args: any[]): void;
     /** @hidden */
-    override _init(text: string, active: boolean, params?: PopupMenu.PopupSwitchMenuItem.ConstructorProperties): void;
+    override _init(text: string, active: boolean, params?: PopupMenu.PopupSwitchMenuItem.ConstructorProps): void;
 
     /**
      * Initializes a new instance of `BackgroundAppMenuItem`.
