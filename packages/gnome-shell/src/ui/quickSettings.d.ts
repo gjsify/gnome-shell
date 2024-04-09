@@ -18,7 +18,7 @@ export declare class QuickSettingsItem extends St.Button {
     /**
      * Initializes a new instance of `QuickSettingsItem`.
      */
-    _init(config?: St.Button.ConstructorProperties): void;
+    _init(config?: St.Button.ConstructorProps): void;
 }
 
 /**
@@ -27,7 +27,6 @@ export declare class QuickSettingsItem extends St.Button {
 export declare class QuickToggle extends QuickSettingsItem {
     title: string;
     subtitle: string;
-    iconName: string;
     gicon: Gio.Icon;
 
     private _box: St.BoxLayout;
@@ -38,7 +37,7 @@ export declare class QuickToggle extends QuickSettingsItem {
     /**
      * Initializes a new instance of `QuickToggle`.
      */
-    _init(params: St.Button.ConstructorProperties): void;
+    _init(params: St.Button.ConstructorProps): void;
 
     get label(): string;
     set label(label: string);
@@ -50,7 +49,6 @@ export declare class QuickToggle extends QuickSettingsItem {
 export declare class QuickMenuToggle extends QuickSettingsItem {
     title: string;
     subtitle: string;
-    iconName: string;
     gicon: Gio.Icon;
     menuEnabled: boolean;
 
@@ -60,14 +58,13 @@ export declare class QuickMenuToggle extends QuickSettingsItem {
     /**
      * Initializes a new instance of `QuickMenuToggle`.
      */
-    _init(params: St.Button.ConstructorProperties): void;
+    _init(params: St.Button.ConstructorProps): void;
 }
 
 /**
  * Class representing a quick slider.
  */
 export declare class QuickSlider extends QuickSettingsItem {
-    iconName: string;
     gicon: Gio.Icon;
     iconReactive: boolean;
     iconLabel: string;
@@ -80,7 +77,7 @@ export declare class QuickSlider extends QuickSettingsItem {
     /**
      * Initializes a new instance of `QuickSlider`.
      */
-    _init(params: St.Button.ConstructorProperties): void;
+    _init(params: St.Button.ConstructorProps): void;
 }
 
 /**
@@ -163,9 +160,9 @@ export declare class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
      * Initializes a new instance of QuickSettingsLayout.
      */
-    constructor(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProperties);
+    constructor(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProps);
 
-    _init(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProperties): void;
+    _init(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProps): void;
 
     /**
      * Method to get child metadata type.

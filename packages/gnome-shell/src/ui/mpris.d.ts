@@ -18,7 +18,7 @@ declare class MediaMessage extends Message {
     constructor(player: MprisPlayer);
 
     /** @hidden */
-    public override _init(params?: St.Button.ConstructorProperties): void;
+    public override _init(params?: St.Button.ConstructorProps): void;
     /** @hidden */
     public override _init(title: string, body: string): void;
     public _init(player: MprisPlayer): void;
@@ -57,7 +57,7 @@ export class MediaSection extends MessageListSection {
     public readonly allowed: boolean;
 
     /** @hidden */
-    public _init(params?: St.BoxLayout.ConstructorProperties): void;
+    public _init(params?: St.BoxLayout.ConstructorProps): void;
     public _init(): void;
 
     _addPlayer(busName: string): void;

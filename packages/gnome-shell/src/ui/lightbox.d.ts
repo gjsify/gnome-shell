@@ -12,7 +12,7 @@ export const VIGNETTE_SHARPNESS = 0.7;
  * @version 46
  */
 export namespace RadialShaderEffect {
-    export interface ConstructorProperties extends Shell.GLSLEffect.ConstructorProperties {
+    export interface ConstructorProps extends Shell.GLSLEffect.ConstructorProps {
         brightness?: number;
         sharpness?: number;
     }
@@ -28,8 +28,8 @@ export class RadialShaderEffect extends Shell.GLSLEffect {
     public brightness: number;
     public sharpness: number;
 
-    constructor(props: RadialShaderEffect.ConstructorProperties);
-    public _init(props: RadialShaderEffect.ConstructorProperties): void;
+    constructor(props: RadialShaderEffect.ConstructorProps);
+    public _init(props: RadialShaderEffect.ConstructorProps): void;
 
     vfunc_build_pipeline(): void;
 }
@@ -44,7 +44,7 @@ export interface LightboxAdditionalParameters {
  * @version 46
  */
 export namespace Lightbox {
-    export interface ConstructorProperties extends St.Bin.ConstructorProperties, LightboxAdditionalParameters {
+    export interface ConstructorProps extends St.Bin.ConstructorProps, LightboxAdditionalParameters {
         brightness?: number;
         sharpness?: number;
     }
@@ -81,8 +81,8 @@ export class Lightbox extends St.Bin {
      * @param {number=} params.fadeFactor: fading opacity factor
      * @param {boolean=} params.radialEffect: whether to enable the GLSL radial effect
      */
-    constructor(container: Clutter.Actor, params?: Lightbox.ConstructorProperties);
-    public _init(container: Clutter.Actor, params?: Lightbox.ConstructorProperties): void;
+    constructor(container: Clutter.Actor, params?: Lightbox.ConstructorProps);
+    public _init(container: Clutter.Actor, params?: Lightbox.ConstructorProps): void;
 
     lightOn(fadeInTime?: number): void;
     lightOff(fadeOutTime?: number): void;
