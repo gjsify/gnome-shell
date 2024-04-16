@@ -84,7 +84,6 @@ export class ModalDialog extends St.Widget {
     public addButton(buttonInfo: ButtonInfo): St.Button;
     public setInitialKeyFocus(actor: St.Widget): void;
     public open(): boolean;
-    //note: upstream has timestamp as paramater here, but it only will be used to call popModal, which doesn't accept that paramater anymore, so this is just a bug upstream
     public close(): boolean;
     /**
      * Drop modal status without closing the dialog; this makes the
