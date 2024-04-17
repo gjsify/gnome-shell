@@ -1,5 +1,5 @@
 import type Shell from '@girs/shell-14';
-import type ClutterExtern from '@girs/clutter-14';
+import type Clutter from '@girs/clutter-14';
 declare global {
     /**
      * Global shell object created by GNOME Shell on startup.
@@ -32,56 +32,58 @@ declare global {
          */
         clamp(x: number, min: number, max: number): number;
     }
+}
 
-    interface EasingParams {
-        // milliseconds
-        duration?: number;
-        // milliseconds
-        delay?: number;
-        mode?: ClutterExtern.AnimationMode;
-        repeatCount?: number;
-        autoReverse?: boolean;
-        onComplete?: () => void;
-        onStopped?: (isFinished: boolean) => void;
-    }
+interface EasingParams {
+    // milliseconds
+    duration?: number;
+    // milliseconds
+    delay?: number;
+    mode?: Clutter.AnimationMode;
+    repeatCount?: number;
+    autoReverse?: boolean;
+    onComplete?: () => void;
+    onStopped?: (isFinished: boolean) => void;
+}
 
-    /**  Any number of extra fields for the properties to be animated (e.g. "opacity: 0").
-     *
-     * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L133
-     *
-     * Note: this list is non exhaustive, since its never typed anywhere else, each parameter is just string in e.g remove_transition, where this is used, so these here are verified manually, but there might be more
-     */
-    type AnimatableActorFields =
-        | 'fixedX'
-        | 'fixedY'
-        | 'height'
-        | 'marginBottom'
-        | 'marginLeft'
-        | 'marginRight'
-        | 'marginTop'
-        | 'minHeight'
-        | 'minWidth'
-        | 'naturalHeight'
-        | 'naturalWidth'
-        | 'opacity'
-        | 'pivotPointZ'
-        | 'rotationAngleX'
-        | 'rotationAngleY'
-        | 'rotationAngleZ'
-        | 'scaleX'
-        | 'scaleY'
-        | 'scaleZ'
-        | 'translationX'
-        | 'translationY'
-        | 'translationZ'
-        | 'width'
-        | 'x'
-        | 'y'
-        | 'zPosition';
+/**  Any number of extra fields for the properties to be animated (e.g. "opacity: 0").
+ *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L133
+ *
+ * Note: this list is non exhaustive, since its never typed anywhere else, each parameter is just string in e.g remove_transition, where this is used, so these here are verified manually, but there might be more
+ */
+type AnimatableActorFields =
+    | 'fixedX'
+    | 'fixedY'
+    | 'height'
+    | 'marginBottom'
+    | 'marginLeft'
+    | 'marginRight'
+    | 'marginTop'
+    | 'minHeight'
+    | 'minWidth'
+    | 'naturalHeight'
+    | 'naturalWidth'
+    | 'opacity'
+    | 'pivotPointZ'
+    | 'rotationAngleX'
+    | 'rotationAngleY'
+    | 'rotationAngleZ'
+    | 'scaleX'
+    | 'scaleY'
+    | 'scaleZ'
+    | 'translationX'
+    | 'translationY'
+    | 'translationZ'
+    | 'width'
+    | 'x'
+    | 'y'
+    | 'zPosition';
 
-    interface EasingParamsWithProperties extends EasingParams, Partial<Pick<ClutterExtern.Actor, AnimatableActorFields>> {}
+interface EasingParamsWithProperties extends EasingParams, Partial<Pick<Clutter.Actor, AnimatableActorFields>> {}
 
-    module St {
+declare module '@girs/st-14' {
+    export namespace St {
         interface Adjustment {
             /**
              * A convenience wrapper for adjustments
@@ -92,8 +94,10 @@ declare global {
             ease<T = unknown>(target: T, params: EasingParamsWithProperties): void;
         }
     }
+}
 
-    module Clutter {
+declare module '@girs/clutter-14' {
+    export namespace Clutter {
         interface Actor {
             /**
              * A convenience wrapper for actors
