@@ -93,5 +93,5 @@ export class SwitcherList extends St.Widget {
 
     vfunc_get_preferred_height(_forWidth: number): [number, number];
 
-    vfunc_allocate(box: any): void;
+    vfunc_allocate(box: Clutter.ActorBox): void;
 }
