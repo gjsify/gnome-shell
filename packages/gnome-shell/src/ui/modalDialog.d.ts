@@ -8,6 +8,14 @@ import type { MonitorConstraint } from './layout.js';
 import type { ButtonInfo, Dialog } from './dialog.js';
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L15
+ * @version 46
+ */
+export const OPEN_AND_CLOSE_TIME = 100;
+export const FADE_OUT_DIALOG_TIME = 1000;
+
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L19
  * @version 46
  */
 export enum State {
@@ -19,6 +27,7 @@ export enum State {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L27
  * @version 46
  */
 export namespace ModalDialog {
@@ -32,6 +41,7 @@ export namespace ModalDialog {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L37
  * @version 46
  */
 export class ModalDialog extends St.Widget {
