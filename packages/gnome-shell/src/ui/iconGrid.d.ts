@@ -6,9 +6,9 @@ import type Shell from '@girs/shell-14';
 
 export namespace BaseIcon {
     export interface ConstructorProps {
-        createIcon?: any | null;
-        setSizeManually?: boolean;
-        showLabel?: boolean;
+        createIcon: any | null;
+        setSizeManually: boolean;
+        showLabel: boolean;
     }
 }
 
@@ -19,10 +19,10 @@ export class BaseIcon extends Shell.SquareBin {
 
     protected _setSizeManually?: boolean;
 
-    constructor(label: string, params?: BaseIcon.ConstructorProps);
+    constructor(label: string, params?: Partial<BaseIcon.ConstructorProps>);
 
-    public _init(params?: Shell.SquareBin.ConstructorProps): void;
-    public _init(label: string, params?: BaseIcon.ConstructorProps): void;
+    public _init(params?: Partial<Shell.SquareBin.ConstructorProps>): void;
+    public _init(label: string, params?: Partial<BaseIcon.ConstructorProps>): void;
 }
 
 export namespace IconGrid {
@@ -47,10 +47,10 @@ export class IconGrid extends St.Viewport {
 
     protected _currentPage: number;
 
-    constructor(layoutParams?: IconGrid.ConstructorProps);
+    constructor(layoutParams?: Partial<IconGrid.ConstructorProps>);
 
     /** @hidden */
-    public _init(params?: St.Viewport.ConstructorProps): void;
+    public _init(params?: Partial<St.Viewport.ConstructorProps>): void;
     public _init(layoutParams?: IconGrid.ConstructorProps): void;
 
     protected _childAdded(grid: IconGrid, child: St.Widget): void;

@@ -30,18 +30,18 @@ export function removeDragMonitor(monitor: _Draggable): void;
 
 declare namespace _Draggable {
     export interface ConstructorProps {
-        manualMode?: boolean;
-        timeoutThreshold?: number;
-        restoreOnSuccess?: boolean;
-        dragActorMaxSize?: number;
-        dragActorOpacity?: number;
+        manualMode: boolean;
+        timeoutThreshold: number;
+        restoreOnSuccess: boolean;
+        dragActorMaxSize: number;
+        dragActorOpacity: number;
     }
 }
 
 declare class _Draggable extends EventEmitter {
     public actor: Clutter.Actor;
 
-    constructor(actor: Clutter.Actor, params: _Draggable.ConstructorProps);
+    constructor(actor: Clutter.Actor, params: Partial<_Draggable.ConstructorProps>);
 
     /**
      * fakeRelease:

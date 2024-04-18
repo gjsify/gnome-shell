@@ -13,16 +13,16 @@ export class AppGrid extends IconGrid {
     public indicatorsPadding: number;
 
     /** @hidden */
-    public _init(params?: St.Viewport.ConstructorProps): void;
-    public _init(layoutParams?: IconGrid.ConstructorProps): void;
+    public _init(params?: Partial<St.Viewport.ConstructorProps>): void;
+    public _init(layoutParams?: Partial<IconGrid.ConstructorProps>): void;
 
     protected _updatePadding(): void;
 }
 
 export abstract class BaseAppView extends St.Widget {
     // TODO: 'view-loaded' signal
-    constructor(params?: St.Widget.ConstructorProps);
-    public _init(params?: St.Widget.ConstructorProps): void;
+    constructor(params?: Partial<St.Widget.ConstructorProps>);
+    public _init(params?: Partial<St.Widget.ConstructorProps>): void;
 
     protected _onDestroy(): void;
     protected _createGrid(): AppGrid;
@@ -111,8 +111,8 @@ export class AppViewItem extends St.Button {
     readonly id: string;
     readonly app: any;
 
-    constructor(params?: St.Button.ConstructorProps);
-    public _init(params?: St.Button.ConstructorProps, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
+    constructor(params?: Partial<St.Button.ConstructorProps>);
+    public _init(params?: Partial<St.Button.ConstructorProps>, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
 
     protected _onDestroy(): void;
     protected _updateMultiline(): void;
@@ -136,8 +136,8 @@ export class AppViewItem extends St.Button {
 
 export namespace AppIcon {
     export interface ConstructorProps extends BaseIcon.ConstructorProps {
-        isDraggable?: boolean;
-        expandTitleOnHover?: boolean;
+        isDraggable: boolean;
+        expandTitleOnHover: boolean;
     }
 }
 
@@ -153,8 +153,8 @@ export class AppIcon extends AppViewItem {
     constructor(app: any, iconParams?: AppIcon.ConstructorProps);
 
     /** @hidden */
-    public _init(params?: St.Button.ConstructorProps, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
-    public _init(app: any, iconParams?: AppIcon.ConstructorProps): void;
+    public _init(params?: Partial<St.Button.ConstructorProps>, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
+    public _init(app: any, iconParams?: Partial<AppIcon.ConstructorProps>): void;
 
     protected _onDestroy(): void;
     protected _createIcon(iconSize: number): St.Widget;

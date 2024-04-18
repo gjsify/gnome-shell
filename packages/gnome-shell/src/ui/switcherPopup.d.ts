@@ -6,7 +6,7 @@ import type Clutter from '@girs/clutter-14';
 
 export abstract class SwitcherPopup extends St.Widget {
     /** @hidden Only defined to resolve type conflict */
-    _init(props: St.Widget.ConstructorProps): void;
+    _init(props: Partial<St.Widget.ConstructorProps>): void;
     _init(items: any[]): void;
 
     _initialSelection(backward: boolean, _binding?: any): void;
@@ -62,7 +62,7 @@ export abstract class SwitcherPopup extends St.Widget {
 
 export class SwitcherList extends St.Widget {
     /** @hidden Defined only to resolve type conflicts */
-    _init(config?: St.Widget.ConstructorProps): void;
+    _init(config?: Partial<St.Widget.ConstructorProps>): void;
     _init(squareItems: any[]): void;
 
     addItem(item: any, label: string): void;

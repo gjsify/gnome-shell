@@ -40,16 +40,16 @@ export class BoxPointer extends St.Widget {
      * @param arrowSide side to draw the arrow on
      * @param binProperties Properties to set on contained bin
      */
-    constructor(arrowSide: St.Side, binProperties?: St.Bin.ConstructorProps);
+    constructor(arrowSide: St.Side, binProperties?: Partial<St.Bin.ConstructorProps>);
 
     /** @hidden */
-    public _init(params?: St.Widget.ConstructorProps): void;
+    public _init(params?: Partial<St.Widget.ConstructorProps>): void;
 
     /**
      * @param arrowSide side to draw the arrow on
      * @param binProperties Properties to set on contained bin
      */
-    public _init(arrowSide: St.Side, binProperties?: St.Bin.ConstructorProps): void;
+    public _init(arrowSide: St.Side, binProperties?: Partial<St.Bin.ConstructorProps>): void;
 
     public vfunc_captured_event(event: Clutter.Event): boolean;
 

@@ -18,7 +18,7 @@ export declare class QuickSettingsItem extends St.Button {
     /**
      * Initializes a new instance of `QuickSettingsItem`.
      */
-    _init(config?: St.Button.ConstructorProps): void;
+    _init(config?: Partial<St.Button.ConstructorProps>): void;
 }
 
 /**
@@ -37,7 +37,7 @@ export declare class QuickToggle extends QuickSettingsItem {
     /**
      * Initializes a new instance of `QuickToggle`.
      */
-    _init(params: St.Button.ConstructorProps): void;
+    _init(params: Partial<St.Button.ConstructorProps>): void;
 
     get label(): string;
     set label(label: string);
@@ -58,7 +58,7 @@ export declare class QuickMenuToggle extends QuickSettingsItem {
     /**
      * Initializes a new instance of `QuickMenuToggle`.
      */
-    _init(params: St.Button.ConstructorProps): void;
+    _init(params: Partial<St.Button.ConstructorProps>): void;
 }
 
 /**
@@ -77,7 +77,7 @@ export declare class QuickSlider extends QuickSettingsItem {
     /**
      * Initializes a new instance of `QuickSlider`.
      */
-    _init(params: St.Button.ConstructorProps): void;
+    _init(params: Partial<St.Button.ConstructorProps>): void;
 }
 
 /**
@@ -160,9 +160,9 @@ export declare class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
      * Initializes a new instance of QuickSettingsLayout.
      */
-    constructor(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProps);
+    constructor(overlay: Clutter.Actor, params?: Partial<Clutter.LayoutManager.ConstructorProps>);
 
-    _init(overlay: Clutter.Actor, params?: Clutter.LayoutManager.ConstructorProps): void;
+    _init(overlay: Clutter.Actor, params?: Partial<Clutter.LayoutManager.ConstructorProps>): void;
 
     /**
      * Method to get child metadata type.

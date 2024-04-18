@@ -8,7 +8,7 @@ export class Animation extends St.Bin {
     constructor(file: Gio.File, width: number, height: number, speed: number);
 
     /** @hidden */
-    public _init(props?: St.Bin.ConstructorProps): void;
+    public _init(props?: Partial<St.Bin.ConstructorProps>): void;
     public _init(file: Gio.File, width: number, height: number, speed: number): void;
 
     public play(): void;
@@ -25,7 +25,7 @@ export class Animation extends St.Bin {
 export class AnimatedIcon extends Animation {
     constructor(file: Gio.File, size: number);
     /** @hidden */
-    public _init(props?: St.Bin.ConstructorProps): void;
+    public _init(props?: Partial<St.Bin.ConstructorProps>): void;
     /** @hidden */
     public _init(file: Gio.File, width: number, height: number, speed: number): void;
     public _init(file: Gio.File, size: number): void;
@@ -34,7 +34,7 @@ export class AnimatedIcon extends Animation {
 export class Spinner extends AnimatedIcon {
     constructor(size: number, params: { animate: boolean; hideOnStop: boolean });
     /** @hidden */
-    public _init(props?: St.Bin.ConstructorProps): void;
+    public _init(props?: Partial<St.Bin.ConstructorProps>): void;
     /** @hidden */
     public _init(file: Gio.File, width: number, height: number, speed: number): void;
     /** @hidden */

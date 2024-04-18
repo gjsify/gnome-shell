@@ -18,7 +18,7 @@ export class URLHighlighter extends St.Label {
     constructor(text?: string, lineWrap?: boolean, allowMarkup?: boolean);
 
     /** @hidden */
-    public _init(params?: St.Label.ConstructorProps): void;
+    public _init(params?: Partial<St.Label.ConstructorProps>): void;
     public _init(text?: string, lineWrap?: boolean, allowMarkup?: boolean): void;
 
     public vfunc_button_press_event(buttonEvent: Clutter.ButtonEvent): boolean;
@@ -38,7 +38,7 @@ export declare namespace Source {
         iconName: string | null;
     }
 
-    type ConstructorProps = Partial<Source.ObjectProperties> & GObject.Object.ConstructorProps;
+    type ConstructorProps = Partial<Source.ObjectProperties> & Partial<GObject.Object.ConstructorProps>;
 }
 
 /**
