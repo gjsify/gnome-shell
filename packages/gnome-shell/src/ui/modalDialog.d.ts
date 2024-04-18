@@ -8,13 +8,6 @@ import type { MonitorConstraint } from './layout.js';
 import type { ButtonInfo, Dialog } from './dialog.js';
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L15
- * @version 46
- */
-export const OPEN_AND_CLOSE_TIME = 100;
-export const FADE_OUT_DIALOG_TIME = 1000;
-
-/**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L19
  * @version 46
  */
