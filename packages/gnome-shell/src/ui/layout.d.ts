@@ -52,7 +52,10 @@ export class MonitorConstraint extends Clutter.Constraint {
     public workArea: boolean;
 
     constructor(props: MonitorConstraint.ConstructorProps);
+
+    /** @hidden */
     public _init(props: MonitorConstraint.ConstructorProps): void;
+    public _init(): void;
 
     public vfunc_set_actor(actor: Clutter.Actor): void;
     public vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
