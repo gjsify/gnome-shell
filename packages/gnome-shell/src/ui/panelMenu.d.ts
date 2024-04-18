@@ -3,7 +3,6 @@
 import type St from '@girs/st-14';
 import Clutter from '@girs/clutter-14';
 
-import * as Signals from '../misc/signals.js';
 import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
 
 /**
@@ -36,10 +35,6 @@ declare class ButtonBox extends St.Widget {
  * @version 46
  */
 export namespace Button {
-    interface SignalMap {
-        readonly 'menu-set': [indicator: Button];
-    }
-
     interface ConstructorProps extends ButtonBox.ConstructorProps {}
 }
 
@@ -47,8 +42,6 @@ export namespace Button {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L97
  * @version 46
  */
-
-//TODO: also extend Signals.EventEmitter<Button.SignalMap>
 export class Button extends ButtonBox {
     menu: PopupMenu | PopupDummyMenu;
 
@@ -64,4 +57,14 @@ export class Button extends ButtonBox {
     public vfunc_event(event: Clutter.Event): boolean;
 
     public vfunc_hide(): void;
+
+    // General signal handler methods
+    connect(sigName: string, callback: (...args: any[]) => void): number;
+    connect_after(sigName: string, callback: (...args: any[]) => void): number;
+    emit(sigName: string, ...args: any[]): void;
+    disconnect(id: number): void;
+
+    // Specific signal handler methods
+    connect(sigName: 'menu-set', callback: ($obj: Button) => void): number;
+    connect_after(sigName: 'menu-set', callback: ($obj: Button) => void): number;
 }
