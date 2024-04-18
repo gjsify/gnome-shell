@@ -8,16 +8,17 @@ import type Clutter from '@girs/clutter-14';
 import type GnomeDesktop from '@girs/gnomedesktop-4.0';
 import type Shell from '@girs/shell-14';
 
-import type { NotificationMessage } from './calendar.js';
-import type { Presence, PresenceStatus } from '../misc/gnomeSession.js';
+import type { PresenceStatus } from '../misc/gnomeSession.js';
 import type * as MessageList from './messageList.js';
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L20
  * @version 46
  */
 export const ANIMATION_TIME: number;
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L36
  * @version 46
  */
 export enum State {
@@ -36,6 +37,7 @@ export enum State {
  * and REPLACED for notifications that were destroyed as a consequence of a
  * newer version having replaced them.
  *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L51
  * @version 46
  */
 export enum NotificationDestroyedReason {
@@ -51,6 +53,7 @@ export enum NotificationDestroyedReason {
  * through the notification daemon. HIGH urgency value is used for chats received
  * through the Telepathy client.
  *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L62
  * @version 46
  */
 export enum Urgency {
@@ -68,6 +71,7 @@ export enum Urgency {
  * status) and hence the same for every user. This affects whether the content
  * of a notification is shown on the lock screen.
  *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L76
  * @version 46
  */
 export enum PrivacyScope {
@@ -81,6 +85,7 @@ export enum PrivacyScope {
  *
  * A notification without a policy object will inherit the default one.
  *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L160
  * @version 46
  */
 export abstract class NotificationPolicy extends GObject.Object {
@@ -103,6 +108,7 @@ export abstract class NotificationPolicy extends GObject.Object {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L213
  * @version 46
  */
 export class NotificationGenericPolicy extends NotificationPolicy {
@@ -119,6 +125,7 @@ export class NotificationGenericPolicy extends NotificationPolicy {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L243
  * @version 46
  */
 export class NotificationApplicationPolicy extends NotificationPolicy {
@@ -139,6 +146,7 @@ export class NotificationApplicationPolicy extends NotificationPolicy {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L316
  * @version 46
  */
 export class Sound extends GObject.Object {
@@ -148,6 +156,7 @@ export class Sound extends GObject.Object {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L335
  * @version 46
  */
 export class Action extends GObject.Object {
@@ -158,6 +167,9 @@ export class Action extends GObject.Object {
     public activate(): void;
 }
 
+/**
+ * @version 46
+ */
 export namespace Notification {
     export interface Params {
         gicon?: Gio.Icon | null;
@@ -170,6 +182,10 @@ export namespace Notification {
     }
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L482
+ * @version 46
+ */
 export declare namespace Source {
     export interface ConstructorProps extends MessageList.Source.ConstructorProps {
         policy?: NotificationPolicy;
@@ -177,6 +193,7 @@ export declare namespace Source {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L499
  * @version 46
  */
 export class Source extends MessageList.Source {
@@ -203,8 +220,31 @@ export class Source extends MessageList.Source {
     public open(): void;
 
     public destroyNonResidentNotifications(): void;
+
+    // General signal handler methods
+    connect(sigName: string, callback: (...args: any[]) => void): number;
+    connect_after(sigName: string, callback: (...args: any[]) => void): number;
+    emit(sigName: string, ...args: any[]): void;
+    disconnect(id: number): void;
+
+    // Specific signal handler methods
+    connect(sigName: 'destroy', callback: ($obj: Source, reason: NotificationDestroyedReason) => void): number;
+    connect_after(sigName: 'destroy', callback: ($obj: Source, reason: NotificationDestroyedReason) => void): number;
+
+    connect(sigName: 'notification-added', callback: ($obj: Source, notification: Notification) => void): number;
+    connect_after(sigName: 'notification-added', callback: ($obj: Source, notification: Notification) => void): number;
+
+    connect(sigName: 'notification-removed', callback: ($obj: Source, notification: Notification) => void): number;
+    connect_after(sigName: 'notification-removed', callback: ($obj: Source, notification: Notification) => void): number;
+
+    connect(sigName: 'notification-request-banner', callback: ($obj: Source, notification: Notification) => void): number;
+    connect_after(sigName: 'notification-request-banner', callback: ($obj: Source, notification: Notification) => void): number;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L604
+ * @version 46
+ */
 export declare namespace Notification {
     export interface ObjectProperties {
         source: Source | null;
@@ -227,6 +267,7 @@ export declare namespace Notification {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L352
  * @version 46
  */
 export class Notification extends GObject.Object implements Notification.ObjectProperties {
@@ -267,8 +308,31 @@ export class Notification extends GObject.Object implements Notification.ObjectP
     activate(): void;
 
     destroy(reason?: NotificationDestroyedReason): void;
+
+    // General signal handler methods
+    connect(sigName: string, callback: (...args: any[]) => void): number;
+    connect_after(sigName: string, callback: (...args: any[]) => void): number;
+    emit(sigName: string, ...args: any[]): void;
+    disconnect(id: number): void;
+
+    // Specific signal handler methods
+    connect(sigName: 'action-added', callback: ($obj: Notification, action: Action) => void): number;
+    connect_after(sigName: 'action-added', callback: ($obj: Notification, action: Action) => void): number;
+
+    connect(sigName: 'action-removed', callback: ($obj: Notification, action: Action) => void): number;
+    connect_after(sigName: 'action-removed', callback: ($obj: Notification, action: Action) => void): number;
+
+    connect(sigName: 'activated', callback: ($obj: Notification) => void): number;
+    connect_after(sigName: 'activated', callback: ($obj: Notification) => void): number;
+
+    connect(sigName: 'destroy', callback: ($obj: Notification, reason: NotificationDestroyedReason) => void): number;
+    connect_after(sigName: 'destroy', callback: ($obj: Notification, reason: NotificationDestroyedReason) => void): number;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L676
+ * @version 46
+ */
 export class MessageTray extends St.Widget {
     constructor();
 
@@ -321,9 +385,28 @@ export class MessageTray extends St.Widget {
     protected _expandActiveNotification(): void;
     protected _expandBanner(autoExpanding?: boolean): void;
     protected _ensureBannerFocused(): void;
+
+    // General signal handler methods
+    connect(sigName: string, callback: (...args: any[]) => void): number;
+    connect_after(sigName: string, callback: (...args: any[]) => void): number;
+    emit(sigName: string, ...args: any[]): void;
+    disconnect(id: number): void;
+
+    // Specific signal handler methods
+    connect(sigName: 'queue-changed', callback: ($obj: MessageTray) => void): number;
+    connect_after(sigName: 'queue-changed', callback: ($obj: MessageTray) => void): number;
+
+    connect(sigName: 'source-added', callback: ($obj: MessageTray, source: Source) => void): number;
+    connect_after(sigName: 'source-added', callback: ($obj: MessageTray, source: Source) => void): number;
+
+    connect(sigName: 'source-removed', callback: ($obj: MessageTray, source: Source) => void): number;
+    connect_after(sigName: 'source-removed', callback: ($obj: MessageTray, source: Source) => void): number;
 }
 
 /**
  * The {Source} that should be used to send system notifications.
+ *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L1290
+ * @version 46
  */
 export function getSystemSource(): Source;
