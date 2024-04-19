@@ -6,6 +6,7 @@ import type Clutter from '@girs/clutter-14';
 import type St from '@girs/st-14';
 import type Meta from '@girs/meta-14';
 import type Mtk from '@girs/mtk-14';
+import type Shell from '@girs/shell-14';
 
 import { EventEmitter } from '../misc/signals.js';
 
@@ -14,6 +15,10 @@ import type { SystemBackground } from './background.js';
 import type { Ripples } from './ripples.js';
 import type { BackgroundManager } from './background.js';
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L159
+ * @version 46
+ */
 export interface Geometry {
     x: number;
     y: number;
@@ -21,6 +26,7 @@ export interface Geometry {
     height: number;
 }
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L41
  * @version 46
  */
 
@@ -33,6 +39,7 @@ export namespace MonitorConstraint {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L56
  * @version 46
  */
 export class MonitorConstraint extends Clutter.Constraint {
@@ -45,13 +52,17 @@ export class MonitorConstraint extends Clutter.Constraint {
     public workArea: boolean;
 
     constructor(props: MonitorConstraint.ConstructorProps);
+
+    /** @hidden */
     public _init(props: MonitorConstraint.ConstructorProps): void;
+    public _init(): void;
 
     public vfunc_set_actor(actor: Clutter.Actor): void;
     public vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L158
  * @version 46
  */
 declare class Monitor {
@@ -67,6 +78,7 @@ declare class Monitor {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L174
  * @version 46
  */
 declare class UiActor extends St.Widget {
@@ -77,6 +89,10 @@ declare class UiActor extends St.Widget {
     public vfunc_get_preferred_height(_forWidth: number): [number, number];
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1454
+ * @version 46
+ */
 declare class ScreenTransition extends Clutter.Actor {
     constructor();
 
@@ -84,12 +100,16 @@ declare class ScreenTransition extends Clutter.Actor {
     public _init(params?: Clutter.Actor.ConstructorProps): void;
     public _init(): void;
 
+    public vfunc_hide(): void;
     public run(): void;
 }
 
 /**
  * This class manages a "hot corner" that can toggle switching to
  * overview.
+ *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1141
+ * @version 46
  */
 declare class HotCorner extends Clutter.Actor {
     protected _entered: boolean;
@@ -106,6 +126,7 @@ declare class HotCorner extends Clutter.Actor {
 
     public setBarrierSize(size: number): void;
     public handleDragOver(source: any, actor: any, x: number, y: number, time: number): DragMotionResult;
+    public vfunc_leave_event(event: Clutter.Event): boolean;
 
     protected _setupFallbackCornerIfNeeded(layoutManager: LayoutManager): void;
     protected _onDestroy(): void;
@@ -114,17 +135,27 @@ declare class HotCorner extends Clutter.Actor {
     protected _onCornerLeft(actor: Clutter.Actor, event: Clutter.Event): void;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L186
+ * @version 46
+ */
+export interface TrackedActors {
+    trackFullscreen: boolean;
+    affectsStruts: boolean;
+    affectsInputRegion: boolean;
+}
+
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L192
+ * @version 46
+ */
 export class LayoutManager extends GObject.Object {
     protected _rtl: boolean;
     protected _keyboardIndex: number;
     protected _rightPanelBarrier: Meta.Barrier | null;
     protected _inOverview: boolean;
     protected _updateRegionIdle: number;
-    protected _trackedActors: {
-        trackFullscreen: boolean;
-        affectsStruts: boolean;
-        affectsInputRegion: boolean;
-    }[];
+    protected _trackedActors: TrackedActors[];
     protected _keyboardHeightNotifyId: number;
     protected _backgroundGroup: Meta.BackgroundGroup;
     protected _interfaceSettings: Gio.Settings;
@@ -194,28 +225,14 @@ export class LayoutManager extends GObject.Object {
      * @param actor An actor to add to the chrome
      * @param params Additional params
      */
-    public addChrome(
-        actor: Clutter.Actor,
-        params?: {
-            affectsStruts?: boolean;
-            affectsInputRegion?: boolean;
-            trackFullscreen?: boolean;
-        }
-    ): void;
+    public addChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
 
     /**
      * Like {@link addChrome()}, but adds `actor` above all windows, including popups.
      * @param actor An actor to add to the chrome
      * @param params Additional params
      */
-    public addTopChrome(
-        actor: Clutter.Actor,
-        params?: {
-            affectsStruts?: boolean;
-            affectsInputRegion?: boolean;
-            trackFullscreen?: boolean;
-        }
-    ): void;
+    public addTopChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
 
     /**
      * Tells the chrome to track `actor`. This can be used to extend the
@@ -228,14 +245,7 @@ export class LayoutManager extends GObject.Object {
      * @param actor a descendant of the chrome to begin tracking
      * @param params parameters describing how to track `actor`
      */
-    public trackChrome(
-        actor: Clutter.Actor,
-        params?: {
-            affectsStruts?: boolean;
-            affectsInputRegion?: boolean;
-            trackFullscreen?: boolean;
-        }
-    ): void;
+    public trackChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
 
     /**
      * Undoes the effect of {@link trackChrome()}
@@ -300,14 +310,7 @@ export class LayoutManager extends GObject.Object {
     protected _startupAnimationSession(): void;
     protected _startupAnimationComplete(): void;
     protected _findActor(actor: Clutter.Actor): number;
-    protected _trackActor(
-        actor: Clutter.Actor,
-        params?: {
-            affectsStruts?: boolean;
-            affectsInputRegion?: boolean;
-            trackFullscreen?: boolean;
-        }
-    ): void;
+    protected _trackActor(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
     protected _untrackActor(actor: Clutter.Actor): void;
     protected _updateActorVisibility(actorData: any): void;
     protected _updateVisibility(): void;
@@ -317,10 +320,14 @@ export class LayoutManager extends GObject.Object {
     protected _updateRegions(): boolean;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1309
+ * @version 46
+ */
 declare class PressureBarrier extends EventEmitter {
     protected _threshold: number;
     protected _timeout: number;
-    protected _actionMode: number;
+    protected _actionMode: Shell.ActionMode;
     protected _barriers: any[];
     protected _eventFilter: any | null;
     protected _isTriggered: boolean;
@@ -328,7 +335,7 @@ declare class PressureBarrier extends EventEmitter {
     protected _currentPressure: number;
     protected _lastTime: number;
 
-    constructor(threshold: number, timeout: number, actionMode: number);
+    constructor(threshold: number, timeout: number, actionMode: Shell.ActionMode);
 
     public addBarrier(barrier: Meta.Barrier): void;
     public removeBarrier(barrier: Meta.Barrier): void;

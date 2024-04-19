@@ -3,6 +3,10 @@
 import type Clutter from '@girs/clutter-14';
 import type St from '@girs/st-14';
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L113
+ * @version 46
+ */
 export interface ButtonInfo {
     action: () => void;
     label: string;
@@ -12,6 +16,7 @@ export interface ButtonInfo {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L18
  * @version 46
  */
 export class Dialog extends St.Widget {
@@ -35,6 +40,7 @@ export class Dialog extends St.Widget {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L158
  * @version 46
  */
 export namespace MessageDialogContent {
@@ -44,6 +50,7 @@ export namespace MessageDialogContent {
     }
 }
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L171
  * @version 46
  */
 export class MessageDialogContent extends St.BoxLayout {
@@ -57,11 +64,18 @@ export class MessageDialogContent extends St.BoxLayout {
     protected _updateTitleStyle(): void | false;
 }
 
-export interface ListSectionProps extends St.BoxLayout.ConstructorProps {
-    title?: string;
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L250
+ * @version 46
+ */
+export namespace ListSection {
+    export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
+        title?: string;
+    }
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L258
  * @version 46
  */
 export class ListSection extends St.BoxLayout {
@@ -70,19 +84,25 @@ export class ListSection extends St.BoxLayout {
 
     public list: St.BoxLayout;
     public title: string;
-    // public label_actor: St.Label;
 
-    constructor(params: ListSectionProps);
-    public _init(params: ListSectionProps): void;
-}
-
-export interface ListSectionItemProps extends St.BoxLayout.ConstructorProps {
-    title?: string;
-    description?: string;
-    // note: iconActor hasn't: GObject.ParamFlags.CONSTRUCT, but might work anyways?
+    constructor(params: ListSection.ConstructorProps);
+    public _init(params: ListSection.ConstructorProps): void;
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L294
+ * @version 46
+ */
+export namespace ListSectionItem {
+    export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
+        title?: string;
+        description?: string;
+        iconActor?: Clutter.Actor;
+    }
+}
+
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L311
  * @version 46
  */
 export class ListSectionItem extends St.BoxLayout {
@@ -94,7 +114,8 @@ export class ListSectionItem extends St.BoxLayout {
     public iconActor: St.Widget;
 
     constructor(params: { style_class?: string | null });
+
     /** @hidden Defined to resolve version conflicts */
-    public _init(config?: ListSectionItemProps): void;
+    public _init(config?: ListSectionItem.ConstructorProps): void;
     public _init(params: { style_class?: string | null }): void;
 }
