@@ -9,7 +9,7 @@ export class MaxWidthBox extends St.BoxLayout {}
 
 export class SearchResult extends St.Button {
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProps): void;
+    public _init(config?: Partial<St.Button.ConstructorProps>): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
     activate(): void;
@@ -17,7 +17,7 @@ export class SearchResult extends St.Button {
 
 export class ListSearchResult extends SearchResult {
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProps): void;
+    public _init(config?: Partial<St.Button.ConstructorProps>): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 }
 
@@ -25,7 +25,7 @@ export class GridSearchResult extends SearchResult {
     public readonly focusChild: St.Widget;
 
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProps): void;
+    public _init(config?: Partial<St.Button.ConstructorProps>): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
     protected _onDestroy(): void;
@@ -39,7 +39,7 @@ export class GridSearchResult extends SearchResult {
 
 export abstract class SearchResultsBase extends St.BoxLayout {
     /** @hidden */
-    public _init(config?: St.BoxLayout.ConstructorProps): void;
+    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
     public _init(props?: { style_class?: string; vertical?: boolean }): void;
@@ -53,7 +53,7 @@ export abstract class SearchResultsBase extends St.BoxLayout {
 
 export class ListSearchResults extends SearchResultsBase {
     /** @hidden */
-    public _init(config?: St.BoxLayout.ConstructorProps): void;
+    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
     /** @hidden */
@@ -74,7 +74,7 @@ export class GridSearchResultsLayout extends Clutter.LayoutManager {
     public spacing: number;
 
     /** @hidden */
-    public _init(config?: Clutter.LayoutManager.ConstructorProps): void;
+    public _init(config?: Partial<Clutter.LayoutManager.ConstructorProps>): void;
     public _init(): void;
 
     public columnsForWidth(width: number): number;
@@ -82,7 +82,7 @@ export class GridSearchResultsLayout extends Clutter.LayoutManager {
 
 export class GridSearchResults extends SearchResultsBase {
     /** @hidden */
-    public _init(config?: St.BoxLayout.ConstructorProps): void;
+    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
     public _init(props?: { style_class?: string; vertical?: boolean }): void;
 
@@ -103,7 +103,7 @@ export class SearchResultsView extends St.BoxLayout {
     public readonly searchInProgress: boolean;
 
     /** @hidden */
-    public _init(config?: St.BoxLayout.ConstructorProps): void;
+    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     public _init(): void;
 
     protected _reloadRemoteProviders(): void;
@@ -135,7 +135,7 @@ export class ProviderInfo extends St.Button {
     readonly PROVIDER_ICON_SIZE: number;
 
     /** @hidden */
-    public _init(config?: St.Button.ConstructorProps): void;
+    public _init(config?: Partial<St.Button.ConstructorProps>): void;
 
     public _init(provider: AppSearchProvider): void;
 

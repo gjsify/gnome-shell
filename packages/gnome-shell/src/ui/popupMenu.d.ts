@@ -32,11 +32,11 @@ export function arrowIcon(side: St.Side): St.Icon;
  */
 declare namespace PopupBaseMenuItem {
     export interface ConstructorProps {
-        reactive?: boolean;
-        activate?: boolean;
-        hover?: boolean;
-        style_class?: string;
-        can_focus?: boolean;
+        reactive: boolean;
+        activate: boolean;
+        hover: boolean;
+        style_class: string;
+        can_focus: boolean;
     }
 }
 
@@ -49,7 +49,7 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
     active: boolean;
     sensitive: boolean;
 
-    constructor(params?: PopupBaseMenuItem.ConstructorProps);
+    constructor(params?: Partial<PopupBaseMenuItem.ConstructorProps>);
     override _init(...args: any[]): void;
 
     activate(event: Clutter.Event): void;
@@ -83,8 +83,8 @@ export namespace PopupMenuItem {
  * @version 46
  */
 export class PopupMenuItem extends PopupBaseMenuItem {
-    constructor(text: string, params?: PopupMenuItem.ConstructorProps);
-    override _init(text: string, params?: PopupMenuItem.ConstructorProps): void;
+    constructor(text: string, params?: Partial<PopupMenuItem.ConstructorProps>);
+    override _init(text: string, params?: Partial<PopupMenuItem.ConstructorProps>): void;
 
     readonly label: St.Label;
 }

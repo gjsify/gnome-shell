@@ -141,7 +141,7 @@ declare class Background extends Meta.Background {
     constructor(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null });
 
     /** @hidden */
-    public _init(params?: Meta.Background.ConstructorProps): void;
+    public _init(params?: Partial<Meta.Background.ConstructorProps>): void;
     public _init(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null }): void;
 
     public destroy(): void;
@@ -165,7 +165,7 @@ export class SystemBackground extends Meta.BackgroundActor {
     constructor();
 
     /** @hidden */
-    public _init(params?: Meta.BackgroundActor.ConstructorProps): void;
+    public _init(params?: Partial<Meta.BackgroundActor.ConstructorProps>): void;
     public _init(): void;
 }
 
@@ -195,7 +195,7 @@ declare class BackgroundSource {
  * wrapper for GnomeBG.BGSlideShow
  */
 declare class Animation extends GnomeBG.BGSlideShow {
-    public _init(params?: GnomeBG.BGSlideShow.ConstructorProps): void;
+    public _init(params?: Partial<GnomeBG.BGSlideShow.ConstructorProps>): void;
 
     /** @hidden */
     load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;

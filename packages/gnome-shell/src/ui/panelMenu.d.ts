@@ -18,10 +18,9 @@ declare namespace ButtonBox {
  * @version 46
  */
 declare class ButtonBox extends St.Widget {
-    constructor(params?: ButtonBox.ConstructorProps);
-
+    constructor(params?: Partial<ButtonBox.ConstructorProps>);
     /** @hidden Defined to resolve version conflicts */
-    _init(params: ButtonBox.ConstructorProps): void;
+    _init(params: Partial<ButtonBox.ConstructorProps>): void;
     container: St.Bin;
 
     public vfunc_get_preferred_width(_forHeight: number): [number, number];
@@ -48,7 +47,7 @@ export class Button extends ButtonBox {
     constructor(menuAlignment: number, nameText: string, dontCreateMenu?: boolean);
 
     /** @hidden Defined to resolve version conflicts */
-    _init(params?: Button.ConstructorProps): void;
+    _init(params?: Partial<ButtonBox.ConstructorProps>): void;
     _init(menuAlignment: number, nameText: string, dontCreateMenu?: boolean): void;
 
     setSensitive(sensitive: boolean): void;

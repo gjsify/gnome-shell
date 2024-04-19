@@ -188,7 +188,7 @@ export namespace Notification {
  */
 export declare namespace Source {
     export interface ConstructorProps extends MessageList.Source.ConstructorProps {
-        policy?: NotificationPolicy;
+        policy: NotificationPolicy;
     }
 }
 
@@ -197,7 +197,7 @@ export declare namespace Source {
  * @version 46
  */
 export class Source extends MessageList.Source {
-    constructor(params?: Source.ConstructorProps);
+    constructor(params?: Partial<Source.ConstructorProps>);
 
     public readonly notifications: readonly Notification[];
 
@@ -263,7 +263,7 @@ export declare namespace Notification {
         isTransient: boolean;
     }
 
-    export type ConstructorProps = Partial<ObjectProperties> & GObject.Object.ConstructorProps;
+    export type ConstructorProps = Partial<ObjectProperties> & Partial<GObject.Object.ConstructorProps>;
 }
 
 /**

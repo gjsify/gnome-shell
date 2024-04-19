@@ -32,9 +32,9 @@ export interface Geometry {
 
 export namespace MonitorConstraint {
     export interface ConstructorProps extends Clutter.Constraint.ConstructorProps {
-        primary?: boolean;
-        index?: number;
-        workArea?: boolean;
+        primary: boolean;
+        index: number;
+        workArea: boolean;
     }
 }
 
@@ -51,10 +51,10 @@ export class MonitorConstraint extends Clutter.Constraint {
     public index: number;
     public workArea: boolean;
 
-    constructor(props: MonitorConstraint.ConstructorProps);
+    constructor(props: Partial<MonitorConstraint.ConstructorProps>);
 
     /** @hidden */
-    public _init(props: MonitorConstraint.ConstructorProps): void;
+    public _init(props: Partial<MonitorConstraint.ConstructorProps>): void;
     public _init(): void;
 
     public vfunc_set_actor(actor: Clutter.Actor): void;
@@ -82,8 +82,8 @@ declare class Monitor {
  * @version 46
  */
 declare class UiActor extends St.Widget {
-    public constructor(props?: St.Widget.ConstructorProps);
-    public _init(props?: St.Widget.ConstructorProps): void;
+    public constructor(props?: Partial<St.Widget.ConstructorProps>);
+    public _init(props?: Partial<St.Widget.ConstructorProps>): void;
 
     public vfunc_get_preferred_width(_forHeight: number): [number, number];
     public vfunc_get_preferred_height(_forWidth: number): [number, number];
@@ -97,7 +97,7 @@ declare class ScreenTransition extends Clutter.Actor {
     constructor();
 
     /** @hidden */
-    public _init(params?: Clutter.Actor.ConstructorProps): void;
+    public _init(params?: Partial<Clutter.Actor.ConstructorProps>): void;
     public _init(): void;
 
     public vfunc_hide(): void;
@@ -121,7 +121,7 @@ declare class HotCorner extends Clutter.Actor {
 
     constructor(layoutManager: LayoutManager, monitor: Monitor, x: number, y: number);
 
-    public _init(props?: Clutter.Actor.ConstructorProps): void;
+    public _init(props?: Partial<Clutter.Actor.ConstructorProps>): void;
     public _init(layoutManager: LayoutManager, monitor: Monitor, x: number, y: number): void;
 
     public setBarrierSize(size: number): void;

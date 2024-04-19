@@ -1,7 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/barLevel.js
 
 import type St from '@girs/st-14';
-import type Atk from '@girs/atk-1.0';
 
 export namespace BarLevel {
     export interface ConstructorProps extends St.DrawingArea.ConstructorProps {}
@@ -17,8 +16,8 @@ export class BarLevel extends St.DrawingArea {
     public maximumValue: number;
     public overdriveStart: number;
 
-    constructor(params?: BarLevel.ConstructorProps);
-    public _init(params?: BarLevel.ConstructorProps): void;
+    constructor(params?: Partial<BarLevel.ConstructorProps>);
+    public _init(params?: Partial<BarLevel.ConstructorProps>): void;
 
     public vfunc_repaint(): void;
 

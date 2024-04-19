@@ -45,8 +45,8 @@ export class Dialog extends St.Widget {
  */
 export namespace MessageDialogContent {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
-        title?: string;
-        description?: string;
+        title: string;
+        description: string;
     }
 }
 /**
@@ -57,8 +57,8 @@ export class MessageDialogContent extends St.BoxLayout {
     public title: string;
     public description: string;
 
-    constructor(params: MessageDialogContent.ConstructorProps);
-    public _init(params: MessageDialogContent.ConstructorProps): void;
+    constructor(params: Partial<MessageDialogContent.ConstructorProps>);
+    public _init(params: Partial<MessageDialogContent.ConstructorProps>): void;
 
     protected _onDestroy(): void;
     protected _updateTitleStyle(): void | false;
@@ -70,7 +70,7 @@ export class MessageDialogContent extends St.BoxLayout {
  */
 export namespace ListSection {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
-        title?: string;
+        title: string;
     }
 }
 
@@ -85,8 +85,8 @@ export class ListSection extends St.BoxLayout {
     public list: St.BoxLayout;
     public title: string;
 
-    constructor(params: ListSection.ConstructorProps);
-    public _init(params: ListSection.ConstructorProps): void;
+    constructor(params: Partial<ListSection.ConstructorProps>);
+    public _init(params: Partial<ListSection.ConstructorProps>): void;
 }
 
 /**
@@ -95,9 +95,9 @@ export class ListSection extends St.BoxLayout {
  */
 export namespace ListSectionItem {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
-        title?: string;
-        description?: string;
-        iconActor?: Clutter.Actor;
+        title: string;
+        description: string;
+        iconActor: Clutter.Actor;
     }
 }
 
@@ -116,6 +116,6 @@ export class ListSectionItem extends St.BoxLayout {
     constructor(params: { style_class?: string | null });
 
     /** @hidden Defined to resolve version conflicts */
-    public _init(config?: ListSectionItem.ConstructorProps): void;
+    public _init(config?: Partial<ListSectionItem.ConstructorProps>): void;
     public _init(params: { style_class?: string | null }): void;
 }
