@@ -2,7 +2,6 @@
 
 import Clutter from '@girs/clutter-14';
 import Gio from '@girs/gio-2.0';
-import GObject from '@girs/gobject-2.0';
 import St from '@girs/st-14';
 
 import * as PopupMenu from './popupMenu.js';

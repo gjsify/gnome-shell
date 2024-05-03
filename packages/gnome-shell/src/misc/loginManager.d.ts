@@ -2,7 +2,6 @@
 
 // loginManager.d.ts
 
-import GLib from '@girs/glib-2.0';
 import Gio from '@girs/gio-2.0';
 import * as Signals from './signals.js';
 
