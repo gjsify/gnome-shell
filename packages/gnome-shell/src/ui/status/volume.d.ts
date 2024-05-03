@@ -2,10 +2,7 @@
 
 import Clutter from '@girs/clutter-14';
 import Gio from '@girs/gio-2.0';
-import GLib from '@girs/glib-2.0';
-import GObject from '@girs/gobject-2.0';
 import Gvc from '@girs/gvc-1.0';
-import * as Main from '../main.js';
 import * as PopupMenu from '../popupMenu.js';
 import { QuickSlider, SystemIndicator } from '../quickSettings.js';
 

@@ -2,7 +2,6 @@ import type { ExtensionMetadata } from '../types/extension-metadata.js';
 import type { Extension } from './extension.js';
 
 import type Gio from '@girs/gio-2.0';
-import type GObject from '@girs/gobject-2.0';
 
 export interface TranslationFunctions {
     /**
