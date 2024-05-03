@@ -22,6 +22,9 @@ export declare class QuickSettingsItem extends St.Button {
 
 /**
  * Class representing a quick toggle item.
+ *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L43
+ * @version 46
  */
 export declare class QuickToggle extends QuickSettingsItem {
     title: string | null;
@@ -44,6 +47,9 @@ export declare class QuickToggle extends QuickSettingsItem {
 
 /**
  * Class representing a quick menu toggle.
+ *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L144
+ * @version 46
  */
 export declare class QuickMenuToggle extends QuickSettingsItem {
     title: string | null;

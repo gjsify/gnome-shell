@@ -1,6 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/fileUtils.js
 
 import type Gio from '@girs/gio-2.0';
+export { loadInterfaceXML } from './dbusUtils.js';
 
 export interface SubdirInfo {
     dir: Gio.File;
@@ -31,20 +32,3 @@ export function recursivelyDeleteDir(dir: Gio.File, deleteParent: boolean): void
  * @param {Gio.File} destDir - the file object for the destination directory
  */
 export function recursivelyMoveDir(srcDir: Gio.File, destDir: Gio.File): void;
-
-/**
- * Load an interface xml file
- *
- * @param {string} iface the interface name
- * @returns {string | null} the XML string or null if it is not found
- */
-export function loadInterfaceXML(iface: string): string | null;
-
-/**
- * Load a subinterface xml file
- *
- * @param {string} iface the interface name
- * @param {string} ifaceFile the interface filename
- * @returns {string | null} the XML string or null if it is not found
- */
-export function loadSubInterfaceXML(iface: string, ifaceFile: string): string | null;
