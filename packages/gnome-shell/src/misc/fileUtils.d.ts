@@ -34,7 +34,7 @@ export function recursivelyMoveDir(srcDir: Gio.File, destDir: Gio.File): void;
 
 /**
  * Load an interface xml file
- * 
+ *
  * @param {string} iface the interface name
  * @returns {string | null} the XML string or null if it is not found
  */
@@ -42,7 +42,7 @@ export function loadInterfaceXML(iface: string): string | null;
 
 /**
  * Load a subinterface xml file
- * 
+ *
  * @param {string} iface the interface name
  * @param {string} ifaceFile the interface filename
  * @returns {string | null} the XML string or null if it is not found
