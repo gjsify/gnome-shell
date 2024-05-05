@@ -987,7 +987,7 @@
     "@girs/gnomebluetooth-3.0": "^3.0.0-4.0.0-beta.3",
     "@girs/gnomedesktop-4.0": "^4.0.0-4.0.0-beta.3",
     "@girs/gobject-2.0": "^2.80.0-4.0.0-beta.3",
-    "@girs/gtk-4.0": "^4.14.1-4.0.0-beta.3",
+    "@girs/gtk-4.0": "^4.14.2-4.0.0-beta.3",
     "@girs/gvc-1.0": "^1.0.0-4.0.0-beta.3",
     "@girs/meta-14": "^14.0.0-4.0.0-beta.3",
     "@girs/mtk-14": "^14.0.0-4.0.0-beta.3",

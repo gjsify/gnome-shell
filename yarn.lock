@@ -482,7 +482,7 @@ __metadata:
     "@girs/gnomebluetooth-3.0": "npm:^3.0.0-4.0.0-beta.3"
     "@girs/gnomedesktop-4.0": "npm:^4.0.0-4.0.0-beta.3"
     "@girs/gobject-2.0": "npm:^2.80.0-4.0.0-beta.3"
-    "@girs/gtk-4.0": "npm:^4.14.1-4.0.0-beta.3"
+    "@girs/gtk-4.0": "npm:^4.14.2-4.0.0-beta.3"
     "@girs/gvc-1.0": "npm:^1.0.0-4.0.0-beta.3"
     "@girs/meta-14": "npm:^14.0.0-4.0.0-beta.3"
     "@girs/mtk-14": "npm:^14.0.0-4.0.0-beta.3"
@@ -609,6 +609,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@girs/gtk-4.0@npm:^4.14.2-4.0.0-beta.3":
+  version: 4.14.2-4.0.0-beta.3
+  resolution: "@girs/gtk-4.0@npm:4.14.2-4.0.0-beta.3"
+  dependencies:
+    "@girs/cairo-1.0": "npm:^1.0.0-4.0.0-beta.3"
+    "@girs/freetype2-2.0": "npm:^2.0.0-4.0.0-beta.3"
+    "@girs/gdk-4.0": "npm:^4.0.0-4.0.0-beta.3"
+    "@girs/gdkpixbuf-2.0": "npm:^2.0.0-4.0.0-beta.3"
+    "@girs/gio-2.0": "npm:^2.80.0-4.0.0-beta.3"
+    "@girs/gjs": "npm:^4.0.0-beta.3"
+    "@girs/glib-2.0": "npm:^2.80.0-4.0.0-beta.3"
+    "@girs/gmodule-2.0": "npm:^2.0.0-4.0.0-beta.3"
+    "@girs/gobject-2.0": "npm:^2.80.0-4.0.0-beta.3"
+    "@girs/graphene-1.0": "npm:^1.0.0-4.0.0-beta.3"
+    "@girs/gsk-4.0": "npm:^4.0.0-4.0.0-beta.3"
+    "@girs/harfbuzz-0.0": "npm:^8.3.1-4.0.0-beta.3"
+    "@girs/pango-1.0": "npm:^1.52.2-4.0.0-beta.3"
+    "@girs/pangocairo-1.0": "npm:^1.0.0-4.0.0-beta.3"
+  checksum: 10/d89a4670d6d740a00815f8c4fd5b4ec416bad92d4be0cd801576c54dd0431e06e1ddb5c78b2aa6bdc04ba30e49b575d570567c3d1673a961bc94952341a07d20
+  languageName: node
+  linkType: hard
+
 "@girs/gvc-1.0@npm:^1.0.0-4.0.0-beta.3":
   version: 1.0.0-4.0.0-beta.3
   resolution: "@girs/gvc-1.0@npm:1.0.0-4.0.0-beta.3"
@@ -696,6 +718,21 @@ __metadata:
     "@girs/gobject-2.0": "npm:^2.80.0-4.0.0-beta.3"
     "@girs/harfbuzz-0.0": "npm:^8.3.1-4.0.0-beta.3"
   checksum: 10/ec0576a635be6b60978714bcce67cc4f8915c73cdc3030e762a8e1d71f84f9fb5619c33138684fb93200394075514f4b4dccd20bcb2bb47e9dc78e62ae596a8b
+  languageName: node
+  linkType: hard
+
+"@girs/pango-1.0@npm:^1.52.2-4.0.0-beta.3":
+  version: 1.52.2-4.0.0-beta.3
+  resolution: "@girs/pango-1.0@npm:1.52.2-4.0.0-beta.3"
+  dependencies:
+    "@girs/cairo-1.0": "npm:^1.0.0-4.0.0-beta.3"
+    "@girs/freetype2-2.0": "npm:^2.0.0-4.0.0-beta.3"
+    "@girs/gio-2.0": "npm:^2.80.0-4.0.0-beta.3"
+    "@girs/gjs": "npm:^4.0.0-beta.3"
+    "@girs/glib-2.0": "npm:^2.80.0-4.0.0-beta.3"
+    "@girs/gobject-2.0": "npm:^2.80.0-4.0.0-beta.3"
+    "@girs/harfbuzz-0.0": "npm:^8.3.1-4.0.0-beta.3"
+  checksum: 10/cbe334fed0349b3bb049d100d9fed9b68e48c2c958cb484fae2e0433f3409a1a9a443660d476d4c9069d9bfa3d8aa140720523bb96a336f472b9e37d1e3ae4db
   languageName: node
   linkType: hard
 
