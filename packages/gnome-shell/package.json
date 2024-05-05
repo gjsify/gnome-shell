@@ -501,6 +501,17 @@
       }
     },
     "./ui/lightbox/ambient": "./dist/ui/lightbox-ambient.d.ts",
+    "./ui/lookingGlass": {
+      "import": {
+        "types": "./dist/ui/lookingGlass.d.ts",
+        "default": "./dist/ui/lookingGlass.js"
+      },
+      "require": {
+        "types": "./dist/ui/lookingGlass.d.ts",
+        "default": "./dist/ui/lookingGlass.cjs"
+      }
+    },
+    "./ui/lookingGlass/ambient": "./dist/ui/lookingGlass-ambient.d.ts",
     "./ui/main": {
       "import": {
         "types": "./dist/ui/main.d.ts",
@@ -896,7 +907,51 @@
         "default": "./dist/ui/windowManager.cjs"
       }
     },
-    "./ui/windowManager/ambient": "./dist/ui/windowManager-ambient.d.ts"
+    "./ui/windowManager/ambient": "./dist/ui/windowManager-ambient.d.ts",
+    "./ui/windowPreview": {
+      "import": {
+        "types": "./dist/ui/windowPreview.d.ts",
+        "default": "./dist/ui/windowPreview.js"
+      },
+      "require": {
+        "types": "./dist/ui/windowPreview.d.ts",
+        "default": "./dist/ui/windowPreview.cjs"
+      }
+    },
+    "./ui/windowPreview/ambient": "./dist/ui/windowPreview-ambient.d.ts",
+    "./ui/workspace": {
+      "import": {
+        "types": "./dist/ui/workspace.d.ts",
+        "default": "./dist/ui/workspace.js"
+      },
+      "require": {
+        "types": "./dist/ui/workspace.d.ts",
+        "default": "./dist/ui/workspace.cjs"
+      }
+    },
+    "./ui/workspace/ambient": "./dist/ui/workspace-ambient.d.ts",
+    "./ui/workspaceAnimation": {
+      "import": {
+        "types": "./dist/ui/workspaceAnimation.d.ts",
+        "default": "./dist/ui/workspaceAnimation.js"
+      },
+      "require": {
+        "types": "./dist/ui/workspaceAnimation.d.ts",
+        "default": "./dist/ui/workspaceAnimation.cjs"
+      }
+    },
+    "./ui/workspaceAnimation/ambient": "./dist/ui/workspaceAnimation-ambient.d.ts",
+    "./ui/workspacesView": {
+      "import": {
+        "types": "./dist/ui/workspacesView.d.ts",
+        "default": "./dist/ui/workspacesView.js"
+      },
+      "require": {
+        "types": "./dist/ui/workspacesView.d.ts",
+        "default": "./dist/ui/workspacesView.cjs"
+      }
+    },
+    "./ui/workspacesView/ambient": "./dist/ui/workspacesView-ambient.d.ts"
   },
   "typedoc": {
     "entryPoint": "./src/index.d.ts",
