@@ -20,9 +20,9 @@
     "typescript": "5.4.5"
   },
   "dependencies": {
-    "@girs/gjs": "^4.0.0-beta.3",
+    "@girs/gjs": "^4.0.0-beta.5",
     "@girs/gnome-shell": "workspace:^",
-    "@girs/gobject-2.0": "^2.80.0-4.0.0-beta.3",
-    "@girs/st-14": "^14.0.0-4.0.0-beta.3"
+    "@girs/gobject-2.0": "^2.80.0-4.0.0-beta.5",
+    "@girs/st-14": "^14.0.0-4.0.0-beta.5"
   }
 }
