@@ -168,21 +168,6 @@ export class Action extends GObject.Object {
 }
 
 /**
- * @version 46
- */
-export namespace Notification {
-    export interface Params {
-        gicon?: Gio.Icon | null;
-        secondaryGIcon?: Gio.Icon | null;
-        bannerMarkup?: boolean;
-        clear?: boolean;
-        datetime?: GLib.DateTime | null;
-        soundName?: string | null;
-        soundFile?: Gio.File | null;
-    }
-}
-
-/**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L482
  * @version 46
  */
