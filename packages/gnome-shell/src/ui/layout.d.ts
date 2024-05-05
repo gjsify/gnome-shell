@@ -162,6 +162,7 @@ export class LayoutManager extends GObject.Object {
     protected _pendingLoadBackground: boolean;
     protected _systemBackground: SystemBackground;
 
+    public readonly _startingUp: boolean;
     public monitors: Monitor[];
     public primaryMonitor: Monitor | null;
     public primaryIndex: number;
