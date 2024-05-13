@@ -1,7 +1,7 @@
 import type Clutter from '@girs/clutter-14';
 import type Meta from '@girs/meta-14';
 
-import { WindowPreview } from './windowPreview';
+import { WindowPreview } from './windowPreview.js';
 
 /**
  * @version 46
