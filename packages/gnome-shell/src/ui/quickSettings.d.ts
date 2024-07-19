@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js
 
-import Clutter from '@girs/clutter-14';
+import Clutter from '@girs/clutter-15';
 import Gio from '@girs/gio-2.0';
-import St from '@girs/st-14';
+import St from '@girs/st-15';
 
 import * as PopupMenu from './popupMenu.js';
 import { Slider } from './slider.js';

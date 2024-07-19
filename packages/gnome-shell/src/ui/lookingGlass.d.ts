@@ -1,4 +1,4 @@
-import type Clutter from '@girs/clutter-14';
+import type Clutter from '@girs/clutter-15';
 
 /**
  * @version 46
