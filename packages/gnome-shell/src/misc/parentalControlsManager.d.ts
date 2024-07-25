@@ -2,7 +2,7 @@
 
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
-import type Shell from '@girs/shell-14';
+import type Shell from '@girs/shell-15';
 
 declare class ParentalControlsManager extends GObject.Object {
     protected _initialized: boolean;

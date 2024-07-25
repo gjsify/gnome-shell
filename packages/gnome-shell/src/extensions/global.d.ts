@@ -1,5 +1,5 @@
-import type Shell from '@girs/shell-14';
-import type Clutter from '@girs/clutter-14';
+import type Shell from '@girs/shell-15';
+import type Clutter from '@girs/clutter-15';
 declare global {
     /**
      * Global shell object created by GNOME Shell on startup.
@@ -88,7 +88,7 @@ type AnimatableActorFields =
 
 interface EasingParamsWithProperties extends EasingParams, Partial<Pick<Clutter.Actor, AnimatableActorFields>> {}
 
-declare module '@girs/st-14' {
+declare module '@girs/st-15' {
     export namespace St {
         interface Adjustment {
             /**
@@ -103,7 +103,7 @@ declare module '@girs/st-14' {
     }
 }
 
-declare module '@girs/clutter-14' {
+declare module '@girs/clutter-15' {
     export namespace Clutter {
         interface Actor {
             /**

@@ -1,4 +1,4 @@
-import type St from '@girs/st-14';
+import type St from '@girs/st-15';
 
 export class CheckBox extends St.Button {
     protected _box: St.Bin;
