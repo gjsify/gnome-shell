@@ -217,6 +217,7 @@ export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.Signal
     readonly firstMenuItem: PopupBaseMenuItem | PopupMenuSection;
     readonly numMenuItems: number;
 
+    _getMenuItems(): (PopupBaseMenuItem | PopupMenuSection)[];
     getSensitive(): boolean;
     setSensitive(sensitive: boolean): void;
     addAction(title: string, callback: () => void, icon?: Gio.Icon): void;
