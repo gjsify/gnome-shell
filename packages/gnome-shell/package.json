@@ -182,6 +182,17 @@
       }
     },
     "./misc/systemActions/ambient": "./dist/misc/systemActions-ambient.d.ts",
+    "./misc/util": {
+      "import": {
+        "types": "./dist/misc/util.d.ts",
+        "default": "./dist/misc/util.js"
+      },
+      "require": {
+        "types": "./dist/misc/util.d.ts",
+        "default": "./dist/misc/util.cjs"
+      }
+    },
+    "./misc/util/ambient": "./dist/misc/util-ambient.d.ts",
     "./ui/accessDialog": {
       "import": {
         "types": "./dist/ui/accessDialog.d.ts",
