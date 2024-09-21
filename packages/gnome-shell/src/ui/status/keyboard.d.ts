@@ -19,6 +19,8 @@ export declare class LayoutMenuItem extends PopupMenu.PopupBaseMenuItem {
     label: St.Label;
     indicator: St.Label;
 
+    /** @hidden Defined only to resolve type conflicts */
+    override _init(config?: PopupMenu.PopupBaseMenuItem.ConstructorProps): void;
     /**
      * Initializes a new instance of `LayoutMenuItem`.
      */
