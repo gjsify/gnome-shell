@@ -1,11 +1,11 @@
 import { build } from 'esbuild';
-import { copyFileSync } from 'fs';
+import { copyFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import AdmZip from 'adm-zip';
-import metadata from './src/metadata.json' assert { type: 'json' };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const metadata = JSON.parse(readFileSync('./src/metadata.json', 'utf8'));
 
 console.debug(`Building ${metadata.name} v${metadata.version}...`);
 
