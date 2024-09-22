@@ -9,11 +9,6 @@ import type Clutter from '@girs/clutter-15';
 /**
  * @version 46
  */
-export function _fixMarkup(text: string, allowMarkup?: boolean): string;
-
-/**
- * @version 46
- */
 export class URLHighlighter extends St.Label {
     constructor(text?: string, lineWrap?: boolean, allowMarkup?: boolean);
 
