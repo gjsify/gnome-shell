@@ -42,7 +42,7 @@ declare namespace PopupBaseMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L81
- * @version 46
+ * @version 47
  */
 declare class PopupBaseMenuItem extends St.BoxLayout {
     readonly actor: PopupBaseMenuItem;
@@ -105,7 +105,7 @@ export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L332
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L330
  * @version 47
  */
 export namespace Switch {
@@ -115,10 +115,10 @@ export namespace Switch {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L339
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L337
  * @version 47
  */
-export class Switch extends St.Bin {
+export class Switch extends St.Widget {
     state: boolean;
     constructor(state: boolean);
     /** @hidden Defined only to resolve type conflicts */
@@ -136,6 +136,9 @@ export class Switch extends St.Bin {
     // Specific signal handler methods
     connect(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
     connect_after(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
+
+    vfunc_motion_event(): typeof Clutter.EVENT_PROPAGATE;
+    vfunc_button_release_event(): typeof Clutter.EVENT_PROPAGATE;
 }
 
 /**
@@ -177,7 +180,7 @@ export class PopupSwitchMenuItem extends PopupBaseMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L505
- * @version 46
+ * @version 47
  */
 export namespace PopupImageMenuItem {
     export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {}
@@ -361,7 +364,7 @@ export namespace PopupMenuManager {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1321
- * @version 46
+ * @version 47
  */
 export class PopupMenuManager {
     constructor(owner: Clutter.Actor, grabParams?: PopupMenuManager.ConstructorProps);
