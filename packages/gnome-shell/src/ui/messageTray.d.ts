@@ -228,7 +228,7 @@ export class Source extends MessageList.Source {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L604
- * @version 46
+ * @version 47
  */
 export declare namespace Notification {
     export interface ObjectProperties {
