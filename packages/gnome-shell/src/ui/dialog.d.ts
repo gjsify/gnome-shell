@@ -1,11 +1,11 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js
 
-import type Clutter from '@girs/clutter-14';
-import type St from '@girs/st-14';
+import type Clutter from '@girs/clutter-15';
+import type St from '@girs/st-15';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L113
- * @version 46
+ * @version 47
  */
 export interface ButtonInfo {
     action: () => void;
@@ -17,7 +17,7 @@ export interface ButtonInfo {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L18
- * @version 46
+ * @version 47
  */
 export class Dialog extends St.Widget {
     protected _parentActor: St.Widget;
@@ -41,7 +41,7 @@ export class Dialog extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L158
- * @version 46
+ * @version 47
  */
 export namespace MessageDialogContent {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
@@ -51,7 +51,7 @@ export namespace MessageDialogContent {
 }
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L171
- * @version 46
+ * @version 47
  */
 export class MessageDialogContent extends St.BoxLayout {
     public title: string;
@@ -66,7 +66,7 @@ export class MessageDialogContent extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L250
- * @version 46
+ * @version 47
  */
 export namespace ListSection {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
@@ -76,7 +76,7 @@ export namespace ListSection {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L258
- * @version 46
+ * @version 47
  */
 export class ListSection extends St.BoxLayout {
     protected _listScrollView: St.ScrollView;
@@ -91,7 +91,7 @@ export class ListSection extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L294
- * @version 46
+ * @version 47
  */
 export namespace ListSectionItem {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
@@ -103,7 +103,7 @@ export namespace ListSectionItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L311
- * @version 46
+ * @version 47
  */
 export class ListSectionItem extends St.BoxLayout {
     protected _iconActorBin: St.Bin;

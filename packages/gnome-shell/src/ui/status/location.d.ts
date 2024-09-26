@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/location.js
 
 import GObject from '@girs/gobject-2.0';
-import St from '@girs/st-14';
+import St from '@girs/st-15';
 
 import * as ModalDialog from '../modalDialog.js';
 import * as PermissionStore from '../../misc/permissionStore.js';

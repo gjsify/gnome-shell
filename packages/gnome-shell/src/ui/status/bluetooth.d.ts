@@ -2,7 +2,7 @@
 
 import Gio from '@girs/gio-2.0';
 import GObject from '@girs/gobject-2.0';
-import St from '@girs/st-14';
+import St from '@girs/st-15';
 import GnomeBluetooth from '@girs/gnomebluetooth-3.0';
 
 import { Spinner } from '../animation.js';

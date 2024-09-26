@@ -1,12 +1,12 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js
 
-import type Clutter from '@girs/clutter-14';
-import type St from '@girs/st-14';
-import type Shell from '@girs/shell-14';
+import type Clutter from '@girs/clutter-15';
+import type St from '@girs/st-15';
+import type Shell from '@girs/shell-15';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L10
- * @version 46
+ * @version 47
  */
 export const DEFAULT_FADE_FACTOR = 0.4;
 export const VIGNETTE_BRIGHTNESS = 0.5;
@@ -14,7 +14,7 @@ export const VIGNETTE_SHARPNESS = 0.7;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L31
- * @version 46
+ * @version 47
  */
 export namespace RadialShaderEffect {
     export interface ConstructorProps extends Shell.GLSLEffect.ConstructorProps {
@@ -25,7 +25,7 @@ export namespace RadialShaderEffect {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L42
- * @version 46
+ * @version 47
  */
 export class RadialShaderEffect extends Shell.GLSLEffect {
     protected _brightness: number;
@@ -42,7 +42,7 @@ export class RadialShaderEffect extends Shell.GLSLEffect {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L121
- * @version 46
+ * @version 47
  */
 export interface LightboxAdditionalParameters {
     inhibitEvents?: boolean;
@@ -52,7 +52,7 @@ export interface LightboxAdditionalParameters {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L91
- * @version 46
+ * @version 47
  */
 export namespace Lightbox {
     export interface ConstructorProps extends St.Bin.ConstructorProps, LightboxAdditionalParameters {
@@ -63,7 +63,7 @@ export namespace Lightbox {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L96
- * @version 46
+ * @version 47
  */
 export class Lightbox extends St.Bin {
     protected _active: boolean;
