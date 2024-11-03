@@ -3,13 +3,8 @@
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
 import type GLib from '@girs/glib-2.0';
-import type St from '@girs/st-14';
-import type Clutter from '@girs/clutter-14';
-
-/**
- * @version 46
- */
-export function _fixMarkup(text: string, allowMarkup?: boolean): string;
+import type St from '@girs/st-15';
+import type Clutter from '@girs/clutter-15';
 
 /**
  * @version 46

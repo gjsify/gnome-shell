@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/backgroundMenu.js
 
-import type Clutter from '@girs/clutter-14';
+import type Clutter from '@girs/clutter-15';
 
 import type { PopupMenu } from './popupMenu.js';
 import type { LayoutManager } from './layout.js';

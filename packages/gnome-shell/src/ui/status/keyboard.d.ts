@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/keyboard.js
 
-import Clutter from '@girs/clutter-14';
-import St from '@girs/st-14';
+import Clutter from '@girs/clutter-15';
+import St from '@girs/st-15';
 
 import * as PanelMenu from '../panelMenu.js';
 import * as PopupMenu from '../popupMenu.js';
@@ -19,6 +19,8 @@ export declare class LayoutMenuItem extends PopupMenu.PopupBaseMenuItem {
     label: St.Label;
     indicator: St.Label;
 
+    /** @hidden Defined only to resolve type conflicts */
+    override _init(config?: PopupMenu.PopupBaseMenuItem.ConstructorProps): void;
     /**
      * Initializes a new instance of `LayoutMenuItem`.
      */

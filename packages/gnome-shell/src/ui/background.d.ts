@@ -95,8 +95,8 @@
  */
 
 import type Gio from '@girs/gio-2.0';
-import type Clutter from '@girs/clutter-14';
-import type Meta from '@girs/meta-14';
+import type Clutter from '@girs/clutter-15';
+import type Meta from '@girs/meta-15';
 import type GnomeDesktop from '@girs/gnomedesktop-4.0';
 import type GnomeBG from '@girs/gnomebg-4.0';
 

@@ -1,10 +1,10 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/main.js
 
 import type Gio from '@girs/gio-2.0';
-import type Shell from '@girs/shell-14';
-import type Clutter from '@girs/clutter-14';
-import type St from '@girs/st-14';
-import type Meta from '@girs/meta-14';
+import type Shell from '@girs/shell-15';
+import type Clutter from '@girs/clutter-15';
+import type St from '@girs/st-15';
+import type Meta from '@girs/meta-15';
 
 import { ComponentManager } from './components.js';
 import { AccessDialogDBus } from './accessDialog.js';
@@ -27,7 +27,7 @@ import { Panel } from './panel.js';
 // import * as Params from '../misc/params.js'
 // import * as RunDialog from './runDialog.js';
 // import * as WelcomeDialog from './welcomeDialog.js';
-import { LayoutManager } from './layout.js';
+import { LayoutManager, UiActor } from './layout.js';
 // import * as LoginManager from '../misc/loginManager.js'
 // import * as LookingGlass from './lookingGlass.js';
 import { NotificationDaemon } from './notificationDaemon.js';
@@ -100,7 +100,11 @@ export declare const actionMode: Shell.ActionMode.NONE;
 
 export declare const modalActorFocusStack: any[];
 
-export declare const uiGroup: any;
+/**
+ * @deprecated use layoutManager.uiGroup instead
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/main.js#L212
+ */
+export declare const uiGroup: UiActor;
 
 export declare const magnifier: any;
 

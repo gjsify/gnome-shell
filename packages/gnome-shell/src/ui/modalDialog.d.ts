@@ -1,15 +1,15 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js
 
-import type St from '@girs/st-14';
-import type Shell from '@girs/shell-14';
-import type Clutter from '@girs/clutter-14';
+import type St from '@girs/st-15';
+import type Shell from '@girs/shell-15';
+import type Clutter from '@girs/clutter-15';
 
 import type { MonitorConstraint } from './layout.js';
 import type { ButtonInfo, Dialog } from './dialog.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L19
- * @version 46
+ * @version 47
  */
 export enum State {
     OPENED = 0,
@@ -21,7 +21,7 @@ export enum State {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L27
- * @version 46
+ * @version 47
  */
 export namespace ModalDialog {
     export interface ConstructorProps extends St.Widget.ConstructorProps {
@@ -35,7 +35,7 @@ export namespace ModalDialog {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/modalDialog.js#L37
- * @version 46
+ * @version 47
  */
 export class ModalDialog extends St.Widget {
     protected _state: State;
@@ -55,7 +55,7 @@ export class ModalDialog extends St.Widget {
     public dialogLayout: Dialog;
     public contentLayout: Dialog['contentLayout'];
     public buttonLayout: Dialog['buttonLayout'];
-    public state: State;
+    public readonly state: State;
 
     constructor(params?: Partial<ModalDialog.ConstructorProps>);
 

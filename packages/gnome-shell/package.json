@@ -1,6 +1,6 @@
 {
   "name": "@girs/gnome-shell",
-  "version": "46.0.2",
+  "version": "47.0.0-next.4",
   "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
   "type": "module",
   "main": "./dist/index.js",
@@ -182,6 +182,17 @@
       }
     },
     "./misc/systemActions/ambient": "./dist/misc/systemActions-ambient.d.ts",
+    "./misc/util": {
+      "import": {
+        "types": "./dist/misc/util.d.ts",
+        "default": "./dist/misc/util.js"
+      },
+      "require": {
+        "types": "./dist/misc/util.d.ts",
+        "default": "./dist/misc/util.cjs"
+      }
+    },
+    "./misc/util/ambient": "./dist/misc/util-ambient.d.ts",
     "./ui/accessDialog": {
       "import": {
         "types": "./dist/ui/accessDialog.d.ts",
@@ -972,34 +983,34 @@
     "generate:types": "node ./scripts/generate-types.js"
   },
   "dependencies": {
-    "@girs/accountsservice-1.0": "^1.0.0-4.0.0-beta.12",
-    "@girs/adw-1": "^1.6.0-4.0.0-beta.12",
-    "@girs/atk-1.0": "^2.52.0-4.0.0-beta.12",
-    "@girs/cally-14": "^14.0.0-4.0.0-beta.12",
-    "@girs/clutter-14": "^14.0.0-4.0.0-beta.12",
-    "@girs/cogl-2.0": "^2.0.0-4.0.0-beta.12",
-    "@girs/gcr-4": "^4.3.0-4.0.0-beta.12",
-    "@girs/gdm-1.0": "^1.0.0-4.0.0-beta.12",
-    "@girs/gio-2.0": "^2.80.3-4.0.0-beta.12",
-    "@girs/gjs": "^4.0.0-beta.12",
-    "@girs/glib-2.0": "^2.80.3-4.0.0-beta.12",
-    "@girs/gnomebg-4.0": "^4.0.0-4.0.0-beta.12",
-    "@girs/gnomebluetooth-3.0": "^3.0.0-4.0.0-beta.12",
-    "@girs/gnomedesktop-4.0": "^4.0.0-4.0.0-beta.12",
-    "@girs/gobject-2.0": "^2.80.3-4.0.0-beta.12",
-    "@girs/gtk-4.0": "^4.14.4-4.0.0-beta.12",
-    "@girs/gvc-1.0": "^1.0.0-4.0.0-beta.12",
-    "@girs/meta-14": "^14.0.0-4.0.0-beta.12",
-    "@girs/mtk-14": "^14.0.0-4.0.0-beta.12",
-    "@girs/polkit-1.0": "^1.0.0-4.0.0-beta.12",
-    "@girs/shell-14": "^14.0.0-4.0.0-beta.12",
-    "@girs/shew-0": "^0.0.0-4.0.0-beta.12",
-    "@girs/st-14": "^14.0.0-4.0.0-beta.12",
-    "@girs/upowerglib-1.0": "^0.99.1-4.0.0-beta.12"
+    "@girs/accountsservice-1.0": "1.0.0-4.0.0-beta.17",
+    "@girs/adw-1": "^1.7.0-4.0.0-beta.17",
+    "@girs/atk-1.0": "^2.54.0-4.0.0-beta.17",
+    "@girs/cally-15": "^15.0.0-4.0.0-beta.17",
+    "@girs/clutter-15": "^15.0.0-4.0.0-beta.17",
+    "@girs/cogl-2.0": "^2.0.0-4.0.0-beta.17",
+    "@girs/gcr-4": "^4.3.0-4.0.0-beta.17",
+    "@girs/gdm-1.0": "^1.0.0-4.0.0-beta.17",
+    "@girs/gio-2.0": "^2.82.2-4.0.0-beta.17",
+    "@girs/gjs": "^4.0.0-beta.17",
+    "@girs/glib-2.0": "^2.82.2-4.0.0-beta.17",
+    "@girs/gnomebg-4.0": "^4.0.0-4.0.0-beta.17",
+    "@girs/gnomebluetooth-3.0": "^3.0.0-4.0.0-beta.17",
+    "@girs/gnomedesktop-4.0": "^4.0.0-4.0.0-beta.17",
+    "@girs/gobject-2.0": "^2.82.2-4.0.0-beta.17",
+    "@girs/gtk-4.0": "^4.16.3-4.0.0-beta.17",
+    "@girs/gvc-1.0": "^1.0.0-4.0.0-beta.17",
+    "@girs/meta-15": "^15.0.0-4.0.0-beta.17",
+    "@girs/mtk-15": "^15.0.0-4.0.0-beta.17",
+    "@girs/polkit-1.0": "^1.0.0-4.0.0-beta.17",
+    "@girs/shell-15": "^15.0.0-4.0.0-beta.17",
+    "@girs/shew-0": "^0.0.0-4.0.0-beta.17",
+    "@girs/st-15": "^15.0.0-4.0.0-beta.17",
+    "@girs/upowerglib-1.0": "^0.99.1-4.0.0-beta.17"
   },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.5",
-    "typescript": "5.5.4"
+    "typescript": "5.6.3"
   },
   "keywords": [
     "Gir",
