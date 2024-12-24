@@ -1,8 +1,25 @@
 {
     "compilerOptions": {
-        "lib": ["ESNext"],
+        "lib": [
+            "ESNext"
+        ],
         "types": [],
         "target": "ESNext",
         "module": "ESNext"
-    }
+    },
+    "include": [
+        "src"
+    ],
+    "files": [],
+    "references": [
+        {
+            "path": "./packages/gnome-shell/tsconfig.json"
+        },
+        {
+            "path": "./packages/gnome-shell/tsconfig.doc.json"
+        },
+        {
+            "path": "./examples/hello-world/tsconfig.json"
+        }
+    ]
 }
