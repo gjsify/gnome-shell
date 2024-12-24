@@ -12,6 +12,15 @@ export class Extension extends ExtensionBase {
     disable(): void;
 }
 
+/**
+ * @version 47
+ */
+export class InjectionManager {
+    overrideMethod<T, M extends keyof T, F extends T[M] extends (...args: any[]) => any ? T[M] : never>(prototype: T, methodName: M, createOverrideFunc: (this: T, originalMethod: F) => (this: T, ...args: Parameters<F>) => ReturnType<F>): void;
+    restoreMethod<T, M extends keyof T>(prototype: T, methodName: M): void;
+    clear(): void;
+}
+
 export declare const gettext: TranslationFunctions['gettext'];
 export declare const ngettext: TranslationFunctions['ngettext'];
 export declare const pgettext: TranslationFunctions['pgettext'];
