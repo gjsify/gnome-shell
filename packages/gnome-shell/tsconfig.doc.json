@@ -12,5 +12,6 @@
         "inlineSourceMap": false,
         "inlineSources": false,
         "newLine": "LF"
-    }
+    },
+    "include": ["./src/**/*.d.ts"]
 }
