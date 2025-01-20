@@ -1,6 +1,6 @@
 {
   "name": "@gjsify/gnome-shell-hello-world-example",
-  "version": "47.0.0-next.4",
+  "version": "47.0.1",
   "description": "Simple Gnome Shell Hello World Extension example",
   "type": "module",
   "main": "dist/extension.js",
@@ -16,13 +16,13 @@
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.5",
     "adm-zip": "^0.5.16",
-    "esbuild": "^0.24.0",
-    "typescript": "5.6.3"
+    "esbuild": "^0.24.2",
+    "typescript": "5.7.3"
   },
   "dependencies": {
-    "@girs/gjs": "^4.0.0-beta.17",
+    "@girs/gjs": "^4.0.0-beta.19",
     "@girs/gnome-shell": "workspace:^",
-    "@girs/gobject-2.0": "^2.82.2-4.0.0-beta.17",
-    "@girs/st-15": "^15.0.0-4.0.0-beta.17"
+    "@girs/gobject-2.0": "^2.82.2-4.0.0-beta.19",
+    "@girs/st-15": "^15.0.0-4.0.0-beta.19"
   }
 }
