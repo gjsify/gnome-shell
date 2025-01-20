@@ -52,9 +52,9 @@
         "url": "https://github.com/gjsify/gnome-shell/issues"
     },
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
-    "packageManager": "yarn@4.5.1",
+    "packageManager": "yarn@4.6.0",
     "devDependencies": {
         "prettier": "^3.4.2",
-        "typescript": "5.6.3"
+        "typescript": "5.7.3"
     }
 }

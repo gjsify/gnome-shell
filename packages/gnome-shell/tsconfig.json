@@ -8,6 +8,5 @@
         "moduleResolution": "Bundler",
         "skipLibCheck": false
     },
-    "include": ["./dist/**/*.d.ts"],
-    "files": ["./dist/index.d.ts"]
+    "include": ["./dist/**/*.d.ts"]
 }

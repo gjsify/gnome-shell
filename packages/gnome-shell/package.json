@@ -1010,7 +1010,7 @@
   },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.5",
-    "typescript": "5.6.3"
+    "typescript": "5.7.3"
   },
   "keywords": [
     "Gir",
