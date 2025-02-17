@@ -1,6 +1,6 @@
 {
     "name": "gnome-shell",
-    "version": "47.0.1",
+    "version": "47.0.2",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
     "main": "src/index.js",
     "type": "module",
@@ -54,7 +54,7 @@
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
     "packageManager": "yarn@4.6.0",
     "devDependencies": {
-        "prettier": "^3.4.2",
+        "prettier": "^3.5.1",
         "typescript": "5.7.3"
     }
 }
