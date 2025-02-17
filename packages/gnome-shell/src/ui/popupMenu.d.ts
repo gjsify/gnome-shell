@@ -1,9 +1,9 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js
 
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-15';
-import type Shell from '@girs/shell-15';
-import type Clutter from '@girs/clutter-15';
+import type St from '@girs/st-16';
+import type Shell from '@girs/shell-16';
+import type Clutter from '@girs/clutter-16';
 
 import * as Signals from '../misc/signals.js';
 import * as BoxPointer from './boxpointer.js';

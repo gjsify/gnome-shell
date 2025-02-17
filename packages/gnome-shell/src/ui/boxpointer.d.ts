@@ -1,5 +1,5 @@
-import type St from '@girs/st-15';
-import type Clutter from '@girs/clutter-15';
+import type St from '@girs/st-16';
+import type Clutter from '@girs/clutter-16';
 
 import type { LayoutManager } from './layout.js';
 

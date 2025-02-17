@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/mpris.js
 
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-15';
+import type St from '@girs/st-16';
 
 import type { EventEmitter } from '../misc/signals.js';
 import type { Message, MessageListSection } from './messageList.js';

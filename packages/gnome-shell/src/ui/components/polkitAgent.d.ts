@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/components/polkitAgent.js
 
-import type Shell from '@girs/shell-15';
+import type Shell from '@girs/shell-16';
 
 declare class AuthenticationAgent extends Shell.PolkitAuthenticationAgent {
     constructor();

@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js
 
-import type Clutter from '@girs/clutter-15';
-import type St from '@girs/st-15';
+import type Clutter from '@girs/clutter-16';
+import type St from '@girs/st-16';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L113
