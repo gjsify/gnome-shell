@@ -9,6 +9,7 @@ import type Meta from '@girs/meta-16';
 import { ComponentManager } from './components.js';
 import { AccessDialogDBus } from './accessDialog.js';
 import { AudioDeviceSelectionDBus } from './audioDeviceSelection.js';
+// import * as BreakManager from '../misc/breakManager.js';
 // import * as CtrlAltTab from './ctrlAltTab.js';
 // import * as EndSessionDialog from './endSessionDialog.js';
 import { ExtensionManager } from './extensionSystem.js';
@@ -38,6 +39,7 @@ import { NotificationDaemon } from './notificationDaemon.js';
 // import * as SessionMode from './sessionMode.js';
 // import * as ShellDBus from './shellDBus.js';
 // import * as ShellMountOperation from './shellMountOperation.js';
+// import * as TimeLimitsManager from '../misc/timeLimitsManager.js';
 import { WindowManager } from './windowManager.js';
 // import * as Magnifier from './magnifier.js';
 // import * as XdndHandler from './xdndHandler.js';
@@ -99,6 +101,8 @@ export declare const modalCount: any;
 export declare const actionMode: Shell.ActionMode.NONE;
 
 export declare const modalActorFocusStack: any[];
+
+export declare const screenTimeDBus: any;
 
 /**
  * @deprecated use layoutManager.uiGroup instead
