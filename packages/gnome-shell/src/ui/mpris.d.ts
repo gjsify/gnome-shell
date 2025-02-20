@@ -4,30 +4,7 @@ import type Gio from '@girs/gio-2.0';
 import type St from '@girs/st-16';
 
 import type { EventEmitter } from '../misc/signals.js';
-import type { Message, MessageListSection } from './messageList.js';
-
-declare class MediaMessage extends Message {
-    protected _player: MprisPlayer;
-    protected _icon: St.Icon;
-    protected _secondaryBin: St.Bin;
-    protected _closeButton: St.Button;
-    protected _prevButton: St.Button;
-    protected _playPauseButton: St.Button;
-    protected _nextButton: St.Button;
-
-    constructor(player: MprisPlayer);
-
-    /** @hidden */
-    public override _init(params?: Partial<St.Button.ConstructorProps>): void;
-    /** @hidden */
-    public override _init(title: string, body: string): void;
-    public _init(player: MprisPlayer): void;
-
-    public vfunc_clicked(): void;
-
-    protected _updateNavButton(button: St.Button, sensitive?: boolean): void;
-    protected _update(): void;
-}
+import type { NotificationMessageGroup } from './messageList.js';
 
 declare class MprisPlayer extends EventEmitter {
     readonly status: string;
@@ -50,7 +27,7 @@ declare class MprisPlayer extends EventEmitter {
     _updateState(): void;
 }
 
-export class MediaSection extends MessageListSection {
+export class MprisSource extends NotificationMessageGroup {
     _players: Map<string, MprisPlayer>;
     _proxy: Gio.DBusProxy;
 
