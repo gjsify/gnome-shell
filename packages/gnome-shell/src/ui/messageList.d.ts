@@ -31,11 +31,7 @@ export class URLHighlighter extends St.Label {
 
 declare class ScaleLayout extends Clutter.BinLayout {
     _container: Clutter.Actor | null;
-    _scalingEnabled: boolean;
-
-    get scalingEnabled(): boolean;
-
-    set scalingEnabled(value: boolean);
+    scalingEnabled: boolean;
 
     vfunc_set_container(container: Clutter.Actor | null): void;
 
@@ -45,14 +41,10 @@ declare class ScaleLayout extends Clutter.BinLayout {
 }
 
 declare class LabelExpanderLayout extends Clutter.BinLayout {
-    _expansion: number;
+    expansion: number;
     _expandLines: number;
 
     constructor(params: Clutter.BinLayout.ConstructorProps);
-
-    get expansion(): number;
-
-    set expansion(v: number);
 
     set expandLines(v: number);
 
@@ -85,15 +77,11 @@ export class Source extends GObject.Object implements Source.ObjectProperties {
 }
 
 declare class TimeLabel extends St.Label {
-    _datetime: Date;
+    datetime: Date;
 
     /** @hidden */
     public _init(params?: Partial<St.Label.ConstructorProps>): void;
     public _init(datetime: Date): void;
-
-    get datetime(): Date;
-
-    set datetime(datetime: Date);
 
     public vfunc_map(): void;
 }
@@ -219,13 +207,9 @@ declare class NotificationMessageGroup extends St.Widget {
 }
 
 declare class MessageGroupExpanderLayout extends Clutter.LayoutManager {
-    _expansion: number;
+    expansion: number;
 
     constructor(cover: Clutter.Actor, header: MessageHeader);
-
-    get expansion(): number;
-
-    set expansion(v: number);
 
     getExpandedHeight(container: Clutter.Actor, forWidth: number): [number, number];
 
