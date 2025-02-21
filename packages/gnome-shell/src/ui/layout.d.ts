@@ -2,11 +2,11 @@
 
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
-import type Clutter from '@girs/clutter-15';
-import type St from '@girs/st-15';
-import type Meta from '@girs/meta-15';
-import type Mtk from '@girs/mtk-15';
-import type Shell from '@girs/shell-15';
+import type Clutter from '@girs/clutter-16';
+import type St from '@girs/st-16';
+import type Meta from '@girs/meta-16';
+import type Mtk from '@girs/mtk-16';
+import type Shell from '@girs/shell-16';
 
 import { EventEmitter } from '../misc/signals.js';
 
@@ -17,7 +17,7 @@ import type { BackgroundManager } from './background.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L159
- * @version 47
+ * @version 48
  */
 export interface Geometry {
     x: number;
@@ -27,7 +27,7 @@ export interface Geometry {
 }
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L41
- * @version 47
+ * @version 48
  */
 
 export namespace MonitorConstraint {
@@ -40,7 +40,7 @@ export namespace MonitorConstraint {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L56
- * @version 47
+ * @version 48
  */
 export class MonitorConstraint extends Clutter.Constraint {
     protected _primary: boolean;
@@ -63,7 +63,7 @@ export class MonitorConstraint extends Clutter.Constraint {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L158
- * @version 47
+ * @version 48
  */
 declare class Monitor {
     public index: number;
@@ -79,7 +79,7 @@ declare class Monitor {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L174
- * @version 47
+ * @version 48
  */
 declare class UiActor extends St.Widget {
     public constructor(props?: Partial<St.Widget.ConstructorProps>);
@@ -91,7 +91,7 @@ declare class UiActor extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1454
- * @version 47
+ * @version 48
  */
 declare class ScreenTransition extends Clutter.Actor {
     constructor();
@@ -109,7 +109,7 @@ declare class ScreenTransition extends Clutter.Actor {
  * overview.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1141
- * @version 47
+ * @version 48
  */
 declare class HotCorner extends Clutter.Actor {
     protected _entered: boolean;
@@ -137,7 +137,7 @@ declare class HotCorner extends Clutter.Actor {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L186
- * @version 47
+ * @version 48
  */
 export interface TrackedActors {
     trackFullscreen: boolean;
@@ -147,7 +147,7 @@ export interface TrackedActors {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L192
- * @version 47
+ * @version 48
  */
 export class LayoutManager extends GObject.Object {
     protected _rtl: boolean;
@@ -323,7 +323,7 @@ export class LayoutManager extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1309
- * @version 47
+ * @version 48
  */
 declare class PressureBarrier extends EventEmitter {
     protected _threshold: number;

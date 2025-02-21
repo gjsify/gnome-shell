@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/backgroundApps.js
 
 import Gio from '@girs/gio-2.0';
-import Shell from '@girs/shell-15';
+import Shell from '@girs/shell-16';
 
 import * as PopupMenu from '../popupMenu.js';
 import { Spinner } from '../animation.js';

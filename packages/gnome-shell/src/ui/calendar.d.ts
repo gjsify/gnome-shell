@@ -2,13 +2,11 @@
 
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-15';
-import type Clutter from '@girs/clutter-15';
+import type St from '@girs/st-16';
+import type Clutter from '@girs/clutter-16';
 
-import type { Message, MessageListSection } from './messageList.js';
-import type { Notification, MessageTray, Source } from './messageTray.js';
 import type { Switch } from './popupMenu.js';
-import type { MediaSection } from './mpris.js';
+import type { MessageView } from './messageList.js';
 
 declare function sameYear(dateA: Date, dateB: Date): boolean;
 
@@ -109,6 +107,10 @@ declare class DBusEventSource extends EventSourceBase {
     protected _getFilteredEvents(begin: Date, end: Date): Generator<CalendarEvent, void, unknown>;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/calendar.js#L406
+ * @version 48
+ */
 export class Calendar extends St.Widget {
     protected _weekStart: number;
     protected _settings: Gio.Settings;
@@ -162,43 +164,6 @@ export class Calendar extends St.Widget {
     protected _update(): void;
 }
 
-export class NotificationMessage extends Message {
-    /** @hidden */
-    override _init(params?: Partial<St.Button.ConstructorProps>): void;
-    /** @hidden */
-    override _init(title: string, body: string): void;
-    public _init(notification: Notification): void;
-
-    public vfunc_clicked(): void;
-    public canClose(): boolean;
-
-    protected _getIcon(): St.Icon;
-    protected _onUpdated(n: Notification, _clear?: boolean): void;
-}
-
-declare class TimeLabel extends St.Label {
-    _datetime: Date;
-
-    /** @hidden */
-    public _init(params?: Partial<St.Label.ConstructorProps>): void;
-    public _init(datetime: Date): void;
-
-    public vfunc_map(): void;
-}
-
-declare class NotificationSection extends MessageListSection {
-    public readonly allowed: boolean;
-
-    /** @hidden */
-    public _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
-    public _init(): void;
-
-    public vfunc_map(): void;
-
-    protected _sourceAdded(tray: MessageTray, source: Source): void;
-    protected _onNotificationAdded(source: Source, notification: Notification): void;
-}
-
 declare class Placeholder extends St.BoxLayout {
     protected _date: Date;
     protected _icon: St.Icon;
@@ -220,15 +185,18 @@ declare class DoNotDisturbSwitch extends Switch {
     public _init(): void;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/calendar.js#L799
+ * @version 48
+ */
+
 export class CalendarMessageList extends St.Widget {
     _placeholder: Placeholder;
     _scrollView: St.ScrollView;
     _dndSwitch: DoNotDisturbSwitch;
     _dndButton: St.Button;
     _clearButton: St.Button;
-    _sectionList: St.BoxLayout;
-    _mediaSection: MediaSection;
-    _notificationSection: NotificationSection;
+    _messageView: MessageView;
 
     // visible: boolean;
 
@@ -236,6 +204,5 @@ export class CalendarMessageList extends St.Widget {
     override _init(config?: Partial<St.Widget.ConstructorProps>): void;
     public _init(): void;
 
-    protected _addSection(section: MessageListSection): void;
-    protected _sync(): void;
+    maybeCollapseMessageGroupForEvent(event: Clutter.Event): boolean;
 }

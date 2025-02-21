@@ -36,8 +36,13 @@ export interface TranslationFunctions {
     pgettext(context: string, str: string): string;
 }
 
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L9
+ * @version 48
+ */
 export class ExtensionBase {
     #gettextDomain: string | null;
+    #console: Console;
 
     readonly metadata: ExtensionMetadata;
 
@@ -76,6 +81,8 @@ export class ExtensionBase {
      * @returns {}
      */
     getSettings(schema?: string): Gio.Settings;
+
+    getLogger(): Console;
 
     /**
      * Initialize Gettext to load translations from extensionsdir/locale. If
@@ -141,4 +148,32 @@ export class GettextWrapper {
     #pgettext(context: any, str: string): string;
 
     defineTranslationFunctions(): TranslationFunctions;
+}
+
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L9
+ * @version 48
+ */
+declare class Console {
+    #extension: ExtensionBase;
+
+    constructor(ext: ExtensionBase);
+
+    log(...args: any[]): void;
+
+    warn(...args: any[]): void;
+
+    error(...args: any[]): void;
+
+    info(...args: any[]): void;
+
+    debug(...args: any[]): void;
+
+    assert(condition: boolean, ...args: any[]): void;
+
+    trace(...args: any[]): void;
+
+    group(...args: any[]): void;
+
+    groupEnd(): void;
 }

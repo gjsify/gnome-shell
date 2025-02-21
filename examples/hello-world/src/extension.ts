@@ -1,5 +1,5 @@
 import '@girs/gjs'; // For global types like `log()`
-import St from '@girs/st-15';
+import St from '@girs/st-16';
 
 import '@girs/gnome-shell/extensions/global'; // For global shell types
 import { Extension, gettext as _ } from '@girs/gnome-shell/extensions/extension';
