@@ -5,7 +5,7 @@ import type Clutter from '@girs/clutter-16';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js#L23
- * @version 47
+ * @version 48
  */
 export interface AdjustAnimationTimeParams {
     /** whether to ignore the enable-animations setting */
@@ -22,7 +22,7 @@ export interface AdjustAnimationTimeParams {
  * and slow-down-factor settings
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js#L22
- * @version 47
+ * @version 48
  */
 
 export function adjustAnimationTime(msecs: number, params?: AdjustAnimationTimeParams): number;
@@ -34,14 +34,14 @@ export function adjustAnimationTime(msecs: number, params?: AdjustAnimationTimeP
  * @param actor - the actor
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js#L40
- * @version 47
+ * @version 48
  */
 
 export function ensureActorVisibleInScrollView(scrollView: St.ScrollView, actor: Clutter.Actor): void;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js#L90
- * @version 47
+ * @version 48
  */
 export interface WiggleParams {
     /** The offset to move the actor by per-wiggle */
@@ -60,7 +60,7 @@ export interface WiggleParams {
  * @param params options for the animation
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js#L86
- * @version 47
+ * @version 48
  */
 
 export function wiggle(actor: Clutter.Actor, params: WiggleParams): void;
