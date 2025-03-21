@@ -4,5 +4,18 @@
         "types": [],
         "target": "ESNext",
         "module": "ESNext"
-    }
+    },
+    "include": [],
+    "files": [],
+    "references": [
+        {
+            "path": "./packages/gnome-shell/tsconfig.json"
+        },
+        {
+            "path": "./packages/gnome-shell/tsconfig.doc.json"
+        },
+        {
+            "path": "./examples/hello-world/tsconfig.json"
+        }
+    ]
 }
