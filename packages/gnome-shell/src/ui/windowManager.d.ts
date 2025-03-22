@@ -6,8 +6,8 @@ import type Meta from 'gi://Meta';
 import type Shell from 'gi://Shell';
 import type St from '@girs/st-16';
 import type Mtk from '@girs/mtk-16';
-import type { Monitor } from './layout';
-import type { Workspace } from './workspace';
+import type { Monitor } from './layout.js';
+import type { Workspace } from './workspace.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/windowManager.js#L28

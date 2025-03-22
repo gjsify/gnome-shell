@@ -5,8 +5,8 @@ import type Gio from '@girs/gio-2.0';
 import type GLib from '@girs/glib-2.0';
 import type St from '@girs/st-16';
 import type Clutter from '@girs/clutter-16';
-import type { Notification } from './messageTray';
-import type { MprisPlayer, MprisSource } from './mpris';
+import type { Notification } from './messageTray.js';
+import type { MprisPlayer, MprisSource } from './mpris.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js#L33
