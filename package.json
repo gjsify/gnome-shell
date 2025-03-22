@@ -54,7 +54,7 @@
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
     "packageManager": "yarn@4.6.0",
     "devDependencies": {
-        "prettier": "^3.5.1",
-        "typescript": "5.7.3"
+        "prettier": "^3.5.3",
+        "typescript": "5.8.2"
     }
 }

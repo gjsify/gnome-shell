@@ -16,13 +16,13 @@
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.5",
     "adm-zip": "^0.5.16",
-    "esbuild": "^0.25.0",
-    "typescript": "5.7.3"
+    "esbuild": "^0.25.1",
+    "typescript": "5.8.2"
   },
   "dependencies": {
-    "@girs/gjs": "^4.0.0-beta.21",
+    "@girs/gjs": "^4.0.0-beta.23",
     "@girs/gnome-shell": "workspace:^",
-    "@girs/gobject-2.0": "^2.83.3-4.0.0-beta.21",
-    "@girs/st-16": "^16.0.0-4.0.0-beta.21"
+    "@girs/gobject-2.0": "^2.84.0-4.0.0-beta.23",
+    "@girs/st-16": "^16.0.0-4.0.0-beta.23"
   }
 }
