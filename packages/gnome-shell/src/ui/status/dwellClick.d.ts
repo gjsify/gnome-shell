@@ -1,9 +1,9 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/dwellClick.js
 
-import Clutter from '@girs/clutter-15';
+import Clutter from '@girs/clutter-16';
 import Gio from '@girs/gio-2.0';
 import GLib from '@girs/glib-2.0';
-import St from '@girs/st-15';
+import St from '@girs/st-16';
 
 import * as PanelMenu from '../panelMenu.js';
 

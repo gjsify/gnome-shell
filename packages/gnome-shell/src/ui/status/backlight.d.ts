@@ -1,4 +1,4 @@
-import St from '@girs/st-15';
+import St from '@girs/st-16';
 import Gio from '@girs/gio-2.0';
 
 import { QuickMenuToggle, SystemIndicator } from '../quickSettings.js';

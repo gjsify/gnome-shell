@@ -1,13 +1,13 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js
 
-import type St from '@girs/st-15';
-import Clutter from '@girs/clutter-15';
+import type St from '@girs/st-16';
+import Clutter from '@girs/clutter-16';
 
 import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L11
- * @version 47
+ * @version 48
  */
 declare namespace ButtonBox {
     interface ConstructorProps extends St.Widget.ConstructorProps {}
@@ -15,7 +15,7 @@ declare namespace ButtonBox {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L12
- * @version 47
+ * @version 48
  */
 declare class ButtonBox extends St.Widget {
     constructor(params?: Partial<ButtonBox.ConstructorProps>);
@@ -31,7 +31,7 @@ declare class ButtonBox extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L95
- * @version 47
+ * @version 48
  */
 export namespace Button {
     interface ConstructorProps extends ButtonBox.ConstructorProps {}
@@ -39,7 +39,7 @@ export namespace Button {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L97
- * @version 47
+ * @version 48
  */
 export class Button extends ButtonBox {
     menu: PopupMenu | PopupDummyMenu;
