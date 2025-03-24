@@ -151,14 +151,10 @@ export class GettextWrapper {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L9
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L285
  * @version 48
  */
-declare class Console {
-    #extension: ExtensionBase;
-
-    constructor(ext: ExtensionBase);
-
+export interface ConsoleLike {
     log(...args: any[]): void;
 
     warn(...args: any[]): void;
@@ -176,4 +172,12 @@ declare class Console {
     group(...args: any[]): void;
 
     groupEnd(): void;
+}
+
+declare interface Console extends ConsoleLike {}
+
+declare class Console implements ConsoleLike {
+    #extension: ExtensionBase;
+
+    constructor(ext: ExtensionBase);
 }
