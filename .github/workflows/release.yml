@@ -1,0 +1,37 @@
+name: Release CI
+
+on:
+  release:
+    types: published
+
+env:
+  node-version: 22.x
+
+jobs:
+  release:
+    name: Release CI
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # This also setups a .npmrc file to publish to npm
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@girs'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Types
+        run: yarn run build:types
+
+      - name: Publish 
+        run: yarn run publish:${{github.event.release.prerelease && 'next' || 'latest'}} --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
