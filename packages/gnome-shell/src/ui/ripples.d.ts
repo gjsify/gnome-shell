@@ -32,5 +32,5 @@ export class Ripples {
      * @param startOpacity
      * @param finalScale
      */
-    protected _animRipple(ripple: St.BoxLayout, delay: number, duration: number, startScale: number, startOpacity: number, finalScale: number): void;
+    _animRipple(ripple: St.BoxLayout, delay: number, duration: number, startScale: number, startOpacity: number, finalScale: number): void;
 }

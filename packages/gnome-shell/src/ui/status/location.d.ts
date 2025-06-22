@@ -47,8 +47,8 @@ export declare class GeoclueAgent extends GObject.Object {
  * Indicator for location services in the system status area.
  */
 export declare class Indicator extends SystemIndicator {
-    private _agent: GeoclueAgent;
-    private _indicator: St.Icon;
+    _agent: GeoclueAgent;
+    _indicator: St.Icon;
 
     constructor();
 }
@@ -62,11 +62,11 @@ export declare class AppAuthorizer {
     // Authorizes the app for location access.
     authorize(): Promise<GeoclueAccuracyLevel>;
     // Prompts user for authorization.
-    private _userAuthorizeApp(): Promise<void>;
+    _userAuthorizeApp(): Promise<void>;
     // Completes the authorization process.
-    private _completeAuth(): GeoclueAccuracyLevel;
+    _completeAuth(): GeoclueAccuracyLevel;
     // Saves the authorization decision to the permission store.
-    private _saveToPermissionStore(): Promise<void>;
+    _saveToPermissionStore(): Promise<void>;
 }
 
 /**
@@ -76,9 +76,9 @@ export declare class GeolocationDialog extends ModalDialog.ModalDialog {
     constructor(name: string, reason: string, reqAccuracyLevel: GeoclueAccuracyLevel);
 
     // Handles the 'Grant Access' action.
-    private _onGrantClicked(): void;
+    _onGrantClicked(): void;
     // Handles the 'Deny Access' action.
-    private _onDenyClicked(): void;
+    _onDenyClicked(): void;
 }
 
 /**

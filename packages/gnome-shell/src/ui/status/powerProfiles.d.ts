@@ -38,9 +38,9 @@ declare const LAST_PROFILE_KEY: string;
  * Class representing the toggle for Power Profiles in the system settings.
  */
 declare class PowerProfilesToggle extends QuickMenuToggle {
-    private _profileItems: Map<string, PopupMenu.PopupImageMenuItem>;
-    private _profileSection: PopupMenu.PopupMenuSection;
-    private _proxy: PowerProfilesProxy;
+    _profileItems: Map<string, PopupMenu.PopupImageMenuItem>;
+    _profileSection: PopupMenu.PopupMenuSection;
+    _proxy: PowerProfilesProxy;
 
     /**
      * Initialize a new Power Profiles toggle.

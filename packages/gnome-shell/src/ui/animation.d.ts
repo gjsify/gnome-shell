@@ -14,12 +14,12 @@ export class Animation extends St.Bin {
     public play(): void;
     public stop(): void;
 
-    protected _loadFile(file: Gio.File, width: number, height: number): void;
-    protected _showFrame(frame: number): void;
-    protected _update(): typeof GLib.SOURCE_CONTINUE;
-    protected _syncAnimationSize(): void;
-    protected _animationsLoaded(): void;
-    protected _onDestroy(): void;
+    _loadFile(file: Gio.File, width: number, height: number): void;
+    _showFrame(frame: number): void;
+    _update(): typeof GLib.SOURCE_CONTINUE;
+    _syncAnimationSize(): void;
+    _animationsLoaded(): void;
+    _onDestroy(): void;
 }
 
 export class AnimatedIcon extends Animation {
@@ -44,5 +44,5 @@ export class Spinner extends AnimatedIcon {
     public play(): void;
     public stop(): void;
 
-    protected _onDestroy(): void;
+    _onDestroy(): void;
 }

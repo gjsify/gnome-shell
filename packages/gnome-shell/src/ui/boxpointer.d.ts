@@ -20,18 +20,18 @@ export enum PopupAnimation {
  *
  */
 export class BoxPointer extends St.Widget {
-    protected _arrowSide: St.Side;
-    protected _userArrowSide: St.Side;
-    protected _arrowOrigin: number;
-    protected _arrowActor: St.Widget | null;
-    protected _border: St.DrawingArea;
-    protected _arrowAlignment: number;
-    protected _sourceAlignment: number;
-    protected _muteKeys: boolean;
-    protected _muteInput: boolean;
-    protected _sourceActor: Clutter.Actor | null;
-    protected _sourceExtents: ReturnType<typeof Clutter.Actor.prototype.get_transformed_extents>;
-    protected _workArea: ReturnType<typeof LayoutManager.prototype.getWorkAreaForMonitor>;
+    _arrowSide: St.Side;
+    _userArrowSide: St.Side;
+    _arrowOrigin: number;
+    _arrowActor: St.Widget | null;
+    _border: St.DrawingArea;
+    _arrowAlignment: number;
+    _sourceAlignment: number;
+    _muteKeys: boolean;
+    _muteInput: boolean;
+    _sourceActor: Clutter.Actor | null;
+    _sourceExtents: ReturnType<typeof Clutter.Actor.prototype.get_transformed_extents>;
+    _workArea: ReturnType<typeof LayoutManager.prototype.getWorkAreaForMonitor>;
 
     public bin: St.Bin;
     public readonly arrowSide: St.Side;
@@ -87,9 +87,9 @@ export class BoxPointer extends St.Widget {
 
     public getArrowHeight(): number;
 
-    protected _adjustAllocationForArrow(isWidth: boolean, minSize: number, naturalSize: number): void;
-    protected _drawBorder(area: St.DrawingArea): void;
-    protected _reposition(allocationBox: Clutter.ActorBox): void;
-    protected _calculateArrowSide(arrowSide: St.Side): St.Side;
-    protected _updateFlip(allocationBox: Clutter.ActorBox): void;
+    _adjustAllocationForArrow(isWidth: boolean, minSize: number, naturalSize: number): void;
+    _drawBorder(area: St.DrawingArea): void;
+    _reposition(allocationBox: Clutter.ActorBox): void;
+    _calculateArrowSide(arrowSide: St.Side): St.Side;
+    _updateFlip(allocationBox: Clutter.ActorBox): void;
 }

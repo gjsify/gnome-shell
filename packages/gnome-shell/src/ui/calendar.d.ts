@@ -76,10 +76,10 @@ declare function _datesEqual(dateA: Date, dateB: Date): boolean;
 declare function _eventOverlapsInterval(e0: Date, e1: Date, i0: Date, i1: Date): boolean;
 
 declare class DBusEventSource extends EventSourceBase {
-    protected _events: Map<string, CalendarEvent>;
-    protected _isLoading: boolean;
-    protected _initialized: boolean;
-    protected _dbusProxy: Gio.DBusProxy;
+    _events: Map<string, CalendarEvent>;
+    _isLoading: boolean;
+    _initialized: boolean;
+    _dbusProxy: Gio.DBusProxy;
 
     public readonly isLoading: boolean;
     public readonly hasCalendars: boolean;
@@ -95,16 +95,16 @@ declare class DBusEventSource extends EventSourceBase {
     public getEvents(begin: Date, end: Date): CalendarEvent[];
     public hasEvents(day: Date): boolean;
 
-    protected _initProxy(): Promise<void>;
-    protected _resetCache(): void;
-    protected _removeMatching(uidPrefix: string): boolean;
-    protected _onNameAppeared(): void;
-    protected _onNameVanished(): void;
-    protected _onEventsAddedOrUpdated(dbusProxy: Gio.DBusProxy, nameOwner: string, argArray: any[][]): void;
-    protected _onEventsRemoved(dbusProxy: Gio.DBusProxy, nameOwner: string, argArray: any[][]): void;
-    protected _onClientDisappeared(dbusProxy: Gio.DBusProxy, nameOwner: string, argArray: string[]): void;
-    protected _loadEvents(forceReload: boolean): void;
-    protected _getFilteredEvents(begin: Date, end: Date): Generator<CalendarEvent, void, unknown>;
+    _initProxy(): Promise<void>;
+    _resetCache(): void;
+    _removeMatching(uidPrefix: string): boolean;
+    _onNameAppeared(): void;
+    _onNameVanished(): void;
+    _onEventsAddedOrUpdated(dbusProxy: Gio.DBusProxy, nameOwner: string, argArray: any[][]): void;
+    _onEventsRemoved(dbusProxy: Gio.DBusProxy, nameOwner: string, argArray: any[][]): void;
+    _onClientDisappeared(dbusProxy: Gio.DBusProxy, nameOwner: string, argArray: string[]): void;
+    _loadEvents(forceReload: boolean): void;
+    _getFilteredEvents(begin: Date, end: Date): Generator<CalendarEvent, void, unknown>;
 }
 
 /**
@@ -112,9 +112,9 @@ declare class DBusEventSource extends EventSourceBase {
  * @version 48
  */
 export class Calendar extends St.Widget {
-    protected _weekStart: number;
-    protected _settings: Gio.Settings;
-    protected _useWeekdate: boolean;
+    _weekStart: number;
+    _settings: Gio.Settings;
+    _useWeekdate: boolean;
 
     /**
      * Translators: The header displaying just the month name
@@ -122,7 +122,7 @@ export class Calendar extends St.Widget {
      * "%OB" is the new format specifier introduced in glibc 2.27,
      * in most cases you should not change it.
      */
-    protected _headerFormatWithoutYear: string;
+    _headerFormatWithoutYear: string;
 
     /**
      * Translators: The header displaying the month name and the year
@@ -133,11 +133,11 @@ export class Calendar extends St.Widget {
      * in most cases you should not use the old "%B" here unless you
      * absolutely know what you are doing.
      */
-    protected _headerFormat: string;
+    _headerFormat: string;
 
-    protected _selectedDate: Date;
+    _selectedDate: Date;
 
-    protected _shouldDateGrabFocus: boolean;
+    _shouldDateGrabFocus: boolean;
 
     constructor();
     /** @hidden */
@@ -156,18 +156,18 @@ export class Calendar extends St.Widget {
 
     public vfunc_scroll_event(event: Clutter.ScrollEvent): boolean;
 
-    protected _buildHeader(): void;
-    protected _onPrevMonthButtonClicked(): void;
-    protected _onNextMonthButtonClicked(): void;
-    protected _onSettingsChange(): void;
-    protected _rebuildCalendar(): void;
-    protected _update(): void;
+    _buildHeader(): void;
+    _onPrevMonthButtonClicked(): void;
+    _onNextMonthButtonClicked(): void;
+    _onSettingsChange(): void;
+    _rebuildCalendar(): void;
+    _update(): void;
 }
 
 declare class Placeholder extends St.BoxLayout {
-    protected _date: Date;
-    protected _icon: St.Icon;
-    protected _label: St.Label;
+    _date: Date;
+    _icon: St.Icon;
+    _label: St.Label;
 
     /** @hidden */
     override _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
@@ -175,7 +175,7 @@ declare class Placeholder extends St.BoxLayout {
 }
 
 declare class DoNotDisturbSwitch extends Switch {
-    protected _settings: Gio.Settings;
+    _settings: Gio.Settings;
 
     constructor();
     /** @hidden */

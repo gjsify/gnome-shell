@@ -20,9 +20,9 @@ export interface ButtonInfo {
  * @version 48
  */
 export class Dialog extends St.Widget {
-    protected _parentActor: St.Widget;
-    protected _dialog: St.BoxLayout;
-    protected _initialKeyFocus: St.Widget;
+    _parentActor: St.Widget;
+    _dialog: St.BoxLayout;
+    _initialKeyFocus: St.Widget;
 
     public contentLayout: St.BoxLayout;
     public buttonLayout: St.Widget;
@@ -34,9 +34,9 @@ export class Dialog extends St.Widget {
     public addButton(buttonInfo: ButtonInfo): St.Button;
     public clearButtons(): void;
 
-    protected _createDialog(): void;
-    protected _onDestroy(): void;
-    protected _setInitialKeyFocus(actor: St.Widget): void;
+    _createDialog(): void;
+    _onDestroy(): void;
+    _setInitialKeyFocus(actor: St.Widget): void;
 }
 
 /**
@@ -60,8 +60,8 @@ export class MessageDialogContent extends St.BoxLayout {
     constructor(params: Partial<MessageDialogContent.ConstructorProps>);
     public _init(params: Partial<MessageDialogContent.ConstructorProps>): void;
 
-    protected _onDestroy(): void;
-    protected _updateTitleStyle(): void | false;
+    _onDestroy(): void;
+    _updateTitleStyle(): void | false;
 }
 
 /**
@@ -79,8 +79,8 @@ export namespace ListSection {
  * @version 48
  */
 export class ListSection extends St.BoxLayout {
-    protected _listScrollView: St.ScrollView;
-    protected _title: St.Label;
+    _listScrollView: St.ScrollView;
+    _title: St.Label;
 
     public list: St.BoxLayout;
     public title: string;
@@ -106,8 +106,8 @@ export namespace ListSectionItem {
  * @version 48
  */
 export class ListSectionItem extends St.BoxLayout {
-    protected _iconActorBin: St.Bin;
-    protected _title: St.Label;
+    _iconActorBin: St.Bin;
+    _title: St.Label;
 
     public title: string;
     public description: string;

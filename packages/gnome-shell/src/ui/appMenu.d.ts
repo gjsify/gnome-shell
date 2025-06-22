@@ -9,23 +9,23 @@ import type { getAppFavorites } from './appFavorites.js';
 import type { getDefault } from '../misc/parentalControlsManager.js';
 
 export class AppMenu extends PopupMenu {
-    protected _app: Shell.App | null;
-    protected _appSystem: Shell.AppSystem;
-    protected _parentalControlsManager: ReturnType<typeof getDefault>;
-    protected _appFavorites: ReturnType<typeof getAppFavorites>;
-    protected _enableFavorites: boolean;
-    protected _showSingleWindows: boolean;
+    _app: Shell.App | null;
+    _appSystem: Shell.AppSystem;
+    _parentalControlsManager: ReturnType<typeof getDefault>;
+    _appFavorites: ReturnType<typeof getAppFavorites>;
+    _enableFavorites: boolean;
+    _showSingleWindows: boolean;
 
-    protected _windowsChangedId: number;
-    protected _updateWindowsLaterId: number;
+    _windowsChangedId: number;
+    _updateWindowsLaterId: number;
 
-    protected _openWindowsHeader: PopupSeparatorMenuItem;
-    protected _windowSection: PopupMenuSection;
-    protected _newWindowItem: ReturnType<typeof this.addAction>;
-    protected _actionSection: PopupMenuSection;
-    protected _onGpuMenuItem: ReturnType<typeof this.addAction>;
-    protected _detailsItem: ReturnType<typeof this.addAction>;
-    protected _quitItem: ReturnType<typeof this.addAction>;
+    _openWindowsHeader: PopupSeparatorMenuItem;
+    _windowSection: PopupMenuSection;
+    _newWindowItem: ReturnType<typeof this.addAction>;
+    _actionSection: PopupMenuSection;
+    _onGpuMenuItem: ReturnType<typeof this.addAction>;
+    _detailsItem: ReturnType<typeof this.addAction>;
+    _quitItem: ReturnType<typeof this.addAction>;
 
     /**
      * @param sourceActor - actor the menu is attached to
@@ -36,16 +36,16 @@ export class AppMenu extends PopupMenu {
      */
     constructor(sourceActor: Clutter.Actor, side?: St.Side, params?: { favoritesSection?: boolean; showSingleWindow: boolean });
 
-    protected _onAppStateChanged(sys: any, app: any): void;
-    protected _updateQuitItem(): void;
-    protected _updateNewWindowItem(): void;
-    protected _updateFavoriteItem(): void;
-    protected _updateGpuItem(): void;
-    protected _updateDetailsVisibility(): void;
-    protected _animateLaunch(): void;
-    protected _getNonDefaultLaunchGpu(): Shell.AppLaunchGpu;
-    protected _queueUpdateWindowsSection(): void;
-    protected _updateWindowsSection(): void;
+    _onAppStateChanged(sys: any, app: any): void;
+    _updateQuitItem(): void;
+    _updateNewWindowItem(): void;
+    _updateFavoriteItem(): void;
+    _updateGpuItem(): void;
+    _updateDetailsVisibility(): void;
+    _animateLaunch(): void;
+    _getNonDefaultLaunchGpu(): Shell.AppLaunchGpu;
+    _queueUpdateWindowsSection(): void;
+    _updateWindowsSection(): void;
 
     public destroy(): void;
 

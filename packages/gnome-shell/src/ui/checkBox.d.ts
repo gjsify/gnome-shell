@@ -1,8 +1,8 @@
 import type St from '@girs/st-16';
 
 export class CheckBox extends St.Button {
-    protected _box: St.Bin;
-    protected _label: St.Label;
+    _box: St.Bin;
+    _label: St.Label;
 
     constructor(label?: string);
     /** @hidden */

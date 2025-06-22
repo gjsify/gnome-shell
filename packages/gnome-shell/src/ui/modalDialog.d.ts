@@ -38,18 +38,18 @@ export namespace ModalDialog {
  * @version 47
  */
 export class ModalDialog extends St.Widget {
-    protected _state: State;
-    protected _hasModal: boolean;
-    protected _actionMode: Shell.ActionMode;
-    protected _shellReactive: boolean;
-    protected _shouldFadeIn: boolean;
-    protected _shouldFadeOut: boolean;
-    protected _destroyOnClose: boolean;
-    protected _backgroundBin: St.Bin;
-    protected _monitorConstraint: MonitorConstraint;
-    protected _initialKeyFocus: St.Widget | null;
-    protected _initialKeyFocusDestroyId: number;
-    protected _savedKeyFocus: St.Widget | null;
+    _state: State;
+    _hasModal: boolean;
+    _actionMode: Shell.ActionMode;
+    _shellReactive: boolean;
+    _shouldFadeIn: boolean;
+    _shouldFadeOut: boolean;
+    _destroyOnClose: boolean;
+    _backgroundBin: St.Bin;
+    _monitorConstraint: MonitorConstraint;
+    _initialKeyFocus: St.Widget | null;
+    _initialKeyFocusDestroyId: number;
+    _savedKeyFocus: St.Widget | null;
 
     public backgroundStack: St.Widget;
     public dialogLayout: Dialog;
@@ -61,9 +61,9 @@ export class ModalDialog extends St.Widget {
 
     public _init(params?: Partial<ModalDialog.ConstructorProps>): void;
 
-    protected _setState(state: State): void;
-    protected _fadeOpen(onPrimary: boolean): void;
-    protected _closeComplete(): void;
+    _setState(state: State): void;
+    _fadeOpen(onPrimary: boolean): void;
+    _closeComplete(): void;
     /**
      * This method is like close, but fades the dialog out much slower,
      * and leaves the lightbox in place. Once in the faded out state,
@@ -77,7 +77,7 @@ export class ModalDialog extends St.Widget {
      * immediately, but the lightbox should remain until the logout is
      * complete.
      */
-    protected _fadeOutDialog(timestamp: number): void;
+    _fadeOutDialog(timestamp: number): void;
 
     public vfunc_key_press_event(event: Clutter.Event): boolean;
     public vfunc_captured_event(event: Clutter.Event): boolean;

@@ -28,8 +28,8 @@ export namespace RadialShaderEffect {
  * @version 48
  */
 export class RadialShaderEffect extends Shell.GLSLEffect {
-    protected _brightness: number;
-    protected _sharpness: number;
+    _brightness: number;
+    _sharpness: number;
 
     public brightness: number;
     public sharpness: number;
@@ -66,7 +66,7 @@ export namespace Lightbox {
  * @version 48
  */
 export class Lightbox extends St.Bin {
-    protected _active: boolean;
+    _active: boolean;
 
     public readonly active: boolean;
 
@@ -101,7 +101,7 @@ export class Lightbox extends St.Bin {
 
     highlight(window: Clutter.Actor): void;
 
-    protected _childAdded(container: Clutter.Actor, newChild: Clutter.Actor): void;
-    protected _childRemoved(container: Clutter.Actor, child: Clutter.Actor): void;
-    protected _onDestroy(): void;
+    _childAdded(container: Clutter.Actor, newChild: Clutter.Actor): void;
+    _childRemoved(container: Clutter.Actor, child: Clutter.Actor): void;
+    _onDestroy(): void;
 }

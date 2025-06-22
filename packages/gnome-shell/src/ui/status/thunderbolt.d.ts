@@ -58,7 +58,7 @@ export const BoltDeviceProxy: Gio.DBusProxy;
  * Client class for interacting with Bolt service.
  */
 export class Client extends Signals.EventEmitter {
-    private _proxy: Gio.DBusProxy | null;
+    _proxy: Gio.DBusProxy | null;
     public probing: boolean;
 
     /**
@@ -69,17 +69,17 @@ export class Client extends Signals.EventEmitter {
     /**
      * Asynchronously gets the Bolt D-Bus proxy.
      */
-    private _getProxy(): Promise<void>;
+    _getProxy(): Promise<void>;
 
     /**
      * Handles changes in Bolt properties.
      */
-    private _onPropertiesChanged(proxy: any, properties: any): void;
+    _onPropertiesChanged(proxy: any, properties: any): void;
 
     /**
      * Handles the addition of new devices.
      */
-    private _onDeviceAdded(proxy: any, emitter: any, params: any): void;
+    _onDeviceAdded(proxy: any, emitter: any, params: any): void;
 
     /**
      * Closes the client and cleans up resources.
@@ -101,9 +101,9 @@ export class Client extends Signals.EventEmitter {
  * Helper class to automatically authorize new devices.
  */
 export class AuthRobot extends Signals.EventEmitter {
-    private _client: Client;
-    private _devicesToEnroll: any[];
-    private _enrolling: boolean;
+    _client: Client;
+    _devicesToEnroll: any[];
+    _enrolling: boolean;
 
     /**
      * Initializes a new instance of AuthRobot.
@@ -119,17 +119,17 @@ export class AuthRobot extends Signals.EventEmitter {
     /**
      * Handles the addition of new devices.
      */
-    private _onDeviceAdded(cli: any, dev: any): void;
+    _onDeviceAdded(cli: any, dev: any): void;
 
     /**
      * Starts the enrollment process for devices.
      */
-    private _enrollDevices(): void;
+    _enrollDevices(): void;
 
     /**
      * Idle callback for enrolling devices.
      */
-    private _enrollDevicesIdle(): Promise<void>;
+    _enrollDevicesIdle(): Promise<void>;
 }
 
 /**

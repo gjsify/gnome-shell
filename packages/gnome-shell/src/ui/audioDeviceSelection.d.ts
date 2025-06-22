@@ -20,21 +20,21 @@ declare class AudioDeviceSelectionDialog extends ModalDialog {
     public _init(props?: Partial<ModalDialog.ConstructorProps>): void;
     public _init(devices: number): void;
 
-    protected _buildLayout(): void;
-    protected _getDeviceLabel(device: AudioDevice): string | null;
-    protected _getDeviceIcon(device: AudioDevice): string | null;
-    protected _addDevice(device: AudioDevice): void;
-    protected _openSettings(): void;
+    _buildLayout(): void;
+    _getDeviceLabel(device: AudioDevice): string | null;
+    _getDeviceIcon(device: AudioDevice): string | null;
+    _addDevice(device: AudioDevice): void;
+    _openSettings(): void;
 }
 
 export class AudioDeviceSelectionDBus {
-    protected _audioSelectionDialog: AudioDeviceSelectionDialog | null;
-    protected _dbusImpl: Gio.DBusExportedObject;
+    _audioSelectionDialog: AudioDeviceSelectionDialog | null;
+    _dbusImpl: Gio.DBusExportedObject;
 
     constructor();
 
-    protected _onDialogClosed(): void;
-    protected _onDeviceSelected(dialog: AudioDeviceSelectionDialog, device: AudioDevice): void;
+    _onDialogClosed(): void;
+    _onDeviceSelected(dialog: AudioDeviceSelectionDialog, device: AudioDevice): void;
 
     OpenAsync(params: string[], invocation: Gio.DBusMethodInvocation): void;
     CloseAsync(params: any, invocation: Gio.DBusMethodInvocation): void;

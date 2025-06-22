@@ -19,16 +19,16 @@ export interface ActionDetails {
  * Class representing system-wide actions such as power off, restart, lock screen, etc.
  */
 declare class SystemActions extends GObject.Object {
-    private _canHavePowerOff: boolean;
-    private _canHaveSuspend: boolean;
-    private _suspendNeedsAuth: boolean;
-    private _loginScreenSettings: Gio.Settings;
-    private _lockdownSettings: Gio.Settings;
-    private _orientationSettings: Gio.Settings;
-    private _session: ReturnType<typeof SessionManager>;
-    private _loginManager: ReturnType<typeof LoginManager.getLoginManager>;
-    private _userManager: AccountsService.UserManager;
-    private _actions: Map<string, ActionDetails>;
+    _canHavePowerOff: boolean;
+    _canHaveSuspend: boolean;
+    _suspendNeedsAuth: boolean;
+    _loginScreenSettings: Gio.Settings;
+    _lockdownSettings: Gio.Settings;
+    _orientationSettings: Gio.Settings;
+    _session: ReturnType<typeof SessionManager>;
+    _loginManager: ReturnType<typeof LoginManager.getLoginManager>;
+    _userManager: AccountsService.UserManager;
+    _actions: Map<string, ActionDetails>;
 
     constructor();
 

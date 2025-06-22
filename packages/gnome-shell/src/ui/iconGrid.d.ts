@@ -17,7 +17,7 @@ export class BaseIcon extends Shell.SquareBin {
     public icon: St.Icon | null;
     public label: St.Label | null;
 
-    protected _setSizeManually?: boolean;
+    _setSizeManually?: boolean;
 
     constructor(label: string, params?: Partial<BaseIcon.ConstructorProps>);
 
@@ -45,7 +45,7 @@ export class IconGrid extends St.Viewport {
     public readonly nPages: number;
     public readonly itemsPerPage: number;
 
-    protected _currentPage: number;
+    _currentPage: number;
 
     constructor(layoutParams?: Partial<IconGrid.ConstructorProps>);
 
@@ -53,11 +53,11 @@ export class IconGrid extends St.Viewport {
     public _init(params?: Partial<St.Viewport.ConstructorProps>): void;
     public _init(layoutParams?: IconGrid.ConstructorProps): void;
 
-    protected _childAdded(grid: IconGrid, child: St.Widget): void;
-    protected _ensureItemIsVisible(item: St.Widget): void;
-    protected _setGridMode(modeIndex: number): void;
-    protected _findBestModeForSize(width: number, height: number): void;
-    protected _childRemoved(grid: IconGrid, child: St.Widget): void;
+    _childAdded(grid: IconGrid, child: St.Widget): void;
+    _ensureItemIsVisible(item: St.Widget): void;
+    _setGridMode(modeIndex: number): void;
+    _findBestModeForSize(width: number, height: number): void;
+    _childRemoved(grid: IconGrid, child: St.Widget): void;
 
     /**
      * addItem:

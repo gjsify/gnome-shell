@@ -7,10 +7,10 @@ export namespace BarLevel {
 }
 
 export class BarLevel extends St.DrawingArea {
-    protected _maxValue: number;
-    protected _value: number;
-    protected _overdriveStart: number;
-    protected _barLevelWidth: number;
+    _maxValue: number;
+    _value: number;
+    _overdriveStart: number;
+    _barLevelWidth: number;
 
     public value: number;
     public maximumValue: number;
@@ -21,10 +21,10 @@ export class BarLevel extends St.DrawingArea {
 
     public vfunc_repaint(): void;
 
-    protected _getCurrentValue(): number;
-    protected _getOverdriveStart(): number;
-    protected _getMinimumValue(): number;
-    protected _getMaximumValue(): number;
-    protected _setCurrentValue(_actor: any, value: number): void;
-    protected _valueChanged(): void;
+    _getCurrentValue(): number;
+    _getOverdriveStart(): number;
+    _getMinimumValue(): number;
+    _getMaximumValue(): number;
+    _setCurrentValue(_actor: any, value: number): void;
+    _valueChanged(): void;
 }

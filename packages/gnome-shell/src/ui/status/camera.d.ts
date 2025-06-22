@@ -8,8 +8,8 @@ import { SystemIndicator } from '../quickSettings.js';
  * System indicator for the camera status.
  */
 export declare class Indicator extends SystemIndicator {
-    private _indicator: St.Icon;
-    private _cameraMonitor: Shell.CameraMonitor;
+    _indicator: St.Icon;
+    _cameraMonitor: Shell.CameraMonitor;
 
     /**
      * Constructs a new instance of the camera indicator.

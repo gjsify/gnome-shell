@@ -28,10 +28,10 @@ export class GridSearchResult extends SearchResult {
     public _init(config?: Partial<St.Button.ConstructorProps>): void;
     public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
-    protected _onDestroy(): void;
-    protected _createResultDisplay(meta: any): void;
-    protected _keyFocusIn(actor: St.Widget): void;
-    protected _ensureResultActors(results: any[]): Promise<void>;
+    _onDestroy(): void;
+    _createResultDisplay(meta: any): void;
+    _keyFocusIn(actor: St.Widget): void;
+    _ensureResultActors(results: any[]): Promise<void>;
 
     public clear(): void;
     public updateSearch(providerResults: any[], terms: string[], callback: () => void): Promise<void>;
@@ -61,11 +61,11 @@ export class ListSearchResults extends SearchResultsBase {
 
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
 
-    protected _setMoreCount(count: number): void;
-    protected _getMaxDisplayedResults(): number;
-    protected _clearResultDisplay(): void;
-    protected _createResultDisplay(meta: any): void;
-    protected _addItem(display: any): void;
+    _setMoreCount(count: number): void;
+    _getMaxDisplayedResults(): number;
+    _clearResultDisplay(): void;
+    _createResultDisplay(meta: any): void;
+    _addItem(display: any): void;
 
     public getFirstResult(): any | null;
 }
@@ -88,11 +88,11 @@ export class GridSearchResults extends SearchResultsBase {
 
     public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
 
-    protected _onDestroy(): void;
-    protected _getMaxDisplayedResults(): number;
-    protected _clearResultDisplay(): void;
-    protected _createResultDisplay(meta: any): void;
-    protected _addItem(display: any): void;
+    _onDestroy(): void;
+    _getMaxDisplayedResults(): number;
+    _clearResultDisplay(): void;
+    _createResultDisplay(meta: any): void;
+    _addItem(display: any): void;
 
     public updateSearch(...args: any[]): void;
     public getFirstResult(): any | null;
@@ -106,22 +106,22 @@ export class SearchResultsView extends St.BoxLayout {
     public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     public _init(): void;
 
-    protected _reloadRemoteProviders(): void;
-    protected _registerProvider(provider: AppSearchProvider): void;
-    protected _unregisterProvider(provider: AppSearchProvider): void;
-    protected _clearSearchTimeout(): void;
-    protected _reset(): void;
-    protected _doProviderSearch(provider: AppSearchProvider, previousResults: any[]): Promise<any[]>;
-    protected _doSearch(): void;
-    protected _onSearchTimeout(): void;
-    protected _onPan(action: any): void;
-    protected _focusChildChanged(provider: AppSearchProvider): void;
-    protected _ensureProviderDisplay(provider: AppSearchProvider): void;
-    protected _clearDisplay(): void;
-    protected _maybeSetInitialSelection(): void;
-    protected _updateSearchProgress(): void;
-    protected _updateResults(provider: AppSearchProvider, results: any[]): void;
-    protected _setSelected(result: any, selected: boolean): void;
+    _reloadRemoteProviders(): void;
+    _registerProvider(provider: AppSearchProvider): void;
+    _unregisterProvider(provider: AppSearchProvider): void;
+    _clearSearchTimeout(): void;
+    _reset(): void;
+    _doProviderSearch(provider: AppSearchProvider, previousResults: any[]): Promise<any[]>;
+    _doSearch(): void;
+    _onSearchTimeout(): void;
+    _onPan(action: any): void;
+    _focusChildChanged(provider: AppSearchProvider): void;
+    _ensureProviderDisplay(provider: AppSearchProvider): void;
+    _clearDisplay(): void;
+    _maybeSetInitialSelection(): void;
+    _updateSearchProgress(): void;
+    _updateResults(provider: AppSearchProvider, results: any[]): void;
+    _setSelected(result: any, selected: boolean): void;
 
     public setTerms(terms: string[]): void;
     public activateDefault(): void;

@@ -17,8 +17,8 @@ declare const MIN_SHARED_INDICATOR_VISIBLE_TIME_US: number;
  * Class representing the Remote Access Applet.
  */
 export declare class RemoteAccessApplet extends SystemIndicator {
-    private _handles: Set<any>;
-    private _indicator: any;
+    _handles: Set<any>;
+    _indicator: any;
 
     /**
      * Initialize a new Remote Access Applet.
@@ -28,33 +28,33 @@ export declare class RemoteAccessApplet extends SystemIndicator {
     /**
      * Determine if recording is in progress.
      */
-    private _isRecording(): boolean;
+    _isRecording(): boolean;
 
     /**
      * Synchronize the applet's visibility.
      */
-    private _sync(): void;
+    _sync(): void;
 
     /**
      * Handle the stop event for a recording handle.
      */
-    private _onStopped(handle: any): void;
+    _onStopped(handle: any): void;
 
     /**
      * Handle a new recording handle.
      */
-    private _onNewHandle(handle: any): void;
+    _onNewHandle(handle: any): void;
 }
 
 /**
  * Class representing the Screen Recording Indicator.
  */
 export declare class ScreenRecordingIndicator extends PanelMenu.ButtonBox {
-    private _box: St.BoxLayout;
-    private _label: St.Label;
-    private _icon: St.Icon;
-    private _timeoutId: number;
-    private _secondsPassed: number;
+    _box: St.BoxLayout;
+    _label: St.Label;
+    _icon: St.Icon;
+    _timeoutId: number;
+    _secondsPassed: number;
 
     /**
      * Initialize a new Screen Recording Indicator.
@@ -69,23 +69,23 @@ export declare class ScreenRecordingIndicator extends PanelMenu.ButtonBox {
     /**
      * Update the label displaying recording time.
      */
-    private _updateLabel(): void;
+    _updateLabel(): void;
 
     /**
      * Handle changes in screencast progress.
      */
-    private _onScreencastInProgressChanged(): void;
+    _onScreencastInProgressChanged(): void;
 }
 
 /**
  * Class representing the Screen Sharing Indicator.
  */
 export declare class ScreenSharingIndicator extends PanelMenu.ButtonBox {
-    private _box: St.BoxLayout;
-    private _controller: any;
-    private _handles: Set<any>;
-    private _hideIndicatorId?: number;
-    private _visibleTimeUs?: number;
+    _box: St.BoxLayout;
+    _controller: any;
+    _handles: Set<any>;
+    _hideIndicatorId?: number;
+    _visibleTimeUs?: number;
 
     /**
      * Initialize a new Screen Sharing Indicator.
@@ -95,7 +95,7 @@ export declare class ScreenSharingIndicator extends PanelMenu.ButtonBox {
     /**
      * Handle a new screen sharing handle.
      */
-    private _onNewHandle(handle: any): void;
+    _onNewHandle(handle: any): void;
 
     /**
      * Override the default event handling.
@@ -105,15 +105,15 @@ export declare class ScreenSharingIndicator extends PanelMenu.ButtonBox {
     /**
      * Stop all ongoing screen sharing sessions.
      */
-    private _stopSharing(): void;
+    _stopSharing(): void;
 
     /**
      * Hide the screen sharing indicator.
      */
-    private _hideIndicator(): boolean;
+    _hideIndicator(): boolean;
 
     /**
      * Synchronize the visibility of the indicator.
      */
-    private _sync(): void;
+    _sync(): void;
 }

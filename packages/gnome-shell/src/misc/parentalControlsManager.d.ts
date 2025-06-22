@@ -5,7 +5,7 @@ import type Gio from '@girs/gio-2.0';
 import type Shell from '@girs/shell-16';
 
 declare class ParentalControlsManager extends GObject.Object {
-    protected _initialized: boolean;
+    _initialized: boolean;
     public readonly initialized: boolean;
 
     constructor();

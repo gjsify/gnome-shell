@@ -25,8 +25,8 @@ export class URLHighlighter extends St.Label {
     public vfunc_leave_event(crossingEvent: Clutter.CrossingEvent): boolean;
     public setMarkup(text?: string, allowMarkup?: boolean): void;
 
-    protected _highlightUrls(): void;
-    protected _findUrlAtPos(event: Clutter.Event): [number, number];
+    _highlightUrls(): void;
+    _findUrlAtPos(event: Clutter.Event): [number, number];
 }
 
 declare class ScaleLayout extends Clutter.BinLayout {
@@ -134,18 +134,18 @@ export class NotificationMessage extends Message {
     public vfunc_clicked(): void;
     public canClose(): boolean;
 
-    protected _getIcon(): St.Icon;
-    protected _onUpdated(n: Notification, _clear?: boolean): void;
+    _getIcon(): St.Icon;
+    _onUpdated(n: Notification, _clear?: boolean): void;
 }
 
 declare class MediaMessage extends Message {
-    protected _player: MprisPlayer;
-    protected _icon: St.Icon;
-    protected _secondaryBin: St.Bin;
-    protected _closeButton: St.Button;
-    protected _prevButton: St.Button;
-    protected _playPauseButton: St.Button;
-    protected _nextButton: St.Button;
+    _player: MprisPlayer;
+    _icon: St.Icon;
+    _secondaryBin: St.Bin;
+    _closeButton: St.Button;
+    _prevButton: St.Button;
+    _playPauseButton: St.Button;
+    _nextButton: St.Button;
 
     constructor(player: MprisPlayer);
 
@@ -157,8 +157,8 @@ declare class MediaMessage extends Message {
 
     public vfunc_clicked(): void;
 
-    protected _updateNavButton(button: St.Button, sensitive?: boolean): void;
-    protected _update(): void;
+    _updateNavButton(button: St.Button, sensitive?: boolean): void;
+    _update(): void;
 }
 
 declare class NotificationMessageGroup extends St.Widget {

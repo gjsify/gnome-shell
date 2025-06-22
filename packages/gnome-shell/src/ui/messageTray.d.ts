@@ -114,14 +114,14 @@ export abstract class NotificationPolicy extends GObject.Object {
 export class NotificationGenericPolicy extends NotificationPolicy {
     public id: string;
 
-    protected _masterSettings: Gio.Settings;
+    _masterSettings: Gio.Settings;
 
     constructor();
     public _init(): void;
 
     public destroy(): void;
 
-    protected _changed(settings: Gio.Settings, key: string): void;
+    _changed(settings: Gio.Settings, key: string): void;
 }
 
 /**
@@ -131,9 +131,9 @@ export class NotificationGenericPolicy extends NotificationPolicy {
 export class NotificationApplicationPolicy extends NotificationPolicy {
     public id: string;
 
-    protected _masterSettings: Gio.Settings;
-    protected _canonicalId: string;
-    protected _settings: Gio.Settings;
+    _masterSettings: Gio.Settings;
+    _canonicalId: string;
+    _settings: Gio.Settings;
 
     constructor(id: string);
     public _init(id: string): void;
@@ -141,8 +141,8 @@ export class NotificationApplicationPolicy extends NotificationPolicy {
     public store(): void;
     public destroy(): void;
 
-    protected _changed(settings: Gio.Settings, key: string): void;
-    protected _canonicalizeId(id: string): string;
+    _changed(settings: Gio.Settings, key: string): void;
+    _canonicalizeId(id: string): string;
 }
 
 /**
@@ -336,21 +336,21 @@ export class MessageTray extends St.Widget {
     public add(source: Source): void;
     public getSources(): Source[];
 
-    protected _sessionUpdated(): void;
-    protected _onDragBegin(): void;
-    protected _onDragEnd(): void;
+    _sessionUpdated(): void;
+    _onDragBegin(): void;
+    _onDragEnd(): void;
 
-    protected _onNotificationKeyRelease(actor: St.Widget, event: Clutter.Event): boolean;
-    protected _expireNotification(): void;
-    protected _addSource(source: Source): void;
-    protected _removeSource(source: Source): void;
-    protected _onSourceEnableChanged(policy: NotificationPolicy, source: Source): void;
-    protected _onNotificationRemoved(source: Source, notification: Notification): void;
-    protected _onNotificationShow(_source: Source, notification: Notification): void;
-    protected _resetNotificationLeftTimeout(): void;
-    protected _onNotificationHoverChanged(): void;
-    protected _onStatusChanged(status: PresenceStatus): void;
-    protected _onNotificationLeftTimeout(): void;
+    _onNotificationKeyRelease(actor: St.Widget, event: Clutter.Event): boolean;
+    _expireNotification(): void;
+    _addSource(source: Source): void;
+    _removeSource(source: Source): void;
+    _onSourceEnableChanged(policy: NotificationPolicy, source: Source): void;
+    _onNotificationRemoved(source: Source, notification: Notification): void;
+    _onNotificationShow(_source: Source, notification: Notification): void;
+    _resetNotificationLeftTimeout(): void;
+    _onNotificationHoverChanged(): void;
+    _onStatusChanged(status: PresenceStatus): void;
+    _onNotificationLeftTimeout(): void;
 
     /**
      * All of the logic for what happens when occurs here; the various
@@ -359,19 +359,19 @@ export class MessageTray extends St.Widget {
      * _updateState() figures out what (if anything) needs to be done
      * at the present time.
      */
-    protected _updateState(): void;
+    _updateState(): void;
 
-    protected _onIdleMonitorBecameActive(): void;
-    protected _showNotification(): void;
-    protected _updateShowingNotification(): void;
-    protected _showNotificationCompleted(): void;
-    protected _updateNotificationTimeout(timeout: number): void;
-    protected _notificationTimeout(): void;
-    protected _hideNotification(animate?: boolean): void;
-    protected _hideNotificationCompleted(): void;
-    protected _expandActiveNotification(): void;
-    protected _expandBanner(autoExpanding?: boolean): void;
-    protected _ensureBannerFocused(): void;
+    _onIdleMonitorBecameActive(): void;
+    _showNotification(): void;
+    _updateShowingNotification(): void;
+    _showNotificationCompleted(): void;
+    _updateNotificationTimeout(timeout: number): void;
+    _notificationTimeout(): void;
+    _hideNotification(animate?: boolean): void;
+    _hideNotificationCompleted(): void;
+    _expandActiveNotification(): void;
+    _expandBanner(autoExpanding?: boolean): void;
+    _ensureBannerFocused(): void;
 
     // General signal handler methods
     connect(sigName: string, callback: (...args: any[]) => void): number;

@@ -5,14 +5,14 @@ import type Shell from '@girs/shell-16';
 import { EventEmitter } from '../misc/signals.js';
 
 declare class AppFavorites extends EventEmitter {
-    protected _favorites: Map<string, Shell.App>;
+    _favorites: Map<string, Shell.App>;
 
     constructor();
 
-    protected _onFavsChanged(): void;
-    protected _getIds(): string[];
-    protected _addFavorite(appId: string, pos: number): void;
-    protected _removeFavorite(appId: string): void;
+    _onFavsChanged(): void;
+    _getIds(): string[];
+    _addFavorite(appId: string, pos: number): void;
+    _removeFavorite(appId: string): void;
 
     public reload(): void;
     public getFavoriteMap(): Map<string, Shell.App>;
