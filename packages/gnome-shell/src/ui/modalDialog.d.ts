@@ -51,15 +51,15 @@ export class ModalDialog extends St.Widget {
     _initialKeyFocusDestroyId: number;
     _savedKeyFocus: St.Widget | null;
 
-    public backgroundStack: St.Widget;
-    public dialogLayout: Dialog;
-    public contentLayout: Dialog['contentLayout'];
-    public buttonLayout: Dialog['buttonLayout'];
-    public readonly state: State;
+    backgroundStack: St.Widget;
+    dialogLayout: Dialog;
+    contentLayout: Dialog['contentLayout'];
+    buttonLayout: Dialog['buttonLayout'];
+    readonly state: State;
 
     constructor(params?: Partial<ModalDialog.ConstructorProps>);
 
-    public _init(params?: Partial<ModalDialog.ConstructorProps>): void;
+    _init(params?: Partial<ModalDialog.ConstructorProps>): void;
 
     _setState(state: State): void;
     _fadeOpen(onPrimary: boolean): void;
@@ -79,20 +79,20 @@ export class ModalDialog extends St.Widget {
      */
     _fadeOutDialog(timestamp: number): void;
 
-    public vfunc_key_press_event(event: Clutter.Event): boolean;
-    public vfunc_captured_event(event: Clutter.Event): boolean;
+    vfunc_key_press_event(event: Clutter.Event): boolean;
+    vfunc_captured_event(event: Clutter.Event): boolean;
 
-    public clearButtons(): void;
-    public setButtons(buttons: ButtonInfo[]): void;
-    public addButton(buttonInfo: ButtonInfo): St.Button;
-    public setInitialKeyFocus(actor: St.Widget): void;
-    public open(): boolean;
-    public close(): boolean;
+    clearButtons(): void;
+    setButtons(buttons: ButtonInfo[]): void;
+    addButton(buttonInfo: ButtonInfo): St.Button;
+    setInitialKeyFocus(actor: St.Widget): void;
+    open(): boolean;
+    close(): boolean;
     /**
      * Drop modal status without closing the dialog; this makes the
      * dialog insensitive as well, so it needs to be followed shortly
      * by either a close() or a pushModal()
      */
-    public popModal(): void;
-    public pushModal(): void;
+    popModal(): void;
+    pushModal(): void;
 }

@@ -6,9 +6,9 @@ export class CheckBox extends St.Button {
 
     constructor(label?: string);
     /** @hidden */
-    public _init(params?: Partial<St.Button.ConstructorProps>): void;
-    public _init(label?: string): void;
+    _init(params?: Partial<St.Button.ConstructorProps>): void;
+    _init(label?: string): void;
 
-    public setLabel(label: string): void;
-    public getLabelActor(): St.Label;
+    setLabel(label: string): void;
+    getLabelActor(): St.Label;
 }

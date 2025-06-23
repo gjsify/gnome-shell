@@ -47,15 +47,15 @@ export class AppMenu extends PopupMenu {
     _queueUpdateWindowsSection(): void;
     _updateWindowsSection(): void;
 
-    public destroy(): void;
+    destroy(): void;
 
     /**
      * @returns true if the menu is empty
      */
-    public isEmpty(): boolean;
+    isEmpty(): boolean;
 
     /**
      * @param app the app the menu represents
      */
-    public setApp(app: Shell.App): void;
+    setApp(app: Shell.App): void;
 }

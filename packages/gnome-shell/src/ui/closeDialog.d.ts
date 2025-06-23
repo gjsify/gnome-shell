@@ -9,10 +9,10 @@ export class CloseDialog extends GObject.Object {
     _tracked: boolean;
     _timeoutId: number;
 
-    public window: Meta.Window;
+    window: Meta.Window;
 
-    public constructor(window: Meta.Window);
-    public _init(window: Meta.Window): void;
+    constructor(window: Meta.Window);
+    _init(window: Meta.Window): void;
 
     _createDialogContent(): MessageDialogContent;
     _updateScale(): void;
@@ -23,7 +23,7 @@ export class CloseDialog extends GObject.Object {
     _onClose(): void;
     _onFocusChanged(): void;
 
-    public vfunc_show(): void;
-    public vfunc_hide(): void;
-    public vfunc_focus(): void;
+    vfunc_show(): void;
+    vfunc_hide(): void;
+    vfunc_focus(): void;
 }

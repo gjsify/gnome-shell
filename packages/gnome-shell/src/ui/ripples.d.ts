@@ -14,9 +14,9 @@ export class Ripples {
 
     constructor(px: number, py: number, styleClass: string | null);
 
-    public destroy(): void;
-    public addTo(stage: Clutter.Stage): void;
-    public playAnimation(x: number, y: number): void;
+    destroy(): void;
+    addTo(stage: Clutter.Stage): void;
+    playAnimation(x: number, y: number): void;
 
     /**
      * We draw a ripple by using a source image and animating it scaling

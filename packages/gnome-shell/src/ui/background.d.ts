@@ -115,10 +115,10 @@ declare class BackgroundCache extends EventEmitter {
 
     constructor();
 
-    public monitorFile(file: Gio.File): Gio.FileMonitor;
-    public getAnimation(params?: { file?: Gio.File | null; settingsSchema?: Gio.SettingsSchema | null; onLoaded: (animation: Animation) => void }): void;
-    public getBackgroundSource(layoutManager: LayoutManager, settingsSchema: Gio.SettingsSchema): BackgroundSource;
-    public releaseBackgroundSource(settingsSchema: Gio.SettingsSchema): void;
+    monitorFile(file: Gio.File): Gio.FileMonitor;
+    getAnimation(params?: { file?: Gio.File | null; settingsSchema?: Gio.SettingsSchema | null; onLoaded: (animation: Animation) => void }): void;
+    getBackgroundSource(layoutManager: LayoutManager, settingsSchema: Gio.SettingsSchema): BackgroundSource;
+    releaseBackgroundSource(settingsSchema: Gio.SettingsSchema): void;
 }
 
 /**
@@ -136,16 +136,16 @@ declare class Background extends Meta.Background {
     _interfaceSettings: Gio.Settings;
     _clock: GnomeDesktop.WallClock;
 
-    public isLoaded: boolean;
+    isLoaded: boolean;
 
     constructor(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null });
 
     /** @hidden */
-    public _init(params?: Partial<Meta.Background.ConstructorProps>): void;
-    public _init(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null }): void;
+    _init(params?: Partial<Meta.Background.ConstructorProps>): void;
+    _init(params?: { monitorIndex?: number; layoutManager: LayoutManager; settings?: Gio.Settings | null; file: Gio.File | null; style: string | null }): void;
 
-    public destroy(): void;
-    public updateResolution(): void;
+    destroy(): void;
+    updateResolution(): void;
 
     _emitChangedSignal(): void;
     _refreshAnimation(): void;
@@ -165,8 +165,8 @@ export class SystemBackground extends Meta.BackgroundActor {
     constructor();
 
     /** @hidden */
-    public _init(params?: Partial<Meta.BackgroundActor.ConstructorProps>): void;
-    public _init(): void;
+    _init(params?: Partial<Meta.BackgroundActor.ConstructorProps>): void;
+    _init(): void;
 }
 
 /**
@@ -184,8 +184,8 @@ declare class BackgroundSource {
 
     constructor(layoutManager: LayoutManager, settingsSchema: Gio.SettingsSchema);
 
-    public getBackground(monitorIndex: number): Background;
-    public destroy(): void;
+    getBackground(monitorIndex: number): Background;
+    destroy(): void;
 
     _onMonitorsChanged(): void;
 }
@@ -195,7 +195,7 @@ declare class BackgroundSource {
  * wrapper for GnomeBG.BGSlideShow
  */
 declare class Animation extends GnomeBG.BGSlideShow {
-    public _init(params?: Partial<GnomeBG.BGSlideShow.ConstructorProps>): void;
+    _init(params?: Partial<GnomeBG.BGSlideShow.ConstructorProps>): void;
 
     /** @hidden */
     load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
@@ -227,11 +227,11 @@ export class BackgroundManager extends EventEmitter {
     _useContentSize: boolean;
     _newBackgroundActor: Meta.BackgroundActor;
 
-    public backgroundActor: Meta.BackgroundActor;
+    backgroundActor: Meta.BackgroundActor;
 
     constructor(params: { container?: Clutter.Actor | null; layoutManager?: LayoutManager; monitorIndex?: number | null; vignette?: boolean; controlPosition?: boolean; settingsSchema?: Gio.SettingsSchema; useContentSize?: boolean });
 
-    public destroy(): void;
+    destroy(): void;
 
     _swapBackgroundActor(): void;
     _updateBackgroundActor(): void;

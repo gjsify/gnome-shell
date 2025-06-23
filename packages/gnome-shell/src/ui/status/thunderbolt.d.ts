@@ -59,7 +59,7 @@ export const BoltDeviceProxy: Gio.DBusProxy;
  */
 export class Client extends Signals.EventEmitter {
     _proxy: Gio.DBusProxy | null;
-    public probing: boolean;
+    probing: boolean;
 
     /**
      * Initializes a new instance of Client.

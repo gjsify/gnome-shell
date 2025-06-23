@@ -26,10 +26,10 @@ declare function _getCalendarDayAbbreviation(dayNumber: number): string;
  * Abstraction for an appointment/event in a calendar
  */
 declare class CalendarEvent {
-    public id: string;
-    public date: Date;
-    public end: Date;
-    public summary: string;
+    id: string;
+    date: Date;
+    end: Date;
+    summary: string;
 
     constructor(id: string, date: Date, end: Date, summary: string);
 }
@@ -38,22 +38,22 @@ declare class CalendarEvent {
  * Interface for appointments/events - e.g. the contents of a calendar
  */
 declare abstract class EventSourceBase extends GObject.Object {
-    public abstract readonly isLoading: boolean;
-    public abstract readonly hasCalendars: boolean;
+    abstract readonly isLoading: boolean;
+    abstract readonly hasCalendars: boolean;
 
-    public destroy(): void;
-    public abstract requestRange(begin: Date, end: Date): void;
-    public abstract getEvents(begin: Date, end: Date): CalendarEvent[];
-    public abstract hasEvents(day: Date): boolean;
+    destroy(): void;
+    abstract requestRange(begin: Date, end: Date): void;
+    abstract getEvents(begin: Date, end: Date): CalendarEvent[];
+    abstract hasEvents(day: Date): boolean;
 }
 
 declare class EmptyEventSource extends EventSourceBase {
-    public readonly isLoading: boolean;
-    public readonly hasCalendars: boolean;
+    readonly isLoading: boolean;
+    readonly hasCalendars: boolean;
 
-    public requestRange(begin: Date, end: Date): void;
-    public getEvents(begin: Date, end: Date): CalendarEvent[];
-    public hasEvents(day: Date): boolean;
+    requestRange(begin: Date, end: Date): void;
+    getEvents(begin: Date, end: Date): CalendarEvent[];
+    hasEvents(day: Date): boolean;
 }
 
 declare const CalendarServerIface: GObject.Interface;
@@ -81,19 +81,19 @@ declare class DBusEventSource extends EventSourceBase {
     _initialized: boolean;
     _dbusProxy: Gio.DBusProxy;
 
-    public readonly isLoading: boolean;
-    public readonly hasCalendars: boolean;
+    readonly isLoading: boolean;
+    readonly hasCalendars: boolean;
 
     constructor();
-    public _init(): void;
+    _init(): void;
 
-    public requestRange(begin: Date, end: Date): void;
-    public getEvents(begin: Date, end: Date): CalendarEvent[];
-    public hasEvents(day: Date): boolean;
-    public destroy(): void;
-    public requestRange(begin: Date, end: Date): void;
-    public getEvents(begin: Date, end: Date): CalendarEvent[];
-    public hasEvents(day: Date): boolean;
+    requestRange(begin: Date, end: Date): void;
+    getEvents(begin: Date, end: Date): CalendarEvent[];
+    hasEvents(day: Date): boolean;
+    destroy(): void;
+    requestRange(begin: Date, end: Date): void;
+    getEvents(begin: Date, end: Date): CalendarEvent[];
+    hasEvents(day: Date): boolean;
 
     _initProxy(): Promise<void>;
     _resetCache(): void;
@@ -141,20 +141,20 @@ export class Calendar extends St.Widget {
 
     constructor();
     /** @hidden */
-    public _init(params?: Partial<St.Widget.ConstructorProps>): void;
-    public _init(): void;
+    _init(params?: Partial<St.Widget.ConstructorProps>): void;
+    _init(): void;
 
-    public setEventSource(eventSource: EventSourceBase): void;
+    setEventSource(eventSource: EventSourceBase): void;
 
     /**
      * Sets the calendar to show a specific date
      * @param date The date to show
      */
-    public setDate(date: Date): void;
+    setDate(date: Date): void;
 
-    public updateTimeZone(): void;
+    updateTimeZone(): void;
 
-    public vfunc_scroll_event(event: Clutter.ScrollEvent): boolean;
+    vfunc_scroll_event(event: Clutter.ScrollEvent): boolean;
 
     _buildHeader(): void;
     _onPrevMonthButtonClicked(): void;
@@ -171,7 +171,7 @@ declare class Placeholder extends St.BoxLayout {
 
     /** @hidden */
     override _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
-    public _init(): void;
+    _init(): void;
 }
 
 declare class DoNotDisturbSwitch extends Switch {
@@ -182,7 +182,7 @@ declare class DoNotDisturbSwitch extends Switch {
     override _init(config?: Partial<St.Bin.ConstructorProps>): void;
     /** @hidden */
     override _init(state: boolean): void;
-    public _init(): void;
+    _init(): void;
 }
 
 /**
@@ -202,7 +202,7 @@ export class CalendarMessageList extends St.Widget {
 
     /** @hidden */
     override _init(config?: Partial<St.Widget.ConstructorProps>): void;
-    public _init(): void;
+    _init(): void;
 
     maybeCollapseMessageGroupForEvent(event: Clutter.Event): boolean;
 }

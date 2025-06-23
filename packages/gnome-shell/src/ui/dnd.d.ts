@@ -38,7 +38,7 @@ declare namespace _Draggable {
 }
 
 declare class _Draggable extends EventEmitter {
-    public actor: Clutter.Actor;
+    actor: Clutter.Actor;
 
     constructor(actor: Clutter.Actor, params: Partial<_Draggable.ConstructorProps>);
 
@@ -50,7 +50,7 @@ declare class _Draggable extends EventEmitter {
      * actors for other purposes (for example if you're using
      * PopupMenu.ignoreRelease())
      */
-    public fakeRelease(): void;
+    fakeRelease(): void;
 
     /**
      * startDrag:
@@ -64,7 +64,7 @@ declare class _Draggable extends EventEmitter {
      * This function is useful to call if you've specified manualMode
      * for the draggable.
      */
-    public startDrag(stageX: number, stageY: number, time: number, sequence?: Clutter.EventSequence, device?: Clutter.InputDevice): void;
+    startDrag(stageX: number, stageY: number, time: number, sequence?: Clutter.EventSequence, device?: Clutter.InputDevice): void;
 
     _onButtonPress(actor: Clutter.Actor, event: Clutter.Event): boolean;
     _onTouchEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;

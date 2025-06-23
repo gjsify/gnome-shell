@@ -31,11 +31,11 @@ export class RadialShaderEffect extends Shell.GLSLEffect {
     _brightness: number;
     _sharpness: number;
 
-    public brightness: number;
-    public sharpness: number;
+    brightness: number;
+    sharpness: number;
 
     constructor(props: Partial<RadialShaderEffect.ConstructorProps>);
-    public _init(props: Partial<RadialShaderEffect.ConstructorProps>): void;
+    _init(props: Partial<RadialShaderEffect.ConstructorProps>): void;
 
     vfunc_build_pipeline(): void;
 }
@@ -68,7 +68,7 @@ export namespace Lightbox {
 export class Lightbox extends St.Bin {
     _active: boolean;
 
-    public readonly active: boolean;
+    readonly active: boolean;
 
     /**
      * Lightbox creates a dark translucent "shade" actor to hide the
@@ -94,7 +94,7 @@ export class Lightbox extends St.Bin {
      * @param {boolean=} params.radialEffect: whether to enable the GLSL radial effect
      */
     constructor(container: Clutter.Actor, params?: Partial<Lightbox.ConstructorProps>);
-    public _init(container: Clutter.Actor, params?: Partial<Lightbox.ConstructorProps>): void;
+    _init(container: Clutter.Actor, params?: Partial<Lightbox.ConstructorProps>): void;
 
     lightOn(fadeInTime?: number): void;
     lightOff(fadeOutTime?: number): void;

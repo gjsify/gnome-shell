@@ -14,14 +14,14 @@ declare class AppFavorites extends EventEmitter {
     _addFavorite(appId: string, pos: number): void;
     _removeFavorite(appId: string): void;
 
-    public reload(): void;
-    public getFavoriteMap(): Map<string, Shell.App>;
-    public getFavorites(): Shell.App[];
-    public isFavorite(appId: string): boolean;
-    public addFavoriteAtPos(appId: string, pos: number): void;
-    public addFavorite(appId: string): void;
-    public moveFavoriteToPos(appId: string, pos: number): void;
-    public removeFavorite(appId: string): void;
+    reload(): void;
+    getFavoriteMap(): Map<string, Shell.App>;
+    getFavorites(): Shell.App[];
+    isFavorite(appId: string): boolean;
+    addFavoriteAtPos(appId: string, pos: number): void;
+    addFavorite(appId: string): void;
+    moveFavoriteToPos(appId: string, pos: number): void;
+    removeFavorite(appId: string): void;
 }
 
 export function getAppFavorites(): AppFavorites;

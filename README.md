@@ -29,7 +29,7 @@ We are happy if you link your project through a PR here 😊
 **Every contribution, regardless of its size, is incredibly valuable.** If you're using these types and discover missing types necessary for your GNOME Shell Extension, contributing just those types is immensely helpful. This approach ensures the types are tested in real-world scenarios, vital for a project as extensive as the GNOME Shell.
 
 ### Getting Started:
-- To add TypeScript type definitions, mimic the data structure of the GNOME Shell's JavaScript source code. Private and protected methods and fields must not have visibility modifiers (making them implicitly public), and public ones must be marked as such.
+- To add TypeScript type definitions, mimic the data structure of the GNOME Shell's JavaScript source code. Visibility modifiers (`private`, `protected`, `public`) must not be included.
 - Contributions can range from adding a few types you need for your project to more extensive contributions.
 
 ### Development Instructions:

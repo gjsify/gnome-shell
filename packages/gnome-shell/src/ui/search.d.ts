@@ -9,57 +9,57 @@ export class MaxWidthBox extends St.BoxLayout {}
 
 export class SearchResult extends St.Button {
     /** @hidden */
-    public _init(config?: Partial<St.Button.ConstructorProps>): void;
-    public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
+    _init(config?: Partial<St.Button.ConstructorProps>): void;
+    _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
     activate(): void;
 }
 
 export class ListSearchResult extends SearchResult {
     /** @hidden */
-    public _init(config?: Partial<St.Button.ConstructorProps>): void;
-    public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
+    _init(config?: Partial<St.Button.ConstructorProps>): void;
+    _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 }
 
 export class GridSearchResult extends SearchResult {
-    public readonly focusChild: St.Widget;
+    readonly focusChild: St.Widget;
 
     /** @hidden */
-    public _init(config?: Partial<St.Button.ConstructorProps>): void;
-    public _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
+    _init(config?: Partial<St.Button.ConstructorProps>): void;
+    _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
 
     _onDestroy(): void;
     _createResultDisplay(meta: any): void;
     _keyFocusIn(actor: St.Widget): void;
     _ensureResultActors(results: any[]): Promise<void>;
 
-    public clear(): void;
-    public updateSearch(providerResults: any[], terms: string[], callback: () => void): Promise<void>;
+    clear(): void;
+    updateSearch(providerResults: any[], terms: string[], callback: () => void): Promise<void>;
 }
 
 export abstract class SearchResultsBase extends St.BoxLayout {
     /** @hidden */
-    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
+    _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
-    public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
-    public _init(props?: { style_class?: string; vertical?: boolean }): void;
+    _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
+    _init(props?: { style_class?: string; vertical?: boolean }): void;
 
-    public activateDefault(): void;
-    public highlightDefault(highlight: boolean): void;
-    public popupMenuDefault(): void;
-    public navigateFocus(direction: St.DirectionType): boolean;
-    public highlightTerms(description: string): string;
+    activateDefault(): void;
+    highlightDefault(highlight: boolean): void;
+    popupMenuDefault(): void;
+    navigateFocus(direction: St.DirectionType): boolean;
+    highlightTerms(description: string): string;
 }
 
 export class ListSearchResults extends SearchResultsBase {
     /** @hidden */
-    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
+    _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
-    public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
+    _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
     /** @hidden */
-    public _init(props?: { style_class?: string; vertical?: boolean }): void;
+    _init(props?: { style_class?: string; vertical?: boolean }): void;
 
-    public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
+    _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
 
     _setMoreCount(count: number): void;
     _getMaxDisplayedResults(): number;
@@ -67,26 +67,26 @@ export class ListSearchResults extends SearchResultsBase {
     _createResultDisplay(meta: any): void;
     _addItem(display: any): void;
 
-    public getFirstResult(): any | null;
+    getFirstResult(): any | null;
 }
 
 export class GridSearchResultsLayout extends Clutter.LayoutManager {
-    public spacing: number;
+    spacing: number;
 
     /** @hidden */
-    public _init(config?: Partial<Clutter.LayoutManager.ConstructorProps>): void;
-    public _init(): void;
+    _init(config?: Partial<Clutter.LayoutManager.ConstructorProps>): void;
+    _init(): void;
 
-    public columnsForWidth(width: number): number;
+    columnsForWidth(width: number): number;
 }
 
 export class GridSearchResults extends SearchResultsBase {
     /** @hidden */
-    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
+    _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
-    public _init(props?: { style_class?: string; vertical?: boolean }): void;
+    _init(props?: { style_class?: string; vertical?: boolean }): void;
 
-    public _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
+    _init(provider: AppSearchProvider, resultsView: SearchResultsView): void;
 
     _onDestroy(): void;
     _getMaxDisplayedResults(): number;
@@ -94,17 +94,17 @@ export class GridSearchResults extends SearchResultsBase {
     _createResultDisplay(meta: any): void;
     _addItem(display: any): void;
 
-    public updateSearch(...args: any[]): void;
-    public getFirstResult(): any | null;
+    updateSearch(...args: any[]): void;
+    getFirstResult(): any | null;
 }
 
 export class SearchResultsView extends St.BoxLayout {
-    public readonly terms: string[];
-    public readonly searchInProgress: boolean;
+    readonly terms: string[];
+    readonly searchInProgress: boolean;
 
     /** @hidden */
-    public _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
-    public _init(): void;
+    _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
+    _init(): void;
 
     _reloadRemoteProviders(): void;
     _registerProvider(provider: AppSearchProvider): void;
@@ -123,22 +123,22 @@ export class SearchResultsView extends St.BoxLayout {
     _updateResults(provider: AppSearchProvider, results: any[]): void;
     _setSelected(result: any, selected: boolean): void;
 
-    public setTerms(terms: string[]): void;
-    public activateDefault(): void;
-    public highlightDefault(highlight: boolean): void;
-    public popupMenuDefault(): void;
-    public navigateFocus(direction: St.DirectionType): boolean;
-    public highlightTerms(description: string): string;
+    setTerms(terms: string[]): void;
+    activateDefault(): void;
+    highlightDefault(highlight: boolean): void;
+    popupMenuDefault(): void;
+    navigateFocus(direction: St.DirectionType): boolean;
+    highlightTerms(description: string): string;
 }
 
 export class ProviderInfo extends St.Button {
     readonly PROVIDER_ICON_SIZE: number;
 
     /** @hidden */
-    public _init(config?: Partial<St.Button.ConstructorProps>): void;
+    _init(config?: Partial<St.Button.ConstructorProps>): void;
 
-    public _init(provider: AppSearchProvider): void;
+    _init(provider: AppSearchProvider): void;
 
-    public animateLaunch(): void;
-    public setMoreCount(count: number): void;
+    animateLaunch(): void;
+    setMoreCount(count: number): void;
 }

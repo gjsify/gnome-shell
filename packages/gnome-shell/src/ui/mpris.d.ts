@@ -31,11 +31,11 @@ export class MprisSource extends NotificationMessageGroup {
     _players: Map<string, MprisPlayer>;
     _proxy: Gio.DBusProxy;
 
-    public readonly allowed: boolean;
+    readonly allowed: boolean;
 
     /** @hidden */
-    public _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
-    public _init(): void;
+    _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
+    _init(): void;
 
     _addPlayer(busName: string): void;
     _onProxyReady(): Promise<void>;

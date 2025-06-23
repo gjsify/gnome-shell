@@ -96,7 +96,7 @@ export abstract class NotificationPolicy extends GObject.Object {
     readonly showInLockScreen: boolean;
     readonly detailsInLockScreen: boolean;
 
-    public static newForApp(app: Shell.App): NotificationPolicy;
+    static newForApp(app: Shell.App): NotificationPolicy;
 
     /**
      * Do nothing for the default policy. These methods are only useful for the
@@ -112,14 +112,14 @@ export abstract class NotificationPolicy extends GObject.Object {
  * @version 48
  */
 export class NotificationGenericPolicy extends NotificationPolicy {
-    public id: string;
+    id: string;
 
     _masterSettings: Gio.Settings;
 
     constructor();
-    public _init(): void;
+    _init(): void;
 
-    public destroy(): void;
+    destroy(): void;
 
     _changed(settings: Gio.Settings, key: string): void;
 }
@@ -129,17 +129,17 @@ export class NotificationGenericPolicy extends NotificationPolicy {
  * @version 48
  */
 export class NotificationApplicationPolicy extends NotificationPolicy {
-    public id: string;
+    id: string;
 
     _masterSettings: Gio.Settings;
     _canonicalId: string;
     _settings: Gio.Settings;
 
     constructor(id: string);
-    public _init(id: string): void;
+    _init(id: string): void;
 
-    public store(): void;
-    public destroy(): void;
+    store(): void;
+    destroy(): void;
 
     _changed(settings: Gio.Settings, key: string): void;
     _canonicalizeId(id: string): string;
@@ -152,7 +152,7 @@ export class NotificationApplicationPolicy extends NotificationPolicy {
 export class Sound extends GObject.Object {
     constructor(file: Gio.File | null | undefined, themedName?: string);
 
-    public play(): void;
+    play(): void;
 }
 
 /**
@@ -162,9 +162,9 @@ export class Sound extends GObject.Object {
 export class Action extends GObject.Object {
     constructor(label: string, callback: () => void);
 
-    public readonly label: string;
+    readonly label: string;
 
-    public activate(): void;
+    activate(): void;
 }
 
 /**
@@ -184,27 +184,27 @@ export declare namespace Source {
 export class Source extends MessageList.Source {
     constructor(params?: Partial<Source.ConstructorProps>);
 
-    public readonly notifications: readonly Notification[];
+    readonly notifications: readonly Notification[];
 
-    public policy: NotificationPolicy;
+    policy: NotificationPolicy;
 
-    public readonly count: number;
+    readonly count: number;
 
-    public readonly unseenCount: number;
+    readonly unseenCount: number;
 
-    public readonly countVisible: number;
+    readonly countVisible: number;
 
-    public countUpdated(): void;
+    countUpdated(): void;
 
-    public readonly narrowestPrivacyScope: PrivacyScope;
+    readonly narrowestPrivacyScope: PrivacyScope;
 
-    public addNotification(notification: Notification): void;
+    addNotification(notification: Notification): void;
 
-    public destroy(reason: NotificationDestroyedReason): void;
+    destroy(reason: NotificationDestroyedReason): void;
 
-    public open(): void;
+    open(): void;
 
-    public destroyNonResidentNotifications(): void;
+    destroyNonResidentNotifications(): void;
 
     // General signal handler methods
     connect(sigName: string, callback: (...args: any[]) => void): number;
@@ -323,18 +323,18 @@ export class Notification extends GObject.Object implements Notification.ObjectP
 export class MessageTray extends St.Widget {
     constructor();
 
-    public idleMonitor: GnomeDesktop.IdleMonitor;
+    idleMonitor: GnomeDesktop.IdleMonitor;
 
-    public bannerAlignment: number;
+    bannerAlignment: number;
 
-    public readonly queueCount: number;
+    readonly queueCount: number;
 
-    public set bannerBlocked(v: boolean);
+    set bannerBlocked(v: boolean);
 
-    public contains(descendant: Clutter.Actor): boolean;
-    public contains(source: Source): boolean;
-    public add(source: Source): void;
-    public getSources(): Source[];
+    contains(descendant: Clutter.Actor): boolean;
+    contains(source: Source): boolean;
+    add(source: Source): void;
+    getSources(): Source[];
 
     _sessionUpdated(): void;
     _onDragBegin(): void;

@@ -47,18 +47,18 @@ export class MonitorConstraint extends Clutter.Constraint {
     _index: number;
     _workArea: boolean;
 
-    public primary: boolean;
-    public index: number;
-    public workArea: boolean;
+    primary: boolean;
+    index: number;
+    workArea: boolean;
 
     constructor(props: Partial<MonitorConstraint.ConstructorProps>);
 
     /** @hidden */
-    public _init(props: Partial<MonitorConstraint.ConstructorProps>): void;
-    public _init(): void;
+    _init(props: Partial<MonitorConstraint.ConstructorProps>): void;
+    _init(): void;
 
-    public vfunc_set_actor(actor: Clutter.Actor): void;
-    public vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
+    vfunc_set_actor(actor: Clutter.Actor): void;
+    vfunc_update_allocation(actor: Clutter.Actor, actorBox: Clutter.ActorBox): void;
 }
 
 /**
@@ -66,13 +66,13 @@ export class MonitorConstraint extends Clutter.Constraint {
  * @version 48
  */
 declare class Monitor {
-    public index: number;
-    public geometryScale: number;
-    public x: number;
-    public y: number;
-    public width: number;
-    public height: number;
-    public readonly inFullscreen: boolean;
+    index: number;
+    geometryScale: number;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    readonly inFullscreen: boolean;
 
     constructor(index: number, geometry: Geometry, geometryScale: number);
 }
@@ -82,11 +82,11 @@ declare class Monitor {
  * @version 48
  */
 declare class UiActor extends St.Widget {
-    public constructor(props?: Partial<St.Widget.ConstructorProps>);
-    public _init(props?: Partial<St.Widget.ConstructorProps>): void;
+    constructor(props?: Partial<St.Widget.ConstructorProps>);
+    _init(props?: Partial<St.Widget.ConstructorProps>): void;
 
-    public vfunc_get_preferred_width(_forHeight: number): [number, number];
-    public vfunc_get_preferred_height(_forWidth: number): [number, number];
+    vfunc_get_preferred_width(_forHeight: number): [number, number];
+    vfunc_get_preferred_height(_forWidth: number): [number, number];
 }
 
 /**
@@ -97,11 +97,11 @@ declare class ScreenTransition extends Clutter.Actor {
     constructor();
 
     /** @hidden */
-    public _init(params?: Partial<Clutter.Actor.ConstructorProps>): void;
-    public _init(): void;
+    _init(params?: Partial<Clutter.Actor.ConstructorProps>): void;
+    _init(): void;
 
-    public vfunc_hide(): void;
-    public run(): void;
+    vfunc_hide(): void;
+    run(): void;
 }
 
 /**
@@ -121,12 +121,12 @@ declare class HotCorner extends Clutter.Actor {
 
     constructor(layoutManager: LayoutManager, monitor: Monitor, x: number, y: number);
 
-    public _init(props?: Partial<Clutter.Actor.ConstructorProps>): void;
-    public _init(layoutManager: LayoutManager, monitor: Monitor, x: number, y: number): void;
+    _init(props?: Partial<Clutter.Actor.ConstructorProps>): void;
+    _init(layoutManager: LayoutManager, monitor: Monitor, x: number, y: number): void;
 
-    public setBarrierSize(size: number): void;
-    public handleDragOver(source: any, actor: any, x: number, y: number, time: number): DragMotionResult;
-    public vfunc_leave_event(event: Clutter.Event): boolean;
+    setBarrierSize(size: number): void;
+    handleDragOver(source: any, actor: any, x: number, y: number, time: number): DragMotionResult;
+    vfunc_leave_event(event: Clutter.Event): boolean;
 
     _setupFallbackCornerIfNeeded(layoutManager: LayoutManager): void;
     _onDestroy(): void;
@@ -162,32 +162,32 @@ export class LayoutManager extends GObject.Object {
     _pendingLoadBackground: boolean;
     _systemBackground: SystemBackground;
 
-    public readonly _startingUp: boolean;
-    public monitors: Monitor[];
-    public primaryMonitor: Monitor | null;
-    public primaryIndex: number;
-    public hotCorners: HotCorner[];
-    public uiGroup: UiActor;
-    public overviewGroup: St.Widget;
-    public screenShieldGroup: St.Widget;
-    public panelBox: St.BoxLayout;
-    public modalDialogGroup: St.Widget;
-    public keyboardBox: St.BoxLayout;
-    public screenshotUIGroup: St.Widget;
-    public dummyCursor: St.Widget;
-    public screenTransition: ScreenTransition;
-    public readonly currentMonitor: Monitor | undefined;
-    public readonly keyboardMonitor: Monitor | undefined;
-    public readonly focusIndex: number;
-    public readonly focusMonitor: Monitor | undefined;
-    public keyboardIndex: number;
+    readonly _startingUp: boolean;
+    monitors: Monitor[];
+    primaryMonitor: Monitor | null;
+    primaryIndex: number;
+    hotCorners: HotCorner[];
+    uiGroup: UiActor;
+    overviewGroup: St.Widget;
+    screenShieldGroup: St.Widget;
+    panelBox: St.BoxLayout;
+    modalDialogGroup: St.Widget;
+    keyboardBox: St.BoxLayout;
+    screenshotUIGroup: St.Widget;
+    dummyCursor: St.Widget;
+    screenTransition: ScreenTransition;
+    readonly currentMonitor: Monitor | undefined;
+    readonly keyboardMonitor: Monitor | undefined;
+    readonly focusIndex: number;
+    readonly focusMonitor: Monitor | undefined;
+    keyboardIndex: number;
 
     constructor();
-    public _init(): void;
+    _init(): void;
 
-    public init(): void;
-    public showOverview(): void;
-    public hideOverview(): void;
+    init(): void;
+    showOverview(): void;
+    hideOverview(): void;
 
     /**
      * setDummyCursorGeometry:
@@ -205,7 +205,7 @@ export class LayoutManager extends GObject.Object {
      * @param width
      * @param height
      */
-    public setDummyCursorGeometry(x: number, y: number, width: number, height: number): void;
+    setDummyCursorGeometry(x: number, y: number, width: number, height: number): void;
 
     /**
      * Adds `actor` to the chrome, and (unless `affectsInputRegion` in
@@ -226,14 +226,14 @@ export class LayoutManager extends GObject.Object {
      * @param actor An actor to add to the chrome
      * @param params Additional params
      */
-    public addChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
+    addChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
 
     /**
      * Like {@link addChrome()}, but adds `actor` above all windows, including popups.
      * @param actor An actor to add to the chrome
      * @param params Additional params
      */
-    public addTopChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
+    addTopChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
 
     /**
      * Tells the chrome to track `actor`. This can be used to extend the
@@ -246,33 +246,33 @@ export class LayoutManager extends GObject.Object {
      * @param actor a descendant of the chrome to begin tracking
      * @param params parameters describing how to track `actor`
      */
-    public trackChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
+    trackChrome(actor: Clutter.Actor, params?: Partial<TrackedActors>): void;
 
     /**
      * Undoes the effect of {@link trackChrome()}
      * `params` is `false`) removes it from the input region.
      * @param actor An actor previously tracked via {@link trackChrome()}
      */
-    public untrackChrome(actor: Clutter.Actor): void;
+    untrackChrome(actor: Clutter.Actor): void;
 
     /**
      * Removes `actor` from the chrome
      * @param actor An actor previously added via {@link addChrome()}
      */
-    public removeChrome(actor: Clutter.Actor): void;
+    removeChrome(actor: Clutter.Actor): void;
 
-    public getWorkAreaForMonitor(monitorIndex: number): Mtk.Rectangle;
+    getWorkAreaForMonitor(monitorIndex: number): Mtk.Rectangle;
 
     /**
      * This call guarantees that we return some monitor to simplify usage of it
      * In practice all tracked actors should be visible on some monitor anyway
      * @param actor
      */
-    public findIndexForActor(actor: Clutter.Actor): number;
+    findIndexForActor(actor: Clutter.Actor): number;
 
-    public findMonitorForActor(actor: Clutter.Actor): Monitor | undefined;
+    findMonitorForActor(actor: Clutter.Actor): Monitor | undefined;
 
-    public modalEnded(): void;
+    modalEnded(): void;
 
     _sessionUpdated(): void;
     _updateMonitors(): void;
@@ -338,10 +338,10 @@ declare class PressureBarrier extends EventEmitter {
 
     constructor(threshold: number, timeout: number, actionMode: Shell.ActionMode);
 
-    public addBarrier(barrier: Meta.Barrier): void;
-    public removeBarrier(barrier: Meta.Barrier): void;
-    public destroy(): void;
-    public setEventFilter(filter: any): void;
+    addBarrier(barrier: Meta.Barrier): void;
+    removeBarrier(barrier: Meta.Barrier): void;
+    destroy(): void;
+    setEventFilter(filter: any): void;
 
     _disconnectBarrier(barrier: Meta.Barrier): void;
     _reset(): void;

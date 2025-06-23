@@ -33,8 +33,8 @@ export class BoxPointer extends St.Widget {
     _sourceExtents: ReturnType<typeof Clutter.Actor.prototype.get_transformed_extents>;
     _workArea: ReturnType<typeof LayoutManager.prototype.getWorkAreaForMonitor>;
 
-    public bin: St.Bin;
-    public readonly arrowSide: St.Side;
+    bin: St.Bin;
+    readonly arrowSide: St.Side;
 
     /**
      * @param arrowSide side to draw the arrow on
@@ -43,49 +43,49 @@ export class BoxPointer extends St.Widget {
     constructor(arrowSide: St.Side, binProperties?: Partial<St.Bin.ConstructorProps>);
 
     /** @hidden */
-    public _init(params?: Partial<St.Widget.ConstructorProps>): void;
+    _init(params?: Partial<St.Widget.ConstructorProps>): void;
 
     /**
      * @param arrowSide side to draw the arrow on
      * @param binProperties Properties to set on contained bin
      */
-    public _init(arrowSide: St.Side, binProperties?: Partial<St.Bin.ConstructorProps>): void;
+    _init(arrowSide: St.Side, binProperties?: Partial<St.Bin.ConstructorProps>): void;
 
-    public vfunc_captured_event(event: Clutter.Event): boolean;
+    vfunc_captured_event(event: Clutter.Event): boolean;
 
-    public vfunc_get_preferred_width(forHeight: number): [number, number];
+    vfunc_get_preferred_width(forHeight: number): [number, number];
 
-    public vfunc_get_preferred_height(forWidth: number): [number, number];
+    vfunc_get_preferred_height(forWidth: number): [number, number];
 
-    public vfunc_allocate(box: Clutter.ActorBox): void;
+    vfunc_allocate(box: Clutter.ActorBox): void;
 
-    public open(animate: boolean, onComplete: () => void): void;
+    open(animate: boolean, onComplete: () => void): void;
 
-    public close(animate: boolean, onComplete: () => void): void;
+    close(animate: boolean, onComplete: () => void): void;
 
-    public setPosition(sourceActor: Clutter.Actor, arrowAlignment: number): void;
+    setPosition(sourceActor: Clutter.Actor, arrowAlignment: number): void;
 
-    public setSourceAlignment(sourceAlignment: number): void;
+    setSourceAlignment(sourceAlignment: number): void;
 
     /**
      * @param origin Coordinate specifying middle of the arrow, along
      * the Y axis for St.Side.LEFT, St.Side.RIGHT from the top and X axis from
      * the left for St.Side.TOP and St.Side.BOTTOM.
      */
-    public setArrowOrigin(origin: number): void;
+    setArrowOrigin(origin: number): void;
 
     /**
      * @param actor an actor relative to which the arrow is positioned.
      * Differently from setPosition, this will not move the boxpointer itself,
      * on the arrow
      */
-    public setArrowActor(actor: St.Widget): void;
+    setArrowActor(actor: St.Widget): void;
 
-    public updateArrowSide(side: St.Side): void;
+    updateArrowSide(side: St.Side): void;
 
-    public getPadding(side: St.Side): number;
+    getPadding(side: St.Side): number;
 
-    public getArrowHeight(): number;
+    getArrowHeight(): number;
 
     _adjustAllocationForArrow(isWidth: boolean, minSize: number, naturalSize: number): void;
     _drawBorder(area: St.DrawingArea): void;

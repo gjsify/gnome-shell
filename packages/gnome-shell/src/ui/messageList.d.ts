@@ -16,14 +16,14 @@ export class URLHighlighter extends St.Label {
     constructor(text?: string, lineWrap?: boolean, allowMarkup?: boolean);
 
     /** @hidden */
-    public _init(params?: Partial<St.Label.ConstructorProps>): void;
-    public _init(text?: string, lineWrap?: boolean, allowMarkup?: boolean): void;
+    _init(params?: Partial<St.Label.ConstructorProps>): void;
+    _init(text?: string, lineWrap?: boolean, allowMarkup?: boolean): void;
 
-    public vfunc_button_press_event(buttonEvent: Clutter.ButtonEvent): boolean;
-    public vfunc_button_release_event(buttonEvent: Clutter.ButtonEvent): boolean;
-    public vfunc_motion_event(motionEvent: Clutter.MotionEvent): boolean;
-    public vfunc_leave_event(crossingEvent: Clutter.CrossingEvent): boolean;
-    public setMarkup(text?: string, allowMarkup?: boolean): void;
+    vfunc_button_press_event(buttonEvent: Clutter.ButtonEvent): boolean;
+    vfunc_button_release_event(buttonEvent: Clutter.ButtonEvent): boolean;
+    vfunc_motion_event(motionEvent: Clutter.MotionEvent): boolean;
+    vfunc_leave_event(crossingEvent: Clutter.CrossingEvent): boolean;
+    setMarkup(text?: string, allowMarkup?: boolean): void;
 
     _highlightUrls(): void;
     _findUrlAtPos(event: Clutter.Event): [number, number];
@@ -68,22 +68,22 @@ export declare namespace Source {
 export class Source extends GObject.Object implements Source.ObjectProperties {
     constructor(params?: Source.ConstructorProps);
 
-    public title: string;
-    public icon: Gio.Icon;
+    title: string;
+    icon: Gio.Icon;
 
-    public get iconName(): string | null;
+    get iconName(): string | null;
 
-    public set iconName(iconName: string);
+    set iconName(iconName: string);
 }
 
 declare class TimeLabel extends St.Label {
     datetime: Date;
 
     /** @hidden */
-    public _init(params?: Partial<St.Label.ConstructorProps>): void;
-    public _init(datetime: Date): void;
+    _init(params?: Partial<St.Label.ConstructorProps>): void;
+    _init(datetime: Date): void;
 
-    public vfunc_map(): void;
+    vfunc_map(): void;
 }
 
 declare class MessageHeader extends St.BoxLayout {
@@ -97,27 +97,27 @@ declare class MessageHeader extends St.BoxLayout {
 export class Message extends St.Button {
     constructor(source: Source);
 
-    public title: string | null;
-    public body: string | null;
-    public useBodyMarkup: boolean;
-    public icon: Gio.Icon | null;
-    public datetime: GLib.DateTime | null;
+    title: string | null;
+    body: string | null;
+    useBodyMarkup: boolean;
+    icon: Gio.Icon | null;
+    datetime: GLib.DateTime | null;
 
-    public expanded: boolean;
+    expanded: boolean;
 
-    public close(): void;
+    close(): void;
 
-    public setActionArea(actor: Clutter.Actor): void;
+    setActionArea(actor: Clutter.Actor): void;
 
-    public addMediaControl(iconName: string, callback: () => void): void;
+    addMediaControl(iconName: string, callback: () => void): void;
 
-    public expand(animate?: boolean): void;
+    expand(animate?: boolean): void;
 
-    public unexpand(animate?: boolean): void;
+    unexpand(animate?: boolean): void;
 
-    public canClose(): boolean;
+    canClose(): boolean;
 
-    public vfunc_key_press_event(keyEvent: Clutter.KeyEvent): boolean;
+    vfunc_key_press_event(keyEvent: Clutter.KeyEvent): boolean;
 }
 
 /**
@@ -129,10 +129,10 @@ export class NotificationMessage extends Message {
     override _init(params?: Partial<St.Button.ConstructorProps>): void;
     /** @hidden */
     override _init(title: string, body: string): void;
-    public _init(notification: Notification): void;
+    _init(notification: Notification): void;
 
-    public vfunc_clicked(): void;
-    public canClose(): boolean;
+    vfunc_clicked(): void;
+    canClose(): boolean;
 
     _getIcon(): St.Icon;
     _onUpdated(n: Notification, _clear?: boolean): void;
@@ -150,12 +150,12 @@ declare class MediaMessage extends Message {
     constructor(player: MprisPlayer);
 
     /** @hidden */
-    public override _init(params?: Partial<St.Button.ConstructorProps>): void;
+    override _init(params?: Partial<St.Button.ConstructorProps>): void;
     /** @hidden */
-    public override _init(title: string, body: string): void;
-    public _init(player: MprisPlayer): void;
+    override _init(title: string, body: string): void;
+    _init(player: MprisPlayer): void;
 
-    public vfunc_clicked(): void;
+    vfunc_clicked(): void;
 
     _updateNavButton(button: St.Button, sensitive?: boolean): void;
     _update(): void;

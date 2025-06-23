@@ -8,11 +8,11 @@ export class Animation extends St.Bin {
     constructor(file: Gio.File, width: number, height: number, speed: number);
 
     /** @hidden */
-    public _init(props?: Partial<St.Bin.ConstructorProps>): void;
-    public _init(file: Gio.File, width: number, height: number, speed: number): void;
+    _init(props?: Partial<St.Bin.ConstructorProps>): void;
+    _init(file: Gio.File, width: number, height: number, speed: number): void;
 
-    public play(): void;
-    public stop(): void;
+    play(): void;
+    stop(): void;
 
     _loadFile(file: Gio.File, width: number, height: number): void;
     _showFrame(frame: number): void;
@@ -25,24 +25,24 @@ export class Animation extends St.Bin {
 export class AnimatedIcon extends Animation {
     constructor(file: Gio.File, size: number);
     /** @hidden */
-    public _init(props?: Partial<St.Bin.ConstructorProps>): void;
+    _init(props?: Partial<St.Bin.ConstructorProps>): void;
     /** @hidden */
-    public _init(file: Gio.File, width: number, height: number, speed: number): void;
-    public _init(file: Gio.File, size: number): void;
+    _init(file: Gio.File, width: number, height: number, speed: number): void;
+    _init(file: Gio.File, size: number): void;
 }
 
 export class Spinner extends AnimatedIcon {
     constructor(size: number, params: { animate: boolean; hideOnStop: boolean });
     /** @hidden */
-    public _init(props?: Partial<St.Bin.ConstructorProps>): void;
+    _init(props?: Partial<St.Bin.ConstructorProps>): void;
     /** @hidden */
-    public _init(file: Gio.File, width: number, height: number, speed: number): void;
+    _init(file: Gio.File, width: number, height: number, speed: number): void;
     /** @hidden */
-    public _init(file: Gio.File, size: number): void;
-    public _init(size: number, params: { animate: boolean; hideOnStop: boolean }): void;
+    _init(file: Gio.File, size: number): void;
+    _init(size: number, params: { animate: boolean; hideOnStop: boolean }): void;
 
-    public play(): void;
-    public stop(): void;
+    play(): void;
+    stop(): void;
 
     _onDestroy(): void;
 }

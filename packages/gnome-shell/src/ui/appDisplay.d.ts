@@ -10,11 +10,11 @@ import { IconGrid, BaseIcon } from './iconGrid.js';
 import { DragMotionResult } from './dnd.js';
 
 export class AppGrid extends IconGrid {
-    public indicatorsPadding: number;
+    indicatorsPadding: number;
 
     /** @hidden */
-    public _init(params?: Partial<St.Viewport.ConstructorProps>): void;
-    public _init(layoutParams?: Partial<IconGrid.ConstructorProps>): void;
+    _init(params?: Partial<St.Viewport.ConstructorProps>): void;
+    _init(layoutParams?: Partial<IconGrid.ConstructorProps>): void;
 
     _updatePadding(): void;
 }
@@ -22,7 +22,7 @@ export class AppGrid extends IconGrid {
 export abstract class BaseAppView extends St.Widget {
     // TODO: 'view-loaded' signal
     constructor(params?: Partial<St.Widget.ConstructorProps>);
-    public _init(params?: Partial<St.Widget.ConstructorProps>): void;
+    _init(params?: Partial<St.Widget.ConstructorProps>): void;
 
     _onDestroy(): void;
     _createGrid(): AppGrid;
@@ -54,19 +54,19 @@ export abstract class BaseAppView extends St.Widget {
     _getDropTarget(x: number, y: number, source: any): [number, number, number];
     _moveItem(item: any, newPage: number, newPosition: number): void;
 
-    public handleDragOver(source: any): DragMotionResult;
-    public acceptDrop(source: any): boolean;
-    public getItemPosition(item: any): [number, number];
-    public getAllItems(): any[];
-    public selectApp(id: string): void;
-    public animateSwitch(animationDirection: number): void;
-    public goToPage(pageNumber: number, animate: boolean): void;
-    public updateDragFocus(dragFocus: any): void;
+    handleDragOver(source: any): DragMotionResult;
+    acceptDrop(source: any): boolean;
+    getItemPosition(item: any): [number, number];
+    getAllItems(): any[];
+    selectApp(id: string): void;
+    animateSwitch(animationDirection: number): void;
+    goToPage(pageNumber: number, animate: boolean): void;
+    updateDragFocus(dragFocus: any): void;
 }
 
 export class AppDisplay extends BaseAppView {
     constructor();
-    public _init(): void;
+    _init(): void;
 
     _onDestroy(): void;
     _redisplay(): void;
@@ -89,22 +89,22 @@ export class AppDisplay extends BaseAppView {
     _onDragCancelled(): void;
     _onDragCancelled(overview: any, source: any): void;
 
-    public getAppInfos(): any[];
-    public animateSwitch(animationDirection: number): void;
-    public goToPage(pageNumber: number, animate?: boolean): void;
-    public addFolderDialog(dialog: any): void;
-    public acceptDrop(source: any): boolean;
-    public createFolder(apps: any[]): boolean;
+    getAppInfos(): any[];
+    animateSwitch(animationDirection: number): void;
+    goToPage(pageNumber: number, animate?: boolean): void;
+    addFolderDialog(dialog: any): void;
+    acceptDrop(source: any): boolean;
+    createFolder(apps: any[]): boolean;
 }
 
 export class AppSearchProvider {
     constructor();
 
-    public getResultMetas(apps: any[]): Promise<any[]>;
-    public filterResults(results: any[], maxNumber: number): any[];
-    public getInitialResultSet(terms: string[], cancellable: Gio.Cancellable): Promise<any[]>;
-    public getSubsearchResultSet(previousResults: any[], terms: string[], cancellable: Gio.Cancellable): any[];
-    public createResultObject(resultMeta: any): AppIcon | SystemActionIcon;
+    getResultMetas(apps: any[]): Promise<any[]>;
+    filterResults(results: any[], maxNumber: number): any[];
+    getInitialResultSet(terms: string[], cancellable: Gio.Cancellable): Promise<any[]>;
+    getSubsearchResultSet(previousResults: any[], terms: string[], cancellable: Gio.Cancellable): any[];
+    createResultObject(resultMeta: any): AppIcon | SystemActionIcon;
 }
 
 export class AppViewItem extends St.Button {
@@ -112,7 +112,7 @@ export class AppViewItem extends St.Button {
     readonly app: any;
 
     constructor(params?: Partial<St.Button.ConstructorProps>);
-    public _init(params?: Partial<St.Button.ConstructorProps>, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
+    _init(params?: Partial<St.Button.ConstructorProps>, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
 
     _onDestroy(): void;
     _updateMultiline(): void;
@@ -125,13 +125,13 @@ export class AppViewItem extends St.Button {
     _onDragMotion(dragEvent: Clutter.Event): boolean;
     _withinLeeways(x: number): boolean;
 
-    public scaleIn(): void;
-    public scaleAndFade(): void;
-    public undoScaleAndFade(): void;
-    public handleDragOver(source: any, actor: St.Widget, x: number): DragMotionResult;
-    public acceptDrop(source: any, actor: St.Widget, x: number): boolean;
-    public cancelActions(): void;
-    public setForcedHighlight(highlight: boolean): void;
+    scaleIn(): void;
+    scaleAndFade(): void;
+    undoScaleAndFade(): void;
+    handleDragOver(source: any, actor: St.Widget, x: number): DragMotionResult;
+    acceptDrop(source: any, actor: St.Widget, x: number): boolean;
+    cancelActions(): void;
+    setForcedHighlight(highlight: boolean): void;
 }
 
 export namespace AppIcon {
@@ -142,8 +142,8 @@ export namespace AppIcon {
 }
 
 export class AppIcon extends AppViewItem {
-    public app: any;
-    public icon: BaseIcon;
+    app: any;
+    icon: BaseIcon;
 
     _id: string;
     _name: string;
@@ -153,8 +153,8 @@ export class AppIcon extends AppViewItem {
     constructor(app: any, iconParams?: AppIcon.ConstructorProps);
 
     /** @hidden */
-    public _init(params?: Partial<St.Button.ConstructorProps>, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
-    public _init(app: any, iconParams?: Partial<AppIcon.ConstructorProps>): void;
+    _init(params?: Partial<St.Button.ConstructorProps>, isDraggable?: boolean, expandTitleOnHover?: boolean): void;
+    _init(app: any, iconParams?: Partial<AppIcon.ConstructorProps>): void;
 
     _onDestroy(): void;
     _createIcon(iconSize: number): St.Widget;
@@ -168,21 +168,21 @@ export class AppIcon extends AppViewItem {
     _canAccept(source: any): boolean;
     _setHoveringByDnd(hovering: boolean): void;
 
-    public onDragBegin(): void;
-    public updateRunningStyle(): void;
-    public getId(): string;
-    public popupMenu(side?: St.Side): void;
-    public animateLaunch(): void;
-    public animateLaunchAtPos(x: number, y: number): void;
-    public shellWorkspaceLaunch(params?: { workspace: number; timestamp: number }): void;
-    public getDragActor(): St.Widget;
+    onDragBegin(): void;
+    updateRunningStyle(): void;
+    getId(): string;
+    popupMenu(side?: St.Side): void;
+    animateLaunch(): void;
+    animateLaunchAtPos(x: number, y: number): void;
+    shellWorkspaceLaunch(params?: { workspace: number; timestamp: number }): void;
+    getDragActor(): St.Widget;
     /**
      * @returns The original actor that should align with the actor we show as the item is being dragged.
      */
-    public getDragActorSource(): St.Widget;
-    public shouldShowTooltip(): boolean;
-    public acceptDrop(source: any, actor: St.Widget, x: number): boolean;
-    public cancelActions(): void;
+    getDragActorSource(): St.Widget;
+    shouldShowTooltip(): boolean;
+    acceptDrop(source: any, actor: St.Widget, x: number): boolean;
+    cancelActions(): void;
 }
 
 export class SystemActionIcon extends GridSearchResult {

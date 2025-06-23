@@ -12,14 +12,14 @@ export class BarLevel extends St.DrawingArea {
     _overdriveStart: number;
     _barLevelWidth: number;
 
-    public value: number;
-    public maximumValue: number;
-    public overdriveStart: number;
+    value: number;
+    maximumValue: number;
+    overdriveStart: number;
 
     constructor(params?: Partial<BarLevel.ConstructorProps>);
-    public _init(params?: Partial<BarLevel.ConstructorProps>): void;
+    _init(params?: Partial<BarLevel.ConstructorProps>): void;
 
-    public vfunc_repaint(): void;
+    vfunc_repaint(): void;
 
     _getCurrentValue(): number;
     _getOverdriveStart(): number;
