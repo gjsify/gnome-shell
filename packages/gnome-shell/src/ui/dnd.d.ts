@@ -38,7 +38,7 @@ declare namespace _Draggable {
 }
 
 declare class _Draggable extends EventEmitter {
-    public actor: Clutter.Actor;
+    actor: Clutter.Actor;
 
     constructor(actor: Clutter.Actor, params: Partial<_Draggable.ConstructorProps>);
 
@@ -50,7 +50,7 @@ declare class _Draggable extends EventEmitter {
      * actors for other purposes (for example if you're using
      * PopupMenu.ignoreRelease())
      */
-    public fakeRelease(): void;
+    fakeRelease(): void;
 
     /**
      * startDrag:
@@ -64,32 +64,32 @@ declare class _Draggable extends EventEmitter {
      * This function is useful to call if you've specified manualMode
      * for the draggable.
      */
-    public startDrag(stageX: number, stageY: number, time: number, sequence?: Clutter.EventSequence, device?: Clutter.InputDevice): void;
+    startDrag(stageX: number, stageY: number, time: number, sequence?: Clutter.EventSequence, device?: Clutter.InputDevice): void;
 
-    protected _onButtonPress(actor: Clutter.Actor, event: Clutter.Event): boolean;
-    protected _onTouchEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
-    protected _grabDevice(actor: Clutter.Actor, pointer: Clutter.InputDevice, touchSequence: Clutter.EventSequence): boolean;
-    protected _ungrabDevice(): void;
-    protected _grabActor(device: Clutter.InputDevice, touchSequence: Clutter.EventSequence): void;
-    protected _ungrabActor(): void;
-    protected _grabEvents(device: Clutter.InputDevice, touchSequence: Clutter.EventSequence): void;
-    protected _ungrabEvents(): void;
-    protected _eventIsRelease(event: Clutter.Event): boolean;
-    protected _onEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
-    protected _updateActorPosition(origScale: number, origDragOffsetX: number, origDragOffsetY: number, transX: number, transY: number): void;
-    protected _maybeStartDrag(event: Clutter.Event): void;
-    protected _pickTargetActor(): Clutter.Actor;
-    protected _updateDragHover(): void;
-    protected _queueUpdateDragHover(): void;
-    protected _updateDragPosition(event: Clutter.Event): void;
-    protected _dragActorDropped(event: Clutter.Event): void;
-    protected _getRestoreLocation(): [number, number, number];
-    protected _cancelDrag(eventTime: number): void;
-    protected _restoreDragActor(eventTime: number): void;
-    protected _animateDragEnd(eventTime: number, params: { opacity: number; mode: Clutter.AnimationMode; onComplete: () => void }): void;
-    protected _finishAnimation(): void;
-    protected _onAnimationComplete(dragActor: Clutter.Actor, eventTime: number): void;
-    protected _dragComplete(): void;
+    _onButtonPress(actor: Clutter.Actor, event: Clutter.Event): boolean;
+    _onTouchEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
+    _grabDevice(actor: Clutter.Actor, pointer: Clutter.InputDevice, touchSequence: Clutter.EventSequence): boolean;
+    _ungrabDevice(): void;
+    _grabActor(device: Clutter.InputDevice, touchSequence: Clutter.EventSequence): void;
+    _ungrabActor(): void;
+    _grabEvents(device: Clutter.InputDevice, touchSequence: Clutter.EventSequence): void;
+    _ungrabEvents(): void;
+    _eventIsRelease(event: Clutter.Event): boolean;
+    _onEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
+    _updateActorPosition(origScale: number, origDragOffsetX: number, origDragOffsetY: number, transX: number, transY: number): void;
+    _maybeStartDrag(event: Clutter.Event): void;
+    _pickTargetActor(): Clutter.Actor;
+    _updateDragHover(): void;
+    _queueUpdateDragHover(): void;
+    _updateDragPosition(event: Clutter.Event): void;
+    _dragActorDropped(event: Clutter.Event): void;
+    _getRestoreLocation(): [number, number, number];
+    _cancelDrag(eventTime: number): void;
+    _restoreDragActor(eventTime: number): void;
+    _animateDragEnd(eventTime: number, params: { opacity: number; mode: Clutter.AnimationMode; onComplete: () => void }): void;
+    _finishAnimation(): void;
+    _onAnimationComplete(dragActor: Clutter.Actor, eventTime: number): void;
+    _dragComplete(): void;
 }
 
 /**

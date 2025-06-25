@@ -9,8 +9,8 @@ import { QuickToggle, SystemIndicator } from '../quickSettings.js';
  * This class extends `QuickToggle`.
  */
 export declare class RotationToggle extends QuickToggle {
-    private _systemActions: SystemActions.SystemActions;
-    private _settings: Gio.Settings;
+    _systemActions: SystemActions.SystemActions;
+    _settings: Gio.Settings;
 
     /**
      * Initializes a new instance of `RotationToggle`.

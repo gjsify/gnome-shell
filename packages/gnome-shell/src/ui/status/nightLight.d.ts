@@ -30,8 +30,8 @@ declare class NightLightToggle extends QuickToggle {
  * System indicator class for Night Light.
  */
 export declare class Indicator extends SystemIndicator {
-    private _indicator: any; // Replace with appropriate type.
-    private _proxy: Gio.DBusProxy;
+    _indicator: any; // Replace with appropriate type.
+    _proxy: Gio.DBusProxy;
 
     /**
      * Initialize the Night Light indicator.

@@ -218,7 +218,7 @@ export namespace PopupMenuBase {
  * @version 48
  */
 export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
-    protected constructor(sourceActor: St.Widget, styleClass?: string);
+    constructor(sourceActor: St.Widget, styleClass?: string);
     readonly sourceActor: St.Widget;
     readonly focusActor: St.Widget;
     readonly length: number;

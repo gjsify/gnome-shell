@@ -37,7 +37,7 @@ export class Slider extends BarLevel.BarLevel {
      * Ends dragging the slider.
      * @returns The event propagation status.
      */
-    protected _endDragging(): typeof Clutter.EVENT_PROPAGATE;
+    _endDragging(): typeof Clutter.EVENT_PROPAGATE;
 
     /**
      * Handles button release events.
@@ -72,7 +72,7 @@ export class Slider extends BarLevel.BarLevel {
      * @param event The Clutter motion event.
      * @returns The event propagation status.
      */
-    protected _motionEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    _motionEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     /**
      * Handles key press events for the slider.
@@ -86,11 +86,11 @@ export class Slider extends BarLevel.BarLevel {
      * @param absX The absolute X coordinate.
      * @param _absY The absolute Y coordinate.
      */
-    protected _moveHandle(absX: number, _absY: number): void;
+    _moveHandle(absX: number, _absY: number): void;
 
     /**
      * Retrieves the minimum increment value for accessibility adjustments.
      * @returns The minimum increment value.
      */
-    protected _getMinimumIncrement(): number;
+    _getMinimumIncrement(): number;
 }

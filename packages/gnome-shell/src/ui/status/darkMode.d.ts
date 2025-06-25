@@ -9,8 +9,8 @@ import { QuickToggle, SystemIndicator } from '../quickSettings.js';
  * Extends `QuickToggle`.
  */
 export declare class DarkModeToggle extends QuickToggle {
-    private _settings: Gio.Settings;
-    private _changedId: number;
+    _settings: Gio.Settings;
+    _changedId: number;
 
     /**
      * Initializes a new instance of `DarkModeToggle`.
@@ -20,12 +20,12 @@ export declare class DarkModeToggle extends QuickToggle {
     /**
      * Toggles the dark mode setting.
      */
-    private _toggleMode(): void;
+    _toggleMode(): void;
 
     /**
      * Synchronizes the toggle state with the current dark mode setting.
      */
-    private _sync(): void;
+    _sync(): void;
 }
 
 /**

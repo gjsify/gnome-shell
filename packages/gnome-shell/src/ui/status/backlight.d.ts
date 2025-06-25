@@ -12,8 +12,8 @@ declare const BrightnessProxy: Gio.DBusProxy;
  * This class extends `PopupMenu.PopupBaseMenuItem`.
  */
 export declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
-    private _slider: Slider;
-    private _sliderChangedId: number;
+    _slider: Slider;
+    _sliderChangedId: number;
 
     /**
      * Constructs a SliderItem.
@@ -36,7 +36,7 @@ export declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
  * This class extends `St.BoxLayout`.
  */
 export declare class DiscreteItem extends St.BoxLayout {
-    private _levelButtons: Map<string, St.BoxLayout>;
+    _levelButtons: Map<string, St.BoxLayout>;
 
     /**
      * Constructs a DiscreteItem.
@@ -46,27 +46,27 @@ export declare class DiscreteItem extends St.BoxLayout {
     /**
      * Converts value to corresponding level.
      */
-    private _valueToLevel(value: number): string;
+    _valueToLevel(value: number): string;
 
     /**
      * Converts level to corresponding value.
      */
-    private _levelToValue(level: string): number;
+    _levelToValue(level: string): number;
 
     /**
      * Adds a level button to the item.
      */
-    private _addLevelButton(key: string, label: string, iconName: string): void;
+    _addLevelButton(key: string, label: string, iconName: string): void;
 
     /**
      * Synchronizes available levels based on `nLevels`.
      */
-    private _syncLevels(): void;
+    _syncLevels(): void;
 
     /**
      * Synchronizes the checked state based on value.
      */
-    private _syncChecked(): void;
+    _syncChecked(): void;
 }
 
 /**
@@ -74,9 +74,9 @@ export declare class DiscreteItem extends St.BoxLayout {
  * This class extends `QuickMenuToggle`.
  */
 export declare class KeyboardBrightnessToggle extends QuickMenuToggle {
-    private _proxy: typeof BrightnessProxy;
-    private _sliderItem: SliderItem;
-    private _discreteItem: DiscreteItem;
+    _proxy: typeof BrightnessProxy;
+    _sliderItem: SliderItem;
+    _discreteItem: DiscreteItem;
 
     /**
      * Initializes a new instance of `KeyboardBrightnessToggle`.
@@ -86,7 +86,7 @@ export declare class KeyboardBrightnessToggle extends QuickMenuToggle {
     /**
      * Synchronizes the toggle state with the brightness settings.
      */
-    private _sync(): void;
+    _sync(): void;
 }
 
 /**
