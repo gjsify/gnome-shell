@@ -4,6 +4,7 @@ import Clutter from '@girs/clutter-16';
 import Gio from '@girs/gio-2.0';
 import St from '@girs/st-16';
 
+import { PopupAnimation } from './boxpointer.js';
 import * as PopupMenu from './popupMenu.js';
 import { Slider } from './slider.js';
 
@@ -13,6 +14,7 @@ import { Slider } from './slider.js';
  */
 export namespace QuickSettingsItem {
     interface ConstructorProps extends St.Button.ConstructorProps {
+        has_menu: boolean;
         hasMenu: boolean;
     }
 }
@@ -43,7 +45,7 @@ export class QuickSettingsItem extends St.Button {
  * @version 46
  */
 export namespace QuickToggle {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         title: string | null;
         subtitle: string | null;
         gicon: Gio.Icon;
@@ -85,7 +87,7 @@ export class QuickToggle extends QuickSettingsItem {
  * @version 46
  */
 export namespace QuickMenuToggle {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         title: string | null;
         subtitle: string | null;
         gicon: Gio.Icon;
@@ -124,7 +126,7 @@ export class QuickMenuToggle extends QuickSettingsItem {
  * @version 46
  */
 export namespace QuickSlider {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         gicon: Gio.Icon;
         iconReactive: boolean;
         iconLabel: string;
@@ -190,8 +192,8 @@ export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
      */
     addHeaderSuffix(actor: Clutter.Actor): void;
 
-    open(animate: boolean): void;
-    close(animate: boolean): void;
+    override open(animate?: PopupAnimation): void;
+    override close(animate?: PopupAnimation): void;
 
     _syncChecked(): void;
 
@@ -288,7 +290,6 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
  */
 export class QuickSettingsMenu extends PopupMenu.PopupMenu {
     _dimEffect: Clutter.BrightnessContrastEffect;
-    _boxPointer: St.Widget;
     _grid: St.Widget;
     _overlay: Clutter.Actor;
 
@@ -312,8 +313,8 @@ export class QuickSettingsMenu extends PopupMenu.PopupMenu {
      */
     getFirstItem(): Clutter.Actor;
 
-    open(animate: boolean): void;
-    close(animate: boolean): void;
+    override open(animate?: PopupAnimation): void;
+    override close(animate?: PopupAnimation): void;
 
     _completeAddItem(item: Clutter.Actor, colSpan: number): void;
     _setDimmed(dim: boolean): void;

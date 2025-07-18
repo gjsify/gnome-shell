@@ -42,6 +42,8 @@ export declare class StreamSlider extends QuickSlider {
      */
     set stream(stream: Gvc.MixerStream);
 
+    getIcon(): string | null;
+
     /**
      * Connects the stream for updates.
      * @param stream The Gvc.MixerStream object.
@@ -71,6 +73,10 @@ export declare class StreamSlider extends QuickSlider {
      */
     _updateVolume(): void;
 
+    _shouldBeVisible(): boolean;
+
+    _sync(): void;
+
     // Additional methods and properties
 }
 
@@ -78,14 +84,15 @@ export declare class StreamSlider extends QuickSlider {
  * OutputStreamSlider class for controlling output audio stream.
  */
 export declare class OutputStreamSlider extends StreamSlider {
-    // Implementation-specific methods and properties
+    _findHeadphones(sink: Gvc.MixerStream): boolean;
 }
 
 /**
  * InputStreamSlider class for controlling input audio stream.
  */
 export declare class InputStreamSlider extends StreamSlider {
-    // Implementation-specific methods and properties
+    _maybeShowInput(): void;
+    override _shouldBeVisible(): boolean;
 }
 
 /**

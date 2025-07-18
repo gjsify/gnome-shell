@@ -59,9 +59,9 @@ export class BoxPointer extends St.Widget {
 
     vfunc_allocate(box: Clutter.ActorBox): void;
 
-    open(animate: boolean, onComplete: () => void): void;
+    open(animate: PopupAnimation, onComplete: () => void): void;
 
-    close(animate: boolean, onComplete: () => void): void;
+    close(animate: PopupAnimation, onComplete: () => void): void;
 
     setPosition(sourceActor: Clutter.Actor, arrowAlignment: number): void;
 

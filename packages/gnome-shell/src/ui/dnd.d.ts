@@ -23,9 +23,28 @@ export enum DragDropResult {
     CONTINUE = 2,
 }
 
-export function addDragMonitor(monitor: _Draggable): void;
+export type DragEvent = {
+    x: number,
+    y: number,
+    dragActor: Clutter.Actor,
+    source: any,
+    targetActor: Clutter.Actor,
+}
 
-export function removeDragMonitor(monitor: _Draggable): void;
+export type DropEvent = {
+    dropActor: Clutter.Actor,
+    targetActor: Clutter.Actor,
+    clutterEvent: Clutter.Event,
+}
+
+export type DragMonitor = {
+    dragMotion?: (event: DragEvent) => DragMotionResult,
+    dragDrop?: (event: DropEvent) => DragDropResult,
+}
+
+export function addDragMonitor(monitor: DragMonitor): void;
+
+export function removeDragMonitor(monitor: DragMonitor): void;
 
 declare namespace _Draggable {
     export interface ConstructorProps {
@@ -39,6 +58,8 @@ declare namespace _Draggable {
 
 declare class _Draggable extends EventEmitter {
     actor: Clutter.Actor;
+
+    _dragState: DragState;
 
     constructor(actor: Clutter.Actor, params: Partial<_Draggable.ConstructorProps>);
 

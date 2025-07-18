@@ -6,6 +6,7 @@ import type Meta from '@girs/meta-16';
 
 import type { Button } from './panelMenu.js';
 import type { DateMenuButton } from './dateMenu.js';
+import { PopupMenuManager } from './popupMenu.js';
 
 /**
  * @version 46
@@ -16,6 +17,7 @@ export class Panel extends St.Widget {
         dateMenu: DateMenuButton;
         quickSettings: any;
     };
+    menuManager: PopupMenuManager;
 
     boxOpacity: number;
 
