@@ -24,23 +24,23 @@ export enum DragDropResult {
 }
 
 export type DragEvent = {
-    x: number,
-    y: number,
-    dragActor: Clutter.Actor,
-    source: any,
-    targetActor: Clutter.Actor,
-}
+    x: number;
+    y: number;
+    dragActor: Clutter.Actor;
+    source: any;
+    targetActor: Clutter.Actor;
+};
 
 export type DropEvent = {
-    dropActor: Clutter.Actor,
-    targetActor: Clutter.Actor,
-    clutterEvent: Clutter.Event,
-}
+    dropActor: Clutter.Actor;
+    targetActor: Clutter.Actor;
+    clutterEvent: Clutter.Event;
+};
 
 export type DragMonitor = {
-    dragMotion?: (event: DragEvent) => DragMotionResult,
-    dragDrop?: (event: DropEvent) => DragDropResult,
-}
+    dragMotion?: (event: DragEvent) => DragMotionResult;
+    dragDrop?: (event: DropEvent) => DragDropResult;
+};
 
 export function addDragMonitor(monitor: DragMonitor): void;
 

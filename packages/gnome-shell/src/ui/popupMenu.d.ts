@@ -209,7 +209,7 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
  */
 export namespace PopupMenuBase {
     interface SignalMap {
-        "open-state-changed": [boolean]
+        'open-state-changed': [boolean];
     }
 
     // PopupMenuBase.addMenuItem explicitly checks for any of these specific
