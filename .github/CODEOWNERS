@@ -1,9 +1,6 @@
 # CODEOWNERS file for gnome-shell repository
 # See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-# Global owners - all maintainers can review any changes
-* @JumpLink @Totto16 @swsnr @schnz
-
 # Critical infrastructure files - require review from core maintainers
 /.github/ @JumpLink @Totto16 @swsnr @schnz
 /package.json @JumpLink @Totto16 @swsnr @schnz
