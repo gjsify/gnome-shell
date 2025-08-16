@@ -35,10 +35,7 @@ jobs:
       - name: Build Types
         run: yarn run build:types
 
-      - name: Generate archive
-        run: yarn workspace @girs/gnome-shell pack
-
       - name: Publish 
-        run: npm publish ./packages/gnome-shell/package.tgz --tolerate-republish --access public --tag ${{github.event.release.prerelease && 'next' || 'latest'}} --provenance
+        run: yarn workspace @girs/gnome-shell npm publish --tolerate-republish --access public --tag ${{github.event.release.prerelease && 'next' || 'latest'}} --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
