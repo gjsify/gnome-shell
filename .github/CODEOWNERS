@@ -15,6 +15,6 @@
 # TypeScript configurations - affect type generation
 /tsconfig*.json @JumpLink @Totto16 @swsnr @schnz
 
-# CODEOWNERS file itself - only repository owner can change
-/.github/CODEOWNERS @JumpLink
+# CODEOWNERS file itself - only core maintainers can change
+/.github/CODEOWNERS @JumpLink @Totto16 @swsnr @schnz
 
