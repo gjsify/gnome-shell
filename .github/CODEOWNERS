@@ -15,8 +15,6 @@
 # TypeScript configurations - affect type generation
 /tsconfig*.json @JumpLink @Totto16 @swsnr @schnz
 
-# Release workflow - most critical, requires all core maintainers
-/.github/workflows/release.yml @JumpLink @Totto16 @swsnr @schnz
-
 # CODEOWNERS file itself - only repository owner can change
 /.github/CODEOWNERS @JumpLink
+
