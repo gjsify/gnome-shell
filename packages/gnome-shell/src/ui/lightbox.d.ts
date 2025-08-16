@@ -28,14 +28,14 @@ export namespace RadialShaderEffect {
  * @version 48
  */
 export class RadialShaderEffect extends Shell.GLSLEffect {
-    protected _brightness: number;
-    protected _sharpness: number;
+    _brightness: number;
+    _sharpness: number;
 
-    public brightness: number;
-    public sharpness: number;
+    brightness: number;
+    sharpness: number;
 
     constructor(props: Partial<RadialShaderEffect.ConstructorProps>);
-    public _init(props: Partial<RadialShaderEffect.ConstructorProps>): void;
+    _init(props: Partial<RadialShaderEffect.ConstructorProps>): void;
 
     vfunc_build_pipeline(): void;
 }
@@ -66,9 +66,9 @@ export namespace Lightbox {
  * @version 48
  */
 export class Lightbox extends St.Bin {
-    protected _active: boolean;
+    _active: boolean;
 
-    public readonly active: boolean;
+    readonly active: boolean;
 
     /**
      * Lightbox creates a dark translucent "shade" actor to hide the
@@ -94,14 +94,14 @@ export class Lightbox extends St.Bin {
      * @param {boolean=} params.radialEffect: whether to enable the GLSL radial effect
      */
     constructor(container: Clutter.Actor, params?: Partial<Lightbox.ConstructorProps>);
-    public _init(container: Clutter.Actor, params?: Partial<Lightbox.ConstructorProps>): void;
+    _init(container: Clutter.Actor, params?: Partial<Lightbox.ConstructorProps>): void;
 
     lightOn(fadeInTime?: number): void;
     lightOff(fadeOutTime?: number): void;
 
     highlight(window: Clutter.Actor): void;
 
-    protected _childAdded(container: Clutter.Actor, newChild: Clutter.Actor): void;
-    protected _childRemoved(container: Clutter.Actor, child: Clutter.Actor): void;
-    protected _onDestroy(): void;
+    _childAdded(container: Clutter.Actor, newChild: Clutter.Actor): void;
+    _childRemoved(container: Clutter.Actor, child: Clutter.Actor): void;
+    _onDestroy(): void;
 }

@@ -4,6 +4,7 @@ import Clutter from '@girs/clutter-16';
 import Gio from '@girs/gio-2.0';
 import St from '@girs/st-16';
 
+import { PopupAnimation } from './boxpointer.js';
 import * as PopupMenu from './popupMenu.js';
 import { Slider } from './slider.js';
 
@@ -13,6 +14,7 @@ import { Slider } from './slider.js';
  */
 export namespace QuickSettingsItem {
     interface ConstructorProps extends St.Button.ConstructorProps {
+        has_menu: boolean;
         hasMenu: boolean;
     }
 }
@@ -43,7 +45,7 @@ export class QuickSettingsItem extends St.Button {
  * @version 46
  */
 export namespace QuickToggle {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         title: string | null;
         subtitle: string | null;
         gicon: Gio.Icon;
@@ -61,10 +63,10 @@ export class QuickToggle extends QuickSettingsItem {
     subtitle: string | null;
     gicon: Gio.Icon;
 
-    private _box: St.BoxLayout;
-    private _icon: St.Icon;
-    private _title: St.Label;
-    private _subtitle: St.Label;
+    _box: St.BoxLayout;
+    _icon: St.Icon;
+    _title: St.Label;
+    _subtitle: St.Label;
 
     /**
      * Initializes a new instance of `QuickToggle`.
@@ -85,7 +87,7 @@ export class QuickToggle extends QuickSettingsItem {
  * @version 46
  */
 export namespace QuickMenuToggle {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         title: string | null;
         subtitle: string | null;
         gicon: Gio.Icon;
@@ -105,8 +107,8 @@ export class QuickMenuToggle extends QuickSettingsItem {
     gicon: Gio.Icon;
     menuEnabled: boolean;
 
-    private _box: St.BoxLayout;
-    private _menuButton: St.Button;
+    _box: St.BoxLayout;
+    _menuButton: St.Button;
 
     /**
      * Initializes a new instance of `QuickMenuToggle`.
@@ -124,7 +126,7 @@ export class QuickMenuToggle extends QuickSettingsItem {
  * @version 46
  */
 export namespace QuickSlider {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         gicon: Gio.Icon;
         iconReactive: boolean;
         iconLabel: string;
@@ -145,9 +147,9 @@ export class QuickSlider extends QuickSettingsItem {
     menuEnabled: boolean;
     slider: Slider;
 
-    private _icon: St.Icon;
-    private _iconButton: St.Button;
-    private _menuButton: St.Button;
+    _icon: St.Icon;
+    _iconButton: St.Button;
+    _menuButton: St.Button;
 
     /**
      * Initializes a new instance of `QuickSlider`.
@@ -169,11 +171,11 @@ export class QuickSlider extends QuickSettingsItem {
 export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
     actor: St.Widget;
 
-    private _header: St.Widget;
-    private _headerIcon: St.Icon;
-    private _headerTitle: St.Label;
-    private _headerSubtitle: St.Label;
-    private _headerSpacer: Clutter.Actor;
+    _header: St.Widget;
+    _headerIcon: St.Icon;
+    _headerTitle: St.Label;
+    _headerSubtitle: St.Label;
+    _headerSpacer: Clutter.Actor;
 
     /**
      * Initializes a new instance of `QuickToggleMenu`.
@@ -190,12 +192,12 @@ export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
      */
     addHeaderSuffix(actor: Clutter.Actor): void;
 
-    open(animate: boolean): void;
-    close(animate: boolean): void;
+    override open(animate?: PopupAnimation): void;
+    override close(animate?: PopupAnimation): void;
 
-    private _syncChecked(): void;
+    _syncChecked(): void;
 
-    private _setOpenedSubMenu(submenu: PopupMenu.PopupSubMenu | null): void;
+    _setOpenedSubMenu(submenu: PopupMenu.PopupSubMenu | null): void;
 }
 
 /**
@@ -236,7 +238,7 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
      * Overlay actor passed to the constructor
      */
-    private _overlay: Clutter.Actor;
+    _overlay: Clutter.Actor;
 
     /**
      * Initializes a new instance of QuickSettingsLayout.
@@ -273,11 +275,11 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
      */
     vfunc_allocate(container: Clutter.Actor, box: Clutter.ActorBox): void;
 
-    private _containerStyleChanged(): void;
-    private _getColSpan(container: Clutter.Actor, child: Clutter.Actor): number;
-    private _getMaxChildWidth(container: Clutter.Actor): [number, number];
-    private _getRows(container: Clutter.Actor): Clutter.Actor[][];
-    private _getRowHeight(children: Clutter.Actor[]): [number, number];
+    _containerStyleChanged(): void;
+    _getColSpan(container: Clutter.Actor, child: Clutter.Actor): number;
+    _getMaxChildWidth(container: Clutter.Actor): [number, number];
+    _getRows(container: Clutter.Actor): Clutter.Actor[][];
+    _getRowHeight(children: Clutter.Actor[]): [number, number];
 }
 
 /**
@@ -287,10 +289,9 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
  * @version 46
  */
 export class QuickSettingsMenu extends PopupMenu.PopupMenu {
-    private _dimEffect: Clutter.BrightnessContrastEffect;
-    private _boxPointer: St.Widget;
-    private _grid: St.Widget;
-    private _overlay: Clutter.Actor;
+    _dimEffect: Clutter.BrightnessContrastEffect;
+    _grid: St.Widget;
+    _overlay: Clutter.Actor;
 
     /**
      * Initializes a new instance of QuickSettingsMenu.
@@ -312,11 +313,11 @@ export class QuickSettingsMenu extends PopupMenu.PopupMenu {
      */
     getFirstItem(): Clutter.Actor;
 
-    open(animate: boolean): void;
-    close(animate: boolean): void;
+    override open(animate?: PopupAnimation): void;
+    override close(animate?: PopupAnimation): void;
 
-    private _completeAddItem(item: Clutter.Actor, colSpan: number): void;
-    private _setDimmed(dim: boolean): void;
+    _completeAddItem(item: Clutter.Actor, colSpan: number): void;
+    _setDimmed(dim: boolean): void;
 }
 
 /**

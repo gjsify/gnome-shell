@@ -14,8 +14,8 @@ declare const BackgroundMonitorProxy: typeof Gio.DBusProxy;
  * This class extends `PopupMenu.PopupImageMenuItem`.
  */
 export declare class BackgroundAppMenuItem extends PopupMenu.PopupImageMenuItem {
-    private _spinner: Spinner;
-    private _spinnerTimeoutId: number | null;
+    _spinner: Spinner;
+    _spinnerTimeoutId: number | null;
     app: Shell.App;
     message: string;
 
@@ -47,10 +47,10 @@ export declare class BackgroundAppMenuItem extends PopupMenu.PopupImageMenuItem 
  * This class extends `QuickToggle`.
  */
 export declare class BackgroundAppsToggle extends QuickToggle {
-    private _appSystem: typeof Shell.AppSystem;
-    private _proxy: typeof BackgroundMonitorProxy | null;
-    private _listTitle: PopupMenu.PopupMenuItem;
-    private _appsSection: PopupMenu.PopupMenuSection;
+    _appSystem: typeof Shell.AppSystem;
+    _proxy: typeof BackgroundMonitorProxy | null;
+    _listTitle: PopupMenu.PopupMenuItem;
+    _appsSection: PopupMenu.PopupMenuSection;
 
     /**
      * Initializes a new instance of `BackgroundAppsToggle`.

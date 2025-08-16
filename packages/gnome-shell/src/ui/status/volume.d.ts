@@ -19,16 +19,16 @@ export declare function getMixerControl(): Gvc.MixerControl;
  * StreamSlider class for controlling audio stream.
  */
 export declare class StreamSlider extends QuickSlider {
-    protected _control: Gvc.MixerControl;
-    protected _inDrag: boolean;
-    protected _notifyVolumeChangeId: number;
-    protected _soundSettings: Gio.Settings;
-    protected _sliderChangedId: number;
-    protected _stream: Gvc.MixerStream;
-    protected _volumeCancellable: Gio.Cancellable;
-    protected _icons: string[];
-    protected _deviceItems: Map<number, PopupMenu.PopupImageMenuItem>;
-    protected _deviceSection: PopupMenu.PopupMenuSection;
+    _control: Gvc.MixerControl;
+    _inDrag: boolean;
+    _notifyVolumeChangeId: number;
+    _soundSettings: Gio.Settings;
+    _sliderChangedId: number;
+    _stream: Gvc.MixerStream;
+    _volumeCancellable: Gio.Cancellable;
+    _icons: string[];
+    _deviceItems: Map<number, PopupMenu.PopupImageMenuItem>;
+    _deviceSection: PopupMenu.PopupMenuSection;
 
     /**
      * Initialize the StreamSlider.
@@ -42,34 +42,40 @@ export declare class StreamSlider extends QuickSlider {
      */
     set stream(stream: Gvc.MixerStream);
 
+    getIcon(): string | null;
+
     /**
      * Connects the stream for updates.
      * @param stream The Gvc.MixerStream object.
      */
-    protected _connectStream(stream: Gvc.MixerStream): void;
+    _connectStream(stream: Gvc.MixerStream): void;
 
     /**
      * Adds a device to the slider.
      * @param id The device ID.
      */
-    protected _addDevice(id: number): void;
+    _addDevice(id: number): void;
 
     /**
      * Removes a device from the slider.
      * @param id The device ID.
      */
-    protected _removeDevice(id: number): void;
+    _removeDevice(id: number): void;
 
     /**
      * Sets the active device.
      * @param activeId The active device ID.
      */
-    protected _setActiveDevice(activeId: number): void;
+    _setActiveDevice(activeId: number): void;
 
     /**
      * Updates the volume level.
      */
-    protected _updateVolume(): void;
+    _updateVolume(): void;
+
+    _shouldBeVisible(): boolean;
+
+    _sync(): void;
 
     // Additional methods and properties
 }
@@ -78,24 +84,25 @@ export declare class StreamSlider extends QuickSlider {
  * OutputStreamSlider class for controlling output audio stream.
  */
 export declare class OutputStreamSlider extends StreamSlider {
-    // Implementation-specific methods and properties
+    _findHeadphones(sink: Gvc.MixerStream): boolean;
 }
 
 /**
  * InputStreamSlider class for controlling input audio stream.
  */
 export declare class InputStreamSlider extends StreamSlider {
-    // Implementation-specific methods and properties
+    _maybeShowInput(): void;
+    override _shouldBeVisible(): boolean;
 }
 
 /**
  * VolumeIndicator for system audio control.
  */
 export declare class VolumeIndicator extends SystemIndicator {
-    protected _indicator: Clutter.Actor;
-    protected _control: Gvc.MixerControl;
-    protected _output: OutputStreamSlider;
-    protected _input: InputStreamSlider;
+    _indicator: Clutter.Actor;
+    _control: Gvc.MixerControl;
+    _output: OutputStreamSlider;
+    _input: InputStreamSlider;
 
     /**
      * Handle scroll events for volume adjustment.
@@ -103,7 +110,7 @@ export declare class VolumeIndicator extends SystemIndicator {
      * @param event The Clutter scroll event.
      * @returns Clutter.EVENT_STOP or Clutter.EVENT_PROPAGATE
      */
-    protected _handleScrollEvent(item: StreamSlider, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
+    _handleScrollEvent(item: StreamSlider, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 }
 
 /**

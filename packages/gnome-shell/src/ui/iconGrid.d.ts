@@ -13,16 +13,16 @@ export namespace BaseIcon {
 }
 
 export class BaseIcon extends Shell.SquareBin {
-    public createIcon: any | null;
-    public icon: St.Icon | null;
-    public label: St.Label | null;
+    createIcon: any | null;
+    icon: St.Icon | null;
+    label: St.Label | null;
 
-    protected _setSizeManually?: boolean;
+    _setSizeManually?: boolean;
 
     constructor(label: string, params?: Partial<BaseIcon.ConstructorProps>);
 
-    public _init(params?: Partial<Shell.SquareBin.ConstructorProps>): void;
-    public _init(label: string, params?: Partial<BaseIcon.ConstructorProps>): void;
+    _init(params?: Partial<Shell.SquareBin.ConstructorProps>): void;
+    _init(label: string, params?: Partial<BaseIcon.ConstructorProps>): void;
 }
 
 export namespace IconGrid {
@@ -41,23 +41,23 @@ export namespace IconGrid {
 }
 
 export class IconGrid extends St.Viewport {
-    public currentPage: number;
-    public readonly nPages: number;
-    public readonly itemsPerPage: number;
+    currentPage: number;
+    readonly nPages: number;
+    readonly itemsPerPage: number;
 
-    protected _currentPage: number;
+    _currentPage: number;
 
     constructor(layoutParams?: Partial<IconGrid.ConstructorProps>);
 
     /** @hidden */
-    public _init(params?: Partial<St.Viewport.ConstructorProps>): void;
-    public _init(layoutParams?: IconGrid.ConstructorProps): void;
+    _init(params?: Partial<St.Viewport.ConstructorProps>): void;
+    _init(layoutParams?: IconGrid.ConstructorProps): void;
 
-    protected _childAdded(grid: IconGrid, child: St.Widget): void;
-    protected _ensureItemIsVisible(item: St.Widget): void;
-    protected _setGridMode(modeIndex: number): void;
-    protected _findBestModeForSize(width: number, height: number): void;
-    protected _childRemoved(grid: IconGrid, child: St.Widget): void;
+    _childAdded(grid: IconGrid, child: St.Widget): void;
+    _ensureItemIsVisible(item: St.Widget): void;
+    _setGridMode(modeIndex: number): void;
+    _findBestModeForSize(width: number, height: number): void;
+    _childRemoved(grid: IconGrid, child: St.Widget): void;
 
     /**
      * addItem:
@@ -73,7 +73,7 @@ export class IconGrid extends St.Viewport {
      * @page must be a number between 0 and the number of pages.
      * Adding to the page after next will create a new page.
      */
-    public addItem(item: Clutter.Actor, page?: number, index?: number): void;
+    addItem(item: Clutter.Actor, page?: number, index?: number): void;
 
     /**
      * appendItem:

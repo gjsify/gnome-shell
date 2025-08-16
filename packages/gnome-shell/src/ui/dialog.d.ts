@@ -20,23 +20,23 @@ export interface ButtonInfo {
  * @version 48
  */
 export class Dialog extends St.Widget {
-    protected _parentActor: St.Widget;
-    protected _dialog: St.BoxLayout;
-    protected _initialKeyFocus: St.Widget;
+    _parentActor: St.Widget;
+    _dialog: St.BoxLayout;
+    _initialKeyFocus: St.Widget;
 
-    public contentLayout: St.BoxLayout;
-    public buttonLayout: St.Widget;
-    public readonly initialKeyFocus: St.Widget;
+    contentLayout: St.BoxLayout;
+    buttonLayout: St.Widget;
+    readonly initialKeyFocus: St.Widget;
 
-    public _init(parentActor: St.Widget, styleClass?: string | null): void;
-    public makeInactive(): void;
-    public vfunc_event(event: Clutter.Event): boolean;
-    public addButton(buttonInfo: ButtonInfo): St.Button;
-    public clearButtons(): void;
+    _init(parentActor: St.Widget, styleClass?: string | null): void;
+    makeInactive(): void;
+    vfunc_event(event: Clutter.Event): boolean;
+    addButton(buttonInfo: ButtonInfo): St.Button;
+    clearButtons(): void;
 
-    protected _createDialog(): void;
-    protected _onDestroy(): void;
-    protected _setInitialKeyFocus(actor: St.Widget): void;
+    _createDialog(): void;
+    _onDestroy(): void;
+    _setInitialKeyFocus(actor: St.Widget): void;
 }
 
 /**
@@ -54,14 +54,14 @@ export namespace MessageDialogContent {
  * @version 48
  */
 export class MessageDialogContent extends St.BoxLayout {
-    public title: string;
-    public description: string;
+    title: string;
+    description: string;
 
     constructor(params: Partial<MessageDialogContent.ConstructorProps>);
-    public _init(params: Partial<MessageDialogContent.ConstructorProps>): void;
+    _init(params: Partial<MessageDialogContent.ConstructorProps>): void;
 
-    protected _onDestroy(): void;
-    protected _updateTitleStyle(): void | false;
+    _onDestroy(): void;
+    _updateTitleStyle(): void | false;
 }
 
 /**
@@ -79,14 +79,14 @@ export namespace ListSection {
  * @version 48
  */
 export class ListSection extends St.BoxLayout {
-    protected _listScrollView: St.ScrollView;
-    protected _title: St.Label;
+    _listScrollView: St.ScrollView;
+    _title: St.Label;
 
-    public list: St.BoxLayout;
-    public title: string;
+    list: St.BoxLayout;
+    title: string;
 
     constructor(params: Partial<ListSection.ConstructorProps>);
-    public _init(params: Partial<ListSection.ConstructorProps>): void;
+    _init(params: Partial<ListSection.ConstructorProps>): void;
 }
 
 /**
@@ -106,16 +106,16 @@ export namespace ListSectionItem {
  * @version 48
  */
 export class ListSectionItem extends St.BoxLayout {
-    protected _iconActorBin: St.Bin;
-    protected _title: St.Label;
+    _iconActorBin: St.Bin;
+    _title: St.Label;
 
-    public title: string;
-    public description: string;
-    public iconActor: St.Widget;
+    title: string;
+    description: string;
+    iconActor: St.Widget;
 
     constructor(params: { style_class?: string | null });
 
     /** @hidden Defined to resolve version conflicts */
-    public _init(config?: Partial<ListSectionItem.ConstructorProps>): void;
-    public _init(params: { style_class?: string | null }): void;
+    _init(config?: Partial<ListSectionItem.ConstructorProps>): void;
+    _init(params: { style_class?: string | null }): void;
 }

@@ -34,7 +34,7 @@ export declare class InputSource extends Signals.EventEmitter {
     type: string;
     id: string;
     displayName: string;
-    private _shortName: string;
+    _shortName: string;
     index: number;
     properties: any; // Replace with appropriate type
     xkbId: string;
@@ -62,16 +62,16 @@ export declare class InputSource extends Signals.EventEmitter {
     /**
      * Generates the XKB ID.
      */
-    private _getXkbId(): string;
+    _getXkbId(): string;
 }
 
 /**
  * Class representing a popup for input sources.
  */
 export declare class InputSourcePopup extends SwitcherPopup.SwitcherPopup {
-    private _action: any; // Replace with appropriate type
-    private _actionBackward: any; // Replace with appropriate type
-    private _switcherList: InputSourceSwitcher;
+    _action: any; // Replace with appropriate type
+    _actionBackward: any; // Replace with appropriate type
+    _switcherList: InputSourceSwitcher;
 
     /** @hidden Only defined to resolve type conflict */
     _init(props: St.Widget.ConstructorProps): void;
@@ -138,13 +138,13 @@ export declare class InputSourceIndicatorContainer extends St.Widget {
  * Class representing an input source indicator.
  */
 export declare class InputSourceIndicator extends PanelMenu.Button {
-    private _menuItems: { [key: string]: LayoutMenuItem };
-    private _indicatorLabels: { [key: string]: St.Label };
-    private _container: InputSourceIndicatorContainer;
-    private _propSeparator: PopupMenu.PopupSeparatorMenuItem;
-    private _propSection: PopupMenu.PopupMenuSection;
-    private _showLayoutItem: any; // Replace with appropriate type
-    private _inputSourceManager: any; // Replace with appropriate type
+    _menuItems: { [key: string]: LayoutMenuItem };
+    _indicatorLabels: { [key: string]: St.Label };
+    _container: InputSourceIndicatorContainer;
+    _propSeparator: PopupMenu.PopupSeparatorMenuItem;
+    _propSection: PopupMenu.PopupMenuSection;
+    _showLayoutItem: any; // Replace with appropriate type
+    _inputSourceManager: any; // Replace with appropriate type
 
     /**
      * Initializes a new instance of `InputSourceIndicator`.

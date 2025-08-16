@@ -23,7 +23,7 @@ declare const PowerManagerProxy: Gio.DBusProxy;
  * A toggle for managing and displaying power-related settings.
  */
 declare class PowerToggle extends QuickToggle {
-    private _proxy: Gio.DBusProxy;
+    _proxy: Gio.DBusProxy;
 
     /**
      * Initializes a new instance of PowerToggle.
@@ -33,12 +33,12 @@ declare class PowerToggle extends QuickToggle {
     /**
      * Update the toggle based on session updates.
      */
-    private _sessionUpdated(): void;
+    _sessionUpdated(): void;
 
     /**
      * Synchronize the state of the toggle with the proxy data.
      */
-    private _sync(): void;
+    _sync(): void;
 }
 
 // ... other classes like ScreenshotItem, SettingsItem, ShutdownItem, LockItem ...
@@ -47,8 +47,8 @@ declare class PowerToggle extends QuickToggle {
  * A system item for quick settings, containing power, screenshot, settings, lock, and shutdown items.
  */
 declare class SystemItem extends QuickSettingsItem {
-    private _powerToggle: PowerToggle;
-    private _laptopSpacer: Clutter.Actor;
+    _powerToggle: PowerToggle;
+    _laptopSpacer: Clutter.Actor;
     // ... other private members
 
     /**
@@ -66,10 +66,10 @@ declare class SystemItem extends QuickSettingsItem {
  * The main system indicator for the GNOME Shell status area.
  */
 declare class Indicator extends SystemIndicator {
-    private _desktopSettings: Gio.Settings;
-    private _indicator: St.Icon;
-    private _percentageLabel: St.Label;
-    private _systemItem: SystemItem;
+    _desktopSettings: Gio.Settings;
+    _indicator: St.Icon;
+    _percentageLabel: St.Label;
+    _systemItem: SystemItem;
 
     /**
      * Initializes a new instance of Indicator.
@@ -79,7 +79,7 @@ declare class Indicator extends SystemIndicator {
     /**
      * Synchronize the indicator with the current state.
      */
-    private _sync(): void;
+    _sync(): void;
 }
 
 export { PowerToggle, SystemItem, Indicator };

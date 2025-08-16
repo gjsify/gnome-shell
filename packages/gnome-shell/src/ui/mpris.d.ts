@@ -1,10 +1,10 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/mpris.js
 
 import type Gio from '@girs/gio-2.0';
+import type GObject from '@girs/gobject-2.0';
 import type St from '@girs/st-16';
 
 import type { EventEmitter } from '../misc/signals.js';
-import type { NotificationMessageGroup } from './messageList.js';
 
 declare class MprisPlayer extends EventEmitter {
     readonly status: string;
@@ -27,15 +27,17 @@ declare class MprisPlayer extends EventEmitter {
     _updateState(): void;
 }
 
-export class MprisSource extends NotificationMessageGroup {
+export class MprisSource extends GObject.Object {
     _players: Map<string, MprisPlayer>;
     _proxy: Gio.DBusProxy;
 
-    public readonly allowed: boolean;
+    readonly allowed: boolean;
+    get players(): MprisPlayer[];
 
+    constructor(params?: Partial<St.BoxLayout.ConstructorProps>);
     /** @hidden */
-    public _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
-    public _init(): void;
+    _init(params?: Partial<St.BoxLayout.ConstructorProps>): void;
+    _init(): void;
 
     _addPlayer(busName: string): void;
     _onProxyReady(): Promise<void>;

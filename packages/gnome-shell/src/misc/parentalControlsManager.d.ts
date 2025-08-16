@@ -5,11 +5,11 @@ import type Gio from '@girs/gio-2.0';
 import type Shell from '@girs/shell-16';
 
 declare class ParentalControlsManager extends GObject.Object {
-    protected _initialized: boolean;
-    public readonly initialized: boolean;
+    _initialized: boolean;
+    readonly initialized: boolean;
 
     constructor();
-    public _init(): void;
+    _init(): void;
 
     _initializeManager(): Promise<void>;
     _onAppFilterChanged(manager: any, uid: ReturnType<typeof Shell.util_get_uid>): void;

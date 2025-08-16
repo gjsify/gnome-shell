@@ -198,6 +198,8 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
     override _init(config?: PopupImageMenuItem.ConstructorProps): void;
     override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProps): void;
 
+    label: St.Label;
+
     setIcon(icon: Gio.Icon | string): void;
 }
 
@@ -206,7 +208,9 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
  * @version 48
  */
 export namespace PopupMenuBase {
-    interface SignalMap {}
+    interface SignalMap {
+        'open-state-changed': [boolean];
+    }
 
     // PopupMenuBase.addMenuItem explicitly checks for any of these specific
     // types
@@ -217,8 +221,10 @@ export namespace PopupMenuBase {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L542
  * @version 48
  */
-export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
-    protected constructor(sourceActor: St.Widget, styleClass?: string);
+export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
+    constructor(sourceActor: St.Widget, styleClass?: string);
+
+    abstract actor: St.Widget;
     readonly sourceActor: St.Widget;
     readonly focusActor: St.Widget;
     readonly length: number;
@@ -228,6 +234,9 @@ export class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.Signal
     // PopupMenuBase._getMenuItems explicitly filters for these two types
     readonly firstMenuItem: PopupBaseMenuItem | PopupMenuSection;
     readonly numMenuItems: number;
+
+    abstract open(animate?: BoxPointer.PopupAnimation): void;
+    abstract close(animate?: BoxPointer.PopupAnimation): void;
 
     getSensitive(): boolean;
     setSensitive(sensitive: boolean): void;
@@ -257,12 +266,14 @@ export namespace PopupMenu {
  */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     constructor(sourceActor: St.Widget, arrowAlignment: number, arrowSide: St.Side);
-    readonly actor: BoxPointer.BoxPointer;
+
+    override actor: BoxPointer.BoxPointer;
+    _boxPointer: BoxPointer.BoxPointer;
 
     setArrowOrigin(origin: number): void;
     setSourceAlignment(alignment: number): void;
-    open(animate: boolean): void;
-    close(animate: boolean): void;
+    override open(animate?: BoxPointer.PopupAnimation): void;
+    override close(animate?: BoxPointer.PopupAnimation): void;
     destroy(): void;
 }
 
@@ -303,8 +314,10 @@ export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMa
     readonly sensitive: boolean;
 
     getSensitive(): boolean;
-    open(animate: boolean): void;
-    close(animate: boolean): void;
+    // PopupSubMenu's methods technically use a boolean, but because PopupAnimation is just a number,
+    // with PopupAnimation.NONE == 0, it can be used like a boolean, so at runtime it works.
+    override open(animate?: BoxPointer.PopupAnimation): void;
+    override close(animate?: BoxPointer.PopupAnimation): void;
 }
 
 /**
@@ -371,7 +384,7 @@ export namespace PopupMenuManager {
 export class PopupMenuManager {
     constructor(owner: Clutter.Actor, grabParams?: PopupMenuManager.ConstructorProps);
 
-    addMenu(menu: PopupMenuBase, position: number): void;
+    addMenu(menu: PopupMenuBase, position?: number): void;
     removeMenu(menu: PopupMenuBase): void;
     ignoreRelease(): void;
 }

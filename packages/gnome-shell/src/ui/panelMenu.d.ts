@@ -23,10 +23,10 @@ declare class ButtonBox extends St.Widget {
     _init(params: Partial<ButtonBox.ConstructorProps>): void;
     container: St.Bin;
 
-    public vfunc_get_preferred_width(_forHeight: number): [number, number];
-    public vfunc_get_preferred_height(_forWidth: number): [number, number];
+    vfunc_get_preferred_width(_forHeight: number): [number, number];
+    vfunc_get_preferred_height(_forWidth: number): [number, number];
 
-    public vfunc_allocate(box: Clutter.ActorBox): void;
+    vfunc_allocate(box: Clutter.ActorBox): void;
 }
 
 /**
@@ -53,9 +53,9 @@ export class Button extends ButtonBox {
     setSensitive(sensitive: boolean): void;
     setMenu(menu: PopupMenu | PopupDummyMenu): void;
 
-    public vfunc_event(event: Clutter.Event): boolean;
+    vfunc_event(event: Clutter.Event): boolean;
 
-    public vfunc_hide(): void;
+    vfunc_hide(): void;
 
     // General signal handler methods
     connect(sigName: string, callback: (...args: any[]) => void): number;

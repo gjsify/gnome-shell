@@ -9,9 +9,9 @@ import * as Signals from './signals.js';
  * Class representing an interface to the systemd login manager.
  */
 declare class LoginManagerSystemd extends Signals.EventEmitter {
-    private _proxy: Gio.DBusProxy;
-    private _userProxy: Gio.DBusProxy;
-    private _currentSession: Gio.DBusProxy | null;
+    _proxy: Gio.DBusProxy;
+    _userProxy: Gio.DBusProxy;
+    _currentSession: Gio.DBusProxy | null;
 
     constructor();
 
