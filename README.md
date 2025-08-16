@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/gjsify/gnome-shell/actions"><img src="https://img.shields.io/github/actions/workflow/status/gjsify/gnome-shell/ci.yml" /></a>
+  <a href="https://github.com/gjsify/gnome-shell/actions"><img src="https://img.shields.io/github/actions/workflow/status/gjsify/gnome-shell/build.yml" /></a>
   <a href="https://github.com/gjsify/gnome-shell/blob/main/LICENSE"><img src="https://img.shields.io/github/license/gjsify/gnome-shell" /></a>
   <a href="https://www.npmjs.com/package/@girs/gnome-shell"><img src="https://img.shields.io/npm/v/@girs/gnome-shell" /></a>
   <a href="https://www.npmjs.com/package/@girs/gnome-shell"><img src="https://img.shields.io/npm/dw/@girs/gnome-shell" /></a>
