@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build CI with Node.js ${{ matrix.node-version }}
+    name: Build CI
     runs-on: ubuntu-24.04
 
     strategy:
