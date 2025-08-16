@@ -8,6 +8,10 @@ on:
     branches:
       - "*"
 
+env:
+  NPM_TOKEN: ""
+
+
 jobs:
   build:
     name: Build CI
