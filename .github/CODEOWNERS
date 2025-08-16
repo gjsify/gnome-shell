@@ -1,0 +1,17 @@
+# CODEOWNERS file for gnome-shell repository
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Critical infrastructure files - require review from core maintainers
+/.github/ @JumpLink @Totto16 @swsnr @schnz
+/package.json @JumpLink @Totto16 @swsnr @schnz
+/yarn.lock @JumpLink @Totto16 @swsnr @schnz
+
+# Package configurations - critical for npm releases
+/packages/*/package.json @JumpLink @Totto16 @swsnr @schnz
+
+# TypeScript configurations - affect type generation
+/tsconfig*.json @JumpLink @Totto16 @swsnr @schnz
+
+# CODEOWNERS file itself - only core maintainers can change
+/.github/CODEOWNERS @JumpLink @Totto16 @swsnr @schnz
+
