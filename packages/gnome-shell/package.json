@@ -1,6 +1,6 @@
 {
   "name": "@girs/gnome-shell",
-  "version": "48.0.2",
+  "version": "48.0.3",
   "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
   "type": "module",
   "main": "./dist/index.js",
