@@ -9,7 +9,7 @@ import * as Signals from '../misc/signals.js';
 import * as BoxPointer from './boxpointer.js';
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L16
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L15
  * @version 48
  */
 export enum Ornament {
@@ -21,13 +21,17 @@ export enum Ornament {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L39
+ * arrowIcon
+ *
+ * @param side - Side to which the arrow points.
+ * @returns a new arrow icon
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#37
  * @version 48
  */
 export function arrowIcon(side: St.Side): St.Icon;
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L67
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L81
  * @version 48
  */
 declare namespace PopupBaseMenuItem {
@@ -41,7 +45,7 @@ declare namespace PopupBaseMenuItem {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L81
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L79
  * @version 48
  */
 declare class PopupBaseMenuItem extends St.BoxLayout {
@@ -79,7 +83,7 @@ export namespace PopupMenuItem {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L286
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L284
  * @version 48
  */
 export class PopupMenuItem extends PopupBaseMenuItem {
@@ -92,7 +96,7 @@ export class PopupMenuItem extends PopupBaseMenuItem {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L302
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L300
  * @version 48
  */
 export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
@@ -115,11 +119,12 @@ export namespace Switch {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L337
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L338
  * @version 48
  */
 export class Switch extends St.Widget {
     state: boolean;
+
     constructor(state: boolean);
     /** @hidden Defined only to resolve type conflicts */
     override _init(config?: Switch.ConstructorProps): void;
@@ -152,10 +157,11 @@ export namespace PopupSwitchMenuItem {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L417
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L542
  * @version 48
  */
 export class PopupSwitchMenuItem extends PopupBaseMenuItem {
+    readonly label: St.Label;
     state: boolean;
 
     constructor(text: string, active: boolean, params?: PopupSwitchMenuItem.ConstructorProps);
@@ -189,7 +195,7 @@ export namespace PopupImageMenuItem {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L506
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L644
  * @version 48
  */
 export class PopupImageMenuItem extends PopupBaseMenuItem {
@@ -198,7 +204,7 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
     override _init(config?: PopupImageMenuItem.ConstructorProps): void;
     override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProps): void;
 
-    label: St.Label;
+    readonly label: St.Label;
 
     setIcon(icon: Gio.Icon | string): void;
 }
@@ -218,7 +224,7 @@ export namespace PopupMenuBase {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L542
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L680
  * @version 48
  */
 export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
@@ -261,7 +267,7 @@ export namespace PopupMenu {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L871
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1009
  * @version 48
  */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
@@ -278,7 +284,7 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1015
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1153
  * @version 48
  */
 export class PopupDummyMenu extends Signals.EventEmitter {
@@ -303,17 +309,18 @@ export namespace PopupSubMenu {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1053
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1191
  * @version 48
  */
 export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMap> extends PopupMenuBase<S> {
-    actor: St.ScrollView;
+    readonly actor: St.ScrollView;
 
     constructor(sourceActor: St.Widget, sourceArrow: St.Widget);
 
     readonly sensitive: boolean;
 
     getSensitive(): boolean;
+
     // PopupSubMenu's methods technically use a boolean, but because PopupAnimation is just a number,
     // with PopupAnimation.NONE == 0, it can be used like a boolean, so at runtime it works.
     override open(animate?: BoxPointer.PopupAnimation): void;
@@ -336,7 +343,7 @@ export namespace PopupMenuSection {
  * can add it to another menu), but is completely transparent
  * to the user
  *
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1192
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1330
  * @version 48
  */
 export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S> {
@@ -349,13 +356,13 @@ export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1215
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1353
  * @version 48
  */
 export class PopupSubMenuMenuItem extends PopupBaseMenuItem {
-    readonly menu: PopupSubMenu;
-
+    readonly icon?: St.Icon;
     readonly label: St.Label;
+    readonly menu: PopupSubMenu;
 
     constructor(text: string, wantIcon?: boolean);
     /** @hidden Defined only to resolve type conflicts */
@@ -378,7 +385,10 @@ export namespace PopupMenuManager {
 }
 
 /**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1321
+ * Basic implementation of a menu manager.
+ * Call addMenu to add menus
+ *
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/popupMenu.js#L1459
  * @version 48
  */
 export class PopupMenuManager {
