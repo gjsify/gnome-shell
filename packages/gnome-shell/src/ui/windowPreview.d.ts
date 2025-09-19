@@ -1,5 +1,5 @@
-import type Shell from '@girs/shell-16';
-import type Meta from '@girs/meta-16';
+import type Shell from '@girs/shell-17';
+import type Meta from '@girs/meta-17';
 
 /**
  * @version 46

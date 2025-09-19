@@ -3,8 +3,8 @@
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
 import type GLib from '@girs/glib-2.0';
-import type St from '@girs/st-16';
-import type Clutter from '@girs/clutter-16';
+import type St from '@girs/st-17';
+import type Clutter from '@girs/clutter-17';
 import type { Notification } from './messageTray.js';
 import type { MprisPlayer, MprisSource } from './mpris.js';
 
