@@ -3,10 +3,10 @@
 import type GObject from '@girs/gobject-2.0';
 import type GLib from '@girs/glib-2.0';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-16';
-import type Clutter from '@girs/clutter-16';
+import type St from '@girs/st-17';
+import type Clutter from '@girs/clutter-17';
 import type GnomeDesktop from '@girs/gnomedesktop-4.0';
-import type Shell from '@girs/shell-16';
+import type Shell from '@girs/shell-17';
 
 import type { PresenceStatus } from '../misc/gnomeSession.js';
 import type * as MessageList from './messageList.js';
