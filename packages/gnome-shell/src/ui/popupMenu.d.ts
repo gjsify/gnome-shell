@@ -138,12 +138,12 @@ export class Switch extends St.Widget {
     override _init(state: boolean): void;
 
     toggle(): void;
-    _startDragging(event: Clutter.Event): boolean;
-    override vfunc_motion_event(event: Clutter.Event): boolean;
-    override vfunc_button_release_event(event: Clutter.Event): boolean;
-    _touchDragging(actor: Clutter.Actor, event: Clutter.Event): boolean;
-    _endDragging(): boolean;
-    _motionEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
+    _startDragging(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    override vfunc_motion_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    override vfunc_button_release_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    _touchDragging(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    _endDragging(): typeof Clutter.EVENT_PROPAGATE;
+    _motionEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     // General signal handler methods
     connect(sigName: string, callback: (...args: any[]) => void): number;
@@ -347,7 +347,7 @@ export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMa
     // with PopupAnimation.NONE == 0, it can be used like a boolean, so at runtime it works.
     override open(animate?: BoxPointer.PopupAnimation): void;
     override close(animate?: BoxPointer.PopupAnimation): void;
-    _onKeyPressEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
+    _onKeyPressEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 }
 
 /**
@@ -426,7 +426,7 @@ export class PopupMenuManager {
     ignoreRelease(): void;
     _onMenuOpenState(menu: PopupMenuBase, open: boolean): void;
     _changeMenu(newMenu: PopupMenuBase): void;
-    _onCapturedEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
+    _onCapturedEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
     _findMenuForSource(source: Clutter.Actor): PopupMenuBase | null;
     _closeMenu(isUser: boolean, menu: PopupMenuBase): void;
 }
