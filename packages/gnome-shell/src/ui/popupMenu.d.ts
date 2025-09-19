@@ -246,7 +246,6 @@ export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBa
     readonly sourceActor: Clutter.Actor;
     readonly focusActor: Clutter.Actor;
     readonly length: number;
-    isOpen: boolean;
     readonly box: St.BoxLayout;
     sensitive: boolean;
     // PopupMenuBase._getMenuItems explicitly filters for these two types
@@ -254,6 +253,14 @@ export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBa
     readonly numMenuItems: number;
 
     constructor(sourceActor: Clutter.Actor, styleClass?: string);
+
+    get isOpen(): boolean;
+
+    /**
+     * For use in subclasses only.
+     * @protected
+     */
+    set isOpen(value: boolean);
 
     abstract open(animate?: BoxPointer.PopupAnimation): void;
     abstract close(animate?: BoxPointer.PopupAnimation): void;
