@@ -3,6 +3,7 @@
 // loginManager.d.ts
 
 import Gio from '@girs/gio-2.0';
+import GioUnix from '@girs/giounix-2.0';
 import * as Signals from './signals.js';
 
 /**
@@ -50,7 +51,7 @@ declare class LoginManagerSystemd extends Signals.EventEmitter {
      * @param reason The reason for inhibition.
      * @param cancellable A Gio.Cancellable object.
      */
-    inhibit(reason: string, cancellable: Gio.Cancellable): Promise<Gio.UnixInputStream | null>;
+    inhibit(reason: string, cancellable: Gio.Cancellable): Promise<GioUnix.InputStream | null>;
 }
 
 /**

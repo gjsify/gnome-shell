@@ -2,8 +2,8 @@
 
 import type GObject from '@girs/gobject-2.0';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-16';
-import type Clutter from '@girs/clutter-16';
+import type St from '@girs/st-17';
+import type Clutter from '@girs/clutter-17';
 
 import type { Switch } from './popupMenu.js';
 import type { MessageView } from './messageList.js';

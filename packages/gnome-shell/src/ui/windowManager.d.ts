@@ -4,8 +4,8 @@ import type Clutter from 'gi://Clutter';
 import type Gio from 'gi://Gio';
 import type Meta from 'gi://Meta';
 import type Shell from 'gi://Shell';
-import type St from '@girs/st-16';
-import type Mtk from '@girs/mtk-16';
+import type St from '@girs/st-17';
+import type Mtk from '@girs/mtk-17';
 import type { Monitor } from './layout.js';
 import type { Workspace } from './workspace.js';
 

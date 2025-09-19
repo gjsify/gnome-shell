@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/keyboard.js
 
-import Clutter from '@girs/clutter-16';
-import St from '@girs/st-16';
+import Clutter from '@girs/clutter-17';
+import St from '@girs/st-17';
 
 import * as PanelMenu from '../panelMenu.js';
 import * as PopupMenu from '../popupMenu.js';

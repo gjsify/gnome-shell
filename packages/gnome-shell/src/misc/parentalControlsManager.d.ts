@@ -1,8 +1,9 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/parentalControlsManager.js
 
 import type GObject from '@girs/gobject-2.0';
-import type Gio from '@girs/gio-2.0';
-import type Shell from '@girs/shell-16';
+import GioUnix from '@girs/giounix-2.0';
+
+import type Shell from '@girs/shell-17';
 
 declare class ParentalControlsManager extends GObject.Object {
     _initialized: boolean;
@@ -15,7 +16,7 @@ declare class ParentalControlsManager extends GObject.Object {
     _onAppFilterChanged(manager: any, uid: ReturnType<typeof Shell.util_get_uid>): void;
 
     /**
-     * Calculate whether the given app (a Gio.DesktopAppInfo) should be shown
+     * Calculate whether the given app (a GioUnix.DesktopAppInfo) should be shown
      * on the desktop, in search results, etc. The app should be shown if:
      *  - The .desktop file doesn’t say it should be hidden.
      *  - The executable from the .desktop file’s Exec line isn’t denied in
@@ -25,7 +26,7 @@ declare class ParentalControlsManager extends GObject.Object {
      *    controls.
      * @param appInfo The app to check
      */
-    shouldShowApp(appInfo: Gio.DesktopAppInfo): boolean;
+    shouldShowApp(appInfo: GioUnix.DesktopAppInfo): boolean;
 }
 
 export function getDefault(): ParentalControlsManager;
