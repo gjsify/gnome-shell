@@ -1,15 +1,8 @@
 {
     "name": "gnome-shell",
     "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
-    "main": "src/index.js",
     "type": "module",
     "private": true,
-    "typedoc": {
-        "entryPoint": "./src/index.d.ts",
-        "readmeFile": "./README.md",
-        "displayName": "GNOME Shell",
-        "tsconfig": "./tsconfig.doc.json"
-    },
     "scripts": {
         "validate": "yarn validate:types && yarn validate:example",
         "validate:types": "yarn workspace @girs/gnome-shell validate",
