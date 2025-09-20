@@ -2,6 +2,10 @@ export type { ExtensionMetadata } from '../types/extension-metadata.js';
 
 export type { ConsoleLike } from './sharedInternals.js';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
+
+/**
+ * @version 49
+ */
 export class Extension extends ExtensionBase {
     static defineTranslationFunctions(url: string): TranslationFunctions;
 
@@ -11,6 +15,7 @@ export class Extension extends ExtensionBase {
     openPreferences(): void;
 
     enable(): void;
+
     disable(): void;
 }
 
@@ -23,6 +28,15 @@ export class InjectionManager {
     clear(): void;
 }
 
+/**
+ * @version 49
+ */
 export declare const gettext: TranslationFunctions['gettext'];
+/**
+ * @version 49
+ */
 export declare const ngettext: TranslationFunctions['ngettext'];
+/**
+ * @version 49
+ */
 export declare const pgettext: TranslationFunctions['pgettext'];
