@@ -1,4 +1,4 @@
-import type { ExtensionMetadata } from '../types/extension-metadata.js';
+import type { MetadataJson } from '../types/extension-metadata.js';
 import type { Extension } from './extension.js';
 
 import type Gio from '@girs/gio-2.0';
@@ -48,7 +48,7 @@ export class ExtensionBase {
     #gettextDomain: string | null;
     #console: Console;
 
-    readonly metadata: ExtensionMetadata;
+    readonly metadata: MetadataJson;
 
     /**
      * Look up an extension by URL (usually 'import.meta.url')
@@ -67,7 +67,7 @@ export class ExtensionBase {
     /**
      * @param metadata - metadata passed in when loading the extension
      */
-    constructor(metadata: ExtensionMetadata);
+    constructor(metadata: MetadataJson);
 
     get uuid(): string;
 

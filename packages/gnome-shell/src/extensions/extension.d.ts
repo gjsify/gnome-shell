@@ -1,5 +1,3 @@
-export type { ExtensionMetadata } from '../types/extension-metadata.js';
-
 export type { ConsoleLike } from './sharedInternals.js';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
 
