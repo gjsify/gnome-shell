@@ -1,8 +1,11 @@
-import type { ExtensionMetadata } from '../types/extension-metadata.js';
+import type { MetadataJson } from '../types/extension-metadata.js';
 import type { Extension } from './extension.js';
 
 import type Gio from '@girs/gio-2.0';
 
+/**
+ * @version 49
+ */
 export interface TranslationFunctions {
     /**
      * Translate `str` using the extension's gettext domain
@@ -12,6 +15,7 @@ export interface TranslationFunctions {
      * @returns {string} the translated string
      */
     gettext(str: string): string;
+
     /**
      * Translate `str` and choose plural form using the extension's
      * gettext domain
@@ -38,13 +42,13 @@ export interface TranslationFunctions {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L9
- * @version 48
+ * @version 49
  */
 export class ExtensionBase {
     #gettextDomain: string | null;
     #console: Console;
 
-    readonly metadata: ExtensionMetadata;
+    readonly metadata: MetadataJson;
 
     /**
      * Look up an extension by URL (usually 'import.meta.url')
@@ -63,7 +67,7 @@ export class ExtensionBase {
     /**
      * @param metadata - metadata passed in when loading the extension
      */
-    constructor(metadata: ExtensionMetadata);
+    constructor(metadata: MetadataJson);
 
     get uuid(): string;
 
@@ -77,8 +81,6 @@ export class ExtensionBase {
      * from metadata['settings-schema'].
      *
      * @param schema - the GSettings schema id
-     *
-     * @returns {}
      */
     getSettings(schema?: string): Gio.Settings;
 
@@ -89,9 +91,9 @@ export class ExtensionBase {
      * domain is not provided, it will be taken from metadata['gettext-domain']
      * if provided, or use the UUID
      *
-     * @param {string=} domain - the gettext domain to use
+     * @param domain - the gettext domain to use
      */
-    initTranslations(domain: string): void;
+    initTranslations(domain?: string): void;
 
     /**
      * Translate `str` using the extension's gettext domain
@@ -131,6 +133,9 @@ export class ExtensionBase {
     #checkGettextDomain(func: string);
 }
 
+/**
+ * @version 49
+ */
 export class GettextWrapper {
     #url: string | null;
     #extensionClass: ExtensionBase;
@@ -152,7 +157,7 @@ export class GettextWrapper {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L285
- * @version 48
+ * @version 49
  */
 export interface ConsoleLike {
     log(...args: any[]): void;
