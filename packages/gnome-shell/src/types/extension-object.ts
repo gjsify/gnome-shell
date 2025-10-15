@@ -1,7 +1,7 @@
 import type Gio from '@girs/gio-2.0';
 
-import type { Extension } from '../extensions/extension';
-import type { ExtensionState, ExtensionType } from '../misc/extensionUtils';
+import type { Extension } from '../extensions/extension.js';
+import type { ExtensionState, ExtensionType } from '../misc/extensionUtils.js';
 import type { MetadataJson } from './extension-metadata.js';
 
 /**
