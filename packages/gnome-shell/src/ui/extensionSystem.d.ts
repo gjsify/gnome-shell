@@ -4,7 +4,7 @@ import type Gio from '@girs/gio-2.0';
 
 import * as Signals from '../misc/signals.js';
 import type { ExtensionType } from '../misc/extensionUtils.js';
-import type { ExtensionObject } from '../types';
+import type { ExtensionObject } from '../types/extension-object.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/dbusServices/extensions/extensionsService.js#L15
