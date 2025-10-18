@@ -75,11 +75,49 @@ export interface EventEmitter<S extends SignalMap<S> = any> extends SignalMethod
  * @version 47
  */
 export class EventEmitter<S extends SignalMap<S> = any> {
-    connectObject(...args: any[]): number; // TODO: return type is return type of imports.misc.signalTracker.connectObject
+    /**
+     * Connect one or more signals, and associate the handlers
+     * with a tracked object.
+     *
+     * All handlers for a particular object can be disconnected
+     * by calling disconnectObject(). If object is a {Clutter.widget},
+     * this is done automatically when the widget is destroyed.
+     *
+     * @param args - a sequence of signal-name/handler pairs
+     * with an optional flags value, followed by an object to track
+     * @returns
+     */
+    connectObject(...args: any[]): void;
 
-    disconnectObject(...args: any[]): number; // TODO: return type is return type of imports.misc.signalTracker.disconnectObject
+    /**
+     * Disconnect all signals that were connected for
+     * the specified tracked object
+     *
+     * @param obj - the tracked object
+     * @returns
+     */
+    disconnectObject(obj: object): void;
 
-    connect_object(...args: any[]): ReturnType<typeof this.connectObject>;
+    /**
+     * Connect one or more signals, and associate the handlers
+     * with a tracked object.
+     *
+     * All handlers for a particular object can be disconnected
+     * by calling disconnectObject(). If object is a {Clutter.widget},
+     * this is done automatically when the widget is destroyed.
+     *
+     * @param args - a sequence of signal-name/handler pairs
+     * with an optional flags value, followed by an object to track
+     * @returns
+     */
+    connect_object(...args: any[]): void;
 
-    disconnect_object(...args: any[]): ReturnType<typeof this.disconnectObject>;
+    /**
+     * Disconnect all signals that were connected for
+     * the specified tracked object
+     *
+     * @param obj - the tracked object
+     * @returns
+     */
+    disconnect_object(obj: object): void;
 }

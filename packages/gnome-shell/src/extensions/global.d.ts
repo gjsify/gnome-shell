@@ -36,6 +36,66 @@ declare global {
     }
 }
 
+declare module '@girs/gobject-2.0/gobject-2.0' {
+    export namespace GObject {
+        interface Object {
+            /**
+             * Connect one or more signals, and associate the handlers
+             * with a tracked object.
+             *
+             * All handlers for a particular object can be disconnected
+             * by calling disconnectObject(). If object is a {Clutter.widget},
+             * this is done automatically when the widget is destroyed.
+             *
+             * @param args - a sequence of signal-name/handler pairs
+             * with an optional flags value, followed by an object to track
+             *
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L245
+             * @version 49
+             */
+            connectObject(...args: any[]): void;
+
+            /**
+             * Connect one or more signals, and associate the handlers
+             * with a tracked object.
+             *
+             * All handlers for a particular object can be disconnected
+             * by calling disconnectObject(). If object is a {Clutter.widget},
+             * this is done automatically when the widget is destroyed.
+             *
+             * @param args - a sequence of signal-name/handler pairs
+             * with an optional flags value, followed by an object to track
+             *
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L248
+             * @version 49
+             */
+            connect_object(...args: any[]): void;
+
+            /**
+             * Disconnect all signals that were connected for
+             * the specified tracked object
+             *
+             * @param obj - the tracked object
+             *
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L251
+             * @version 49
+             */
+            disconnectObject(obj: object): void;
+
+            /**
+             * Disconnect all signals that were connected for
+             * the specified tracked object
+             *
+             * @param obj - the tracked object
+             *
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L254
+             * @version 49
+             */
+            disconnect_object(obj: object): void;
+        }
+    }
+}
+
 /**
  * @version 46
  */
@@ -114,6 +174,25 @@ declare module '@girs/clutter-17/clutter-17' {
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L286
              */
             ease(props: EasingParamsWithProperties): void;
+
+            /**
+             * A convenience wrapper for {@link Clutter.PropertyTransition}
+             *
+             * @param propName The name of the property or any of the following:
+             * - @layout.property
+             * - @actions.name.property
+             * - @constraints.name.property
+             * - @content.property
+             * - @effects.name.property
+             * @param target The target value
+             * @param props Easing properties
+             *
+             * @version 49
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/96e27f0e7d4e0c71976305d0d2c36a6c39d9853c/docs/js-coding-style.md#animations
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L289
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L71
+             */
+            ease_property<T = unknown>(propName: string, target: T, props: EasingParams): void;
         }
     }
 }
