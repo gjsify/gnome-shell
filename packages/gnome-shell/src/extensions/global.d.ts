@@ -40,28 +40,58 @@ declare module '@girs/gobject-2.0/gobject-2.0' {
     export namespace GObject {
         interface Object {
             /**
+             * Connect one or more signals, and associate the handlers
+             * with a tracked object.
+             *
+             * All handlers for a particular object can be disconnected
+             * by calling disconnectObject(). If object is a {Clutter.widget},
+             * this is done automatically when the widget is destroyed.
+             *
+             * @param args - a sequence of signal-name/handler pairs
+             * with an optional flags value, followed by an object to track
+             *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L245
              * @version 49
              */
             connectObject(...args: any[]): void;
 
             /**
+             * Connect one or more signals, and associate the handlers
+             * with a tracked object.
+             *
+             * All handlers for a particular object can be disconnected
+             * by calling disconnectObject(). If object is a {Clutter.widget},
+             * this is done automatically when the widget is destroyed.
+             *
+             * @param args - a sequence of signal-name/handler pairs
+             * with an optional flags value, followed by an object to track
+             *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L248
              * @version 49
              */
             connect_object(...args: any[]): void;
 
             /**
+             * Disconnect all signals that were connected for
+             * the specified tracked object
+             *
+             * @param obj - the tracked object
+             *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L251
              * @version 49
              */
-            disconnectObject(...args: any[]): void;
+            disconnectObject(obj: object): void;
 
             /**
+             * Disconnect all signals that were connected for
+             * the specified tracked object
+             *
+             * @param obj - the tracked object
+             *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L254
              * @version 49
              */
-            disconnect_object(...args: any[]): void;
+            disconnect_object(obj: object): void;
         }
     }
 }
