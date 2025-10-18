@@ -36,6 +36,36 @@ declare global {
     }
 }
 
+declare module '@girs/gobject-2.0/gobject-2.0' {
+    export namespace GObject {
+        interface Object {
+            /**
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L245
+             * @version 49
+             */
+            connectObject(...args: any[]): void;
+
+            /**
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L248
+             * @version 49
+             */
+            connect_object(...args: any[]): void;
+
+            /**
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L251
+             * @version 49
+             */
+            disconnectObject(...args: any[]): void;
+
+            /**
+             * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L254
+             * @version 49
+             */
+            disconnect_object(...args: any[]): void;
+        }
+    }
+}
+
 /**
  * @version 46
  */
