@@ -72,6 +72,17 @@
       }
     },
     "./misc/config/ambient": "./dist/misc/config-ambient.d.ts",
+    "./misc/dateUtils": {
+      "import": {
+        "types": "./dist/misc/dateUtils.d.ts",
+        "default": "./dist/misc/dateUtils.js"
+      },
+      "require": {
+        "types": "./dist/misc/dateUtils.d.ts",
+        "default": "./dist/misc/dateUtils.cjs"
+      }
+    },
+    "./misc/dateUtils/ambient": "./dist/misc/dateUtils-ambient.d.ts",
     "./misc/dbusUtils": {
       "import": {
         "types": "./dist/misc/dbusUtils.d.ts",
