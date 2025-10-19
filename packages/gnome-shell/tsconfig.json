@@ -1,11 +1,12 @@
 {
     "extends": "@tsconfig/strictest/tsconfig.json",
     "compilerOptions": {
+        // GJS 1.85.2 uses Spidermonkey 140 which supports most ESNext features.
         "lib": ["ESNext"],
         "types": [],
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
+        "target": "esnext",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "skipLibCheck": false
     },
     "include": ["./dist/**/*.d.ts"]

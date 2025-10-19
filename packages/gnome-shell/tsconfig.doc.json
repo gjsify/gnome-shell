@@ -2,8 +2,6 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         // General settings for code interpretation
-        "target": "ESNext",
-        "module": "ESNext",
         "noEmit": true,
         "baseUrl": "./",
         "rootDir": ".",
