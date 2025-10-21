@@ -1,5 +1,6 @@
 import type Shell from '@girs/shell-17';
 import type Clutter from '@girs/clutter-17';
+
 declare global {
     /**
      * Global shell object created by GNOME Shell on startup.
