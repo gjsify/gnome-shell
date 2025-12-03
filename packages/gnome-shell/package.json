@@ -435,6 +435,17 @@
       }
     },
     "./ui/components/telepathyClient/ambient": "./dist/ui/components/telepathyClient-ambient.d.ts",
+    "./ui/dash": {
+      "import": {
+        "types": "./dist/ui/dash.d.ts",
+        "default": "./dist/ui/dash.js"
+      },
+      "require": {
+        "types": "./dist/ui/dash.d.ts",
+        "default": "./dist/ui/dash.cjs"
+      }
+    },
+    "./ui/dash/ambient": "./dist/ui/dash-ambient.d.ts",
     "./ui/dateMenu": {
       "import": {
         "types": "./dist/ui/dateMenu.d.ts",
