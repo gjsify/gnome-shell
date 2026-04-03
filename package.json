@@ -44,7 +44,7 @@
         "url": "https://github.com/gjsify/gnome-shell/issues"
     },
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
-    "packageManager": "yarn@4.10.2",
+    "packageManager": "yarn@4.13.0",
     "devDependencies": {
         "prettier": "^3.6.2",
         "typescript": "5.9.2"
