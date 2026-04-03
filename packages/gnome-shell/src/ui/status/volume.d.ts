@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/volume.js
 
-import Clutter from '@girs/clutter-17';
+import Clutter from '@girs/clutter-18';
 import Gio from '@girs/gio-2.0';
 import Gvc from '@girs/gvc-1.0';
 import * as PopupMenu from '../popupMenu.js';

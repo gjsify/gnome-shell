@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js
 
-import type St from '@girs/st-17';
-import type Clutter from '@girs/clutter-17';
+import type St from '@girs/st-18';
+import type Clutter from '@girs/clutter-18';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/animationUtils.js#L23

@@ -1,6 +1,6 @@
-import type Meta from '@girs/meta-17';
-import type Clutter from '@girs/clutter-17';
-import type St from '@girs/st-17';
+import type Meta from '@girs/meta-18';
+import type Clutter from '@girs/clutter-18';
+import type St from '@girs/st-18';
 
 /**
  * @version 46

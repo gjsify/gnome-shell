@@ -1,5 +1,5 @@
-import type Clutter from '@girs/clutter-17';
-import type Meta from '@girs/meta-17';
+import type Clutter from '@girs/clutter-18';
+import type Meta from '@girs/meta-18';
 
 import { WindowPreview } from './windowPreview.js';
 
