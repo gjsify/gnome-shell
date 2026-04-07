@@ -127,6 +127,17 @@
       }
     },
     "./misc/gnomeSession/ambient": "./dist/misc/gnomeSession-ambient.d.ts",
+    "./misc/ibusManager": {
+      "import": {
+        "types": "./dist/misc/ibusManager.d.ts",
+        "default": "./dist/misc/ibusManager.js"
+      },
+      "require": {
+        "types": "./dist/misc/ibusManager.d.ts",
+        "default": "./dist/misc/ibusManager.cjs"
+      }
+    },
+    "./misc/ibusManager/ambient": "./dist/misc/ibusManager-ambient.d.ts",
     "./misc": {
       "import": {
         "types": "./dist/misc/index.d.ts",
@@ -1005,34 +1016,34 @@
     "generate:types": "node ./scripts/generate-types.js"
   },
   "dependencies": {
-    "@girs/accountsservice-1.0": "1.0.0-4.0.0-beta.38",
-    "@girs/adw-1": "^1.9.0-4.0.0-beta.38",
-    "@girs/atk-1.0": "^2.58.0-4.0.0-beta.38",
-    "@girs/clutter-17": "^17.0.0-4.0.0-beta.38",
-    "@girs/cogl-2.0": "^2.0.0-4.0.0-beta.38",
-    "@girs/gcr-4": "^4.4.0-4.0.0-beta.38",
-    "@girs/gdm-1.0": "^1.0.0-4.0.0-beta.38",
-    "@girs/gio-2.0": "^2.86.0-4.0.0-beta.38",
-    "@girs/giounix-2.0": "^2.0.0-4.0.0-beta.38",
-    "@girs/gjs": "^4.0.0-beta.38",
-    "@girs/glib-2.0": "^2.86.0-4.0.0-beta.38",
-    "@girs/gnomebg-4.0": "^4.0.0-4.0.0-beta.38",
-    "@girs/gnomebluetooth-3.0": "^3.0.0-4.0.0-beta.38",
-    "@girs/gnomedesktop-4.0": "^4.0.0-4.0.0-beta.38",
-    "@girs/gobject-2.0": "^2.86.0-4.0.0-beta.38",
-    "@girs/gtk-4.0": "^4.20.1-4.0.0-beta.38",
-    "@girs/gvc-1.0": "^1.0.0-4.0.0-beta.38",
-    "@girs/meta-17": "^17.0.0-4.0.0-beta.38",
-    "@girs/mtk-17": "^17.0.0-4.0.0-beta.38",
-    "@girs/polkit-1.0": "^1.0.0-4.0.0-beta.38",
-    "@girs/shell-17": "^17.0.0-4.0.0-beta.38",
-    "@girs/shew-0": "^0.0.0-4.0.0-beta.38",
-    "@girs/st-17": "^17.0.0-4.0.0-beta.38",
-    "@girs/upowerglib-1.0": "^0.99.1-4.0.0-beta.38"
+    "@girs/accountsservice-1.0": "1.0.0-4.0.0-rc.1",
+    "@girs/adw-1": "^1.10.0-4.0.0-rc.1",
+    "@girs/atk-1.0": "^2.60.0-4.0.0-rc.1",
+    "@girs/clutter-18": "^18.0.0-4.0.0-rc.1",
+    "@girs/cogl-2.0": "^2.0.0-4.0.0-rc.1",
+    "@girs/gcr-4": "^4.4.0-4.0.0-rc.1",
+    "@girs/gdm-1.0": "^1.0.0-4.0.0-rc.1",
+    "@girs/gio-2.0": "^2.88.0-4.0.0-rc.1",
+    "@girs/giounix-2.0": "^2.0.0-4.0.0-rc.1",
+    "@girs/gjs": "^4.0.0-rc.1",
+    "@girs/glib-2.0": "^2.88.0-4.0.0-rc.1",
+    "@girs/gnomebg-4.0": "^4.0.0-4.0.0-rc.1",
+    "@girs/gnomebluetooth-3.0": "^3.0.0-4.0.0-rc.1",
+    "@girs/gnomedesktop-4.0": "^4.0.0-4.0.0-rc.1",
+    "@girs/gobject-2.0": "^2.88.0-4.0.0-rc.1",
+    "@girs/gtk-4.0": "^4.23.0-4.0.0-rc.1",
+    "@girs/gvc-1.0": "^1.0.0-4.0.0-rc.1",
+    "@girs/meta-18": "^18.0.0-4.0.0-rc.1",
+    "@girs/mtk-18": "^18.0.0-4.0.0-rc.1",
+    "@girs/polkit-1.0": "^1.0.0-4.0.0-rc.1",
+    "@girs/shell-18": "^18.0.0-4.0.0-rc.1",
+    "@girs/shew-0": "^0.0.0-4.0.0-rc.1",
+    "@girs/st-18": "^18.0.0-4.0.0-rc.1",
+    "@girs/upowerglib-1.0": "^1.91.1-4.0.0-rc.1"
   },
   "devDependencies": {
-    "@tsconfig/strictest": "^2.0.5",
-    "typescript": "5.9.2"
+    "@tsconfig/strictest": "^2.0.8",
+    "typescript": "6.0.2"
   },
   "keywords": [
     "Gir",

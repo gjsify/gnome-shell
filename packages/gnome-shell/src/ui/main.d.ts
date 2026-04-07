@@ -1,10 +1,10 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/main.js
 
 import type Gio from '@girs/gio-2.0';
-import type Shell from '@girs/shell-17';
-import type Clutter from '@girs/clutter-17';
-import type St from '@girs/st-17';
-import type Meta from '@girs/meta-17';
+import type Shell from '@girs/shell-18';
+import type Clutter from '@girs/clutter-18';
+import type St from '@girs/st-18';
+import type Meta from '@girs/meta-18';
 
 import { ComponentManager } from './components.js';
 import { AccessDialogDBus } from './accessDialog.js';

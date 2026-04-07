@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panel.js
 
-import type St from '@girs/st-17';
-import type Clutter from '@girs/clutter-17';
-import type Meta from '@girs/meta-17';
+import type St from '@girs/st-18';
+import type Clutter from '@girs/clutter-18';
+import type Meta from '@girs/meta-18';
 
 import type { Button } from './panelMenu.js';
 import type { DateMenuButton } from './dateMenu.js';

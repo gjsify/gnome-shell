@@ -2,7 +2,7 @@
 
 import type Gio from '@girs/gio-2.0';
 import type GObject from '@girs/gobject-2.0';
-import type St from '@girs/st-17';
+import type St from '@girs/st-18';
 
 import type { EventEmitter } from '../misc/signals.js';
 

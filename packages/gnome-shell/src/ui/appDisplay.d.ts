@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/appDisplay.js
 
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-17';
-import type Clutter from '@girs/clutter-17';
+import type St from '@girs/st-18';
+import type Clutter from '@girs/clutter-18';
 
 import { GridSearchResult } from './search.js';
 
