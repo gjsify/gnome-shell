@@ -148,7 +148,7 @@ type AnimatableActorFields =
 
 interface EasingParamsWithProperties extends EasingParams, Partial<Pick<Clutter.Actor, AnimatableActorFields>> {}
 
-declare module '@girs/st-18/st-17' {
+declare module '@girs/st-18/st-18' {
     export namespace St {
         interface Adjustment {
             /**
