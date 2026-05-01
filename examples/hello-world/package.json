@@ -19,9 +19,9 @@
     "typescript": "6.0.2"
   },
   "dependencies": {
-    "@girs/gjs": "^4.0.0-rc.1",
+    "@girs/gjs": "^4.0.0-rc.9",
     "@girs/gnome-shell": "workspace:^",
-    "@girs/gobject-2.0": "^2.88.0-4.0.0-rc.1",
-    "@girs/st-18": "^18.0.0-4.0.0-rc.1"
+    "@girs/gobject-2.0": "^2.88.0-4.0.0-rc.9",
+    "@girs/st-18": "^18.0.0-4.0.0-rc.9"
   }
 }
