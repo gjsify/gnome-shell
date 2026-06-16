@@ -40,22 +40,26 @@ jobs:
       - name: Generate archive
         run: yarn workspace @girs/gnome-shell pack
 
+      - name: Get OIDC token
+        uses: actions/github-script@v7
+        id: oidc
+        with:
+          script: |
+            const token = await core.getIDToken('npm');
+            core.setSecret(token);
+            core.setOutput('token', token);
+
       - name: Publish
         env:
+          OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
           PUBLISH_TAG: ${{ github.event.release.prerelease && 'next' || inputs.tag || 'latest' }}
         run: |
-          # Exchange GitHub Actions OIDC token for a short-lived npm publish token.
-          # npm CLI's automatic OIDC detection is unreliable; we do the exchange
-          # explicitly the same way @actions/core does (string-concat the audience
-          # parameter to avoid URLSearchParams dropping it).
-          OIDC_TOKEN=$(curl -sSfL "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm" \
-            -H "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" | \
-            python3 -c "import sys,json; print(json.load(sys.stdin)['value'])")
           NPM_TOKEN=$(curl -sSfL "https://registry.npmjs.org/-/npm/v1/oidc/token" \
             -X POST \
             -H "Content-Type: application/json" \
             -d "{\"type\":\"oidc\",\"oidcToken\":\"${OIDC_TOKEN}\"}" | \
             python3 -c "import sys,json; print(json.load(sys.stdin)['token'])")
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
-          cd packages/gnome-shell
-          npm publish --access public --provenance --tag "$PUBLISH_TAG"
+          yarn config set npmRegistryServer "https://registry.npmjs.org"
+          yarn config set npmAlwaysAuth true
+          yarn config set npmAuthToken "${NPM_TOKEN}"
+          yarn workspace @girs/gnome-shell npm publish --tolerate-republish --access public --provenance --tag "${PUBLISH_TAG}"
