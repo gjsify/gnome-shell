@@ -26,9 +26,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      # No registry-url: actions/setup-node would inject a NODE_AUTH_TOKEN
-      # placeholder that makes npm skip OIDC and fall back to token auth.
-      # The registry defaults to https://registry.npmjs.org.
       - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v6
         with:
@@ -47,5 +44,18 @@ jobs:
         env:
           PUBLISH_TAG: ${{ github.event.release.prerelease && 'next' || inputs.tag || 'latest' }}
         run: |
+          # Exchange GitHub Actions OIDC token for a short-lived npm publish token.
+          # npm CLI's automatic OIDC detection is unreliable; we do the exchange
+          # explicitly the same way @actions/core does (string-concat the audience
+          # parameter to avoid URLSearchParams dropping it).
+          OIDC_TOKEN=$(curl -sSfL "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm" \
+            -H "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" | \
+            python3 -c "import sys,json; print(json.load(sys.stdin)['value'])")
+          NPM_TOKEN=$(curl -sSfL "https://registry.npmjs.org/-/npm/v1/oidc/token" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d "{\"type\":\"oidc\",\"oidcToken\":\"${OIDC_TOKEN}\"}" | \
+            python3 -c "import sys,json; print(json.load(sys.stdin)['token'])")
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
           cd packages/gnome-shell
           npm publish --access public --provenance --tag "$PUBLISH_TAG"
