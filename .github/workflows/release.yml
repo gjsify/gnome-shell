@@ -46,4 +46,6 @@ jobs:
       - name: Publish
         env:
           PUBLISH_TAG: ${{ github.event.release.prerelease && 'next' || inputs.tag || 'latest' }}
-        run: npm publish packages/gnome-shell --access public --provenance --tag "$PUBLISH_TAG"
+        run: |
+          cd packages/gnome-shell
+          npm publish --access public --provenance --tag "$PUBLISH_TAG"
