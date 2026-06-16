@@ -3,6 +3,12 @@ name: Release CI
 on:
   release:
     types: published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Publish tag (latest or next)'
+        required: false
+        default: 'latest'
 
 env:
   node-version: 22.x
@@ -39,5 +45,5 @@ jobs:
 
       - name: Publish
         env:
-          PUBLISH_TAG: ${{ github.event.release.prerelease && 'next' || 'latest' }}
+          PUBLISH_TAG: ${{ github.event.release.prerelease && 'next' || inputs.tag || 'latest' }}
         run: npm publish packages/gnome-shell --access public --provenance --tag "$PUBLISH_TAG"
