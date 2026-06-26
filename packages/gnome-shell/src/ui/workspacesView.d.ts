@@ -25,4 +25,6 @@ export class WorkspacesView {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspacesView.js#L816
  * @version 50
  */
-export class WorkspacesDisplay extends St.Widget {}
+export class WorkspacesDisplay extends St.Widget {
+    _leavingOverview: boolean;
+}
