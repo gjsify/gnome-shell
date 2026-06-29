@@ -5,12 +5,23 @@ import type Clutter from '@girs/clutter-18';
 
 import { AppSearchProvider } from './appDisplay.js';
 
+/**
+ * @version 50
+ */
+export interface MetaInfo {
+    id: string;
+    name: string;
+    createIcon?: (size: number) => Clutter.Actor;
+    description?: string;
+    clipboardText?: string;
+}
+
 export class MaxWidthBox extends St.BoxLayout {}
 
 export class SearchResult extends St.Button {
     /** @hidden */
     _init(config?: Partial<St.Button.ConstructorProps>): void;
-    _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
+    _init(provider: AppSearchProvider, metaInfo: MetaInfo, resultsView: SearchResultsView): void;
 
     activate(): void;
 }
@@ -18,7 +29,7 @@ export class SearchResult extends St.Button {
 export class ListSearchResult extends SearchResult {
     /** @hidden */
     _init(config?: Partial<St.Button.ConstructorProps>): void;
-    _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
+    _init(provider: AppSearchProvider, metaInfo: MetaInfo, resultsView: SearchResultsView): void;
 }
 
 export class GridSearchResult extends SearchResult {
@@ -26,7 +37,7 @@ export class GridSearchResult extends SearchResult {
 
     /** @hidden */
     _init(config?: Partial<St.Button.ConstructorProps>): void;
-    _init(provider: AppSearchProvider, metaInfo: any, resultsView: SearchResultsView): void;
+    _init(provider: AppSearchProvider, metaInfo: MetaInfo, resultsView: SearchResultsView): void;
 
     _onDestroy(): void;
     _createResultDisplay(meta: any): void;
