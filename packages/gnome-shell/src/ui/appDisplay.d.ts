@@ -163,10 +163,22 @@ export abstract class BaseAppView extends St.Widget {
 }
 
 /**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1254
+ * @version 50
+ */
+declare namespace PageManager {
+    export interface SignalSignatures extends GObject.Object.SignalSignatures {
+        'layout-changed': () => void;
+    }
+}
+
+/**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1256
  * @version 50
  */
 declare class PageManager extends GObject.Object {
+    $signals: PageManager.SignalSignatures;
+
     pages: { [appId: string]: { position: number } }[];
 
     _updatingPages: boolean;
@@ -177,6 +189,14 @@ declare class PageManager extends GObject.Object {
     _loadPages(): void;
 
     getAppPosition(appId: string): [number, number];
+
+    // Signal handler methods
+    connect<S extends PageManager.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends PageManager.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+
+    // Generic signal handler methods
+    connect(signal: string, callback: (...args: any[]) => any): number;
+    connect_after(signal: string, callback: (...args: any[]) => any): number;
 }
 
 /**
