@@ -41,7 +41,7 @@ export interface SignalMethods<S extends SignalMap<S> = any> {
      * @param callback A callback function
      * @returns A handler ID
      */
-    connect<Name extends keyof S>(sigName: Name, callback: (self: this, ...args: S[Name]) => boolean | undefined): number;
+    connect<Name extends keyof S>(sigName: Name, callback: (self: this, ...args: S[Name]) => boolean | void): number;
     /**
      * Emits a signal for an object. Emission stops if a signal handler returns `true`.
      *
