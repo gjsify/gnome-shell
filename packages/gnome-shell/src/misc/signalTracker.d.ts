@@ -107,7 +107,7 @@ export function disconnectObject(thisObj: object, obj: object): void;
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L266
  * @version 50
  */
-export function registerDestroyableType(gtype: GObject.Type): void;
+export function registerDestroyableType(gtype: GObject.GTypeInput): void;
 
 /**
  * A debug function that can be used to inspect signal trackers at run time
