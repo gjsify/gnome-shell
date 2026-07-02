@@ -1,5 +1,15 @@
 import type Shell from '@girs/shell-18';
 import type Clutter from '@girs/clutter-18';
+import type Cogl from '@girs/cogl-18';
+
+declare module '@girs/cairo-1.0/cairo-1.0' {
+    export namespace cairo {
+        interface Context {
+            setSourceColor(color: Cogl.Color): void;
+        }
+    }
+}
+
 declare global {
     /**
      * Global shell object created by GNOME Shell on startup.
