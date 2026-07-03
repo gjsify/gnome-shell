@@ -1,0 +1,127 @@
+name: Update @girs
+
+on:
+  # Poll weekly so a new ts-for-gir / @girs release is picked up automatically.
+  schedule:
+    - cron: "0 6 * * 1"
+  # Manual run from the Actions tab.
+  workflow_dispatch:
+  # Optional instant trigger, e.g. from ts-for-gir's release workflow:
+  #   gh api repos/gjsify/gnome-shell/dispatches -f event_type=girs-release
+  repository_dispatch:
+    types: [girs-release]
+
+# Avoid overlapping runs racing on the same branch.
+concurrency:
+  group: update-girs
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  # The bump changes package.json, so the lockfile must be allowed to update.
+  YARN_ENABLE_IMMUTABLE_INSTALLS: "false"
+
+jobs:
+  update-girs:
+    name: Update @girs
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Bump @girs dependencies to latest
+        run: node scripts/update-girs.mjs packages/gnome-shell/package.json examples/hello-world/package.json | tee "$RUNNER_TEMP/girs-changes.txt"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet -- packages/gnome-shell/package.json examples/hello-world/package.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No @girs updates available."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        if: steps.changes.outputs.changed == 'true'
+        run: yarn install
+
+      - name: Validate
+        id: validate
+        if: steps.changes.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          set -e
+          yarn run build:types
+          yarn run prettier:check
+          yarn run validate:types
+          yarn run build:example
+          yarn run validate:example
+
+      - name: Create or update pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VALIDATE_OUTCOME: ${{ steps.validate.outcome }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          BRANCH="chore/update-girs"
+
+          if [ "$VALIDATE_OUTCOME" = "success" ]; then
+            STATUS="✅ Local validation (build + \`tsc\` + example) passed in this workflow run."
+            DRAFT_FLAG=""
+          else
+            STATUS="⚠️ **Validation failed** in this workflow run — the new @girs types likely need code changes in this repo. See the [workflow logs](${SERVER_URL}/${REPOSITORY}/actions/runs/${RUN_ID}). Opened as a draft."
+            DRAFT_FLAG="--draft"
+          fi
+
+          {
+            echo "Automated update of the \`@girs/*\` type dependencies to their latest npm \`latest\` dist-tag."
+            echo
+            echo "Dependencies use caret ranges (\`^x.y.z\`) on the release-only \`@girs\` version scheme (ts-for-gir >= 4.1): a caret dedupes across stable releases and excludes prereleases. This job advances the caret floor to the latest release. See \`scripts/update-girs.mjs\` for the full explanation."
+            echo
+            echo "$STATUS"
+            echo
+            echo '```'
+            cat "$RUNNER_TEMP/girs-changes.txt"
+            echo '```'
+            echo
+            echo "_Triggered by: \`${EVENT_NAME}\`._"
+            echo
+            echo "> Note: PRs opened by the default \`GITHUB_TOKEN\` do not trigger the Build CI workflow. Validation already ran inside this update workflow; close and reopen the PR if you want a separate Build CI run."
+          } > "$RUNNER_TEMP/pr-body.md"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add -A
+          git commit -m "chore: update @girs dependencies to latest"
+          git push -f origin "$BRANCH"
+
+          EXISTING="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --body-file "$RUNNER_TEMP/pr-body.md"
+            echo "Updated existing PR #$EXISTING"
+          else
+            gh pr create --base main --head "$BRANCH" \
+              --title "chore: update @girs dependencies to latest" \
+              --body-file "$RUNNER_TEMP/pr-body.md" $DRAFT_FLAG
+          fi
