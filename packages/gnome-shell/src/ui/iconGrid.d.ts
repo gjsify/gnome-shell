@@ -6,7 +6,7 @@ import type Shell from '@girs/shell-18';
 
 export namespace BaseIcon {
     export interface ConstructorProps {
-        createIcon: (size: number) => St.Icon | null;
+        createIcon: ((size: number) => St.Icon) | null;
         setSizeManually: boolean;
         showLabel: boolean;
     }
@@ -33,7 +33,7 @@ export class BaseIcon extends Shell.SquareBin {
     createIcon(size: number): St.Icon;
     setIconSize(size: number): void;
     animateZoomOut(): void;
-    animateZoomOutAtPos(): void;
+    animateZoomOutAtPos(x: number, y: number): void;
     update(): void;
 
     _createIconTexture(size: number): void;
