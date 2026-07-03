@@ -1,9 +1,9 @@
 name: Update @girs
 
 on:
-  # Poll daily so a new ts-for-gir / @girs release is picked up automatically.
+  # Poll weekly so a new ts-for-gir / @girs release is picked up automatically.
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 6 * * 1"
   # Manual run from the Actions tab.
   workflow_dispatch:
   # Optional instant trigger, e.g. from ts-for-gir's release workflow:
@@ -68,9 +68,9 @@ jobs:
           set -e
           yarn run build:types
           yarn run prettier:check
-          NODE_OPTIONS=--max_old_space_size=9216 yarn run validate:types
+          yarn run validate:types
           yarn run build:example
-          NODE_OPTIONS=--max_old_space_size=9216 yarn run validate:example
+          yarn run validate:example
 
       - name: Create or update pull request
         if: steps.changes.outputs.changed == 'true'
