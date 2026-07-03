@@ -96,7 +96,7 @@ jobs:
           {
             echo "Automated update of the \`@girs/*\` type dependencies to their latest npm \`latest\` dist-tag."
             echo
-            echo "Versions are pinned exactly (no caret) on purpose — \`@girs\` encodes the library and ts-for-gir version in one semver string, so a stable suffix sorts *below* a release candidate and ranges resolve back to the rc. See \`scripts/update-girs.mjs\` for the full explanation."
+            echo "Dependencies use caret ranges (\`^x.y.z\`) on the release-only \`@girs\` version scheme (ts-for-gir >= 4.1): a caret dedupes across stable releases and excludes prereleases. This job advances the caret floor to the latest release. See \`scripts/update-girs.mjs\` for the full explanation."
             echo
             echo "$STATUS"
             echo

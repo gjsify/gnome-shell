@@ -1,16 +1,20 @@
-// Pin every @girs/* dependency in the given package.json files to its npm
-// `latest` dist-tag, as an EXACT version (no caret/tilde range).
+// Bump every @girs/* dependency in the given package.json files to a caret range
+// (`^x.y.z`) on its npm `latest` dist-tag.
 //
-// Why exact pins?
-// @girs versions concatenate the library version and the ts-for-gir version into
-// a single semver string, e.g. "2.88.0-4.0.4". That makes the ts-for-gir part a
-// *prerelease tag*. By semver precedence a stable suffix like "-4.0.4" sorts
-// LOWER than a release-candidate suffix like "-4.0.0-rc.17" (a numeric identifier
-// such as "4" has lower precedence than an alphanumeric one such as "0-rc"). As a
-// result any caret/tilde range happily resolves back to the newest release
-// candidate and the `latest` dist-tag is never selected. Exact pins are the only
-// reliable way to track the stable releases — and it matches how the @girs
-// packages pin their own siblings.
+// Why caret ranges?
+// Since ts-for-gir 4.1 (gjsify/ts-for-gir#432) @girs packages version as the
+// ts-for-gir release alone (e.g. "4.1.0"; the targeted library version lives in a
+// `libraryVersion` field). On that release-only scheme a caret range dedupes
+// across stable releases AND excludes prereleases (`4.2.0-rc.1` does not satisfy
+// `^4.1.0`) — on Yarn 4 too. It also matches how the @girs packages now pin their
+// own siblings (e.g. `@girs/clutter-18` -> `"@girs/gobject-2.0": "^4.1.0"`), so
+// transitive resolution dedupes to a single copy.
+//
+// This job advances the caret *floor* to the latest release: it refreshes the
+// declared minimum and gives the workflow a concrete diff to validate the new
+// types against. Exact pins are deliberately avoided — an exact top-level pin
+// re-diverges from the transitive `^x` deps as soon as a newer patch ships, which
+// re-opens the duplicate-copy issue (gjsify/ts-for-gir#431).
 //
 // Scope: only updates the version of @girs/* keys that already exist. It does not
 // add, remove or rename packages (namespace changes like cogl-2.0 -> cogl-18 are
@@ -58,8 +62,10 @@ for (const file of files) {
             console.error(`WARN: could not resolve latest for ${name}, leaving as "${ver}"`);
             return full;
         }
-        if (latest !== ver) allChanges.push(`${name}: ${ver} -> ${latest}`);
-        return pre + latest + post;
+        // Caret on the release-only version (dedupes stable releases, excludes rc).
+        const next = `^${latest}`;
+        if (next !== ver) allChanges.push(`${name}: ${ver} -> ${next}`);
+        return pre + next + post;
     });
     writeFileSync(file, text);
 }
