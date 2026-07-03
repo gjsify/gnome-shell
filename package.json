@@ -14,7 +14,8 @@
         "build:example": "yarn workspace @gjsify/gnome-shell-hello-world-example build",
         "build:types": "yarn workspace @girs/gnome-shell build",
         "prettier:check": "prettier --check .",
-        "prettier:fix": "prettier --write ."
+        "prettier:fix": "prettier --write .",
+        "update:girs": "node scripts/update-girs.mjs packages/gnome-shell/package.json examples/hello-world/package.json"
     },
     "gitHooks": {
         "pre-commit": "yarn run prettier:check"
