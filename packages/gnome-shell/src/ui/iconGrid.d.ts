@@ -6,23 +6,38 @@ import type Shell from '@girs/shell-18';
 
 export namespace BaseIcon {
     export interface ConstructorProps {
-        createIcon: any | null;
+        createIcon: ((size: number) => St.Icon) | null;
         setSizeManually: boolean;
         showLabel: boolean;
     }
 }
 
 export class BaseIcon extends Shell.SquareBin {
-    createIcon: any | null;
+    iconSize: number;
     icon: St.Icon | null;
     label: St.Label | null;
 
-    _setSizeManually?: boolean;
+    _box: St.BoxLayout;
+    _iconBin: St.Bin;
+    _setSizeManually: boolean;
 
     constructor(label: string, params?: Partial<BaseIcon.ConstructorProps>);
 
     _init(params?: Partial<Shell.SquareBin.ConstructorProps>): void;
     _init(label: string, params?: Partial<BaseIcon.ConstructorProps>): void;
+
+    /**
+     * This can be overridden by a subclass, or by the createIcon
+     * parameter to _init()
+     */
+    createIcon(size: number): St.Icon;
+    setIconSize(size: number): void;
+    animateZoomOut(): void;
+    animateZoomOutAtPos(x: number, y: number): void;
+    update(): void;
+
+    _createIconTexture(size: number): void;
+    _onIconThemeChanged(): void;
 }
 
 export namespace IconGrid {
