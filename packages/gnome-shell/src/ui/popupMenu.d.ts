@@ -370,7 +370,7 @@ export namespace PopupMenuSection {
  * @version 49
  */
 export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S> {
-    override readonly actor: St.BoxLayout;
+    override readonly actor: Clutter.Actor;
 
     constructor();
 
