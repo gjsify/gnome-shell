@@ -20,9 +20,10 @@ The TypeScript types for the used libraries are generated from the `.gir` files 
 
 ## Showcase
 * [gTile](https://github.com/gTile/gTile) is a fully typed Gnome extension for tiling and resizing windows
+* [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is a fully typed Gnome extension that brings live wallpapers to your desktop
+* [Notification Badge](https://codeberg.org/icsanyi/gnome-notification-badge) is a fully typed Gnome extension that shows the notification count of apps on their icons
 * [Pano](https://github.com/oae/gnome-shell-pano) is a fully typed Gnome extension that serves as the next-gen Clipboard Manager
 * [Rounded Window Corners Reborn](https://github.com/flexagoon/rounded-window-corners) is a fully typed Gnome extension for rounded window (all) corners
-* [Notification Badge](https://codeberg.org/icsanyi/gnome-notification-badge) is a fully typed Gnome extension that shows the notification count of apps on their icons
 
 We are happy if you link your project through a PR here 😊
 
