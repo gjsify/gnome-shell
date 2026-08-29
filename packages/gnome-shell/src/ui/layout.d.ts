@@ -112,7 +112,6 @@ declare class ScreenTransition extends Clutter.Actor {
  * @version 48
  */
 declare class HotCorner extends Clutter.Actor {
-    _entered: boolean;
     _monitor: Monitor;
     _x: number;
     _y: number;
@@ -127,11 +126,8 @@ declare class HotCorner extends Clutter.Actor {
     setBarrierSize(size: number): void;
     handleDragOver(source: any, actor: any, x: number, y: number, time: number): DragMotionResult;
 
-    _setupFallbackCornerIfNeeded(layoutManager: LayoutManager): void;
     _onDestroy(): void;
     _toggleOverview(): void;
-    _onCornerEntered(): void;
-    _onCornerLeft(actor: Clutter.Actor, event: Clutter.Event): void;
 }
 
 /**
@@ -158,7 +154,6 @@ export class LayoutManager extends GObject.Object {
     _keyboardHeightNotifyId: number;
     _backgroundGroup: Meta.BackgroundGroup;
     _interfaceSettings: Gio.Settings;
-    _pendingLoadBackground: boolean;
     _systemBackground: SystemBackground;
 
     readonly _startingUp: boolean;

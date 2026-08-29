@@ -38,8 +38,6 @@ export abstract class SwitcherPopup extends St.Widget {
      */
     _onModifierChange(controller: Clutter.KeyController): void;
 
-    vfunc_button_press_event(): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
-
     _scrollHandler(direction: any): void;
 
     /**
