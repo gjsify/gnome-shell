@@ -80,7 +80,6 @@ export class ModalDialog extends St.Widget {
     _fadeOutDialog(timestamp: number): void;
 
     vfunc_key_press_event(event: Clutter.Event): boolean;
-    vfunc_captured_event(event: Clutter.Event): boolean;
 
     clearButtons(): void;
     setButtons(buttons: ButtonInfo[]): void;

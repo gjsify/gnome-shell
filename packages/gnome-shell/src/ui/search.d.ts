@@ -2,6 +2,7 @@
 
 import type St from '@girs/st-51';
 import type Clutter from '@girs/clutter-51';
+import type GObject from '@girs/gobject-2.0';
 
 import { AppSearchProvider } from './appDisplay.js';
 
@@ -14,6 +15,30 @@ export interface MetaInfo {
     createIcon?: (size: number) => Clutter.Actor;
     description?: string;
     clipboardText?: string;
+}
+
+export namespace SearchEntry {
+    export interface SignalSignatures extends St.Entry.SignalSignatures {
+        'activate-new-instance': () => void;
+    }
+}
+
+/**
+ * The overview's search entry. Ctrl+Enter emits `activate-new-instance` rather
+ * than activating the selected result.
+ *
+ * @version 51
+ */
+export class SearchEntry extends St.Entry {
+    $signals: SearchEntry.SignalSignatures;
+
+    // Signal handler methods
+    connect<S extends SearchEntry.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends SearchEntry.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+
+    // Generic signal handler methods
+    connect(signal: string, callback: (...args: any[]) => any): number;
+    connect_after(signal: string, callback: (...args: any[]) => any): number;
 }
 
 export class MaxWidthBox extends St.BoxLayout {}

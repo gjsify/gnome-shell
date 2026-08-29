@@ -60,11 +60,13 @@ export class Slider extends BarLevel.BarLevel {
     scroll(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     /**
-     * Handles scroll events for the slider.
-     * @param event The Clutter scroll event.
-     * @returns The event propagation status.
+     * Handles the `scroll` signal of the smooth, horizontal scroll controller.
+     * The slider adds a second, discrete controller for the vertical axis, and
+     * that one has its own inline handler, so only `dx` arrives here.
+     *
+     * @version 51
      */
-    vfunc_scroll_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number): void;
 
     /**
      * Handles motion events during dragging.
@@ -75,11 +77,20 @@ export class Slider extends BarLevel.BarLevel {
     _motionEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     /**
-     * Handles key press events for the slider.
-     * @param event The Clutter key press event.
-     * @returns The event propagation status.
+     * Moves the handle a tenth of the range towards the left edge. The Left key
+     * binding calls it.
+     *
+     * @version 51
      */
-    vfunc_key_press_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    _moveLeft(): void;
+
+    /**
+     * Moves the handle a tenth of the range towards the right edge. The Right
+     * key binding calls it.
+     *
+     * @version 51
+     */
+    _moveRight(): void;
 
     /**
      * Moves the handle of the slider to a new position based on the given coordinates.

@@ -105,12 +105,21 @@ export declare class VolumeIndicator extends SystemIndicator {
     _input: InputStreamSlider;
 
     /**
-     * Handle scroll events for volume adjustment.
-     * @param item The StreamSlider item.
-     * @param event The Clutter scroll event.
-     * @returns Clutter.EVENT_STOP or Clutter.EVENT_PROPAGATE
+     * Handles the indicator's scroll controller. The base class throws
+     * `GObject.NotImplementedError`; subclasses pick the stream to adjust.
+     *
+     * @version 51
      */
-    _handleScrollEvent(item: StreamSlider, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
+    _onScroll(source: Clutter.ScrollSource, dx: number, dy: number): void;
+
+    /**
+     * Steps the given stream slider and shows its OSD.
+     * @param item The StreamSlider item.
+     * @param delta The scroll delta along the slider's axis.
+     *
+     * @version 51
+     */
+    _handleScroll(item: StreamSlider, delta: number): void;
 }
 
 /**
