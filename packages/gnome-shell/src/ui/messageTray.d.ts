@@ -345,7 +345,6 @@ export class MessageTray extends St.Widget {
     _removeSource(source: Source): void;
     _onSourceEnableChanged(policy: NotificationPolicy, source: Source): void;
     _onNotificationRemoved(source: Source, notification: Notification): void;
-    _onNotificationShow(_source: Source, notification: Notification): void;
     _resetNotificationLeftTimeout(): void;
     _onNotificationHoverChanged(): void;
     _onStatusChanged(status: PresenceStatus): void;

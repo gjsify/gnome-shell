@@ -9,7 +9,6 @@ declare class AppFavorites extends EventEmitter {
 
     constructor();
 
-    _onFavsChanged(): void;
     _getIds(): string[];
     _addFavorite(appId: string, pos: number): void;
     _removeFavorite(appId: string): void;
