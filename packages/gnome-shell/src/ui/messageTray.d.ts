@@ -340,7 +340,6 @@ export class MessageTray extends St.Widget {
     _onDragBegin(): void;
     _onDragEnd(): void;
 
-    _onNotificationKeyRelease(actor: St.Widget, event: Clutter.Event): boolean;
     _expireNotification(): void;
     _addSource(source: Source): void;
     _removeSource(source: Source): void;

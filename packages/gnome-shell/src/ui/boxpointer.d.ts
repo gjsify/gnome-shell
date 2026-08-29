@@ -27,8 +27,8 @@ export class BoxPointer extends St.Widget {
     _border: St.DrawingArea;
     _arrowAlignment: number;
     _sourceAlignment: number;
-    _muteKeys: boolean;
-    _muteInput: boolean;
+    _muteKeys: Clutter.KeyController;
+    _muteInput: Clutter.ClickGesture;
     _sourceActor: Clutter.Actor | null;
     _sourceExtents: ReturnType<typeof Clutter.Actor.prototype.get_transformed_extents>;
     _workArea: ReturnType<typeof LayoutManager.prototype.getWorkAreaForMonitor>;
@@ -50,8 +50,6 @@ export class BoxPointer extends St.Widget {
      * @param binProperties Properties to set on contained bin
      */
     _init(arrowSide: St.Side, binProperties?: Partial<St.Bin.ConstructorProps>): void;
-
-    vfunc_captured_event(event: Clutter.Event): boolean;
 
     vfunc_get_preferred_width(forHeight: number): [number, number];
 

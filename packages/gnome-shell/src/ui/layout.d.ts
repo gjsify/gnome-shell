@@ -126,7 +126,6 @@ declare class HotCorner extends Clutter.Actor {
 
     setBarrierSize(size: number): void;
     handleDragOver(source: any, actor: any, x: number, y: number, time: number): DragMotionResult;
-    vfunc_leave_event(event: Clutter.Event): boolean;
 
     _setupFallbackCornerIfNeeded(layoutManager: LayoutManager): void;
     _onDestroy(): void;
