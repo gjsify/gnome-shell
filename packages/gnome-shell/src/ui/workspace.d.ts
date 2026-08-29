@@ -1,7 +1,7 @@
-import type Clutter from '@girs/clutter-18';
-import type St from '@girs/st-18';
-import type Meta from '@girs/meta-18';
-import type Shell from '@girs/shell-18';
+import type Clutter from '@girs/clutter-51';
+import type St from '@girs/st-51';
+import type Meta from '@girs/meta-51';
+import type Shell from '@girs/shell-51';
 
 import { WindowPreview } from './windowPreview.js';
 import { OverviewAdjustment } from './overviewControls.js';

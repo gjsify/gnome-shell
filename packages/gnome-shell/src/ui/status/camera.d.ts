@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/camera.js
 
-import Shell from '@girs/shell-18';
-import St from '@girs/st-18';
+import Shell from '@girs/shell-51';
+import St from '@girs/st-51';
 import { SystemIndicator } from '../quickSettings.js';
 
 /**

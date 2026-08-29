@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspaceThumbnail.js
 
-import type Clutter from '@girs/clutter-18';
-import type St from '@girs/st-18';
-import type Meta from '@girs/meta-18';
+import type Clutter from '@girs/clutter-51';
+import type St from '@girs/st-51';
+import type Meta from '@girs/meta-51';
 
 import { DragMotionResult } from './dnd.js';
 

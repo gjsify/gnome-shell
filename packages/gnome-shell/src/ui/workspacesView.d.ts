@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspacesView.js
 
-import type St from '@girs/st-18';
+import type St from '@girs/st-51';
 
 import { Workspace } from './workspace.js';
 
