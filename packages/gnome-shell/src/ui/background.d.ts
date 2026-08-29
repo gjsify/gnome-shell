@@ -197,10 +197,24 @@ declare class BackgroundSource {
 declare class Animation extends GnomeBG.BGSlideShow {
     _init(params?: Partial<GnomeBG.BGSlideShow.ConstructorProps>): void;
 
+    /**
+     * @hidden
+     * @deprecated The shell's override hands its own callback to
+     * `GnomeBG.BGSlideShow.load_async`, so the promisified form of the base
+     * method never takes effect. It returns `undefined`, and awaiting it
+     * resolves right away with the slide show still unloaded. The overload is
+     * here only so the override stays assignable to the base class. Pass a
+     * callback.
+     */
+    load_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /** @hidden */
     load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
     /**
      * Tries to load the slide show asynchronously.
+     *
+     * The shell calls the callback with no arguments. It wraps the callback to
+     * set its own `loaded` flag first, and the base class' `Gio.AsyncResult`
+     * never reaches it.
      * @param cancellable a #GCancellable
      * @param callback the callback
      */
