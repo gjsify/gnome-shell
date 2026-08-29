@@ -30,7 +30,6 @@ export class Dialog extends St.Widget {
 
     _init(parentActor: St.Widget, styleClass?: string | null): void;
     makeInactive(): void;
-    vfunc_event(event: Clutter.Event): boolean;
     addButton(buttonInfo: ButtonInfo): St.Button;
     clearButtons(): void;
 
