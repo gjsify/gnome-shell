@@ -150,7 +150,6 @@ export class SearchResultsView extends St.BoxLayout {
     _doProviderSearch(provider: AppSearchProvider, previousResults: any[]): Promise<any[]>;
     _doSearch(): void;
     _onSearchTimeout(): void;
-    _onPan(action: any): void;
     _focusChildChanged(provider: AppSearchProvider): void;
     _ensureProviderDisplay(provider: AppSearchProvider): void;
     _clearDisplay(): void;
