@@ -154,7 +154,13 @@ export class Calendar extends St.Widget {
 
     updateTimeZone(): void;
 
-    vfunc_scroll_event(event: Clutter.ScrollEvent): boolean;
+    /**
+     * Handles the `scroll` signal of the calendar's scroll controller, which
+     * flips to the previous or next month.
+     *
+     * @version 51
+     */
+    _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
 
     _buildHeader(): void;
     _onPrevMonthButtonClicked(): void;

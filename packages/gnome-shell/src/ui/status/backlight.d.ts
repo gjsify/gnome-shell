@@ -1,3 +1,4 @@
+import Clutter from '@girs/clutter-51';
 import St from '@girs/st-51';
 import Gio from '@girs/gio-2.0';
 
@@ -29,6 +30,14 @@ export declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
      * Sets the value of the slider.
      */
     set value(value: number);
+
+    /**
+     * Forwards focus navigation to the slider, so Left and Right reach the
+     * slider's own key bindings.
+     *
+     * @version 51
+     */
+    vfunc_navigate_focus(from: Clutter.Actor | null, direction: St.DirectionType): boolean;
 }
 
 /**

@@ -23,15 +23,31 @@ export abstract class SwitcherPopup extends St.Widget {
 
     _keyPressHandler(_keysym: any, _action: any): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
-    vfunc_key_press_event(keyEvent: Clutter.KeyEvent): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
+    /**
+     * Handles the `key-press` signal of the popup's key controller.
+     *
+     * @version 51
+     */
+    _onKeyPress(controller: Clutter.KeyController): boolean;
 
-    vfunc_key_release_event(keyEvent: Clutter.KeyEvent): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
+    /**
+     * Handles the `modifier-change` signal, which finishes the switch once the
+     * held modifier goes up.
+     *
+     * @version 51
+     */
+    _onModifierChange(controller: Clutter.KeyController): void;
 
     vfunc_button_press_event(): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
 
     _scrollHandler(direction: any): void;
 
-    vfunc_scroll_event(scrollEvent: any /* Clutter.ScrollEvent */): typeof Clutter.EVENT_PROPAGATE | typeof Clutter.EVENT_STOP;
+    /**
+     * Handles the `scroll` signal of the popup's scroll controller.
+     *
+     * @version 51
+     */
+    _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
 
     _itemActivatedHandler(n: number): void;
 
