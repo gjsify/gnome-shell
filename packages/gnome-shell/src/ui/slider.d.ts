@@ -20,44 +20,11 @@ export class Slider extends BarLevel.BarLevel {
     vfunc_repaint(): void;
 
     /**
-     * Handles button press events, initiating dragging.
-     * @param event The Clutter button press event.
-     * @returns The event propagation status.
+     * Moves the value by the given number of scroll steps.
+     * @param nSteps The number of steps, negative to move towards the start.
+     * @returns Whether the value changed.
      */
-    vfunc_button_press_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-
-    /**
-     * Starts dragging the slider.
-     * @param event The Clutter event initiating the drag.
-     * @returns The event propagation status.
-     */
-    startDragging(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-
-    /**
-     * Ends dragging the slider.
-     * @returns The event propagation status.
-     */
-    _endDragging(): typeof Clutter.EVENT_PROPAGATE;
-
-    /**
-     * Handles button release events.
-     * @returns The event propagation status.
-     */
-    vfunc_button_release_event(): typeof Clutter.EVENT_PROPAGATE;
-
-    /**
-     * Handles touch events for the slider.
-     * @param event The Clutter touch event.
-     * @returns The event propagation status.
-     */
-    vfunc_touch_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-
-    /**
-     * Scrolls the slider.
-     * @param event The Clutter scroll event.
-     * @returns The event propagation status.
-     */
-    scroll(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
+    step(nSteps: number): boolean;
 
     /**
      * Handles the `scroll` signal of the smooth, horizontal scroll controller.
@@ -67,14 +34,6 @@ export class Slider extends BarLevel.BarLevel {
      * @version 51
      */
     _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number): void;
-
-    /**
-     * Handles motion events during dragging.
-     * @param actor The actor receiving the motion event.
-     * @param event The Clutter motion event.
-     * @returns The event propagation status.
-     */
-    _motionEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     /**
      * Moves the handle a tenth of the range towards the left edge. The Left key

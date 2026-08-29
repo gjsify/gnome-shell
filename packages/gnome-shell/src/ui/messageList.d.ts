@@ -19,8 +19,6 @@ export class URLHighlighter extends St.Label {
     _init(params?: Partial<St.Label.ConstructorProps>): void;
     _init(text?: string, lineWrap?: boolean, allowMarkup?: boolean): void;
 
-    vfunc_button_press_event(buttonEvent: Clutter.ButtonEvent): boolean;
-    vfunc_button_release_event(buttonEvent: Clutter.ButtonEvent): boolean;
     /**
      * Handles the `motion` signal of the label's motion controller, which sets
      * the pointer cursor over a URL.
@@ -152,16 +150,11 @@ export class NotificationMessage extends Message {
 
     vfunc_clicked(): void;
     canClose(): boolean;
-
-    _getIcon(): St.Icon;
-    _onUpdated(n: Notification, _clear?: boolean): void;
 }
 
 declare class MediaMessage extends Message {
     _player: MprisPlayer;
     _icon: St.Icon;
-    _secondaryBin: St.Bin;
-    _closeButton: St.Button;
     _prevButton: St.Button;
     _playPauseButton: St.Button;
     _nextButton: St.Button;

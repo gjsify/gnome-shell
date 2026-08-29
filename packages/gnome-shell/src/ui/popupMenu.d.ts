@@ -141,9 +141,7 @@ export class Switch extends St.Widget {
     _startDragging(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
     override vfunc_motion_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
     override vfunc_button_release_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-    _touchDragging(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
     _endDragging(): typeof Clutter.EVENT_PROPAGATE;
-    _motionEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     // General signal handler methods
     connect(sigName: string, callback: (...args: any[]) => void): number;
