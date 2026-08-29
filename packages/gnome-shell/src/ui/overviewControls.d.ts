@@ -1,9 +1,9 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js
 
-import type Clutter from '@girs/clutter-18';
+import type Clutter from '@girs/clutter-51';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-18';
-import type Meta from '@girs/meta-18';
+import type St from '@girs/st-51';
+import type Meta from '@girs/meta-51';
 
 import { AppDisplay } from './appDisplay.js';
 import { FitMode, WorkspacesDisplay } from './workspacesView.js';

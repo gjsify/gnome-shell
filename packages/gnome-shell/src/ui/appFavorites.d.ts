@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/appFavorites.js
 
-import type Shell from '@girs/shell-18';
+import type Shell from '@girs/shell-51';
 
 import { EventEmitter } from '../misc/signals.js';
 

@@ -22,6 +22,6 @@
     "@girs/gjs": "^4.3.0",
     "@girs/gnome-shell": "workspace:^",
     "@girs/gobject-2.0": "^4.3.0",
-    "@girs/st-18": "^4.3.0"
+    "@girs/st-51": "^4.3.0"
   }
 }
