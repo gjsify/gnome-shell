@@ -192,8 +192,8 @@ export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
      */
     addHeaderSuffix(actor: Clutter.Actor): void;
 
-    override open(animate?: PopupAnimation): void;
-    override close(animate?: PopupAnimation): void;
+    override open(params?: PopupMenu.PopupMenuBase.AnimationParams): void;
+    override close(params?: PopupMenu.PopupMenuBase.AnimationParams): void;
 
     _syncChecked(): void;
 
@@ -313,8 +313,8 @@ export class QuickSettingsMenu extends PopupMenu.PopupMenu {
      */
     getFirstItem(): Clutter.Actor;
 
-    override open(animate?: PopupAnimation): void;
-    override close(animate?: PopupAnimation): void;
+    override open(params?: PopupMenu.PopupMenuBase.AnimationParams): void;
+    override close(params?: PopupMenu.PopupMenuBase.AnimationParams): void;
 
     _completeAddItem(item: Clutter.Actor, colSpan: number): void;
     _setDimmed(dim: boolean): void;
