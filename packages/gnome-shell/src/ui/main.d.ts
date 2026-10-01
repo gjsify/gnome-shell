@@ -34,9 +34,9 @@ import { LayoutManager, UiActor } from './layout.js';
 import { NotificationDaemon } from './notificationDaemon.js';
 // import * as WindowAttentionHandler from './windowAttentionHandler.js';
 // import * as Screenshot from './screenshot.js';
-// import * as ScreenShield from './screenShield.js';
+import { ScreenShield } from './screenShield.js';
 // import * as Scripting from './scripting.js';
-// import * as SessionMode from './sessionMode.js';
+import { SessionMode } from './sessionMode.js';
 // import * as ShellDBus from './shellDBus.js';
 // import * as ShellMountOperation from './shellMountOperation.js';
 // import * as TimeLimitsManager from '../misc/timeLimitsManager.js';
@@ -68,7 +68,7 @@ export declare const wm: WindowManager;
 
 export declare const messageTray: MessageTray;
 
-export declare const screenShield: any;
+export declare const screenShield: ScreenShield;
 
 export declare const notificationDaemon: NotificationDaemon;
 
@@ -82,7 +82,7 @@ export declare const osdWindowManager: any;
 
 export declare const osdMonitorLabeler: any;
 
-export declare const sessionMode: any;
+export declare const sessionMode: SessionMode;
 
 export declare const screenshotUI: any;
 
@@ -100,7 +100,14 @@ export declare const modalCount: any;
 
 export declare const actionMode: Shell.ActionMode.NONE;
 
-export declare const modalActorFocusStack: any[];
+export declare const modalActorFocusStack: {
+    actor: Clutter.Actor;
+    grab: Clutter.Grab;
+    destroyId: number;
+    prevFocus: Clutter.Actor | null;
+    prevFocusDestroyId: number | undefined;
+    actionMode: Shell.ActionMode;
+}[];
 
 export declare const screenTimeDBus: any;
 

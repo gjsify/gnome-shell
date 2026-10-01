@@ -710,6 +710,17 @@
       }
     },
     "./ui/ripples/ambient": "./dist/ui/ripples-ambient.d.ts",
+    "./ui/screenShield": {
+      "import": {
+        "types": "./dist/ui/screenShield.d.ts",
+        "default": "./dist/ui/screenShield.js"
+      },
+      "require": {
+        "types": "./dist/ui/screenShield.d.ts",
+        "default": "./dist/ui/screenShield.cjs"
+      }
+    },
+    "./ui/screenShield/ambient": "./dist/ui/screenShield-ambient.d.ts",
     "./ui/search": {
       "import": {
         "types": "./dist/ui/search.d.ts",
@@ -732,6 +743,17 @@
       }
     },
     "./ui/searchController/ambient": "./dist/ui/searchController-ambient.d.ts",
+    "./ui/sessionMode": {
+      "import": {
+        "types": "./dist/ui/sessionMode.d.ts",
+        "default": "./dist/ui/sessionMode.js"
+      },
+      "require": {
+        "types": "./dist/ui/sessionMode.d.ts",
+        "default": "./dist/ui/sessionMode.cjs"
+      }
+    },
+    "./ui/sessionMode/ambient": "./dist/ui/sessionMode-ambient.d.ts",
     "./ui/slider": {
       "import": {
         "types": "./dist/ui/slider.d.ts",
