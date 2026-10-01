@@ -6,8 +6,10 @@ import type St from '@girs/st-18';
 import { DragEvent, DragMonitor, DragMotionResult } from './dnd.js';
 import { ControlsState, ControlsManager } from './overviewControls.js';
 import { SearchController } from './searchController.js';
-import { EventEmitter } from '../misc/signals.js';
+import * as Signals from '../misc/signals.js';
 import { Dash } from './dash.js';
+import { AppViewItem } from './appDisplay.js';
+import Meta from 'gi://Meta';
 
 /**
  * Time for initial animation going into Overview mode;
@@ -54,7 +56,28 @@ declare enum OverviewShownState {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js#L108
  * @version 50
  */
-export class Overview extends EventEmitter {
+export namespace Overview {
+    interface SignalMap {
+        hidden: [];
+        hiding: [];
+        showing: [];
+        shown: [];
+        'scroll-event': [Clutter.ScrollEvent];
+        'windows-restacked': [{ [key: number]: number }];
+        'item-drag-begin': [AppViewItem];
+        'item-drag-cancelled': [AppViewItem];
+        'item-drag-end': [AppViewItem];
+        'window-drag-begin': [Meta.Window];
+        'window-drag-cancelled': [Meta.Window];
+        'window-drag-end': [Meta.Window];
+    }
+}
+
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js#L108
+ * @version 50
+ */
+export class Overview<S extends Signals.SignalMap<S> = Overview.SignalMap> extends Signals.EventEmitter<S> {
     isDummy: boolean;
 
     _overview: OverviewActor;
@@ -73,7 +96,7 @@ export class Overview extends EventEmitter {
     _windowSwitchTimeoutId: number;
     _windowSwitchTimestamp: number;
     _lastActiveWorkspaceIndex: number;
-    _lastHoveredWindow: any | null;
+    _lastHoveredWindow: Meta.Window | null;
     _initCalled: boolean;
     _swipeTracker: any;
     _inXdndDrag: boolean | undefined;
@@ -114,12 +137,12 @@ export class Overview extends EventEmitter {
     _gestureBegin(tracker: any): void;
     _gestureUpdate(tracker: any, progress: number): void;
     _gestureEnd(tracker: any, duration: number, endProgress: number): void;
-    beginItemDrag(source: any): void;
-    cancelledItemDrag(source: any): void;
-    endItemDrag(source: any): void;
-    beginWindowDrag(window: any): void;
-    cancelledWindowDrag(window: any): void;
-    endWindowDrag(window: any): void;
+    beginItemDrag(source: AppViewItem): void;
+    cancelledItemDrag(source: AppViewItem): void;
+    endItemDrag(source: AppViewItem): void;
+    beginWindowDrag(window: Meta.Window): void;
+    cancelledWindowDrag(window: Meta.Window): void;
+    endWindowDrag(window: Meta.Window): void;
     focusSearch(): void;
     /**
      * Checks if the Activities button is currently sensitive to
