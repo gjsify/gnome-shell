@@ -117,7 +117,13 @@ export abstract class BaseAppView extends St.Widget {
 
     _onDestroy(): void;
     _createGrid(): AppGrid;
-    _onScroll(actor: St.ScrollView, event: Clutter.ScrollEvent): boolean;
+    /**
+     * Handles the `scroll` signal of the page's scroll controller. GNOME 51
+     * replaced the old `(actor, event)` handler with these arguments.
+     *
+     * @version 51
+     */
+    _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
     _swipeBegin(tracker: any, monitor: Clutter.EventSequence): void;
     _swipeUpdate(tracker: any, progress: number): void;
     _swipeEnd(tracker: any, duration: number, endProgress: number): void;
@@ -226,8 +232,13 @@ export class AppDisplay extends BaseAppView {
     _getItemPosition(item: AppViewItem): [number, number];
     _compareItems(a: AppViewItem, b: AppViewItem): number;
     _loadApps(): AppViewItem[];
-    _onScroll(actor: St.ScrollView, event: Clutter.ScrollEvent): boolean;
-    _onKeyPressEvent(actor: St.Widget, event: Clutter.KeyEvent): boolean;
+    /**
+     * Handles the `scroll` signal of the page's scroll controller. GNOME 51
+     * replaced the old `(actor, event)` handler with these arguments.
+     *
+     * @version 51
+     */
+    _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
     _maybeMoveItem(dragEvent: DragEvent): void;
     /** @hidden */
     _onDragBegin(): void;
