@@ -1,7 +1,7 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js
 
-import type Clutter from '@girs/clutter-18';
-import type St from '@girs/st-18';
+import type Clutter from '@girs/clutter-51';
+import type St from '@girs/st-51';
 
 import { DragEvent, DragMonitor, DragMotionResult } from './dnd.js';
 import { ControlsState, ControlsManager } from './overviewControls.js';

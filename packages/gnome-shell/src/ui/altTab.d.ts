@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/altTab.js
 
 import type GLib from '@girs/glib-2.0';
-import type Clutter from '@girs/clutter-18';
-import type Meta from '@girs/meta-18';
+import type Clutter from '@girs/clutter-51';
+import type Meta from '@girs/meta-51';
 
 import { SwitcherPopup } from './switcherPopup.js';
 

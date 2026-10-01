@@ -2,7 +2,7 @@
 
 import type GLib from '@girs/glib-2.0';
 import type Gio from '@girs/gio-2.0';
-import type St from '@girs/st-18';
+import type St from '@girs/st-51';
 
 export class Animation extends St.Bin {
     constructor(file: Gio.File, width: number, height: number, speed: number);
