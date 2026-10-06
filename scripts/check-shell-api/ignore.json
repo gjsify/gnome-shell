@@ -1,0 +1,6 @@
+{
+    "extensions/global::file": "global is created by the C side of gnome-shell, no js file defines it",
+    "misc/config::file": "config.js is generated from config.js.in at build time, so a source checkout has no js/misc/config.js",
+    "ui/panel::QuickSettings#menu": "deliberate re-declaration, narrows the type of the menu PanelMenu.Button already defines",
+    "ui/components/index::file": "barrel file of this package, upstream has no js/ui/components/index.js"
+}
