@@ -139,8 +139,6 @@ export class Switch extends St.Widget {
 
     toggle(): void;
     _startDragging(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-    override vfunc_motion_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-    override vfunc_button_release_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
     _endDragging(): typeof Clutter.EVENT_PROPAGATE;
 
     // General signal handler methods
@@ -422,7 +420,6 @@ export class PopupMenuManager {
 
     addMenu(menu: PopupMenuBase, position?: number): void;
     removeMenu(menu: PopupMenuBase): void;
-    ignoreRelease(): void;
     _onMenuOpenState(menu: PopupMenuBase, open: boolean): void;
     _changeMenu(newMenu: PopupMenuBase): void;
     _onCapturedEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;

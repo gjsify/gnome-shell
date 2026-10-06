@@ -59,46 +59,11 @@ declare namespace _Draggable {
 declare class _Draggable extends EventEmitter {
     actor: Clutter.Actor;
 
-    _dragState: DragState;
-
     constructor(actor: Clutter.Actor, params: Partial<_Draggable.ConstructorProps>);
-
-    /**
-     * fakeRelease:
-     *
-     * Fake a release event.
-     * Must be called if you want to intercept release events on draggable
-     * actors for other purposes (for example if you're using
-     * PopupMenu.ignoreRelease())
-     */
-    fakeRelease(): void;
-
-    /**
-     * startDrag:
-     * @param stageX: X coordinate of event
-     * @param stageY: Y coordinate of event
-     * @param time: Event timestamp
-     * @param sequence: Event sequence
-     * @param device: device that originated the event
-     *
-     * Directly initiate a drag and drop operation from the given actor.
-     * This function is useful to call if you've specified manualMode
-     * for the draggable.
-     */
-    startDrag(stageX: number, stageY: number, time: number, sequence?: Clutter.EventSequence, device?: Clutter.InputDevice): void;
-
-    _onButtonPress(actor: Clutter.Actor, event: Clutter.Event): boolean;
-    _onTouchEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
-    _grabDevice(actor: Clutter.Actor, pointer: Clutter.InputDevice, touchSequence: Clutter.EventSequence): boolean;
-    _ungrabDevice(): void;
-    _grabActor(device: Clutter.InputDevice, touchSequence: Clutter.EventSequence): void;
-    _ungrabActor(): void;
     _grabEvents(device: Clutter.InputDevice, touchSequence: Clutter.EventSequence): void;
     _ungrabEvents(): void;
-    _eventIsRelease(event: Clutter.Event): boolean;
     _onEvent(actor: Clutter.Actor, event: Clutter.Event): boolean;
     _updateActorPosition(origScale: number, origDragOffsetX: number, origDragOffsetY: number, transX: number, transY: number): void;
-    _maybeStartDrag(event: Clutter.Event): void;
     _pickTargetActor(): Clutter.Actor;
     _updateDragHover(): void;
     _queueUpdateDragHover(): void;

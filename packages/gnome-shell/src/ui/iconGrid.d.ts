@@ -67,12 +67,9 @@ export class IconGrid extends St.Viewport {
     /** @hidden */
     _init(params?: Partial<St.Viewport.ConstructorProps>): void;
     _init(layoutParams?: IconGrid.ConstructorProps): void;
-
-    _childAdded(grid: IconGrid, child: St.Widget): void;
     _ensureItemIsVisible(item: St.Widget): void;
     _setGridMode(modeIndex: number): void;
     _findBestModeForSize(width: number, height: number): void;
-    _childRemoved(grid: IconGrid, child: St.Widget): void;
 
     /**
      * addItem:
