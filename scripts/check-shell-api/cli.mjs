@@ -27,6 +27,7 @@ const { values: options } = parseArgs({
         'no-baseline': { type: 'boolean', default: false },
         'update-baseline': { type: 'boolean', default: false },
         exports: { type: 'boolean', default: false },
+        visibility: { type: 'string', default: 'all' },
         json: { type: 'boolean', default: false },
     },
 });
@@ -37,6 +38,7 @@ const fail = (message) => {
 };
 
 if (!options.shell) fail('--shell <path to a gnome-shell git checkout> is required');
+if (!['all', 'public', 'private'].includes(options.visibility)) fail('--visibility is all, public or private');
 const readJson = (file, fallback) => (existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : fallback);
 
 const baseline = readJson(options.baseline, { tag: null, entries: [] });
@@ -82,18 +84,29 @@ if (options['update-baseline']) {
     process.exit(0);
 }
 
+// A leading underscore marks a member private by GJS convention. Classes, files
+// and exports are always public.
+const visibilityOf = (key) => (/[#.][_#][^#.]*$/.test(key) ? 'private' : 'public');
+const visible = (key) => options.visibility === 'all' || visibilityOf(key) === options.visibility;
+
 const known = new Set(useBaseline ? baseline.entries : []);
 const current = new Set(found);
 const ignored = found.filter(isIgnored);
-const added = found.filter((key) => !isIgnored(key) && !known.has(key));
-const fixed = [...known].filter((key) => !current.has(key));
+const added = found.filter((key) => !isIgnored(key) && !known.has(key) && visible(key));
+const fixed = [...known].filter((key) => !current.has(key) && visible(key));
 
 if (options.json) {
     console.log(JSON.stringify({ tag, added, fixed, ignored: ignored.length, known: known.size }, null, 2));
 } else {
-    const list = (title, keys) => keys.length && console.log(`${title}\n${keys.map((key) => `  ${key}`).join('\n')}\n`);
+    const list = (title, keys) => {
+        for (const visibility of ['public', 'private']) {
+            const group = keys.filter((key) => visibilityOf(key) === visibility);
+            if (group.length) console.log(`${title} [${visibility}]\n${group.map((key) => `  ${key}`).join('\n')}\n`);
+        }
+    };
     list(`Declared, but not in GNOME Shell ${tag}${useBaseline ? ' (not in the baseline)' : ''}:`, added);
     list('In the baseline, but no longer found; remove from baseline.json (run with --update-baseline):', fixed);
-    console.log(`${tag}: ${added.length} new, ${fixed.length} fixed, ${known.size - fixed.length} known, ${ignored.length} ignored`);
+    const count = (keys, visibility) => keys.filter((key) => visibilityOf(key) === visibility).length;
+    console.log(`${tag}: ${added.length} new (${count(added, 'public')} public), ${fixed.length} fixed, ${known.size - fixed.length} known, ${ignored.length} ignored`);
 }
 process.exit(added.length || fixed.length ? 1 : 0);
