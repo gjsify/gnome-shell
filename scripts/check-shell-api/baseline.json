@@ -1,18 +1,4 @@
 {
     "tag": "51.beta",
-    "entries": [
-        "ui/animation::AnimatedIcon",
-        "ui/animation::AnimatedIcon#_init",
-        "ui/animation::Animation",
-        "ui/animation::Animation#_animationsLoaded",
-        "ui/animation::Animation#_init",
-        "ui/animation::Animation#_loadFile",
-        "ui/animation::Animation#_onDestroy",
-        "ui/animation::Animation#_showFrame",
-        "ui/animation::Animation#_syncAnimationSize",
-        "ui/animation::Animation#_update",
-        "ui/animation::Spinner#_init",
-        "ui/animation::Spinner#_onDestroy",
-        "ui/components/telepathyClient::file"
-    ]
+    "entries": []
 }
