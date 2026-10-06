@@ -35,7 +35,7 @@ export declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
      * Forwards focus navigation to the slider, so Left and Right reach the
      * slider's own key bindings.
      *
-     * @version 51
+     * @since 51
      */
     vfunc_navigate_focus(from: Clutter.Actor | null, direction: St.DirectionType): boolean;
 }

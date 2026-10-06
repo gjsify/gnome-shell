@@ -108,7 +108,7 @@ declare class DBusEventSource extends EventSourceBase {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/calendar.js#L406
- * @version 48
+ * @since 48
  */
 export class Calendar extends St.Widget {
     _weekStart: number;
@@ -157,7 +157,7 @@ export class Calendar extends St.Widget {
      * Handles the `scroll` signal of the calendar's scroll controller, which
      * flips to the previous or next month.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
 
@@ -181,7 +181,7 @@ declare class Placeholder extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/calendar.js#L799
- * @version 48
+ * @since 48
  */
 
 export class CalendarMessageList extends St.Widget {
