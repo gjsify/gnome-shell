@@ -168,7 +168,7 @@ export class QuickSlider extends QuickSettingsItem {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L350
  * @since 46
  */
-export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
+declare class QuickToggleMenu extends PopupMenu.PopupMenuBase {
     actor: St.Widget;
 
     _header: St.Widget;
@@ -206,7 +206,7 @@ export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L519
  * @since 46
  */
-export class QuickSettingsLayoutMeta extends Clutter.LayoutMeta {
+declare class QuickSettingsLayoutMeta extends Clutter.LayoutMeta {
     /**
      * The span of a child widget in grid columns.
      */
@@ -219,7 +219,7 @@ export class QuickSettingsLayoutMeta extends Clutter.LayoutMeta {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L536
  * @since 46
  */
-export class QuickSettingsLayout extends Clutter.LayoutManager {
+declare class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
      * Spacing between rows.
      */
@@ -344,3 +344,4 @@ export class SystemIndicator extends St.BoxLayout {
      */
     _addIndicator(): St.Icon;
 }
+export type { QuickToggleMenu, QuickSettingsLayoutMeta, QuickSettingsLayout };

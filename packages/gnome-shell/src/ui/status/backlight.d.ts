@@ -12,7 +12,7 @@ declare const BrightnessProxy: Gio.DBusProxy;
  * Class for a slider item in the menu for adjusting brightness.
  * This class extends `PopupMenu.PopupBaseMenuItem`.
  */
-export declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
+declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
     _slider: Slider;
     _sliderChangedId: number;
 
@@ -44,7 +44,7 @@ export declare class SliderItem extends PopupMenu.PopupBaseMenuItem {
  * Class for a discrete item with levels for brightness adjustment.
  * This class extends `St.BoxLayout`.
  */
-export declare class DiscreteItem extends St.BoxLayout {
+declare class DiscreteItem extends St.BoxLayout {
     _levelButtons: Map<string, St.BoxLayout>;
 
     /**
@@ -82,7 +82,7 @@ export declare class DiscreteItem extends St.BoxLayout {
  * Toggle class for keyboard brightness settings.
  * This class extends `QuickMenuToggle`.
  */
-export declare class KeyboardBrightnessToggle extends QuickMenuToggle {
+declare class KeyboardBrightnessToggle extends QuickMenuToggle {
     _proxy: typeof BrightnessProxy;
     _sliderItem: SliderItem;
     _discreteItem: DiscreteItem;
@@ -108,3 +108,4 @@ export declare class Indicator extends SystemIndicator {
      */
     _init(): void;
 }
+export type { SliderItem, DiscreteItem, KeyboardBrightnessToggle };
