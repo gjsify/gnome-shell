@@ -4,7 +4,7 @@ import type { Extension } from './extension.js';
 import type Gio from '@girs/gio-2.0';
 
 /**
- * @version 49
+ * @since 49
  */
 export interface TranslationFunctions {
     /**
@@ -42,7 +42,7 @@ export interface TranslationFunctions {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L9
- * @version 49
+ * @since 49
  */
 export class ExtensionBase {
     #gettextDomain: string | null;
@@ -134,7 +134,7 @@ export class ExtensionBase {
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export class GettextWrapper {
     #url: string | null;
@@ -157,7 +157,7 @@ export class GettextWrapper {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L285
- * @version 49
+ * @since 49
  */
 export interface ConsoleLike {
     log(...args: any[]): void;

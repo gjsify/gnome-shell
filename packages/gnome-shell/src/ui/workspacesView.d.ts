@@ -6,7 +6,7 @@ import { Workspace } from './workspace.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspacesView.js#L85
- * @version 50
+ * @since 50
  */
 export enum FitMode {
     SINGLE = 0,
@@ -14,7 +14,7 @@ export enum FitMode {
 }
 
 /**
- * @version 46
+ * @since 46
  */
 export class WorkspacesView {
     _scrollToActive(): void;
@@ -23,7 +23,7 @@ export class WorkspacesView {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspacesView.js#L816
- * @version 50
+ * @since 50
  */
 export class WorkspacesDisplay extends St.Widget {
     _leavingOverview: boolean;

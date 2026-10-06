@@ -4,7 +4,7 @@ import type Gtk from '@girs/gtk-4.0';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
 
 /**
- * @version 47
+ * @since 47
  */
 export class ExtensionPreferences extends ExtensionBase {
     static defineTranslationFunctions(url: string): TranslationFunctions;
