@@ -79,6 +79,6 @@ A private member (leading underscore) is optional to declare. By default the rep
 
 The report also lists declarations gone upstream, with exports on. It exits 0 whatever it finds, so it is never a gate: being unfinished is the normal state, and the number is the progress. Once nothing is left to declare, make the last line fail on a finding.
 
-`report-ignore.json` lists what is not planned, each with the reason: `gdm`, `dbusServices` and `portalHelper` run outside the shell process an extension lives in. `--json` gives the same for tools.
+`report-ignore.json` lists what is not planned, each with the reason: `dbusServices` and `portalHelper` are separate processes, outside the shell process an extension lives in. `gdm` is not listed: it runs in the shell process and can be imported. `--json` gives the same for tools.
 
 Both commands compare names, so a declared export that has the wrong shape still counts as declared.
