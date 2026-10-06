@@ -77,8 +77,6 @@ declare class CyclerPopup extends SwitcherPopup {
     _highlightItem(index: number, _justOutline: boolean): void;
 
     _finish(): void;
-
-    onDestroy(): void;
 }
 
 export class GroupCyclerPopup extends CyclerPopup {
@@ -104,8 +102,6 @@ export class WindowSwitcherPopup extends SwitcherPopup {
 }
 
 export class WindowCyclerPopup extends CyclerPopup {
-    init(): void;
-
     _getWindows(): Meta.Window[];
 
     _keyPressHandler(keysym: any, action: any): typeof Clutter.EVENT_STOP | typeof Clutter.EVENT_PROPAGATE;
