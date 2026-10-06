@@ -149,3 +149,16 @@ test('diffModule skips what is declared for a newer release than the one checked
     assert.deepEqual(at50.skipped, ['ui/x::Old#fresh', 'ui/x::New', 'ui/x::New#a']);
     assert.deepEqual(diffModule('ui/x', decl, def, { shellMajor: 51 }).skipped, []);
 });
+
+test('exports include destructured names and leave out type-only ones', () => {
+    const api = declaredIn(`
+        export const { gettext, ngettext }: Gettext;
+        export const [first]: string[];
+        export type { Shape } from './shape.js';
+        export { type Other, kept } from './other.js';
+        export interface Local {}
+        export enum Reason { A }
+        export declare namespace Helpers {}
+    `);
+    assert.deepEqual([...api.exports].sort(), ['Helpers', 'Reason', 'first', 'gettext', 'kept', 'ngettext']);
+});

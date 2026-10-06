@@ -100,27 +100,37 @@ function topLevelNames(sourceFile) {
     for (const statement of sourceFile.statements) {
         if (ts.isVariableStatement(statement)) {
             for (const declaration of statement.declarationList.declarations) {
-                if (ts.isIdentifier(declaration.name)) names.add(declaration.name.text);
+                for (const name of bindingNames(declaration.name)) names.add(name);
             }
-        } else if ((ts.isClassDeclaration(statement) || ts.isFunctionDeclaration(statement)) && statement.name) names.add(statement.name.text);
+        } else if ((ts.isClassDeclaration(statement) || ts.isFunctionDeclaration(statement) || ts.isEnumDeclaration(statement) || ts.isModuleDeclaration(statement)) && statement.name) names.add(statement.name.text);
     }
     return names;
 }
 
+// `export const {gettext, ngettext} = …` exports every name it destructures.
+function bindingNames(name) {
+    if (ts.isIdentifier(name)) return [name.text];
+    return name.elements.flatMap((element) => (ts.isOmittedExpression(element) ? [] : bindingNames(element.name)));
+}
+
+// Type-only exports exist for the compiler and have no counterpart in js/.
 function exportsOf(sourceFile) {
     const names = new Set();
     for (const statement of sourceFile.statements) {
         if (ts.isExportDeclaration(statement)) {
+            if (statement.isTypeOnly) continue;
             if (statement.exportClause && ts.isNamedExports(statement.exportClause)) {
-                for (const element of statement.exportClause.elements) names.add(element.name.text);
+                for (const element of statement.exportClause.elements) {
+                    if (!element.isTypeOnly) names.add(element.name.text);
+                }
             }
         } else if (hasModifier(statement, SyntaxKind.ExportKeyword)) {
             if (hasModifier(statement, SyntaxKind.DefaultKeyword)) names.add('default');
             else if (ts.isVariableStatement(statement)) {
                 for (const declaration of statement.declarationList.declarations) {
-                    if (ts.isIdentifier(declaration.name)) names.add(declaration.name.text);
+                    for (const name of bindingNames(declaration.name)) names.add(name);
                 }
-            } else if ((ts.isClassDeclaration(statement) || ts.isFunctionDeclaration(statement)) && statement.name) names.add(statement.name.text);
+            } else if ((ts.isClassDeclaration(statement) || ts.isFunctionDeclaration(statement) || ts.isEnumDeclaration(statement) || ts.isModuleDeclaration(statement)) && statement.name) names.add(statement.name.text);
         }
     }
     return names;
