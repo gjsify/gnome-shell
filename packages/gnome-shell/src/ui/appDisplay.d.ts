@@ -33,7 +33,7 @@ export class AppGrid extends IconGrid {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L191
  * @since 50
  */
-export abstract class BaseAppViewGridLayout extends Clutter.BinLayout {
+declare abstract class BaseAppViewGridLayout extends Clutter.BinLayout {
     _grid: AppGrid;
     _scrollView: St.ScrollView;
     _previousPageIndicator: St.Widget;
@@ -75,7 +75,7 @@ interface PageMoveData {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L471
  * @since 50
  */
-export namespace BaseAppView {
+declare namespace BaseAppView {
     export interface SignalSignatures extends St.Widget.SignalSignatures {
         'view-loaded': () => void;
     }
@@ -85,7 +85,7 @@ export namespace BaseAppView {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L476
  * @since 50
  */
-export abstract class BaseAppView extends St.Widget {
+declare abstract class BaseAppView extends St.Widget {
     $signals: BaseAppView.SignalSignatures;
 
     _grid: AppGrid;
@@ -553,6 +553,7 @@ export class AppIcon extends AppViewItem {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L3155
  * @since 50
  */
-export class SystemActionIcon extends GridSearchResult {
+declare class SystemActionIcon extends GridSearchResult {
     activate(): void;
 }
+export type { BaseAppViewGridLayout, BaseAppView, SystemActionIcon, PageMoveData, PageManager, FolderGrid };

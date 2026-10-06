@@ -12,7 +12,7 @@ import { QuickMenuToggle, SystemIndicator } from '../quickSettings.js';
 /**
  * Bluetooth client class, managing the state and devices of Bluetooth.
  */
-export declare class BtClient extends GObject.Object {
+declare class BtClient extends GObject.Object {
     _client: typeof GnomeBluetooth.Client;
     _proxy: Gio.DBusProxy;
     _adapter: any; // Replace with actual type
@@ -59,7 +59,7 @@ export declare class BtClient extends GObject.Object {
 /**
  * Menu item representing a Bluetooth device.
  */
-export declare class BluetoothDeviceItem extends PopupMenu.PopupBaseMenuItem {
+declare class BluetoothDeviceItem extends PopupMenu.PopupBaseMenuItem {
     _device: any; // Replace with actual type
     _client: BtClient;
     _icon: St.Icon;
@@ -81,7 +81,7 @@ export declare class BluetoothDeviceItem extends PopupMenu.PopupBaseMenuItem {
 /**
  * Toggle for managing Bluetooth settings.
  */
-export declare class BluetoothToggle extends QuickMenuToggle {
+declare class BluetoothToggle extends QuickMenuToggle {
     _client: BtClient;
     _deviceItems: Map<string, BluetoothDeviceItem>;
     _deviceSection: PopupMenu.PopupMenuSection;
@@ -119,3 +119,4 @@ export declare class Indicator extends SystemIndicator {
 
     _sync(): void;
 }
+export type { BtClient, BluetoothDeviceItem, BluetoothToggle };

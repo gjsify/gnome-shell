@@ -16,7 +16,7 @@ declare const BOLT_DBUS_PATH: string;
 /**
  * Enum for Bolt device status.
  */
-export enum Status {
+declare enum Status {
     DISCONNECTED = 'disconnected',
     CONNECTING = 'connecting',
     CONNECTED = 'connected',
@@ -28,7 +28,7 @@ export enum Status {
 /**
  * Enum for Bolt device policy.
  */
-export enum Policy {
+declare enum Policy {
     DEFAULT = 'default',
     MANUAL = 'manual',
     AUTO = 'auto',
@@ -37,14 +37,14 @@ export enum Policy {
 /**
  * Enum for Bolt device authorization control.
  */
-export enum AuthCtrl {
+declare enum AuthCtrl {
     NONE = 'none',
 }
 
 /**
  * Enum for Bolt device authorization mode.
  */
-export enum AuthMode {
+declare enum AuthMode {
     DISABLED = 'disabled',
     ENABLED = 'enabled',
 }
@@ -52,12 +52,12 @@ export enum AuthMode {
 /**
  * A proxy wrapper for a Bolt device.
  */
-export const BoltDeviceProxy: Gio.DBusProxy;
+declare const BoltDeviceProxy: Gio.DBusProxy;
 
 /**
  * Client class for interacting with Bolt service.
  */
-export class Client extends Signals.EventEmitter {
+declare class Client extends Signals.EventEmitter {
     _proxy: Gio.DBusProxy | null;
     probing: boolean;
 
@@ -100,7 +100,7 @@ export class Client extends Signals.EventEmitter {
 /**
  * Helper class to automatically authorize new devices.
  */
-export class AuthRobot extends Signals.EventEmitter {
+declare class AuthRobot extends Signals.EventEmitter {
     _client: Client;
     _devicesToEnroll: any[];
     _enrolling: boolean;
@@ -155,3 +155,4 @@ export class Indicator extends SystemIndicator {
 
     _onEnrollFailed(obj: any, device: any, error: any): void;
 }
+export type { Status, Policy, AuthCtrl, AuthMode, BoltDeviceProxy, Client, AuthRobot };

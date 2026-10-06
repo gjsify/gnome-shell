@@ -10,7 +10,7 @@ import { SystemIndicator } from '../quickSettings.js';
 /**
  * Enum for representing accuracy levels of geolocation services.
  */
-export enum GeoclueAccuracyLevel {
+declare enum GeoclueAccuracyLevel {
     NONE = 0,
     COUNTRY = 1,
     CITY = 4,
@@ -23,12 +23,12 @@ export enum GeoclueAccuracyLevel {
  * Converts a GeoclueAccuracyLevel enum value to its string representation.
  * @param accuracyLevel - The accuracy level to convert.
  */
-export declare function accuracyLevelToString(accuracyLevel: GeoclueAccuracyLevel): string;
+declare function accuracyLevelToString(accuracyLevel: GeoclueAccuracyLevel): string;
 
 /**
  * Class representing a Geoclue agent to interact with location services.
  */
-export declare class GeoclueAgent extends GObject.Object {
+declare class GeoclueAgent extends GObject.Object {
     // Indicates whether location services are enabled.
     enabled: boolean;
     // Indicates whether location services are currently in use.
@@ -56,7 +56,7 @@ export declare class Indicator extends SystemIndicator {
 /**
  * Manages authorization of apps requesting location access.
  */
-export declare class AppAuthorizer {
+declare class AppAuthorizer {
     constructor(desktopId: string, reqAccuracyLevel: GeoclueAccuracyLevel, permStoreProxy: PermissionStore.PermissionStoreProxy, maxAccuracyLevel: GeoclueAccuracyLevel);
 
     // Authorizes the app for location access.
@@ -85,3 +85,4 @@ export declare class GeolocationDialog extends ModalDialog.ModalDialog {
  * Retrieves the singleton instance of the Geoclue agent.
  */
 export function getGeoclueAgent(): GeoclueAgent;
+export type { GeoclueAccuracyLevel, accuracyLevelToString, GeoclueAgent, AppAuthorizer };

@@ -33,7 +33,7 @@ Members are matched anywhere in the file, not per class: upstream often splits s
 A declaration tagged `@since 51` describes a shell that has not shipped at 50.4, so checking 50.4 does not report it. It is counted as "declared for a newer release" instead. A member without a tag of its own takes the tag of its class, and of several overloads the earliest tag counts. The tag is compared by major version: `51.alpha`, `51.beta` and `51.0` are all 51.
 
 ```sh
-for tag in 46.0 47.0 48.0 49.0 50.0 51.beta; do yarn check:shell-api --shell /tmp/gnome-shell --tag $tag --no-baseline | tail -1; done
+for tag in 46.0 47.0 48.0 49.0 50.0 51.beta; do yarn check:shell-api --shell /tmp/gnome-shell --tag $tag | tail -1; done
 ```
 
 What a look back reports is therefore a declaration that is untagged but missing at that release: either its `@since` tag is missing, or it never existed. Untagged is read as "46 or earlier", the oldest release the package covers.
@@ -56,3 +56,29 @@ A member with a leading underscore is private by GJS convention. The report list
 The check fails on every finding. `ignore.json` is for findings the script gets wrong, each with the reason. Keys may use `*`.
 
 `--tag` is required. Any release works: `--tag 50.4` looks at another one.
+
+## Report: what is not declared yet
+
+`check-shell-api` looks one way, from the declarations to the shell. It cannot say that something is missing, and a clean run never means the package is complete. `report-shell-api` looks both ways and never fails.
+
+The package mirrors the shell's file tree, `js/ui/foo.js` as `src/ui/foo.d.ts`, so a missing file is a path comparison. Inside a mirrored file it compares the exports, and with `--members` the members of declared classes.
+
+```sh
+yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta
+yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta --members
+yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta --members --visibility all
+```
+
+| key | meaning |
+| --- | --- |
+| `file:ui/screenShield` | upstream has `js/ui/screenShield.js`, the package has no `src/ui/screenShield.d.ts` |
+| `export:ui/main::breakManager` | upstream exports it, the `.d.ts` does not declare it |
+| `member:ui/slider::Slider#foo` | upstream class member the declared class lacks, only with `--members` |
+
+A private member (leading underscore) is optional to declare. By default the report lists only public members that are missing; `--visibility all` adds the private ones. A private member that is declared must still exist upstream, which `check-shell-api` enforces.
+
+The report also lists declarations gone upstream, with exports on. It exits 0 whatever it finds, so it is never a gate: being unfinished is the normal state, and the number is the progress. Once nothing is left to declare, make the last line fail on a finding.
+
+`report-ignore.json` lists what is not planned, each with the reason: `dbusServices` and `portalHelper` are separate processes, outside the shell process an extension lives in. `gdm` is not listed: it runs in the shell process and can be imported. `--json` gives the same for tools.
+
+Both commands compare names, so a declared export that has the wrong shape still counts as declared.

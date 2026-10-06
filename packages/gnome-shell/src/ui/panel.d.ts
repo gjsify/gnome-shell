@@ -34,19 +34,19 @@ import type { ScreenRecordingIndicator, ScreenSharingIndicator } from './status/
 /**
  * @since 48
  */
-export class UnsafeModeIndicator extends SystemIndicator {
+declare class UnsafeModeIndicator extends SystemIndicator {
     _indicator: St.Icon;
 }
 
 /**
  * @since 50
  */
-export class ActivitiesButton extends Button {}
+declare class ActivitiesButton extends Button {}
 
 /**
  * @since 48
  */
-export class QuickSettings extends Button {
+declare class QuickSettings extends Button {
     override menu: QuickSettingsMenu;
     _indicators: St.BoxLayout;
 
@@ -131,3 +131,4 @@ export class Panel extends St.Widget {
 
     _getDraggableWindowForPosition(stageX: number): Meta.Window | null;
 }
+export type { UnsafeModeIndicator, ActivitiesButton, QuickSettings, PanelItems };

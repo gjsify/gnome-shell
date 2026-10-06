@@ -19,7 +19,7 @@ declare const rfkillManagerInfo: Gio.DBusInterfaceInfo;
 /**
  * Class representing the RFKill Manager.
  */
-export declare class RfkillManager extends GObject.Object {
+declare class RfkillManager extends GObject.Object {
     _proxy: Gio.DBusProxy;
 
     /**
@@ -57,7 +57,7 @@ export declare function getRfkillManager(): RfkillManager;
 /**
  * Class representing the RFKill Toggle in Quick Settings.
  */
-export declare class RfkillToggle extends QuickToggle {
+declare class RfkillToggle extends QuickToggle {
     _manager: RfkillManager;
 
     /**
@@ -83,3 +83,4 @@ export declare class Indicator extends SystemIndicator {
      */
     _sync(): void;
 }
+export type { RfkillManager, RfkillToggle };

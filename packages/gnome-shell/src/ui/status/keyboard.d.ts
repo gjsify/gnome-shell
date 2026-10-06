@@ -96,7 +96,7 @@ export declare class InputSourcePopup extends SwitcherPopup.SwitcherPopup {
 /**
  * Class representing a switcher for input sources.
  */
-export declare class InputSourceSwitcher extends SwitcherPopup.SwitcherList {
+declare class InputSourceSwitcher extends SwitcherPopup.SwitcherList {
     _init(config?: St.Widget.ConstructorProps): void;
     _init(squareItems: any[]): void;
 
@@ -117,7 +117,7 @@ export declare class InputSourceSwitcher extends SwitcherPopup.SwitcherList {
 /**
  * Class representing a container for input source indicators.
  */
-export declare class InputSourceIndicatorContainer extends St.Widget {
+declare class InputSourceIndicatorContainer extends St.Widget {
     /**
      * Overridden method to get preferred width.
      */
@@ -186,3 +186,4 @@ export declare class InputSourceIndicator extends PanelMenu.Button {
      */
     _showLayout(): void;
 }
+export type { InputSourceSwitcher, InputSourceIndicatorContainer };
