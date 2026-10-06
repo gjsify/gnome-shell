@@ -149,7 +149,23 @@ export interface TrackedActors {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L192
  * @version 48
  */
+export namespace LayoutManager {
+    export interface SignalSignatures extends GObject.Object.SignalSignatures {
+        'hot-corners-changed': () => void;
+        'startup-complete': () => void;
+        'startup-prepared': () => void;
+        'monitors-changed': () => void;
+        'system-modal-opened': () => void;
+    }
+}
+
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L192
+ * @version 48
+ */
 export class LayoutManager extends GObject.Object {
+    $signals: LayoutManager.SignalSignatures;
+
     _rtl: boolean;
     _keyboardIndex: number;
     _rightPanelBarrier: Meta.Barrier | null;
