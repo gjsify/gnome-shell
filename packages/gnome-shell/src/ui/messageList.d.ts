@@ -19,10 +19,21 @@ export class URLHighlighter extends St.Label {
     _init(params?: Partial<St.Label.ConstructorProps>): void;
     _init(text?: string, lineWrap?: boolean, allowMarkup?: boolean): void;
 
-    vfunc_button_press_event(buttonEvent: Clutter.ButtonEvent): boolean;
-    vfunc_button_release_event(buttonEvent: Clutter.ButtonEvent): boolean;
-    vfunc_motion_event(motionEvent: Clutter.MotionEvent): boolean;
-    vfunc_leave_event(crossingEvent: Clutter.CrossingEvent): boolean;
+    /**
+     * Handles the `motion` signal of the label's motion controller, which sets
+     * the pointer cursor over a URL.
+     *
+     * @version 51
+     */
+    _onMotion(controller: Clutter.MotionController, sprite: Clutter.Sprite, x: number, y: number): void;
+
+    /**
+     * Handles the `leave` signal of the same controller and restores the
+     * default cursor.
+     *
+     * @version 51
+     */
+    _onLeave(): void;
     setMarkup(text?: string, allowMarkup?: boolean): void;
 
     _highlightUrls(): void;
@@ -117,7 +128,13 @@ export class Message extends St.Button {
 
     canClose(): boolean;
 
-    vfunc_key_press_event(keyEvent: Clutter.KeyEvent): boolean;
+    /**
+     * Closes the message if its notification allows it. The BackSpace and
+     * Delete key bindings call this.
+     *
+     * @version 51
+     */
+    _closeIfAllowed(): void;
 }
 
 /**
@@ -133,16 +150,11 @@ export class NotificationMessage extends Message {
 
     vfunc_clicked(): void;
     canClose(): boolean;
-
-    _getIcon(): St.Icon;
-    _onUpdated(n: Notification, _clear?: boolean): void;
 }
 
 declare class MediaMessage extends Message {
     _player: MprisPlayer;
     _icon: St.Icon;
-    _secondaryBin: St.Bin;
-    _closeButton: St.Button;
     _prevButton: St.Button;
     _playPauseButton: St.Button;
     _nextButton: St.Button;
