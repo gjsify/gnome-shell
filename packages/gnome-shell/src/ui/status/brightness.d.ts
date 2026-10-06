@@ -13,7 +13,7 @@ declare const BrightnessProxy: Gio.DBusProxy;
  * Class representing a slider item for adjusting screen brightness.
  * Extends `QuickSlider`.
  */
-export declare class BrightnessItem extends QuickSlider {
+declare class BrightnessItem extends QuickSlider {
     /**
      * Initializes a new instance of `BrightnessItem`.
      */
@@ -34,3 +34,4 @@ export declare class Indicator extends SystemIndicator {
      */
     _init(): void;
 }
+export type { BrightnessItem };

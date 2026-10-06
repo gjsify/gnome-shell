@@ -16,7 +16,7 @@ export const VIGNETTE_SHARPNESS = 0.7;
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L31
  * @since 51
  */
-export namespace RadialShaderEffect {
+declare namespace RadialShaderEffect {
     export interface ConstructorProps extends Clutter.ShaderEffect.ConstructorProps {
         brightness: number;
         sharpness: number;
@@ -27,7 +27,7 @@ export namespace RadialShaderEffect {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L42
  * @since 51
  */
-export class RadialShaderEffect extends Clutter.ShaderEffect {
+declare class RadialShaderEffect extends Clutter.ShaderEffect {
     _brightness: number;
     _sharpness: number;
 
@@ -105,3 +105,4 @@ export class Lightbox extends St.Bin {
     _childRemoved(container: Clutter.Actor, child: Clutter.Actor): void;
     _onDestroy(): void;
 }
+export type { RadialShaderEffect };
