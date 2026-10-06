@@ -3,7 +3,7 @@
 import type GObject from '@girs/gobject-2.0';
 import GioUnix from '@girs/giounix-2.0';
 
-import type Shell from '@girs/shell-18';
+import type Shell from '@girs/shell-51';
 
 declare class ParentalControlsManager extends GObject.Object {
     _initialized: boolean;

@@ -1,6 +1,6 @@
-import type Shell from '@girs/shell-18';
-import type Clutter from '@girs/clutter-18';
-import type Cogl from '@girs/cogl-18';
+import type Shell from '@girs/shell-51';
+import type Clutter from '@girs/clutter-51';
+import type Cogl from '@girs/cogl-51';
 
 declare module '@girs/cairo-1.0/cairo-1.0' {
     export namespace cairo {
@@ -158,7 +158,7 @@ type AnimatableActorFields =
 
 interface EasingParamsWithProperties extends EasingParams, Partial<Pick<Clutter.Actor, AnimatableActorFields>> {}
 
-declare module '@girs/st-18/st-18' {
+declare module '@girs/st-51/st-18' {
     export namespace St {
         interface Adjustment {
             /**
@@ -173,7 +173,7 @@ declare module '@girs/st-18/st-18' {
     }
 }
 
-declare module '@girs/clutter-18/clutter-18' {
+declare module '@girs/clutter-51/clutter-18' {
     export namespace Clutter {
         interface Actor {
             /**

@@ -1,8 +1,8 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js
 
-import type Clutter from '@girs/clutter-18';
-import type St from '@girs/st-18';
-import type Shell from '@girs/shell-18';
+import type Clutter from '@girs/clutter-51';
+import type Cogl from '@girs/cogl-51';
+import type St from '@girs/st-51';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L10
@@ -14,10 +14,10 @@ export const VIGNETTE_SHARPNESS = 0.7;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L31
- * @version 48
+ * @version 51
  */
 export namespace RadialShaderEffect {
-    export interface ConstructorProps extends Shell.GLSLEffect.ConstructorProps {
+    export interface ConstructorProps extends Clutter.ShaderEffect.ConstructorProps {
         brightness: number;
         sharpness: number;
     }
@@ -25,9 +25,9 @@ export namespace RadialShaderEffect {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/lightbox.js#L42
- * @version 48
+ * @version 51
  */
-export class RadialShaderEffect extends Shell.GLSLEffect {
+export class RadialShaderEffect extends Clutter.ShaderEffect {
     _brightness: number;
     _sharpness: number;
 
@@ -37,7 +37,7 @@ export class RadialShaderEffect extends Shell.GLSLEffect {
     constructor(props: Partial<RadialShaderEffect.ConstructorProps>);
     _init(props: Partial<RadialShaderEffect.ConstructorProps>): void;
 
-    vfunc_build_pipeline(): void;
+    vfunc_get_static_snippet(): Cogl.Snippet;
 }
 
 /**

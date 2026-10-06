@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dnd.js
 
-import type Clutter from '@girs/clutter-18';
+import type Clutter from '@girs/clutter-51';
 
 import { EventEmitter } from '../misc/signals.js';
 

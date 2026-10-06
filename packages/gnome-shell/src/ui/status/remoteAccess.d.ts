@@ -3,8 +3,8 @@
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/status/remoteAccess.js
  */
 
-import Clutter from '@girs/clutter-18';
-import St from '@girs/st-18';
+import Clutter from '@girs/clutter-51';
+import St from '@girs/st-51';
 import * as PanelMenu from '../panelMenu.js';
 import { SystemIndicator } from '../quickSettings.js';
 
