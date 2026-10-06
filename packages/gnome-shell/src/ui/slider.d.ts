@@ -23,6 +23,7 @@ export class Slider extends BarLevel.BarLevel {
      * Moves the value by the given number of scroll steps.
      * @param nSteps The number of steps, negative to move towards the start.
      * @returns Whether the value changed.
+     * @since 49
      */
     step(nSteps: number): boolean;
 

@@ -181,6 +181,7 @@ export interface ConsoleLike {
 
 declare interface Console extends ConsoleLike {}
 
+/** @since 48 */
 declare class Console implements ConsoleLike {
     #extension: ExtensionBase;
 
