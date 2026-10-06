@@ -6,7 +6,7 @@ The compiler cannot see this. A member that upstream dropped still type-checks, 
 
 ```sh
 git clone --depth 1 --branch 51.beta https://gitlab.gnome.org/GNOME/gnome-shell.git /tmp/gnome-shell
-yarn check:shell-api --shell /tmp/gnome-shell
+yarn check:shell-api --shell /tmp/gnome-shell --tag 51.beta
 yarn test:shell-api
 ```
 
@@ -39,13 +39,8 @@ A member with a leading underscore is private by GJS convention. The report list
 - Members set from outside their class (`obj._x = …` elsewhere) look undefined.
 - Exports are off by default: several `.d.ts` files export classes that upstream keeps module-private, and removing an export breaks consumers.
 
-## Baseline and ignore list
+## Ignore list
 
-`baseline.json` freezes the findings that are known and still to be fixed, for **one tag**. The check fails on:
+The check fails on every finding. `ignore.json` is for findings the script gets wrong, each with the reason. Keys may use `*`.
 
-- a finding that is not in the baseline, so no new drift enters, and
-- a baseline entry that no longer occurs, so the baseline only shrinks. Fix a declaration, then run `yarn check:shell-api --shell … --update-baseline`.
-
-`ignore.json` is for findings the script gets wrong, each with the reason. Keys may use `*`. A baseline entry means "known wrong, fix it", an ignore entry means "not wrong".
-
-Use `--no-baseline --tag 50.4` to look at another release without the baseline.
+`--tag` is required. Any release works: `--tag 50.4` looks at another one.

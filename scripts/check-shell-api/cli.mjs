@@ -8,7 +8,7 @@
 // See README.md in this directory.
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -22,10 +22,7 @@ const { values: options } = parseArgs({
         shell: { type: 'string' },
         tag: { type: 'string' },
         src: { type: 'string', default: join(repoRoot, 'packages/gnome-shell/src') },
-        baseline: { type: 'string', default: join(here, 'baseline.json') },
         ignore: { type: 'string', default: join(here, 'ignore.json') },
-        'no-baseline': { type: 'boolean', default: false },
-        'update-baseline': { type: 'boolean', default: false },
         exports: { type: 'boolean', default: false },
         visibility: { type: 'string', default: 'all' },
         json: { type: 'boolean', default: false },
@@ -38,19 +35,14 @@ const fail = (message) => {
 };
 
 if (!options.shell) fail('--shell <path to a gnome-shell git checkout> is required');
+if (!options.tag) fail('--tag <release to check against, e.g. 51.beta> is required');
 if (!['all', 'public', 'private'].includes(options.visibility)) fail('--visibility is all, public or private');
 const readJson = (file, fallback) => (existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : fallback);
 
-const baseline = readJson(options.baseline, { tag: null, entries: [] });
 const ignore = readJson(options.ignore, {});
 const ignoreMatchers = Object.keys(ignore).map((pattern) => new RegExp('^' + pattern.replace(/[.+?^${}()|[\]\\#]/g, '\\$&').replace(/\*/g, '.*') + '$'));
 const isIgnored = (key) => ignoreMatchers.some((matcher) => matcher.test(key));
-const tag = options.tag ?? baseline.tag;
-if (!tag) fail('no --tag given and the baseline names none');
-
-// A baseline describes one tag. Comparing it with another is meaningless.
-const useBaseline = !options['no-baseline'] && !options['update-baseline'];
-if (useBaseline && baseline.tag && baseline.tag !== tag) fail(`baseline is for ${baseline.tag}, not ${tag}; pass --no-baseline to see every finding`);
+const tag = options.tag;
 
 const git = (...args) => execFileSync('git', ['-C', options.shell, ...args], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
 const upstreamFiles = new Set(git('ls-tree', '-r', '--name-only', tag, 'js').split('\n'));
@@ -77,36 +69,22 @@ for (const file of declarationFiles(options.src)) {
     found.push(...diffModule(module, declaredIn(readFileSync(file, 'utf8'), file), definedIn(git('show', `${tag}:${upstream}`), upstream), { exports: options.exports }));
 }
 
-if (options['update-baseline']) {
-    const entries = found.filter((key) => !isIgnored(key)).sort();
-    writeFileSync(options.baseline, JSON.stringify({ tag, entries }, null, 4) + '\n');
-    console.log(`baseline written: ${entries.length} entries for ${tag}`);
-    process.exit(0);
-}
-
 // A leading underscore marks a member private by GJS convention. Classes, files
 // and exports are always public.
 const visibilityOf = (key) => (/[#.][_#][^#.]*$/.test(key) ? 'private' : 'public');
 const visible = (key) => options.visibility === 'all' || visibilityOf(key) === options.visibility;
 
-const known = new Set(useBaseline ? baseline.entries : []);
-const current = new Set(found);
 const ignored = found.filter(isIgnored);
-const added = found.filter((key) => !isIgnored(key) && !known.has(key) && visible(key));
-const fixed = [...known].filter((key) => !current.has(key) && visible(key));
+const findings = found.filter((key) => !isIgnored(key) && visible(key));
 
 if (options.json) {
-    console.log(JSON.stringify({ tag, added, fixed, ignored: ignored.length, known: known.size }, null, 2));
+    console.log(JSON.stringify({ tag, findings, ignored: ignored.length }, null, 2));
 } else {
-    const list = (title, keys) => {
-        for (const visibility of ['public', 'private']) {
-            const group = keys.filter((key) => visibilityOf(key) === visibility);
-            if (group.length) console.log(`${title} [${visibility}]\n${group.map((key) => `  ${key}`).join('\n')}\n`);
-        }
-    };
-    list(`Declared, but not in GNOME Shell ${tag}${useBaseline ? ' (not in the baseline)' : ''}:`, added);
-    list('In the baseline, but no longer found; remove from baseline.json (run with --update-baseline):', fixed);
-    const count = (keys, visibility) => keys.filter((key) => visibilityOf(key) === visibility).length;
-    console.log(`${tag}: ${added.length} new (${count(added, 'public')} public), ${fixed.length} fixed, ${known.size - fixed.length} known, ${ignored.length} ignored`);
+    for (const visibility of ['public', 'private']) {
+        const group = findings.filter((key) => visibilityOf(key) === visibility);
+        if (group.length) console.log(`Declared, but not in GNOME Shell ${tag} [${visibility}]\n${group.map((key) => `  ${key}`).join('\n')}\n`);
+    }
+    const publicCount = findings.filter((key) => visibilityOf(key) === 'public').length;
+    console.log(`${tag}: ${findings.length} stale (${publicCount} public), ${ignored.length} ignored`);
 }
-process.exit(added.length || fixed.length ? 1 : 0);
+process.exit(findings.length ? 1 : 0);
