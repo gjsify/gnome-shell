@@ -14,13 +14,13 @@ import { Dash } from './dash.js';
  * this is defined here to make it available in imports.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js#L12
- * @version 50
+ * @since 50
  */
 export const ANIMATION_TIME: number;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js#L27
- * @version 50
+ * @since 50
  */
 declare class OverviewActor extends St.BoxLayout {
     _controls: ControlsManager;
@@ -41,7 +41,7 @@ declare class OverviewActor extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js#L80
- * @version 50
+ * @since 50
  */
 declare enum OverviewShownState {
     HIDDEN = 'HIDDEN',
@@ -52,7 +52,7 @@ declare enum OverviewShownState {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overview.js#L108
- * @version 50
+ * @since 50
  */
 export class Overview extends EventEmitter {
     isDummy: boolean;

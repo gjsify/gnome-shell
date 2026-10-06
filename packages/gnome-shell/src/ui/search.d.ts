@@ -7,7 +7,7 @@ import type GObject from '@girs/gobject-2.0';
 import { AppSearchProvider } from './appDisplay.js';
 
 /**
- * @version 50
+ * @since 50
  */
 export interface MetaInfo {
     id: string;
@@ -27,7 +27,7 @@ export namespace SearchEntry {
  * The overview's search entry. Ctrl+Enter emits `activate-new-instance` rather
  * than activating the selected result.
  *
- * @version 51
+ * @since 51
  */
 export class SearchEntry extends St.Entry {
     $signals: SearchEntry.SignalSignatures;

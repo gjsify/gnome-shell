@@ -108,7 +108,7 @@ export declare class VolumeIndicator extends SystemIndicator {
      * Handles the indicator's scroll controller. The base class throws
      * `GObject.NotImplementedError`; subclasses pick the stream to adjust.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(source: Clutter.ScrollSource, dx: number, dy: number): void;
 
@@ -117,7 +117,7 @@ export declare class VolumeIndicator extends SystemIndicator {
      * @param item The StreamSlider item.
      * @param delta The scroll delta along the slider's axis.
      *
-     * @version 51
+     * @since 51
      */
     _handleScroll(item: StreamSlider, delta: number): void;
 }

@@ -31,7 +31,7 @@ export class Slider extends BarLevel.BarLevel {
      * The slider adds a second, discrete controller for the vertical axis, and
      * that one has its own inline handler, so only `dx` arrives here.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number): void;
 
@@ -39,7 +39,7 @@ export class Slider extends BarLevel.BarLevel {
      * Moves the handle a tenth of the range towards the left edge. The Left key
      * binding calls it.
      *
-     * @version 51
+     * @since 51
      */
     _moveLeft(): void;
 
@@ -47,7 +47,7 @@ export class Slider extends BarLevel.BarLevel {
      * Moves the handle a tenth of the range towards the right edge. The Right
      * key binding calls it.
      *
-     * @version 51
+     * @since 51
      */
     _moveRight(): void;
 

@@ -10,7 +10,7 @@ import type { MprisPlayer, MprisSource } from './mpris.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js#L33
- * @version 48
+ * @since 48
  */
 export class URLHighlighter extends St.Label {
     constructor(text?: string, lineWrap?: boolean, allowMarkup?: boolean);
@@ -23,7 +23,7 @@ export class URLHighlighter extends St.Label {
      * Handles the `motion` signal of the label's motion controller, which sets
      * the pointer cursor over a URL.
      *
-     * @version 51
+     * @since 51
      */
     _onMotion(controller: Clutter.MotionController, sprite: Clutter.Sprite, x: number, y: number): void;
 
@@ -31,7 +31,7 @@ export class URLHighlighter extends St.Label {
      * Handles the `leave` signal of the same controller and restores the
      * default cursor.
      *
-     * @version 51
+     * @since 51
      */
     _onLeave(): void;
     setMarkup(text?: string, allowMarkup?: boolean): void;
@@ -74,7 +74,7 @@ export declare namespace Source {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js#L284
- * @version 48
+ * @since 48
  */
 export class Source extends GObject.Object implements Source.ObjectProperties {
     constructor(params?: Source.ConstructorProps);
@@ -103,7 +103,7 @@ declare class MessageHeader extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js#L421
- * @version 48
+ * @since 48
  */
 export class Message extends St.Button {
     constructor(source: Source);
@@ -132,14 +132,14 @@ export class Message extends St.Button {
      * Closes the message if its notification allows it. The BackSpace and
      * Delete key bindings call this.
      *
-     * @version 51
+     * @since 51
      */
     _closeIfAllowed(): void;
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js#L691
- * @version 48
+ * @since 48
  */
 export class NotificationMessage extends Message {
     /** @hidden */
@@ -243,7 +243,7 @@ declare class MessageViewLayout extends Clutter.LayoutManager {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageList.js#L1391
- * @version 48
+ * @since 48
  */
 export class MessageView extends St.Viewport {
     messages: Message[];
