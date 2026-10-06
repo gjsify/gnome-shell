@@ -84,28 +84,68 @@ const defined = (source) => definedIn(source);
 const declared = (source) => declaredIn(source);
 
 test('diffModule reports a member nothing defines', () => {
-    const findings = diffModule('ui/x', declared('declare class X { gone(): void; kept(): void; static s(): void }'), defined('class X { kept() {} }'));
+    const { findings } = diffModule('ui/x', declared('declare class X { gone(): void; kept(): void; static s(): void }'), defined('class X { kept() {} }'));
     assert.deepEqual(findings, ['ui/x::X#gone', 'ui/x::X.s']);
 });
 
 test('diffModule matches a member anywhere in the file', () => {
-    const findings = diffModule('ui/x', declared('declare class Base { shared: number }'), defined('class Base {} class Sub extends Base { constructor() { this.shared = 1; } }'));
+    const { findings } = diffModule('ui/x', declared('declare class Base { shared: number }'), defined('class Base {} class Sub extends Base { constructor() { this.shared = 1; } }'));
     assert.deepEqual(findings, []);
 });
 
 test('diffModule reports a class that no longer exists', () => {
-    const findings = diffModule('ui/x', declared('declare class Gone { a(): void }'), defined('class Other {}'));
+    const { findings } = diffModule('ui/x', declared('declare class Gone { a(): void }'), defined('class Other {}'));
     assert.deepEqual(findings, ['ui/x::Gone', 'ui/x::Gone#a']);
 });
 
 test('diffModule leaves a declared class alone when upstream has it as a plain value', () => {
-    const findings = diffModule('misc/x', declared('export declare class Proxy { a(): void }'), defined('const Proxy = Gio.DBusProxy.makeProxyWrapper(xml);'));
+    const { findings } = diffModule('misc/x', declared('export declare class Proxy { a(): void }'), defined('const Proxy = Gio.DBusProxy.makeProxyWrapper(xml);'));
     assert.deepEqual(findings, []);
 });
 
 test('diffModule checks exports only on request', () => {
     const decl = declared('export declare class Private {}');
     const def = defined('class Private {}');
-    assert.deepEqual(diffModule('ui/x', decl, def), []);
-    assert.deepEqual(diffModule('ui/x', decl, def, { exports: true }), ['ui/x::export:Private']);
+    assert.deepEqual(diffModule('ui/x', decl, def).findings, []);
+    assert.deepEqual(diffModule('ui/x', decl, def, { exports: true }).findings, ['ui/x::export:Private']);
+});
+
+test('declaredIn reads @since from a member and from its class', () => {
+    const api = declaredIn(`
+        /** @since 48 */
+        export declare class A {
+            /** @since 51 */
+            fresh(): void;
+            old(): void;
+        }
+        export declare class B {
+            /** @since 51 */
+            f(a: number): void;
+            /** @since 50 */
+            f(a: string): void;
+        }
+    `);
+    assert.equal(api.since.get('A'), 48);
+    assert.equal(api.since.get('A#fresh'), 51);
+    assert.equal(api.since.has('A#old'), false);
+    assert.equal(api.since.get('B#f'), 50);
+});
+
+test('diffModule skips what is declared for a newer release than the one checked', () => {
+    const decl = declared(`
+        /** @since 49 */
+        declare class Old {
+            gone(): void;
+            /** @since 51 */
+            fresh(): void;
+        }
+        /** @since 51 */
+        declare class New { a(): void }
+        declare class Plain { untagged(): void }
+    `);
+    const def = defined('class Old {} class Plain {}');
+    const at50 = diffModule('ui/x', decl, def, { shellMajor: 50 });
+    assert.deepEqual(at50.findings, ['ui/x::Old#gone', 'ui/x::Plain#untagged']);
+    assert.deepEqual(at50.skipped, ['ui/x::Old#fresh', 'ui/x::New', 'ui/x::New#a']);
+    assert.deepEqual(diffModule('ui/x', decl, def, { shellMajor: 51 }).skipped, []);
 });

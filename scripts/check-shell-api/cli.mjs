@@ -59,6 +59,9 @@ function declarationFiles(dir) {
 }
 
 const found = [];
+const skippedNewer = [];
+// 50.4, 51.beta and 49.alpha.0 are all releases of their major version.
+const shellMajor = Number.parseInt(tag, 10);
 for (const file of declarationFiles(options.src)) {
     const module = relative(options.src, file).replace(/\.d\.ts$/, '');
     const upstream = `js/${module}.js`;
@@ -66,7 +69,9 @@ for (const file of declarationFiles(options.src)) {
         found.push(`${module}::file`);
         continue;
     }
-    found.push(...diffModule(module, declaredIn(readFileSync(file, 'utf8'), file), definedIn(git('show', `${tag}:${upstream}`), upstream), { exports: options.exports }));
+    const result = diffModule(module, declaredIn(readFileSync(file, 'utf8'), file), definedIn(git('show', `${tag}:${upstream}`), upstream), { exports: options.exports, shellMajor });
+    found.push(...result.findings);
+    skippedNewer.push(...result.skipped);
 }
 
 // A leading underscore marks a member private by GJS convention. Classes, files
@@ -78,13 +83,13 @@ const ignored = found.filter(isIgnored);
 const findings = found.filter((key) => !isIgnored(key) && visible(key));
 
 if (options.json) {
-    console.log(JSON.stringify({ tag, findings, ignored: ignored.length }, null, 2));
+    console.log(JSON.stringify({ tag, findings, ignored: ignored.length, newer: skippedNewer.length }, null, 2));
 } else {
     for (const visibility of ['public', 'private']) {
         const group = findings.filter((key) => visibilityOf(key) === visibility);
         if (group.length) console.log(`Declared, but not in GNOME Shell ${tag} [${visibility}]\n${group.map((key) => `  ${key}`).join('\n')}\n`);
     }
     const publicCount = findings.filter((key) => visibilityOf(key) === 'public').length;
-    console.log(`${tag}: ${findings.length} stale (${publicCount} public), ${ignored.length} ignored`);
+    console.log(`${tag}: ${findings.length} stale (${publicCount} public), ${ignored.length} ignored, ${skippedNewer.length} declared for a newer release`);
 }
 process.exit(findings.length ? 1 : 0);

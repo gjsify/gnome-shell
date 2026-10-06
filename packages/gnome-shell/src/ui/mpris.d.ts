@@ -27,6 +27,7 @@ declare class MprisPlayer extends EventEmitter {
     _updateState(): void;
 }
 
+/** @since 48 */
 export class MprisSource extends GObject.Object {
     _players: Map<string, MprisPlayer>;
     _proxy: Gio.DBusProxy;

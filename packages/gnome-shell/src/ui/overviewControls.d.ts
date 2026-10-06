@@ -11,7 +11,7 @@ import { ThumbnailsBox } from './workspaceThumbnail.js';
 import { SearchController } from './searchController.js';
 import { Dash } from './dash.js';
 
-/** @version 50 */
+/** @since 50 */
 interface StateTransitionParams {
     transitioning: boolean;
     currentState: ControlsState;
@@ -22,19 +22,19 @@ interface StateTransitionParams {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js#L21
- * @version 50
+ * @since 50
  */
 export const SMALL_WORKSPACE_RATIO: number;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js#L29
- * @version 50
+ * @since 50
  */
 export const SIDE_CONTROLS_ANIMATION_TIME: number;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js#L32
- * @version 50
+ * @since 50
  */
 export enum ControlsState {
     HIDDEN = 0,
@@ -44,7 +44,7 @@ export enum ControlsState {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js#L39
- * @version 50
+ * @since 50
  */
 declare class ControlsManagerLayout extends Clutter.LayoutManager {
     _appDisplay: AppDisplay;
@@ -72,7 +72,7 @@ declare class ControlsManagerLayout extends Clutter.LayoutManager {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js#L268
- * @version 50
+ * @since 50
  */
 export class OverviewAdjustment extends St.Adjustment {
     _init(actor: Clutter.Actor): void;
@@ -81,7 +81,7 @@ export class OverviewAdjustment extends St.Adjustment {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/overviewControls.js#L313
- * @version 50
+ * @since 50
  */
 export class ControlsManager extends St.Widget {
     dash: Dash;

@@ -18,7 +18,7 @@ import * as MessageTray from './messageTray.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/screenShield.js#L50
- * @version 51
+ * @since 51
  */
 export namespace ScreenShield {
     interface SignalMap {
@@ -38,7 +38,7 @@ export namespace ScreenShield {
  * https://bugzilla.gnome.org/show_bug.cgi?id=668703 explains the dependency.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/screenShield.js#L50
- * @version 51
+ * @since 51
  */
 export class ScreenShield<S extends Signals.SignalMap<S> = ScreenShield.SignalMap> extends Signals.EventEmitter<S> {
     actor: typeof Main.layoutManager.screenShieldGroup;

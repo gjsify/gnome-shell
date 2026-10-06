@@ -2,7 +2,7 @@ export type { ConsoleLike } from './sharedInternals.js';
 import type { ExtensionBase, TranslationFunctions } from './sharedInternals.js';
 
 /**
- * @version 49
+ * @since 49
  */
 export class Extension extends ExtensionBase {
     static defineTranslationFunctions(url: string): TranslationFunctions;
@@ -18,7 +18,7 @@ export class Extension extends ExtensionBase {
 }
 
 /**
- * @version 47
+ * @since 47
  */
 export class InjectionManager {
     overrideMethod<T, M extends keyof T, F extends T[M] extends (...args: any[]) => any ? T[M] : never>(prototype: T, methodName: M, createOverrideFunc: (this: T, originalMethod: F) => (this: T, ...args: Parameters<F>) => ReturnType<F>): void;
@@ -27,14 +27,14 @@ export class InjectionManager {
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export declare const gettext: TranslationFunctions['gettext'];
 /**
- * @version 49
+ * @since 49
  */
 export declare const ngettext: TranslationFunctions['ngettext'];
 /**
- * @version 49
+ * @since 49
  */
 export declare const pgettext: TranslationFunctions['pgettext'];

@@ -15,7 +15,7 @@ declare global {
      * Global shell object created by GNOME Shell on startup.
      *
      * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/8a8539ee6766058b39d0a5c0961a08f76799f4da/js/ui/environment.js#L253
-     * @version 46
+     * @since 46
      */
     const global: Shell.Global;
 
@@ -40,7 +40,7 @@ declare global {
          * @param min The lower bound of the result.
          * @param max The upper bound of the result.
          *
-         * @version 46
+         * @since 46
          */
         clamp(x: number, min: number, max: number): number;
     }
@@ -61,7 +61,7 @@ declare module '@girs/gobject-2.0/gobject-2.0' {
              * with an optional flags value, followed by an object to track
              *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L245
-             * @version 49
+             * @since 49
              */
             connectObject(...args: any[]): void;
 
@@ -77,7 +77,7 @@ declare module '@girs/gobject-2.0/gobject-2.0' {
              * with an optional flags value, followed by an object to track
              *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L248
-             * @version 49
+             * @since 49
              */
             connect_object(...args: any[]): void;
 
@@ -88,7 +88,7 @@ declare module '@girs/gobject-2.0/gobject-2.0' {
              * @param obj - the tracked object
              *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L251
-             * @version 49
+             * @since 49
              */
             disconnectObject(obj: object): void;
 
@@ -99,7 +99,7 @@ declare module '@girs/gobject-2.0/gobject-2.0' {
              * @param obj - the tracked object
              *
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L254
-             * @version 49
+             * @since 49
              */
             disconnect_object(obj: object): void;
         }
@@ -107,7 +107,7 @@ declare module '@girs/gobject-2.0/gobject-2.0' {
 }
 
 /**
- * @version 46
+ * @since 46
  */
 interface EasingParams {
     // milliseconds
@@ -125,7 +125,7 @@ interface EasingParams {
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L133
  *
- * @version 46
+ * @since 46
  * Note: this list is non exhaustive, since its never typed anywhere else, each parameter is just string in e.g remove_transition, where this is used, so these here are verified manually, but there might be more
  */
 type AnimatableActorFields =
@@ -164,7 +164,7 @@ declare module '@girs/st-51/st-18' {
             /**
              * A convenience wrapper for adjustments
              *
-             * @version 46
+             * @since 46
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/96e27f0e7d4e0c71976305d0d2c36a6c39d9853c/docs/js-coding-style.md#animations
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L292
              */
@@ -184,7 +184,7 @@ declare module '@girs/clutter-51/clutter-18' {
              * property, your actor will not be able to be dropped onto.
              * In case the class is an actor itself, the _delegate can be just set to this.
              *
-             * @version 50
+             * @since 50
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/docs/js-coding-style.md#actor-deprecated-and-_delegate
              */
             _delegate?: object;
@@ -192,7 +192,7 @@ declare module '@girs/clutter-51/clutter-18' {
             /**
              * A convenience wrapper for actors
              *
-             * @version 46
+             * @since 46
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/96e27f0e7d4e0c71976305d0d2c36a6c39d9853c/docs/js-coding-style.md#animations
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L286
              */
@@ -210,7 +210,7 @@ declare module '@girs/clutter-51/clutter-18' {
              * @param target The target value
              * @param props Easing properties
              *
-             * @version 49
+             * @since 49
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/96e27f0e7d4e0c71976305d0d2c36a6c39d9853c/docs/js-coding-style.md#animations
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L289
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L71
