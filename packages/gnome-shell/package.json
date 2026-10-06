@@ -446,17 +446,6 @@
       }
     },
     "./ui/components/polkitAgent/ambient": "./dist/ui/components/polkitAgent-ambient.d.ts",
-    "./ui/components/telepathyClient": {
-      "import": {
-        "types": "./dist/ui/components/telepathyClient.d.ts",
-        "default": "./dist/ui/components/telepathyClient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/telepathyClient.d.ts",
-        "default": "./dist/ui/components/telepathyClient.cjs"
-      }
-    },
-    "./ui/components/telepathyClient/ambient": "./dist/ui/components/telepathyClient-ambient.d.ts",
     "./ui/dash": {
       "import": {
         "types": "./dist/ui/dash.d.ts",
