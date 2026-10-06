@@ -7,6 +7,7 @@ export const SPINNER_ANIMATION_TIME: number;
 export class Spinner extends St.Widget {
     constructor(size: number, params?: { animate?: boolean; hideOnStop?: boolean });
 
+    /** @since 48 */
     vfunc_map(): void;
 
     play(): void;

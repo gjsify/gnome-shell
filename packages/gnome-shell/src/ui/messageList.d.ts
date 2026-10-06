@@ -42,8 +42,10 @@ export class URLHighlighter extends St.Label {
 
 declare class ScaleLayout extends Clutter.BinLayout {
     _container: Clutter.Actor | null;
+    /** @since 48 */
     scalingEnabled: boolean;
 
+    /** @since 48 */
     vfunc_set_container(container: Clutter.Actor | null): void;
 
     vfunc_get_preferred_width(container: Clutter.Actor, forHeight: number): [number, number];
@@ -152,6 +154,7 @@ export class NotificationMessage extends Message {
     canClose(): boolean;
 }
 
+/** @since 48 */
 declare class MediaMessage extends Message {
     _player: MprisPlayer;
     _icon: St.Icon;
@@ -173,6 +176,7 @@ declare class MediaMessage extends Message {
     _update(): void;
 }
 
+/** @since 48 */
 declare class NotificationMessageGroup extends St.Widget {
     source: Source;
     _expanded: boolean;
@@ -218,6 +222,7 @@ declare class NotificationMessageGroup extends St.Widget {
     close(): void;
 }
 
+/** @since 48 */
 declare class MessageGroupExpanderLayout extends Clutter.LayoutManager {
     expansion: number;
 
@@ -231,6 +236,7 @@ declare class MessageGroupExpanderLayout extends Clutter.LayoutManager {
 
     vfunc_allocate(container: Clutter.Actor, box: Clutter.ActorBox): void;
 }
+/** @since 48 */
 declare class MessageViewLayout extends Clutter.LayoutManager {
     constructor(overlay: Clutter.Actor);
 
