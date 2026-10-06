@@ -1,5 +1,4 @@
 {
-    "file:gdm/*": "login screen code; extensions do not run in the gdm session mode",
-    "file:dbusServices/*": "separate gjs processes started over D-Bus, never loaded into gnome-shell",
-    "file:portalHelper/*": "separate gjs process of the portal helper, never loaded into gnome-shell"
+    "file:dbusServices/*": "separate gjs processes started over D-Bus, they run outside the shell process",
+    "file:portalHelper/*": "separate gjs process of the portal helper, it runs outside the shell process"
 }
