@@ -26,7 +26,7 @@ const { values: options } = parseArgs({
         src: { type: 'string', default: join(repoRoot, 'packages/gnome-shell/src') },
         ignore: { type: 'string', default: join(here, 'report-ignore.json') },
         members: { type: 'boolean', default: false },
-        visibility: { type: 'string', default: 'all' },
+        visibility: { type: 'string', default: 'public' },
         json: { type: 'boolean', default: false },
     },
 });
