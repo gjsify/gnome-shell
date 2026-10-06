@@ -67,7 +67,7 @@ export class MonitorConstraint extends Clutter.Constraint {
  */
 declare class Monitor {
     index: number;
-    geometryScale: number;
+    geometry_scale: number;
     x: number;
     y: number;
     width: number;

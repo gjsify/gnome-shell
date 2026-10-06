@@ -49,11 +49,11 @@ export abstract class SwitcherPopup extends St.Widget {
 
     _itemActivatedHandler(n: number): void;
 
-    itemEnteredHandler(n: number): void;
+    _itemEnteredHandler(n: number): void;
 
     _itemEntered(switcher: any, n: number): void;
 
-    itemRemovedHandler(n: number): void;
+    _itemRemovedHandler(n: number): void;
 
     _itemRemoved(switcher: any, n: number): void;
 
