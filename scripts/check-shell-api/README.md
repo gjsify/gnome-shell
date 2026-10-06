@@ -28,6 +28,18 @@ A member counts as defined when upstream has it as a method, accessor or field, 
 
 Members are matched anywhere in the file, not per class: upstream often splits state over a base class and its subclasses where the declarations flatten it onto one class.
 
+## Looking back
+
+A declaration tagged `@since 51` describes a shell that has not shipped at 50.4, so checking 50.4 does not report it. It is counted as "declared for a newer release" instead. A member without a tag of its own takes the tag of its class, and of several overloads the earliest tag counts. The tag is compared by major version: `51.alpha`, `51.beta` and `51.0` are all 51.
+
+```sh
+for tag in 46.0 47.0 48.0 49.0 50.0 51.beta; do yarn check:shell-api --shell /tmp/gnome-shell --tag $tag --no-baseline | tail -1; done
+```
+
+What a look back reports is therefore a declaration that is untagged but missing at that release: either its `@since` tag is missing, or it never existed. Untagged is read as "46 or earlier", the oldest release the package covers.
+
+A pre-release can report declarations that arrived later in the same cycle, since the tag only says "51". `51.alpha` is such a case; use the final release or the latest beta.
+
 ## Public and private
 
 A member with a leading underscore is private by GJS convention. The report lists public findings first, since a wrong public declaration is what consumers actually hit, and the summary counts them. `--visibility public` or `--visibility private` narrows the report; classes, files and exports are always public.
