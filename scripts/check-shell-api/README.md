@@ -28,6 +28,10 @@ A member counts as defined when upstream has it as a method, accessor or field, 
 
 Members are matched anywhere in the file, not per class: upstream often splits state over a base class and its subclasses where the declarations flatten it onto one class.
 
+## Public and private
+
+A member with a leading underscore is private by GJS convention. The report lists public findings first, since a wrong public declaration is what consumers actually hit, and the summary counts them. `--visibility public` or `--visibility private` narrows the report; classes, files and exports are always public.
+
 ## Limits
 
 - It compares **names, never signatures**. A method whose parameters changed is invisible.
