@@ -65,7 +65,8 @@ The package mirrors the shell's file tree, `js/ui/foo.js` as `src/ui/foo.d.ts`, 
 
 ```sh
 yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta
-yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta --members --visibility public
+yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta --members
+yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta --members --visibility all
 ```
 
 | key | meaning |
@@ -73,6 +74,8 @@ yarn report:shell-api --shell /tmp/gnome-shell --tag 51.beta --members --visibil
 | `file:ui/screenShield` | upstream has `js/ui/screenShield.js`, the package has no `src/ui/screenShield.d.ts` |
 | `export:ui/main::breakManager` | upstream exports it, the `.d.ts` does not declare it |
 | `member:ui/slider::Slider#foo` | upstream class member the declared class lacks, only with `--members` |
+
+A private member (leading underscore) is optional to declare. By default the report lists only public members that are missing; `--visibility all` adds the private ones. A private member that is declared must still exist upstream, which `check-shell-api` enforces.
 
 The report also lists declarations gone upstream, with exports on. It exits 0 whatever it finds, so it is never a gate: being unfinished is the normal state, and the number is the progress. Once nothing is left to declare, make the last line fail on a finding.
 
