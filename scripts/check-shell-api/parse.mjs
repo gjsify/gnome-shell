@@ -126,18 +126,35 @@ function exportsOf(sourceFile) {
     return names;
 }
 
+// The release that introduced a declaration, from its `@since 51` tag.
+function sinceOf(node) {
+    const tag = ts.getJSDocTags(node).find((candidate) => candidate.tagName.text === 'since');
+    const match = typeof tag?.comment === 'string' ? tag.comment.match(/^\s*(\d+)/) : null;
+    return match ? Number(match[1]) : null;
+}
+
 export function declaredIn(text, fileName = 'module.d.ts') {
     const sourceFile = parse(fileName, text, ts.ScriptKind.TS);
     const classes = new Map();
+    const since = new Map();
+    // Overloads of one member can carry different tags; the earliest one counts.
+    const noteSince = (key, node) => {
+        const release = sinceOf(node);
+        if (release !== null) since.set(key, Math.min(release, since.get(key) ?? Infinity));
+    };
     for (const statement of sourceFile.statements) {
         if (!ts.isClassDeclaration(statement) || !statement.name) continue;
-        addTo(classes, statement.name.text, null);
+        const className = statement.name.text;
+        addTo(classes, className, null);
+        noteSince(className, statement);
         for (const member of statement.members) {
             const name = isMember(member) ? nameOf(member) : null;
-            if (name && !TYPING_ONLY.has(name)) addTo(classes, statement.name.text, memberKey(member, name));
+            if (!name || TYPING_ONLY.has(name)) continue;
+            addTo(classes, className, memberKey(member, name));
+            noteSince(className + memberKey(member, name), member);
         }
     }
-    return { classes, exports: exportsOf(sourceFile), names: new Set() };
+    return { classes, exports: exportsOf(sourceFile), names: new Set(), since };
 }
 
 // Besides the members written in the class body, upstream creates most of its
@@ -184,7 +201,7 @@ export function definedIn(text, fileName = 'module.js') {
     };
     visitStatic(sourceFile);
 
-    return { classes, exports: exportsOf(sourceFile), names: topLevelNames(sourceFile) };
+    return { classes, exports: exportsOf(sourceFile), names: topLevelNames(sourceFile), since: new Map() };
 }
 
 // Everything declared but not defined, as stable keys:
@@ -192,22 +209,25 @@ export function definedIn(text, fileName = 'module.js') {
 //   `ui/slider::Slider.step`   static member
 //   `ui/slider::Slider`        class that no longer exists
 //   `ui/search::export:Name`   exported name that no longer exists (only with `exports`)
-export function diffModule(module, declared, defined, { exports = false } = {}) {
+export function diffModule(module, declared, defined, { exports = false, shellMajor = Infinity } = {}) {
     // Upstream splits state across a base class and its subclasses where the
-    // declarations flatten it onto one class, so members match anywhere in the file.
+    // declarations flatten it onto one, so members match anywhere in the file.
     const definedMembers = new Set([...defined.classes.values()].flatMap((members) => [...members]));
     const findings = [];
+    const skipped = [];
+    // A declaration tagged for a later release than the one checked is no error:
+    // it describes a shell that has not shipped yet at that tag. A member without
+    // a tag of its own takes the tag of its class.
+    const report = (key, since) => (since !== undefined && since > shellMajor ? skipped : findings).push(key);
     for (const [className, members] of declared.classes) {
-        if (!defined.classes.has(className)) {
-            if (defined.names.has(className)) continue;
-            findings.push(`${module}::${className}`);
-        }
+        if (!defined.classes.has(className) && !defined.names.has(className)) report(`${module}::${className}`, declared.since.get(className));
+        if (!defined.classes.has(className) && defined.names.has(className)) continue;
         for (const key of members) {
-            if (!definedMembers.has(key)) findings.push(`${module}::${className}${key}`);
+            if (!definedMembers.has(key)) report(`${module}::${className}${key}`, declared.since.get(className + key) ?? declared.since.get(className));
         }
     }
     for (const name of exports ? declared.exports : []) {
         if (!defined.exports.has(name)) findings.push(`${module}::export:${name}`);
     }
-    return findings;
+    return { findings, skipped };
 }
