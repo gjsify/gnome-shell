@@ -5,7 +5,6 @@ import type Gio from '@girs/gio-2.0';
 import type St from '@girs/st-51';
 import type Clutter from '@girs/clutter-51';
 
-import type { Switch } from './popupMenu.js';
 import type { MessageView } from './messageList.js';
 
 declare function sameYear(dateA: Date, dateB: Date): boolean;
@@ -154,7 +153,13 @@ export class Calendar extends St.Widget {
 
     updateTimeZone(): void;
 
-    vfunc_scroll_event(event: Clutter.ScrollEvent): boolean;
+    /**
+     * Handles the `scroll` signal of the calendar's scroll controller, which
+     * flips to the previous or next month.
+     *
+     * @version 51
+     */
+    _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
 
     _buildHeader(): void;
     _onPrevMonthButtonClicked(): void;
@@ -174,17 +179,6 @@ declare class Placeholder extends St.BoxLayout {
     _init(): void;
 }
 
-declare class DoNotDisturbSwitch extends Switch {
-    _settings: Gio.Settings;
-
-    constructor();
-    /** @hidden */
-    override _init(config?: Partial<St.Bin.ConstructorProps>): void;
-    /** @hidden */
-    override _init(state: boolean): void;
-    _init(): void;
-}
-
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/calendar.js#L799
  * @version 48
@@ -193,8 +187,6 @@ declare class DoNotDisturbSwitch extends Switch {
 export class CalendarMessageList extends St.Widget {
     _placeholder: Placeholder;
     _scrollView: St.ScrollView;
-    _dndSwitch: DoNotDisturbSwitch;
-    _dndButton: St.Button;
     _clearButton: St.Button;
     _messageView: MessageView;
 
