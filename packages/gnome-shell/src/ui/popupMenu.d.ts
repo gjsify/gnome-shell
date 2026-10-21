@@ -233,6 +233,8 @@ export namespace PopupMenuBase {
 
     // PopupMenuBase.addMenuItem explicitly checks for any of these specific types
     type MenuItemType = PopupMenuSection | PopupSubMenuMenuItem | PopupSeparatorMenuItem | PopupBaseMenuItem;
+
+    type AnimationParams = { animate?: boolean; fadeOnly?: boolean };
 }
 
 /**
@@ -254,8 +256,8 @@ export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBa
 
     constructor(sourceActor: Clutter.Actor, styleClass?: string);
 
-    abstract open(animate?: BoxPointer.PopupAnimation): void;
-    abstract close(animate?: BoxPointer.PopupAnimation): void;
+    abstract open(params?: PopupMenuBase.AnimationParams): void;
+    abstract close(params?: PopupMenuBase.AnimationParams): void;
 
     _getTopMenu(): PopupMenuBase<S>;
     _setParent(parent: PopupMenuBase<S> | null): void;
@@ -299,8 +301,8 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
     _onKeyPress(actor: Clutter.Actor, event: Clutter.Event): void;
     setArrowOrigin(origin: number): void;
     setSourceAlignment(alignment: number): void;
-    override open(animate?: BoxPointer.PopupAnimation): void;
-    override close(animate?: BoxPointer.PopupAnimation): void;
+    override open(params?: PopupMenuBase.AnimationParams): void;
+    override close(params?: PopupMenuBase.AnimationParams): void;
     override destroy(): void;
 }
 
@@ -344,8 +346,8 @@ export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMa
     getSensitive(): boolean;
     // PopupSubMenu's methods technically use a boolean, but because PopupAnimation is just a number,
     // with PopupAnimation.NONE == 0, it can be used like a boolean, so at runtime it works.
-    override open(animate?: BoxPointer.PopupAnimation): void;
-    override close(animate?: BoxPointer.PopupAnimation): void;
+    override open(params?: PopupMenuBase.AnimationParams): void;
+    override close(params?: PopupMenuBase.AnimationParams): void;
     _onKeyPressEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 }
 
