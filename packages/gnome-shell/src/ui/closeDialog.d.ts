@@ -6,7 +6,6 @@ import { Dialog, MessageDialogContent } from './dialog.js';
 export class CloseDialog extends GObject.Object {
     _window: Meta.Window;
     _dialog: Dialog | null;
-    _tracked: boolean;
     _timeoutId: number;
 
     window: Meta.Window;
@@ -21,7 +20,6 @@ export class CloseDialog extends GObject.Object {
     _removeWindowEffect(): void;
     _onWait(): void;
     _onClose(): void;
-    _onFocusChanged(): void;
 
     vfunc_show(): void;
     vfunc_hide(): void;

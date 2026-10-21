@@ -62,11 +62,6 @@ export declare class ScreenRecordingIndicator extends PanelMenu.ButtonBox {
     _init(): void;
 
     /**
-     * Override the default event handling.
-     */
-    vfunc_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-
-    /**
      * Update the label displaying recording time.
      */
     _updateLabel(): void;
@@ -96,11 +91,6 @@ export declare class ScreenSharingIndicator extends PanelMenu.ButtonBox {
      * Handle a new screen sharing handle.
      */
     _onNewHandle(handle: any): void;
-
-    /**
-     * Override the default event handling.
-     */
-    vfunc_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
 
     /**
      * Stop all ongoing screen sharing sessions.

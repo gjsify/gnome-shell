@@ -14,24 +14,10 @@ declare const BrightnessProxy: Gio.DBusProxy;
  * Extends `QuickSlider`.
  */
 export declare class BrightnessItem extends QuickSlider {
-    _proxy: typeof BrightnessProxy;
-    _sliderChangedId: number;
-
     /**
      * Initializes a new instance of `BrightnessItem`.
      */
     _init(): void;
-
-    /**
-     * Handles changes in the slider's value, updating brightness.
-     */
-    _sliderChanged(): void;
-
-    /**
-     * Updates the slider's value without triggering change events.
-     * @param value - The new value to set for the slider.
-     */
-    _changeSlider(value: number): void;
 
     /**
      * Synchronizes the brightness with the system's current setting.
