@@ -38,6 +38,13 @@ jobs:
     - name: Build Types
       run: yarn run build:types
 
+    - name: Check for uncommitted changes
+      run: |
+        if [[ -n "$(git diff --exit-code)" ]]; then
+          echo "Changes detected. Commit them manually!"
+          exit 1
+        fi
+
     - name: Validate Formatting
       run: yarn run prettier:check
 
