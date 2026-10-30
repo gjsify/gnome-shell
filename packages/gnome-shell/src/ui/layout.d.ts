@@ -17,7 +17,7 @@ import type { BackgroundManager } from './background.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L159
- * @version 48
+ * @since 48
  */
 export interface Geometry {
     x: number;
@@ -27,7 +27,7 @@ export interface Geometry {
 }
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L41
- * @version 48
+ * @since 48
  */
 
 export namespace MonitorConstraint {
@@ -40,7 +40,7 @@ export namespace MonitorConstraint {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L56
- * @version 48
+ * @since 48
  */
 export class MonitorConstraint extends Clutter.Constraint {
     _primary: boolean;
@@ -63,7 +63,7 @@ export class MonitorConstraint extends Clutter.Constraint {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L158
- * @version 48
+ * @since 48
  */
 declare class Monitor {
     index: number;
@@ -79,7 +79,7 @@ declare class Monitor {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L174
- * @version 48
+ * @since 48
  */
 declare class UiActor extends St.Widget {
     constructor(props?: Partial<St.Widget.ConstructorProps>);
@@ -91,7 +91,7 @@ declare class UiActor extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1454
- * @version 48
+ * @since 48
  */
 declare class ScreenTransition extends Clutter.Actor {
     constructor();
@@ -109,7 +109,7 @@ declare class ScreenTransition extends Clutter.Actor {
  * overview.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1141
- * @version 48
+ * @since 48
  */
 declare class HotCorner extends Clutter.Actor {
     _monitor: Monitor;
@@ -132,7 +132,7 @@ declare class HotCorner extends Clutter.Actor {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L186
- * @version 48
+ * @since 48
  */
 export interface TrackedActors {
     trackFullscreen: boolean;
@@ -142,7 +142,7 @@ export interface TrackedActors {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L192
- * @version 48
+ * @since 48
  */
 export namespace LayoutManager {
     export interface SignalSignatures extends GObject.Object.SignalSignatures {
@@ -156,7 +156,7 @@ export namespace LayoutManager {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L192
- * @version 48
+ * @since 48
  */
 export class LayoutManager extends GObject.Object {
     $signals: LayoutManager.SignalSignatures;
@@ -333,7 +333,7 @@ export class LayoutManager extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/layout.js#L1267
- * @version 50
+ * @since 50
  */
 declare class PressureBarrier extends EventEmitter {
     _threshold: number;

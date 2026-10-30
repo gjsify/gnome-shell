@@ -13,13 +13,13 @@ import type * as MessageList from './messageList.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L20
- * @version 49
+ * @since 49
  */
 export const ANIMATION_TIME: number;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L36
- * @version 49
+ * @since 49
  */
 export enum State {
     HIDDEN = 0,
@@ -38,7 +38,7 @@ export enum State {
  * newer version having replaced them.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L51
- * @version 49
+ * @since 49
  */
 export enum NotificationDestroyedReason {
     EXPIRED = 1,
@@ -54,7 +54,7 @@ export enum NotificationDestroyedReason {
  * through the Telepathy client.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L62
- * @version 49
+ * @since 49
  */
 export enum Urgency {
     LOW = 0,
@@ -72,7 +72,7 @@ export enum Urgency {
  * of a notification is shown on the lock screen.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L76
- * @version 49
+ * @since 49
  */
 export enum PrivacyScope {
     USER = 0,
@@ -86,7 +86,7 @@ export enum PrivacyScope {
  * A notification without a policy object will inherit the default one.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L160
- * @version 49
+ * @since 49
  */
 export abstract class NotificationPolicy extends GObject.Object {
     readonly enable: boolean;
@@ -109,7 +109,7 @@ export abstract class NotificationPolicy extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L213
- * @version 49
+ * @since 49
  */
 export class NotificationGenericPolicy extends NotificationPolicy {
     id: string;
@@ -126,7 +126,7 @@ export class NotificationGenericPolicy extends NotificationPolicy {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L243
- * @version 49
+ * @since 49
  */
 export class NotificationApplicationPolicy extends NotificationPolicy {
     id: string;
@@ -147,7 +147,7 @@ export class NotificationApplicationPolicy extends NotificationPolicy {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L316
- * @version 49
+ * @since 49
  */
 export class Sound extends GObject.Object {
     constructor(file?: Gio.File | null, themedName?: string | null);
@@ -157,7 +157,7 @@ export class Sound extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L335
- * @version 49
+ * @since 49
  */
 export class Action extends GObject.Object {
     constructor(label: string, callback: () => void);
@@ -169,7 +169,7 @@ export class Action extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L482
- * @version 49
+ * @since 49
  */
 export declare namespace Source {
     export interface ConstructorProps extends MessageList.Source.ConstructorProps {
@@ -179,7 +179,7 @@ export declare namespace Source {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L499
- * @version 49
+ * @since 49
  */
 export class Source extends MessageList.Source {
     constructor(params?: Partial<Source.ConstructorProps>);
@@ -228,7 +228,7 @@ export class Source extends MessageList.Source {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L604
- * @version 49
+ * @since 49
  */
 export declare namespace Notification {
     export interface ObjectProperties {
@@ -253,7 +253,7 @@ export declare namespace Notification {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L352
- * @version 49
+ * @since 49
  */
 export class Notification extends GObject.Object implements Notification.ObjectProperties {
     constructor(params?: Notification.ConstructorProps);
@@ -318,7 +318,7 @@ export class Notification extends GObject.Object implements Notification.ObjectP
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L676
- * @version 48
+ * @since 48
  */
 export class MessageTray extends St.Widget {
     constructor();
@@ -392,6 +392,6 @@ export class MessageTray extends St.Widget {
  * The {Source} that should be used to send system notifications.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L1290
- * @version 49
+ * @since 49
  */
 export function getSystemSource(): Source;

@@ -11,7 +11,7 @@ export enum DragMotionResult {
     CONTINUE = 3,
 }
 
-export enum DragState {
+declare enum DragState {
     INIT = 0,
     DRAGGING = 1,
     CANCELLED = 2,
@@ -101,3 +101,4 @@ declare class _Draggable extends EventEmitter {
  * reset these values.
  */
 export function makeDraggable(actor: Clutter.Actor, params: any): _Draggable;
+export type { DragState, _Draggable };

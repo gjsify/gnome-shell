@@ -11,13 +11,13 @@ import type { Workspace } from './workspace.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/windowManager.js#L28
- * @version 48
+ * @since 48
  */
 export const SHELL_KEYBINDINGS_SCHEMA: string;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/windowManager.js#L134
- * @version 48
+ * @since 48
  */
 export class WindowDimmer extends Clutter.BrightnessContrastEffect {
     _init(): void;
@@ -29,7 +29,7 @@ export class WindowDimmer extends Clutter.BrightnessContrastEffect {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/windowManager.js#L394
- * @version 48
+ * @since 48
  */
 export class TilePreview extends St.Widget {
     _init(): void;
@@ -45,7 +45,7 @@ export class TilePreview extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/windowManager.js#L508
- * @version 48
+ * @since 48
  */
 export class WindowManager {
     insertWorkspace(pos: number): void;

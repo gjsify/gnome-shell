@@ -26,7 +26,7 @@ export abstract class SwitcherPopup extends St.Widget {
     /**
      * Handles the `key-press` signal of the popup's key controller.
      *
-     * @version 51
+     * @since 51
      */
     _onKeyPress(controller: Clutter.KeyController): boolean;
 
@@ -34,7 +34,7 @@ export abstract class SwitcherPopup extends St.Widget {
      * Handles the `modifier-change` signal, which finishes the switch once the
      * held modifier goes up.
      *
-     * @version 51
+     * @since 51
      */
     _onModifierChange(controller: Clutter.KeyController): void;
 
@@ -43,7 +43,7 @@ export abstract class SwitcherPopup extends St.Widget {
     /**
      * Handles the `scroll` signal of the popup's scroll controller.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
 

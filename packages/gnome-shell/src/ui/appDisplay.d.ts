@@ -17,7 +17,7 @@ import { AppMenu } from './appMenu.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L154
- * @version 50
+ * @since 50
  */
 export class AppGrid extends IconGrid {
     indicatorsPadding: number;
@@ -31,9 +31,9 @@ export class AppGrid extends IconGrid {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L191
- * @version 50
+ * @since 50
  */
-export abstract class BaseAppViewGridLayout extends Clutter.BinLayout {
+declare abstract class BaseAppViewGridLayout extends Clutter.BinLayout {
     _grid: AppGrid;
     _scrollView: St.ScrollView;
     _previousPageIndicator: St.Widget;
@@ -61,7 +61,7 @@ export abstract class BaseAppViewGridLayout extends Clutter.BinLayout {
 }
 
 /**
- * @version 50
+ * @since 50
  */
 interface PageMoveData {
     page: number;
@@ -73,9 +73,9 @@ interface PageMoveData {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L471
- * @version 50
+ * @since 50
  */
-export namespace BaseAppView {
+declare namespace BaseAppView {
     export interface SignalSignatures extends St.Widget.SignalSignatures {
         'view-loaded': () => void;
     }
@@ -83,9 +83,9 @@ export namespace BaseAppView {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L476
- * @version 50
+ * @since 50
  */
-export abstract class BaseAppView extends St.Widget {
+declare abstract class BaseAppView extends St.Widget {
     $signals: BaseAppView.SignalSignatures;
 
     _grid: AppGrid;
@@ -121,7 +121,7 @@ export abstract class BaseAppView extends St.Widget {
      * Handles the `scroll` signal of the page's scroll controller. GNOME 51
      * replaced the old `(actor, event)` handler with these arguments.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
     _swipeBegin(tracker: any, monitor: Clutter.EventSequence): void;
@@ -170,7 +170,7 @@ export abstract class BaseAppView extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1254
- * @version 50
+ * @since 50
  */
 declare namespace PageManager {
     export interface SignalSignatures extends GObject.Object.SignalSignatures {
@@ -180,7 +180,7 @@ declare namespace PageManager {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1256
- * @version 50
+ * @since 50
  */
 declare class PageManager extends GObject.Object {
     $signals: PageManager.SignalSignatures;
@@ -207,7 +207,7 @@ declare class PageManager extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1316
- * @version 50
+ * @since 50
  */
 export class AppDisplay extends BaseAppView {
     _pageManager: PageManager;
@@ -236,7 +236,7 @@ export class AppDisplay extends BaseAppView {
      * Handles the `scroll` signal of the page's scroll controller. GNOME 51
      * replaced the old `(actor, event)` handler with these arguments.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(controller: Clutter.ScrollController, sprite: Clutter.Sprite, source: Clutter.ScrollSource, dx: number, dy: number): void;
     _maybeMoveItem(dragEvent: DragEvent): void;
@@ -259,7 +259,7 @@ export class AppDisplay extends BaseAppView {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1752
- * @version 50
+ * @since 50
  */
 export class AppSearchProvider {
     id: string;
@@ -282,7 +282,7 @@ export class AppSearchProvider {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L1847
- * @version 50
+ * @since 50
  */
 export class AppViewItem extends St.Button {
     _id?: string;
@@ -319,7 +319,7 @@ export class AppViewItem extends St.Button {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2059
- * @version 50
+ * @since 50
  */
 declare class FolderGrid extends AppGrid {
     constructor();
@@ -328,7 +328,7 @@ declare class FolderGrid extends AppGrid {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2078
- * @version 50
+ * @since 50
  */
 export class FolderView extends BaseAppView {
     _folder: Gio.Settings;
@@ -358,7 +358,7 @@ export class FolderView extends BaseAppView {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2272
- * @version 50
+ * @since 50
  */
 export namespace FolderIcon {
     export interface SignalSignatures extends St.Button.SignalSignatures {
@@ -368,7 +368,7 @@ export namespace FolderIcon {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2276
- * @version 50
+ * @since 50
  */
 export class FolderIcon extends AppViewItem {
     $signals: FolderIcon.SignalSignatures;
@@ -412,7 +412,7 @@ export class FolderIcon extends AppViewItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2455
- * @version 50
+ * @since 50
  */
 export namespace AppFolderDialog {
     export interface SignalSignatures extends St.Bin.SignalSignatures {
@@ -422,7 +422,7 @@ export namespace AppFolderDialog {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2459
- * @version 50
+ * @since 50
  */
 export class AppFolderDialog extends St.Bin {
     $signals: AppFolderDialog.SignalSignatures;
@@ -476,7 +476,7 @@ export class AppFolderDialog extends St.Bin {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2908
- * @version 50
+ * @since 50
  */
 export namespace AppIcon {
     export interface SignalSignatures extends St.Button.SignalSignatures {
@@ -493,7 +493,7 @@ export namespace AppIcon {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L2913
- * @version 50
+ * @since 50
  */
 export class AppIcon extends AppViewItem {
     $signals: AppIcon.SignalSignatures;
@@ -551,8 +551,9 @@ export class AppIcon extends AppViewItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/appDisplay.js#L3155
- * @version 50
+ * @since 50
  */
-export class SystemActionIcon extends GridSearchResult {
+declare class SystemActionIcon extends GridSearchResult {
     activate(): void;
 }
+export type { BaseAppViewGridLayout, BaseAppView, SystemActionIcon, PageMoveData, PageManager, FolderGrid };

@@ -8,13 +8,13 @@ import { DragMotionResult } from './dnd.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspaceThumbnail.js#L59
- * @version 50
+ * @since 50
  */
 export class WindowClone extends Clutter.Actor {}
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspaceThumbnail.js#L213
- * @version 50
+ * @since 50
  */
 export enum ThumbnailState {
     NEW = 0,
@@ -31,7 +31,7 @@ export enum ThumbnailState {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspaceThumbnail.js#L237
- * @version 50
+ * @since 50
  */
 export class WorkspaceThumbnail extends St.Widget {
     metaWorkspace: Meta.Workspace;
@@ -79,6 +79,6 @@ export class WorkspaceThumbnail extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/workspaceThumbnail.js#L590
- * @version 50
+ * @since 50
  */
 export class ThumbnailsBox extends St.Widget {}

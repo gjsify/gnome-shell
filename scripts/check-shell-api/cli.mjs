@@ -7,12 +7,10 @@
 // Usage: node scripts/check-shell-api/cli.mjs --shell <gnome-shell checkout> [options]
 // See README.md in this directory.
 
-import { execFileSync } from 'node:child_process';
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { dirname, join, relative, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { declaredIn, definedIn, diffModule } from './parse.mjs';
+import { findStale, globMatcher, openShell, readJson, visibilityOf } from './shell.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, '../..');
@@ -37,54 +35,26 @@ const fail = (message) => {
 if (!options.shell) fail('--shell <path to a gnome-shell git checkout> is required');
 if (!options.tag) fail('--tag <release to check against, e.g. 51.beta> is required');
 if (!['all', 'public', 'private'].includes(options.visibility)) fail('--visibility is all, public or private');
-const readJson = (file, fallback) => (existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : fallback);
 
 const ignore = readJson(options.ignore, {});
-const ignoreMatchers = Object.keys(ignore).map((pattern) => new RegExp('^' + pattern.replace(/[.+?^${}()|[\]\\#]/g, '\\$&').replace(/\*/g, '.*') + '$'));
-const isIgnored = (key) => ignoreMatchers.some((matcher) => matcher.test(key));
+const isIgnored = globMatcher(Object.keys(ignore));
 const tag = options.tag;
 
-const git = (...args) => execFileSync('git', ['-C', options.shell, ...args], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
-const upstreamFiles = new Set(git('ls-tree', '-r', '--name-only', tag, 'js').split('\n'));
+const { findings: found, skipped: skippedNewer } = findStale(openShell(options.shell, tag), options.src, { exports: options.exports });
 
-function declarationFiles(dir) {
-    const files = [];
-    for (const entry of readdirSync(dir, { withFileTypes: true })) {
-        const path = join(dir, entry.name);
-        if (entry.isDirectory()) {
-            if (entry.name !== 'types') files.push(...declarationFiles(path));
-        } else if (entry.name.endsWith('.d.ts')) files.push(path);
-    }
-    return files.sort();
-}
-
-const found = [];
-for (const file of declarationFiles(options.src)) {
-    const module = relative(options.src, file).replace(/\.d\.ts$/, '');
-    const upstream = `js/${module}.js`;
-    if (!upstreamFiles.has(upstream)) {
-        found.push(`${module}::file`);
-        continue;
-    }
-    found.push(...diffModule(module, declaredIn(readFileSync(file, 'utf8'), file), definedIn(git('show', `${tag}:${upstream}`), upstream), { exports: options.exports }));
-}
-
-// A leading underscore marks a member private by GJS convention. Classes, files
-// and exports are always public.
-const visibilityOf = (key) => (/[#.][_#][^#.]*$/.test(key) ? 'private' : 'public');
 const visible = (key) => options.visibility === 'all' || visibilityOf(key) === options.visibility;
 
 const ignored = found.filter(isIgnored);
 const findings = found.filter((key) => !isIgnored(key) && visible(key));
 
 if (options.json) {
-    console.log(JSON.stringify({ tag, findings, ignored: ignored.length }, null, 2));
+    console.log(JSON.stringify({ tag, findings, ignored: ignored.length, newer: skippedNewer.length }, null, 2));
 } else {
     for (const visibility of ['public', 'private']) {
         const group = findings.filter((key) => visibilityOf(key) === visibility);
         if (group.length) console.log(`Declared, but not in GNOME Shell ${tag} [${visibility}]\n${group.map((key) => `  ${key}`).join('\n')}\n`);
     }
     const publicCount = findings.filter((key) => visibilityOf(key) === 'public').length;
-    console.log(`${tag}: ${findings.length} stale (${publicCount} public), ${ignored.length} ignored`);
+    console.log(`${tag}: ${findings.length} stale (${publicCount} public), ${ignored.length} ignored, ${skippedNewer.length} declared for a newer release`);
 }
 process.exit(findings.length ? 1 : 0);

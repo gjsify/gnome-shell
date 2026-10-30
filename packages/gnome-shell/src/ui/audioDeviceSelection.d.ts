@@ -5,7 +5,7 @@ import type St from '@girs/st-51';
 
 import type { ModalDialog } from './modalDialog.js';
 
-export enum AudioDevice {
+declare enum AudioDevice {
     HEADPHONES = 1 << 0,
     HEADSET = 1 << 1,
     MICROPHONE = 1 << 2,
@@ -39,3 +39,4 @@ export class AudioDeviceSelectionDBus {
     OpenAsync(params: string[], invocation: Gio.DBusMethodInvocation): void;
     CloseAsync(params: any, invocation: Gio.DBusMethodInvocation): void;
 }
+export type { AudioDevice, AudioDeviceSelectionDialog };

@@ -8,7 +8,7 @@ import type { MetadataJson } from './extension-metadata.js';
  *
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/extensionSystem.js#L381
- * @version 49
+ * @since 49
  */
 export interface ExtensionObject {
     readonly metadata: MetadataJson;

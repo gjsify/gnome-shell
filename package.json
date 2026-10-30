@@ -14,6 +14,7 @@
         "build:example": "yarn workspace @gjsify/gnome-shell-hello-world-example build",
         "build:types": "yarn workspace @girs/gnome-shell build",
         "check:shell-api": "node scripts/check-shell-api/cli.mjs",
+        "report:shell-api": "node scripts/check-shell-api/report.mjs",
         "test:shell-api": "node --test scripts/check-shell-api/parse.test.mjs",
         "prettier:check": "prettier --check .",
         "prettier:fix": "prettier --write .",
