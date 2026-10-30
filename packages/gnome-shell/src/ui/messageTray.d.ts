@@ -175,6 +175,13 @@ export declare namespace Source {
     export interface ConstructorProps extends MessageList.Source.ConstructorProps {
         policy: NotificationPolicy;
     }
+
+    export interface SignalSignatures extends MessageList.Source.SignalSignatures {
+        destroy: (reason: NotificationDestroyedReason) => void;
+        'notification-added': (notification: Notification) => void;
+        'notification-removed': (notification: Notification) => void;
+        'notification-request-banner': (notification: Notification) => void;
+    }
 }
 
 /**
@@ -213,17 +220,8 @@ export class Source extends MessageList.Source {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'destroy', callback: ($obj: Source, reason: NotificationDestroyedReason) => void): number;
-    connect_after(sigName: 'destroy', callback: ($obj: Source, reason: NotificationDestroyedReason) => void): number;
-
-    connect(sigName: 'notification-added', callback: ($obj: Source, notification: Notification) => void): number;
-    connect_after(sigName: 'notification-added', callback: ($obj: Source, notification: Notification) => void): number;
-
-    connect(sigName: 'notification-removed', callback: ($obj: Source, notification: Notification) => void): number;
-    connect_after(sigName: 'notification-removed', callback: ($obj: Source, notification: Notification) => void): number;
-
-    connect(sigName: 'notification-request-banner', callback: ($obj: Source, notification: Notification) => void): number;
-    connect_after(sigName: 'notification-request-banner', callback: ($obj: Source, notification: Notification) => void): number;
+    connect<S extends Source.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends Source.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
 
 /**
@@ -249,6 +247,13 @@ export declare namespace Notification {
     }
 
     export type ConstructorProps = Partial<ObjectProperties> & Partial<GObject.Object.ConstructorProps>;
+
+    export interface SignalSignatures extends GObject.Object.SignalSignatures {
+        'action-added': (action: Action) => void;
+        'action-removed': (action: Action) => void;
+        activated: () => void;
+        destroy: () => void;
+    }
 }
 
 /**
@@ -303,17 +308,20 @@ export class Notification extends GObject.Object implements Notification.ObjectP
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'action-added', callback: ($obj: Notification, action: Action) => void): number;
-    connect_after(sigName: 'action-added', callback: ($obj: Notification, action: Action) => void): number;
+    connect<S extends Notification.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends Notification.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+}
 
-    connect(sigName: 'action-removed', callback: ($obj: Notification, action: Action) => void): number;
-    connect_after(sigName: 'action-removed', callback: ($obj: Notification, action: Action) => void): number;
-
-    connect(sigName: 'activated', callback: ($obj: Notification) => void): number;
-    connect_after(sigName: 'activated', callback: ($obj: Notification) => void): number;
-
-    connect(sigName: 'destroy', callback: ($obj: Notification, reason: NotificationDestroyedReason) => void): number;
-    connect_after(sigName: 'destroy', callback: ($obj: Notification, reason: NotificationDestroyedReason) => void): number;
+/**
+ * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/messageTray.js#L676
+ * @since 48
+ */
+export declare namespace MessageTray {
+    export interface SignalSignatures extends St.Widget.SignalSignatures {
+        'queue-changed': () => void;
+        'source-added': (source: Source) => void;
+        'source-removed': (source: Source) => void;
+    }
 }
 
 /**
@@ -378,14 +386,8 @@ export class MessageTray extends St.Widget {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'queue-changed', callback: ($obj: MessageTray) => void): number;
-    connect_after(sigName: 'queue-changed', callback: ($obj: MessageTray) => void): number;
-
-    connect(sigName: 'source-added', callback: ($obj: MessageTray, source: Source) => void): number;
-    connect_after(sigName: 'source-added', callback: ($obj: MessageTray, source: Source) => void): number;
-
-    connect(sigName: 'source-removed', callback: ($obj: MessageTray, source: Source) => void): number;
-    connect_after(sigName: 'source-removed', callback: ($obj: MessageTray, source: Source) => void): number;
+    connect<S extends MessageTray.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends MessageTray.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
 
 /**

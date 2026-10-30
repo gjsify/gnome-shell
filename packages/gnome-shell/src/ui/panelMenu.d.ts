@@ -2,6 +2,7 @@
 
 import type St from '@girs/st-51';
 import Clutter from '@girs/clutter-51';
+import type GObject from '@girs/gobject-2.0';
 
 import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
 
@@ -11,6 +12,8 @@ import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
  */
 declare namespace ButtonBox {
     interface ConstructorProps extends St.Widget.ConstructorProps {}
+
+    interface SignalSignatures extends St.Widget.SignalSignatures {}
 }
 
 /**
@@ -35,6 +38,10 @@ declare class ButtonBox extends St.Widget {
  */
 export namespace Button {
     interface ConstructorProps extends ButtonBox.ConstructorProps {}
+
+    interface SignalSignatures extends ButtonBox.SignalSignatures {
+        'menu-set': () => void;
+    }
 }
 
 /**
@@ -64,6 +71,6 @@ export class Button extends ButtonBox {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'menu-set', callback: ($obj: Button) => void): number;
-    connect_after(sigName: 'menu-set', callback: ($obj: Button) => void): number;
+    connect<S extends Button.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends Button.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
