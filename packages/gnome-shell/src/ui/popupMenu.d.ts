@@ -4,6 +4,7 @@ import type Gio from '@girs/gio-2.0';
 import type St from '@girs/st-51';
 import type Shell from '@girs/shell-51';
 import type Clutter from '@girs/clutter-51';
+import type GObject from '@girs/gobject-2.0';
 
 import * as Signals from '../misc/signals.js';
 import * as BoxPointer from './boxpointer.js';
@@ -42,6 +43,10 @@ declare namespace PopupBaseMenuItem {
         style_class: string | null;
         can_focus: boolean;
     }
+
+    export interface SignalSignatures extends St.BoxLayout.SignalSignatures {
+        activate: (event: Clutter.Event) => void;
+    }
 }
 
 /**
@@ -70,8 +75,8 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'activate', callback: ($obj: PopupBaseMenuItem, event: Clutter.Event) => void): number;
-    connect_after(sigName: 'activate', callback: ($obj: PopupBaseMenuItem, event: Clutter.Event) => void): number;
+    connect<S extends PopupBaseMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends PopupBaseMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 
     syncSensitive(): boolean;
     getSensitive(): boolean;
@@ -123,6 +128,10 @@ export namespace Switch {
     export interface ConstructorProps extends St.Widget.ConstructorProps {
         state?: boolean;
     }
+
+    export interface SignalSignatures extends St.Widget.SignalSignatures {
+        'notify::state': () => void;
+    }
 }
 
 /**
@@ -148,8 +157,8 @@ export class Switch extends St.Widget {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
-    connect_after(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
+    connect<S extends Switch.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends Switch.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
 
 /**
@@ -159,6 +168,10 @@ export class Switch extends St.Widget {
 export namespace PopupSwitchMenuItem {
     export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {
         state: boolean;
+    }
+
+    export interface SignalSignatures extends PopupBaseMenuItem.SignalSignatures {
+        toggled: (toggled: boolean) => void;
     }
 }
 
@@ -189,8 +202,8 @@ export class PopupSwitchMenuItem extends PopupBaseMenuItem {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'toggled', callback: (item: PopupSwitchMenuItem, toggled: boolean) => void): number;
-    connect_after(sigName: 'toggled', callback: (item: PopupSwitchMenuItem, toggled: boolean) => void): number;
+    connect<S extends PopupSwitchMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends PopupSwitchMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
 
 /**

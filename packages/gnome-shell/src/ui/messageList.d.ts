@@ -72,6 +72,8 @@ export declare namespace Source {
     }
 
     type ConstructorProps = Partial<Source.ObjectProperties> & Partial<GObject.Object.ConstructorProps>;
+
+    interface SignalSignatures extends GObject.Object.SignalSignatures {}
 }
 
 /**
