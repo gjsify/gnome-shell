@@ -39,15 +39,7 @@ declare class ButtonBox extends St.Widget {
 export namespace Button {
     interface ConstructorProps extends ButtonBox.ConstructorProps {}
 
-    interface SignalSignatures extends Clutter.Actor.SignalSignatures {}
-}
-
-/**
- * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L97
- * @version 50
- */
-export namespace Button {
-    export interface SignalSignatures extends ButtonBox.SignalSignatures {
+    interface SignalSignatures extends ButtonBox.SignalSignatures {
         'menu-set': () => void;
     }
 }
