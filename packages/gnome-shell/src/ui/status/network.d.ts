@@ -67,9 +67,6 @@ export declare class Indicator extends SystemIndicator {
     _onActivationFailed(): void;
     _syncMainConnection(): void;
     _mainConnectionStateChanged(): void;
-    _flushConnectivityQueue(): void;
-    _closeConnectivityCheck(path: string): void;
-    _portalHelperDone(parameters: any[]): Promise<void>; // Replace 'any' with the correct type
     _syncConnectivity(): Promise<void>;
     _updateIcon(): void;
 }

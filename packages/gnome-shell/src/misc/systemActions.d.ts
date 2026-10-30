@@ -26,7 +26,6 @@ declare class SystemActions extends GObject.Object {
     _lockdownSettings: Gio.Settings;
     _orientationSettings: Gio.Settings;
     _session: ReturnType<typeof SessionManager>;
-    _loginManager: ReturnType<typeof LoginManager.getLoginManager>;
     _userManager: AccountsService.UserManager;
     _actions: Map<string, ActionDetails>;
 

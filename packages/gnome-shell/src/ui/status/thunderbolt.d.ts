@@ -136,15 +136,11 @@ export class AuthRobot extends Signals.EventEmitter {
  * System indicator for Thunderbolt devices.
  */
 export class Indicator extends SystemIndicator {
-    _source: MessageTray.Source | null;
-
     _init(): void;
 
     _createPermission(): Promise<void>;
 
     _onDestroy(): void;
-
-    _ensureSource(): MessageTray.Source;
 
     _notify(title: string, body: string): void;
 
