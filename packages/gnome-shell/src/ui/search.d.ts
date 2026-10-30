@@ -41,7 +41,7 @@ export class SearchEntry extends St.Entry {
     connect_after(signal: string, callback: (...args: any[]) => any): number;
 }
 
-export class MaxWidthBox extends St.BoxLayout {}
+declare class MaxWidthBox extends St.BoxLayout {}
 
 export class SearchResult extends St.Button {
     /** @hidden */
@@ -73,7 +73,7 @@ export class GridSearchResult extends SearchResult {
     updateSearch(providerResults: any[], terms: string[], callback: () => void): Promise<void>;
 }
 
-export abstract class SearchResultsBase extends St.BoxLayout {
+declare abstract class SearchResultsBase extends St.BoxLayout {
     /** @hidden */
     _init(config?: Partial<St.BoxLayout.ConstructorProps>): void;
     /** @hidden */
@@ -106,7 +106,7 @@ export class ListSearchResults extends SearchResultsBase {
     getFirstResult(): any | null;
 }
 
-export class GridSearchResultsLayout extends Clutter.LayoutManager {
+declare class GridSearchResultsLayout extends Clutter.LayoutManager {
     spacing: number;
 
     /** @hidden */
@@ -166,7 +166,7 @@ export class SearchResultsView extends St.BoxLayout {
     highlightTerms(description: string): string;
 }
 
-export class ProviderInfo extends St.Button {
+declare class ProviderInfo extends St.Button {
     readonly PROVIDER_ICON_SIZE: number;
 
     /** @hidden */
@@ -177,3 +177,4 @@ export class ProviderInfo extends St.Button {
     animateLaunch(): void;
     setMoreCount(count: number): void;
 }
+export type { MaxWidthBox, SearchResultsBase, GridSearchResultsLayout, ProviderInfo };

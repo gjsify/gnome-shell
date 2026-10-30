@@ -13,7 +13,7 @@ declare const BackgroundMonitorProxy: typeof Gio.DBusProxy;
  * Class for a menu item related to background applications.
  * This class extends `PopupMenu.PopupImageMenuItem`.
  */
-export declare class BackgroundAppMenuItem extends PopupMenu.PopupImageMenuItem {
+declare class BackgroundAppMenuItem extends PopupMenu.PopupImageMenuItem {
     _spinner: Spinner;
     _spinnerTimeoutId: number | null;
     app: Shell.App;
@@ -46,7 +46,7 @@ export declare class BackgroundAppMenuItem extends PopupMenu.PopupImageMenuItem 
  * Toggle class for background applications.
  * This class extends `QuickToggle`.
  */
-export declare class BackgroundAppsToggle extends QuickToggle {
+declare class BackgroundAppsToggle extends QuickToggle {
     _appSystem: typeof Shell.AppSystem;
     _proxy: typeof BackgroundMonitorProxy | null;
     _listTitle: PopupMenu.PopupMenuItem;
@@ -83,3 +83,4 @@ export declare class Indicator extends SystemIndicator {
      */
     _init(): void;
 }
+export type { BackgroundAppMenuItem, BackgroundAppsToggle };
