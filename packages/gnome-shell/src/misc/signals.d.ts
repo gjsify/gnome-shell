@@ -72,7 +72,7 @@ export interface SignalMethods<S extends SignalMap<S> = any> {
 export interface EventEmitter<S extends SignalMap<S> = any> extends SignalMethods<S> {}
 
 /**
- * @version 47
+ * @since 47
  */
 export class EventEmitter<S extends SignalMap<S> = any> {
     /**

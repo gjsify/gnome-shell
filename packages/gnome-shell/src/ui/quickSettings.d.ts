@@ -10,7 +10,7 @@ import { Slider } from './slider.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L21
- * @version 46
+ * @since 46
  */
 export namespace QuickSettingsItem {
     interface ConstructorProps extends St.Button.ConstructorProps {
@@ -23,7 +23,7 @@ export namespace QuickSettingsItem {
  * Class representing a quick settings item.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L29
- * @version 46
+ * @since 46
  */
 export class QuickSettingsItem extends St.Button {
     hasMenu: boolean;
@@ -42,7 +42,7 @@ export class QuickSettingsItem extends St.Button {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L43
- * @version 46
+ * @since 46
  */
 export namespace QuickToggle {
     interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
@@ -56,7 +56,7 @@ export namespace QuickToggle {
  * Class representing a quick toggle item.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L56
- * @version 46
+ * @since 46
  */
 export class QuickToggle extends QuickSettingsItem {
     title: string | null;
@@ -84,7 +84,7 @@ export class QuickToggle extends QuickSettingsItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L144
- * @version 46
+ * @since 46
  */
 export namespace QuickMenuToggle {
     interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
@@ -99,7 +99,7 @@ export namespace QuickMenuToggle {
  * Class representing a quick menu toggle.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L161
- * @version 46
+ * @since 46
  */
 export class QuickMenuToggle extends QuickSettingsItem {
     title: string | null;
@@ -123,7 +123,7 @@ export class QuickMenuToggle extends QuickSettingsItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L235
- * @version 46
+ * @since 46
  */
 export namespace QuickSlider {
     interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
@@ -138,7 +138,7 @@ export namespace QuickSlider {
  * Class representing a quick slider.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L257
- * @version 46
+ * @since 46
  */
 export class QuickSlider extends QuickSettingsItem {
     gicon: Gio.Icon;
@@ -166,7 +166,7 @@ export class QuickSlider extends QuickSettingsItem {
  * Class representing a quick toggle menu.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L350
- * @version 46
+ * @since 46
  */
 export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
     actor: St.Widget;
@@ -204,7 +204,7 @@ export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
  * Layout metadata for QuickSettingsLayout.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L519
- * @version 46
+ * @since 46
  */
 export class QuickSettingsLayoutMeta extends Clutter.LayoutMeta {
     /**
@@ -217,7 +217,7 @@ export class QuickSettingsLayoutMeta extends Clutter.LayoutMeta {
  * Custom layout manager for QuickSettingsMenu.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L536
- * @version 46
+ * @since 46
  */
 export class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
@@ -286,7 +286,7 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
  * Class representing the QuickSettingsMenu.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L708
- * @version 46
+ * @since 46
  */
 export class QuickSettingsMenu extends PopupMenu.PopupMenu {
     _dimEffect: Clutter.BrightnessContrastEffect;
@@ -324,7 +324,7 @@ export class QuickSettingsMenu extends PopupMenu.PopupMenu {
  * Class representing a system indicator.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/quickSettings.js#L832
- * @version 46
+ * @since 46
  */
 export class SystemIndicator extends St.BoxLayout {
     quickSettingsItems: QuickSettingsItem[];

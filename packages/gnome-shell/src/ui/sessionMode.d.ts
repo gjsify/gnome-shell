@@ -84,13 +84,13 @@ declare type Modes = {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/sessionMode.js#L139
- * @version 51
+ * @since 51
  */
 export function listModes(): void;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/sessionMode.js#L154
- * @version 51
+ * @since 51
  */
 export namespace SessionMode {
     interface SignalMap {
@@ -100,7 +100,7 @@ export namespace SessionMode {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/sessionMode.js#L154
- * @version 51
+ * @since 51
  */
 export class SessionMode<Mode extends string = keyof Modes, S extends Signals.SignalMap<S> = SessionMode.SignalMap> extends Signals.EventEmitter<S> {
     _modeStack: Mode[];
@@ -124,6 +124,6 @@ type SessionModeFields = {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/sessionMode.js#L154
- * @version 51
+ * @since 51
  */
 export interface SessionMode extends SessionModeFields {}

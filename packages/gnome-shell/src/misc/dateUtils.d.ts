@@ -7,7 +7,7 @@ import GLib from '@girs/glib-2.0';
  * @param date a Date object
  * @param format a format String for the date
  *
- * @version 49
+ * @since 49
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/dateUtils.js#L41
  */
 export function formatDateWithCFormatString(date: Date, format: string): string;
@@ -18,7 +18,7 @@ export function formatDateWithCFormatString(date: Date, format: string): string;
  *
  * @param date the start of the time span
  *
- * @version 49
+ * @since 49
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/dateUtils.js#L54
  */
 export function formatTimeSpan(date: GLib.DateTime): string;
@@ -32,7 +32,7 @@ export function formatTimeSpan(date: GLib.DateTime): string;
  * @param params.timeOnly whether the string should only contain the time (no date)
  * @param params.ampm whether to include the "am" or "pm" in the string
  *
- * @version 49
+ * @since 49
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/dateUtils.js#L123
  */
 export function formatTime(time: GLib.DateTime | Date, params?: { timeOnly?: boolean; ampm?: boolean }): string;
