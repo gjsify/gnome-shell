@@ -32,21 +32,21 @@ import type { DwellClickIndicator } from './status/dwellClick.js';
 import type { ScreenRecordingIndicator, ScreenSharingIndicator } from './status/remoteAccess.js';
 
 /**
- * @version 48
+ * @since 48
  */
-export class UnsafeModeIndicator extends SystemIndicator {
+declare class UnsafeModeIndicator extends SystemIndicator {
     _indicator: St.Icon;
 }
 
 /**
- * @version 50
+ * @since 50
  */
-export class ActivitiesButton extends Button {}
+declare class ActivitiesButton extends Button {}
 
 /**
- * @version 48
+ * @since 48
  */
-export class QuickSettings extends Button {
+declare class QuickSettings extends Button {
     override menu: QuickSettingsMenu;
     _indicators: St.BoxLayout;
 
@@ -76,7 +76,7 @@ export class QuickSettings extends Button {
 }
 
 /**
- * @version 50
+ * @since 50
  */
 interface PanelItems {
     activities?: ActivitiesButton;
@@ -90,7 +90,7 @@ interface PanelItems {
 }
 
 /**
- * @version 50
+ * @since 50
  */
 export class Panel extends St.Widget {
     statusArea: PanelItems & { [role: string]: unknown };
@@ -131,3 +131,4 @@ export class Panel extends St.Widget {
 
     _getDraggableWindowForPosition(stageX: number): Meta.Window | null;
 }
+export type { UnsafeModeIndicator, ActivitiesButton, QuickSettings, PanelItems };

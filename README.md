@@ -24,6 +24,7 @@ The TypeScript types for the used libraries are generated from the `.gir` files 
 * [Notification Badge](https://codeberg.org/icsanyi/gnome-notification-badge) is a fully typed Gnome extension that shows the notification count of apps on their icons
 * [Pano](https://github.com/oae/gnome-shell-pano) is a fully typed Gnome extension that serves as the next-gen Clipboard Manager
 * [Rounded Window Corners Reborn](https://github.com/flexagoon/rounded-window-corners) is a fully typed Gnome extension for rounded window (all) corners
+* [Shatter Shell](https://github.com/adil192/shatter-shell) is a fully typed Gnome extension for tiling window management, forked from Pop Shell
 
 We are happy if you link your project through a PR here 😊
 

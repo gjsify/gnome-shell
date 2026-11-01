@@ -15,7 +15,7 @@ export interface PermissionStoreIface extends Gio.DBusInterface {
 /**
  * Creates a proxy for accessing the Permission Store via D-Bus.
  */
-export declare class PermissionStoreProxy extends Gio.DBusProxy {
+declare class PermissionStoreProxy extends Gio.DBusProxy {
     /**
      * Creates a new PermissionStoreProxy instance.
      * @param connection The D-Bus connection to use.
@@ -34,3 +34,4 @@ export declare class PermissionStoreProxy extends Gio.DBusProxy {
  * @returns An instance of the Permission Store proxy.
  */
 export declare function PermissionStore(initCallback: Function, cancellable: Gio.Cancellable | null): PermissionStoreProxy;
+export type { PermissionStoreProxy };

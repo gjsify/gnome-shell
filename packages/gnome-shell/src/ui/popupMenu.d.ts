@@ -4,13 +4,14 @@ import type Gio from '@girs/gio-2.0';
 import type St from '@girs/st-51';
 import type Shell from '@girs/shell-51';
 import type Clutter from '@girs/clutter-51';
+import type GObject from '@girs/gobject-2.0';
 
 import * as Signals from '../misc/signals.js';
 import * as BoxPointer from './boxpointer.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L15
- * @version 49
+ * @since 49
  */
 export enum Ornament {
     NONE = 0,
@@ -26,13 +27,13 @@ export enum Ornament {
  * @param side Side to which the arrow points.
  * @returns a new arrow icon
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L37
- * @version 49
+ * @since 49
  */
 export function arrowIcon(side: St.Side): St.Icon;
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L65
- * @version 49
+ * @since 49
  */
 declare namespace PopupBaseMenuItem {
     export interface ConstructorProps {
@@ -42,11 +43,15 @@ declare namespace PopupBaseMenuItem {
         style_class: string | null;
         can_focus: boolean;
     }
+
+    export interface SignalSignatures extends St.BoxLayout.SignalSignatures {
+        activate: (event: Clutter.Event) => void;
+    }
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L79
- * @version 49
+ * @since 49
  */
 declare class PopupBaseMenuItem extends St.BoxLayout {
     readonly actor: PopupBaseMenuItem;
@@ -70,8 +75,8 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'activate', callback: ($obj: PopupBaseMenuItem, event: Clutter.Event) => void): number;
-    connect_after(sigName: 'activate', callback: ($obj: PopupBaseMenuItem, event: Clutter.Event) => void): number;
+    connect<S extends PopupBaseMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends PopupBaseMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 
     syncSensitive(): boolean;
     getSensitive(): boolean;
@@ -81,7 +86,7 @@ declare class PopupBaseMenuItem extends St.BoxLayout {
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export namespace PopupMenuItem {
     export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {}
@@ -89,7 +94,7 @@ export namespace PopupMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L284
- * @version 49
+ * @since 49
  */
 export class PopupMenuItem extends PopupBaseMenuItem {
     readonly label: St.Label;
@@ -102,7 +107,7 @@ export class PopupMenuItem extends PopupBaseMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L299
- * @version 49
+ * @since 49
  */
 export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
     readonly label: St.Label;
@@ -117,17 +122,21 @@ export class PopupSeparatorMenuItem extends PopupBaseMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L331
- * @version 49
+ * @since 49
  */
 export namespace Switch {
     export interface ConstructorProps extends St.Widget.ConstructorProps {
         state?: boolean;
     }
+
+    export interface SignalSignatures extends St.Widget.SignalSignatures {
+        'notify::state': () => void;
+    }
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L338
- * @version 49
+ * @since 49
  */
 export class Switch extends St.Widget {
     state: boolean;
@@ -139,8 +148,6 @@ export class Switch extends St.Widget {
 
     toggle(): void;
     _startDragging(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-    override vfunc_motion_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
-    override vfunc_button_release_event(event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;
     _endDragging(): typeof Clutter.EVENT_PROPAGATE;
 
     // General signal handler methods
@@ -150,23 +157,27 @@ export class Switch extends St.Widget {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
-    connect_after(sigName: 'notify::state', callback: ($obj: Switch) => void): number;
+    connect<S extends Switch.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends Switch.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L538
- * @version 49
+ * @since 49
  */
 export namespace PopupSwitchMenuItem {
     export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {
         state: boolean;
     }
+
+    export interface SignalSignatures extends PopupBaseMenuItem.SignalSignatures {
+        toggled: (toggled: boolean) => void;
+    }
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L546
- * @version 49
+ * @since 49
  */
 export class PopupSwitchMenuItem extends PopupBaseMenuItem {
     readonly label: St.Label;
@@ -191,12 +202,12 @@ export class PopupSwitchMenuItem extends PopupBaseMenuItem {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'toggled', callback: (item: PopupSwitchMenuItem, toggled: boolean) => void): number;
-    connect_after(sigName: 'toggled', callback: (item: PopupSwitchMenuItem, toggled: boolean) => void): number;
+    connect<S extends PopupSwitchMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends PopupSwitchMenuItem.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export namespace PopupImageMenuItem {
     export interface ConstructorProps extends PopupBaseMenuItem.ConstructorProps {}
@@ -204,7 +215,7 @@ export namespace PopupImageMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L648
- * @version 49
+ * @since 49
  */
 export class PopupImageMenuItem extends PopupBaseMenuItem {
     readonly label: St.Label;
@@ -219,7 +230,7 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L684
- * @version 49
+ * @since 49
  */
 export namespace PopupMenuBase {
     interface SignalMap {
@@ -239,7 +250,7 @@ export namespace PopupMenuBase {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L684
- * @version 49
+ * @since 49
  */
 export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
     abstract readonly actor: Clutter.Actor;
@@ -281,7 +292,7 @@ export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBa
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export namespace PopupMenu {
     interface SignalMap extends PopupMenuBase.SignalMap {}
@@ -289,7 +300,7 @@ export namespace PopupMenu {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1013
- * @version 49
+ * @since 49
  */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     override readonly actor: BoxPointer.BoxPointer;
@@ -308,7 +319,7 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1164
- * @version 49
+ * @since 49
  */
 export class PopupDummyMenu extends Signals.EventEmitter {
     readonly sourceActor: Clutter.Actor;
@@ -326,7 +337,7 @@ export class PopupDummyMenu extends Signals.EventEmitter {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1202
- * @version 49
+ * @since 49
  */
 export namespace PopupSubMenu {
     interface SignalMap extends PopupMenuBase.SignalMap {}
@@ -334,7 +345,7 @@ export namespace PopupSubMenu {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1202
- * @version 49
+ * @since 49
  */
 export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMap> extends PopupMenuBase<S> {
     override readonly actor: St.ScrollView;
@@ -352,7 +363,7 @@ export class PopupSubMenu<S extends Signals.SignalMap<S> = PopupSubMenu.SignalMa
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export namespace PopupMenuSection {
     interface SignalMap extends PopupMenuBase.SignalMap {}
@@ -367,7 +378,7 @@ export namespace PopupMenuSection {
  * to the user
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1341
- * @version 49
+ * @since 49
  */
 export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.SignalMap> extends PopupMenuBase<S> {
     override readonly actor: Clutter.Actor;
@@ -380,7 +391,7 @@ export class PopupMenuSection<S extends Signals.SignalMap<S> = PopupMenuSection.
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1363
- * @version 49
+ * @since 49
  */
 export class PopupSubMenuMenuItem extends PopupBaseMenuItem {
     readonly icon?: St.Icon;
@@ -404,7 +415,7 @@ export class PopupSubMenuMenuItem extends PopupBaseMenuItem {
 }
 
 /**
- * @version 49
+ * @since 49
  */
 export namespace PopupMenuManager {
     export interface ConstructorProps {
@@ -417,14 +428,13 @@ export namespace PopupMenuManager {
  * Call addMenu to add menus
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/49.0/js/ui/popupMenu.js#L1470
- * @version 49
+ * @since 49
  */
 export class PopupMenuManager {
     constructor(owner: Clutter.Actor, grabParams?: PopupMenuManager.ConstructorProps);
 
     addMenu(menu: PopupMenuBase, position?: number): void;
     removeMenu(menu: PopupMenuBase): void;
-    ignoreRelease(): void;
     _onMenuOpenState(menu: PopupMenuBase, open: boolean): void;
     _changeMenu(newMenu: PopupMenuBase): void;
     _onCapturedEvent(actor: Clutter.Actor, event: Clutter.Event): typeof Clutter.EVENT_PROPAGATE;

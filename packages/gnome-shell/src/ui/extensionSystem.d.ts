@@ -10,7 +10,7 @@ export type { ExtensionObject };
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/dbusServices/extensions/extensionsService.js#L15
- * @version 49
+ * @since 49
  */
 export namespace ExtensionManager {
     interface SignalMap {
@@ -20,7 +20,7 @@ export namespace ExtensionManager {
     /**
      *
      * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/data/dbus-interfaces/org.gnome.Shell.Extensions.xml#L234
-     * @version 49
+     * @since 49
      */
     interface OpenExtensionPrefsOptions {
         modal?: boolean;
@@ -29,7 +29,7 @@ export namespace ExtensionManager {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/extensionSystem.js#L29
- * @version 49
+ * @since 49
  */
 export class ExtensionManager<S extends Signals.SignalMap<S> = ExtensionManager.SignalMap> extends Signals.EventEmitter<S> {
     init(): void;

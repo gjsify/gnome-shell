@@ -4,7 +4,7 @@ import type GObject from '@girs/gobject-2.0';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L15
- * @version 50
+ * @since 50
  */
 export class TransientSignalHolder extends GObject.Object {
     constructor(owner?: object);
@@ -13,7 +13,7 @@ export class TransientSignalHolder extends GObject.Object {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L96
- * @version 50
+ * @since 50
  */
 interface SignalData {
     /** a list of handler IDs */
@@ -24,7 +24,7 @@ interface SignalData {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L83
- * @version 50
+ * @since 50
  */
 declare class SignalTracker {
     _owner: object;
@@ -82,7 +82,7 @@ declare class SignalTracker {
  * with an optional flags value, followed by an object to track
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L209
- * @version 50
+ * @since 50
  */
 export function connectObject(thisObj: object, ...args: any): void;
 
@@ -94,7 +94,7 @@ export function connectObject(thisObj: object, ...args: any): void;
  * @param {object} obj - the tracked object
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L256
- * @version 50
+ * @since 50
  */
 export function disconnectObject(thisObj: object, obj: object): void;
 
@@ -105,7 +105,7 @@ export function disconnectObject(thisObj: object, obj: object): void;
  * @param {GObject.Type} gtype - a GObject type
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L266
- * @version 50
+ * @since 50
  */
 export function registerDestroyableType(gtype: GObject.GTypeInput): void;
 
@@ -113,6 +113,6 @@ export function registerDestroyableType(gtype: GObject.GTypeInput): void;
  * A debug function that can be used to inspect signal trackers at run time
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L281
- * @version 50
+ * @since 50
  */
 export function debugGetSignalTrackers(): Map<object, SignalTracker>;

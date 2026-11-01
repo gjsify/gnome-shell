@@ -5,7 +5,7 @@ import type Gio from '@girs/gio-2.0';
 /** The raw extension metadata from metadata.json.
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/extensionUtils.js#L143
- * @version 49
+ * @since 49
  */
 export interface MetadataJson extends Record<string, any> {
     // GNOME Shell checks these properties
@@ -18,7 +18,7 @@ export interface MetadataJson extends Record<string, any> {
 /** The Metadata Object for Extensions
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/extensions/sharedInternals.js#L49
- * @version 49
+ * @since 49
  */
 export interface ExtensionMetadata {
     readonly uuid: string;

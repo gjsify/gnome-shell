@@ -3,7 +3,7 @@ import type Clutter from '@girs/clutter-51';
 import type St from '@girs/st-51';
 
 /**
- * @version 46
+ * @since 46
  */
 export class WorkspaceAnimationController {
     _movingWindow: Meta.Window;
@@ -16,7 +16,7 @@ export class WorkspaceAnimationController {
 }
 
 /**
- * @version 46
+ * @since 46
  */
 export class WorkspaceGroup extends Clutter.Actor {
     _windowRecords: Array<{
@@ -30,7 +30,7 @@ export class WorkspaceGroup extends Clutter.Actor {
 }
 
 /**
- * @version 46
+ * @since 46
  */
 export class MonitorGroup extends St.Widget {
     _workspaceGroups: WorkspaceGroup[];

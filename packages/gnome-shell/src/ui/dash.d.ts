@@ -10,7 +10,7 @@ import { BaseIcon } from './iconGrid.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L22
- * @version 49
+ * @since 49
  */
 export class DashIcon extends AppIcon {
     constructor(app: Shell.App);
@@ -26,7 +26,7 @@ export class DashIcon extends AppIcon {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L49
- * @version 49
+ * @since 49
  */
 export class DashItemContainer extends St.Widget {
     label: St.Label;
@@ -51,7 +51,7 @@ export class DashItemContainer extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L190
- * @version 49
+ * @since 49
  */
 export class ShowAppsIcon extends DashItemContainer {
     toggleButton: St.Button;
@@ -72,7 +72,7 @@ export class ShowAppsIcon extends DashItemContainer {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L275
- * @version 49
+ * @since 49
  */
 declare class DragPlaceholderItem extends DashItemContainer {
     _init(): void;
@@ -80,7 +80,7 @@ declare class DragPlaceholderItem extends DashItemContainer {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L283
- * @version 49
+ * @since 49
  */
 declare class EmptyDropTargetItem extends DashItemContainer {
     _init(): void;
@@ -88,7 +88,7 @@ declare class EmptyDropTargetItem extends DashItemContainer {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L291
- * @version 49
+ * @since 49
  */
 declare class DashIconsLayout extends Clutter.BoxLayout {
     _init(): void;
@@ -97,7 +97,7 @@ declare class DashIconsLayout extends Clutter.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dash.js#L308
- * @version 49
+ * @since 49
  */
 export class Dash extends St.Widget {
     constructor();

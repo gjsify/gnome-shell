@@ -10,19 +10,19 @@ import { DragMotionResult } from './dnd.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/workspace.js#L412
- * @version 50
+ * @since 50
  */
 export class WorkspaceLayout extends Clutter.LayoutManager {}
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/workspace.js#L942
- * @version 50
+ * @since 50
  */
 export class WorkspaceBackground extends Shell.WorkspaceBackground {}
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-50/js/ui/workspace.js#L1031
- * @version 50
+ * @since 50
  */
 export class Workspace extends St.Widget {
     metaWorkspace: Meta.Workspace;

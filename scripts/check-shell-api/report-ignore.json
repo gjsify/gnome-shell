@@ -1,0 +1,4 @@
+{
+    "file:dbusServices/*": "separate gjs processes started over D-Bus, they run outside the shell process",
+    "file:portalHelper/*": "separate gjs process of the portal helper, it runs outside the shell process"
+}

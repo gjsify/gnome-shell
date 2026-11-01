@@ -82,4 +82,4 @@ declare class Indicator extends SystemIndicator {
     _sync(): void;
 }
 
-export { PowerToggle, SystemItem, Indicator };
+export { type PowerToggle, type SystemItem, Indicator };

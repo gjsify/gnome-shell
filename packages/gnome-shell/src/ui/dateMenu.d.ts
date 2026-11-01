@@ -4,7 +4,7 @@ import { CalendarMessageList } from './calendar.js';
 import type { Button } from './panelMenu.js';
 
 /**
- * @version 46
+ * @since 46
  */
 export class DateMenuButton extends Button {
     _messageList: CalendarMessageList;

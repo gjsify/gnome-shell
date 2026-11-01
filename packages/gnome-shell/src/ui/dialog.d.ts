@@ -5,7 +5,7 @@ import type St from '@girs/st-51';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L113
- * @version 48
+ * @since 48
  */
 export interface ButtonInfo {
     action: () => void;
@@ -17,7 +17,7 @@ export interface ButtonInfo {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L18
- * @version 48
+ * @since 48
  */
 export class Dialog extends St.Widget {
     _parentActor: St.Widget;
@@ -40,7 +40,7 @@ export class Dialog extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L158
- * @version 48
+ * @since 48
  */
 export namespace MessageDialogContent {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
@@ -50,7 +50,7 @@ export namespace MessageDialogContent {
 }
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L171
- * @version 48
+ * @since 48
  */
 export class MessageDialogContent extends St.BoxLayout {
     title: string;
@@ -65,7 +65,7 @@ export class MessageDialogContent extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L250
- * @version 48
+ * @since 48
  */
 export namespace ListSection {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
@@ -75,7 +75,7 @@ export namespace ListSection {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L258
- * @version 48
+ * @since 48
  */
 export class ListSection extends St.BoxLayout {
     _listScrollView: St.ScrollView;
@@ -90,7 +90,7 @@ export class ListSection extends St.BoxLayout {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L294
- * @version 48
+ * @since 48
  */
 export namespace ListSectionItem {
     export interface ConstructorProps extends St.BoxLayout.ConstructorProps {
@@ -102,7 +102,7 @@ export namespace ListSectionItem {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/dialog.js#L311
- * @version 48
+ * @since 48
  */
 export class ListSectionItem extends St.BoxLayout {
     _iconActorBin: St.Bin;

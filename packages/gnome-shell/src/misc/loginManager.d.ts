@@ -22,11 +22,6 @@ declare class LoginManagerSystemd extends Signals.EventEmitter {
     getCurrentSessionProxy(): Promise<Gio.DBusProxy | null>;
 
     /**
-     * Checks if the system can be suspended.
-     */
-    canSuspend(): Promise<{ canSuspend: boolean; needsAuth: boolean }>;
-
-    /**
      * Checks if the system can reboot to the boot loader menu.
      */
     canRebootToBootLoaderMenu(): Promise<{ canRebootToBootLoaderMenu: boolean; needsAuth: boolean }>;
@@ -42,11 +37,6 @@ declare class LoginManagerSystemd extends Signals.EventEmitter {
     listSessions(): Promise<any[]>;
 
     /**
-     * Suspends the system.
-     */
-    suspend(): void;
-
-    /**
      * Inhibits the system from performing certain actions.
      * @param reason The reason for inhibition.
      * @param cancellable A Gio.Cancellable object.
@@ -59,11 +49,9 @@ declare class LoginManagerSystemd extends Signals.EventEmitter {
  */
 declare class LoginManagerDummy extends Signals.EventEmitter {
     getCurrentSessionProxy(): Promise<void>;
-    canSuspend(): Promise<{ canSuspend: boolean; needsAuth: boolean }>;
     canRebootToBootLoaderMenu(): Promise<{ canRebootToBootLoaderMenu: boolean; needsAuth: boolean }>;
     setRebootToBootLoaderMenu(): void;
     listSessions(): Promise<any[]>;
-    suspend(): void;
     inhibit(): Promise<null>;
 }
 

@@ -18,7 +18,7 @@ export declare function getMixerControl(): Gvc.MixerControl;
 /**
  * StreamSlider class for controlling audio stream.
  */
-export declare class StreamSlider extends QuickSlider {
+declare class StreamSlider extends QuickSlider {
     _control: Gvc.MixerControl;
     _inDrag: boolean;
     _notifyVolumeChangeId: number;
@@ -83,14 +83,14 @@ export declare class StreamSlider extends QuickSlider {
 /**
  * OutputStreamSlider class for controlling output audio stream.
  */
-export declare class OutputStreamSlider extends StreamSlider {
+declare class OutputStreamSlider extends StreamSlider {
     _findHeadphones(sink: Gvc.MixerStream): boolean;
 }
 
 /**
  * InputStreamSlider class for controlling input audio stream.
  */
-export declare class InputStreamSlider extends StreamSlider {
+declare class InputStreamSlider extends StreamSlider {
     _maybeShowInput(): void;
     override _shouldBeVisible(): boolean;
 }
@@ -98,7 +98,7 @@ export declare class InputStreamSlider extends StreamSlider {
 /**
  * VolumeIndicator for system audio control.
  */
-export declare class VolumeIndicator extends SystemIndicator {
+declare class VolumeIndicator extends SystemIndicator {
     _indicator: Clutter.Actor;
     _control: Gvc.MixerControl;
     _output: OutputStreamSlider;
@@ -108,7 +108,7 @@ export declare class VolumeIndicator extends SystemIndicator {
      * Handles the indicator's scroll controller. The base class throws
      * `GObject.NotImplementedError`; subclasses pick the stream to adjust.
      *
-     * @version 51
+     * @since 51
      */
     _onScroll(source: Clutter.ScrollSource, dx: number, dy: number): void;
 
@@ -117,7 +117,7 @@ export declare class VolumeIndicator extends SystemIndicator {
      * @param item The StreamSlider item.
      * @param delta The scroll delta along the slider's axis.
      *
-     * @version 51
+     * @since 51
      */
     _handleScroll(item: StreamSlider, delta: number): void;
 }
@@ -135,3 +135,4 @@ export declare class OutputIndicator extends VolumeIndicator {
 export declare class InputIndicator extends VolumeIndicator {
     // Implementation-specific methods and properties
 }
+export type { StreamSlider, OutputStreamSlider, InputStreamSlider, VolumeIndicator };

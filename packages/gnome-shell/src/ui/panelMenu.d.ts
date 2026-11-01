@@ -2,20 +2,23 @@
 
 import type St from '@girs/st-51';
 import Clutter from '@girs/clutter-51';
+import type GObject from '@girs/gobject-2.0';
 
 import type { PopupMenu, PopupDummyMenu } from './popupMenu.js';
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L11
- * @version 48
+ * @since 48
  */
 declare namespace ButtonBox {
     interface ConstructorProps extends St.Widget.ConstructorProps {}
+
+    interface SignalSignatures extends St.Widget.SignalSignatures {}
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L12
- * @version 48
+ * @since 48
  */
 declare class ButtonBox extends St.Widget {
     constructor(params?: Partial<ButtonBox.ConstructorProps>);
@@ -31,15 +34,19 @@ declare class ButtonBox extends St.Widget {
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L95
- * @version 50
+ * @since 50
  */
 export namespace Button {
     interface ConstructorProps extends ButtonBox.ConstructorProps {}
+
+    interface SignalSignatures extends ButtonBox.SignalSignatures {
+        'menu-set': () => void;
+    }
 }
 
 /**
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/panelMenu.js#L97
- * @version 50
+ * @since 50
  */
 export class Button extends ButtonBox {
     menu: PopupMenu | PopupDummyMenu;
@@ -64,6 +71,6 @@ export class Button extends ButtonBox {
     disconnect(id: number): void;
 
     // Specific signal handler methods
-    connect(sigName: 'menu-set', callback: ($obj: Button) => void): number;
-    connect_after(sigName: 'menu-set', callback: ($obj: Button) => void): number;
+    connect<S extends Button.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
+    connect_after<S extends Button.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
 }

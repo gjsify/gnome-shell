@@ -13,6 +13,9 @@
         "build": "yarn build:types && yarn build:example",
         "build:example": "yarn workspace @gjsify/gnome-shell-hello-world-example build",
         "build:types": "yarn workspace @girs/gnome-shell build",
+        "check:shell-api": "node scripts/check-shell-api/cli.mjs",
+        "report:shell-api": "node scripts/check-shell-api/report.mjs",
+        "test:shell-api": "node --test scripts/check-shell-api/parse.test.mjs",
         "prettier:check": "prettier --check .",
         "prettier:fix": "prettier --write .",
         "update:girs": "node scripts/update-girs.mjs packages/gnome-shell/package.json examples/hello-world/package.json"
@@ -45,7 +48,7 @@
         "url": "https://github.com/gjsify/gnome-shell/issues"
     },
     "homepage": "https://github.com/gjsify/gnome-shell#readme",
-    "packageManager": "yarn@4.13.0",
+    "packageManager": "yarn@4.18.1",
     "devDependencies": {
         "prettier": "^3.8.3",
         "typescript": "^6.0.3"

@@ -1,6 +1,6 @@
 {
   "name": "@girs/gnome-shell",
-  "version": "51.0.0-alpha.1",
+  "version": "51.0.1",
   "description": "GJS TypeScript type definitions for GNOME Shell Extensions",
   "type": "module",
   "main": "./dist/index.js",
@@ -446,17 +446,6 @@
       }
     },
     "./ui/components/polkitAgent/ambient": "./dist/ui/components/polkitAgent-ambient.d.ts",
-    "./ui/components/telepathyClient": {
-      "import": {
-        "types": "./dist/ui/components/telepathyClient.d.ts",
-        "default": "./dist/ui/components/telepathyClient.js"
-      },
-      "require": {
-        "types": "./dist/ui/components/telepathyClient.d.ts",
-        "default": "./dist/ui/components/telepathyClient.cjs"
-      }
-    },
-    "./ui/components/telepathyClient/ambient": "./dist/ui/components/telepathyClient-ambient.d.ts",
     "./ui/dash": {
       "import": {
         "types": "./dist/ui/dash.d.ts",
@@ -710,6 +699,17 @@
       }
     },
     "./ui/ripples/ambient": "./dist/ui/ripples-ambient.d.ts",
+    "./ui/screenShield": {
+      "import": {
+        "types": "./dist/ui/screenShield.d.ts",
+        "default": "./dist/ui/screenShield.js"
+      },
+      "require": {
+        "types": "./dist/ui/screenShield.d.ts",
+        "default": "./dist/ui/screenShield.cjs"
+      }
+    },
+    "./ui/screenShield/ambient": "./dist/ui/screenShield-ambient.d.ts",
     "./ui/search": {
       "import": {
         "types": "./dist/ui/search.d.ts",
@@ -732,6 +732,17 @@
       }
     },
     "./ui/searchController/ambient": "./dist/ui/searchController-ambient.d.ts",
+    "./ui/sessionMode": {
+      "import": {
+        "types": "./dist/ui/sessionMode.d.ts",
+        "default": "./dist/ui/sessionMode.js"
+      },
+      "require": {
+        "types": "./dist/ui/sessionMode.d.ts",
+        "default": "./dist/ui/sessionMode.cjs"
+      }
+    },
+    "./ui/sessionMode/ambient": "./dist/ui/sessionMode-ambient.d.ts",
     "./ui/slider": {
       "import": {
         "types": "./dist/ui/slider.d.ts",
@@ -1071,30 +1082,30 @@
     "generate:types": "node ./scripts/generate-types.js"
   },
   "dependencies": {
-    "@girs/accountsservice-1.0": "^4.3.0",
-    "@girs/adw-1": "^4.3.0",
-    "@girs/atk-1.0": "^4.3.0",
-    "@girs/clutter-51": "^4.3.0",
-    "@girs/cogl-51": "^4.3.0",
-    "@girs/gcr-4": "^4.3.0",
-    "@girs/gdm-1.0": "^4.3.0",
-    "@girs/gio-2.0": "^4.3.0",
-    "@girs/giounix-2.0": "^4.3.0",
-    "@girs/gjs": "^4.3.0",
-    "@girs/glib-2.0": "^4.3.0",
-    "@girs/gnomebg-4.0": "^4.3.0",
-    "@girs/gnomebluetooth-3.0": "^4.3.0",
-    "@girs/gnomedesktop-4.0": "^4.3.0",
-    "@girs/gobject-2.0": "^4.3.0",
-    "@girs/gtk-4.0": "^4.3.0",
-    "@girs/gvc-1.0": "^4.3.0",
-    "@girs/meta-51": "^4.3.0",
-    "@girs/mtk-51": "^4.3.0",
-    "@girs/polkit-1.0": "^4.3.0",
-    "@girs/shell-51": "^4.3.0",
-    "@girs/shew-0": "^4.3.0",
-    "@girs/st-51": "^4.3.0",
-    "@girs/upowerglib-1.0": "^4.3.0"
+    "@girs/accountsservice-1.0": "^5.6.0",
+    "@girs/adw-1": "^5.6.0",
+    "@girs/atk-1.0": "^5.6.0",
+    "@girs/clutter-51": "^5.6.0",
+    "@girs/cogl-51": "^5.6.0",
+    "@girs/gcr-4": "^5.6.0",
+    "@girs/gdm-1.0": "^5.6.0",
+    "@girs/gio-2.0": "^5.6.0",
+    "@girs/giounix-2.0": "^5.6.0",
+    "@girs/gjs": "^5.6.0",
+    "@girs/glib-2.0": "^5.6.0",
+    "@girs/gnomebg-4.0": "^5.6.0",
+    "@girs/gnomebluetooth-3.0": "^5.6.0",
+    "@girs/gnomedesktop-4.0": "^5.6.0",
+    "@girs/gobject-2.0": "^5.6.0",
+    "@girs/gtk-4.0": "^5.6.0",
+    "@girs/gvc-1.0": "^5.6.0",
+    "@girs/meta-51": "^5.6.0",
+    "@girs/mtk-51": "^5.6.0",
+    "@girs/polkit-1.0": "^5.6.0",
+    "@girs/shell-51": "^5.6.0",
+    "@girs/shew-0": "^5.6.0",
+    "@girs/st-51": "^5.6.0",
+    "@girs/upowerglib-1.0": "^5.6.0"
   },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.8",

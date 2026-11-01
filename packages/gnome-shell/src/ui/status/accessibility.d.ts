@@ -11,15 +11,6 @@ export declare class ATIndicator extends PanelMenu.Button {
     /** Queue the menu visibility sync, avoiding redundant calls */
     _queueSyncMenuVisibility(): void;
     /**
-     * Build an extended item for the menu.
-     * @param string - The display string for the menu item.
-     * @param initialValue - The initial value/state of the toggle.
-     * @param writable - Indicates if the toggle is writable/interactive.
-     * @param onSet - Callback function when the toggle is switched.
-     * @returns A PopupSwitchMenuItem instance.
-     */
-    _buildItemExtended(string: string, initialValue: boolean, writable: boolean, onSet: (state: boolean) => void): PopupMenu.PopupSwitchMenuItem;
-    /**
      * Build a standard menu item.
      * @param string - The display string for the menu item.
      * @param schema - The GSettings schema id.
