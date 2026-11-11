@@ -161,6 +161,10 @@ export namespace LayoutManager {
 export class LayoutManager extends GObject.Object {
     $signals: LayoutManager.SignalSignatures;
 
+    connect<K extends keyof LayoutManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LayoutManager.SignalSignatures[K]>): number;
+    connect_after<K extends keyof LayoutManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LayoutManager.SignalSignatures[K]>): number;
+    emit<K extends keyof LayoutManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LayoutManager.SignalSignatures[K]>): void;
+
     _rtl: boolean;
     _keyboardIndex: number;
     _rightPanelBarrier: Meta.Barrier | null;

@@ -14,11 +14,7 @@ export namespace Inspector {
 export class Inspector extends Clutter.Actor {
     $signals: Inspector.SignalSignatures;
 
-    // Signal handler methods
-    connect<S extends Inspector.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
-    connect_after<S extends Inspector.SignalSignatures, K extends keyof S>(signal: K, callback: GObject.SignalCallback<this, S[K]>): number;
-
-    // Generic signal handler methods
-    connect(signal: string, callback: (...args: any[]) => any): number;
-    connect_after(signal: string, callback: (...args: any[]) => any): number;
+    connect<K extends keyof Inspector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Inspector.SignalSignatures[K]>): number;
+    connect_after<K extends keyof Inspector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Inspector.SignalSignatures[K]>): number;
+    emit<K extends keyof Inspector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Inspector.SignalSignatures[K]>): void;
 }

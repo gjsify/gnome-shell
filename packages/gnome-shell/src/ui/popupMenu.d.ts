@@ -252,9 +252,9 @@ export namespace PopupMenuBase {
  */
 export abstract class PopupMenuBase<S extends Signals.SignalMap<S> = PopupMenuBase.SignalMap> extends Signals.EventEmitter<S> {
     abstract readonly actor: Clutter.Actor;
-    readonly sourceActor: Clutter.Actor;
-    readonly focusActor: Clutter.Actor;
-    readonly length: number;
+    sourceActor: Clutter.Actor;
+    focusActor: Clutter.Actor;
+    length: number;
     // Changed in subclasses
     isOpen: boolean;
     readonly box: St.BoxLayout;
@@ -320,7 +320,7 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
  * @since 49
  */
 export class PopupDummyMenu extends Signals.EventEmitter {
-    readonly sourceActor: Clutter.Actor;
+    sourceActor: Clutter.Actor;
     readonly actor: Clutter.Actor;
     readonly sensitive: boolean;
 
