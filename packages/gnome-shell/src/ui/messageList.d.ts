@@ -81,6 +81,11 @@ export declare namespace Source {
  * @since 48
  */
 export class Source extends GObject.Object implements Source.ObjectProperties {
+    $signals: Source.SignalSignatures;
+
+    connect<K extends keyof Source.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Source.SignalSignatures[K]>): number;
+    connect_after<K extends keyof Source.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Source.SignalSignatures[K]>): number;
+    emit<K extends keyof Source.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Source.SignalSignatures[K]>): void;
     constructor(params?: Source.ConstructorProps);
 
     title: string;
